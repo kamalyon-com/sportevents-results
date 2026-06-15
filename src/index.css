@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ── Isolation: block WordPress/theme CSS from leaking into the widget ──────── */
+#sportevents-results,
+#kamalyon-race-results,
+#root {
+  all: initial;
+  display: block;
+  font-family: 'Barlow', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-size: 16px;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+/* Re-apply box-sizing to all descendants */
+#sportevents-results *,
+#sportevents-results *::before,
+#sportevents-results *::after,
+#kamalyon-race-results *,
+#kamalyon-race-results *::before,
+#kamalyon-race-results *::after {
+  box-sizing: border-box;
+}
+
+/* Neutralise Astra global hr override */
+#sportevents-results hr,
+#kamalyon-race-results hr {
+  background-color: transparent;
+}
+
+/* Neutralise Astra global table/td/th border override */
+#sportevents-results table,
+#sportevents-results td,
+#sportevents-results th,
+#kamalyon-race-results table,
+#kamalyon-race-results td,
+#kamalyon-race-results th {
+  border: none;
+}
+
+/* Restore MUI content-box for native inputs (MUI sets height:1.4375em with content-box) */
+#sportevents-results input,
+#kamalyon-race-results input {
+  box-sizing: content-box;
+}
+
+/* Force Barlow on native form elements (browser UA default overrides inheritance) */
+#sportevents-results input,
+#sportevents-results button,
+#sportevents-results select,
+#sportevents-results textarea,
+#kamalyon-race-results input,
+#kamalyon-race-results button,
+#kamalyon-race-results select,
+#kamalyon-race-results textarea {
+  font-family: 'Exo 2', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}

@@ -1,0 +1,47 @@
+name: Refresh Race Data
+
+# Runs daily at 06:00 UTC (08:00 Madrid summer time)
+# Also triggers on push to the prefetch script, and can be run manually
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/prefetch-results.js'
+      - 'package.json'
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch race results from RaceResult API
+        env:
+          REACT_APP_RR_API_KEY: ${{ secrets.RR_API_KEY }}
+        run: npm run prefetch
+
+      - name: Upload JSON data files to WordPress via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./public/
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+          # Only upload JSON data files — never overwrite the JS bundle from this job
+          include: '["**.json"]'
+          exclude: '[]'
+          log-level: minimal
