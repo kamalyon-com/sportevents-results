@@ -107,7 +107,7 @@ function loadEnv(filePath) {
 
 const ROOT    = path.resolve(__dirname, '..');
 const env     = loadEnv(path.join(ROOT, '.env.local'));
-const API_KEY = env.REACT_APP_RR_API_KEY ; process.env.REACT_APP_RR_API_KEY ; '';
+const API_KEY = env.REACT_APP_RR_API_KEY || process.env.REACT_APP_RR_API_KEY || '';
 
 if (!API_KEY) {
   console.error('ERROR: REACT_APP_RR_API_KEY not found in .env.local');
