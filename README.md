@@ -1,13 +1,55 @@
-﻿# Widget de Resultados de Carrera — Guía de Desarrollo
+﻿# Buscador de Resultados de Carreras
 
-Widget React + TypeScript + MUI que muestra resultados de carreras desde la plataforma RaceResult 14, integrado dentro de una página de WordPress.
+Widget web para buscar y consultar resultados de carreras deportivas. Se integra en cualquier página web con dos líneas de código y se actualiza automáticamente cada día.
 
 ---
 
-## Requisitos previos
+## ¿Qué hace?
 
-- Node.js 18+ y npm
-- Una clave de API de solo lectura de RaceResult (en el software RaceResult bajo Ajustes > Claves API)
+- Muestra los resultados de todas las carreras disponibles en tu cuenta de RaceResult.
+- Permite buscar por nombre/apellido, filtrar por categoría y modalidad.
+- Muestra tiempos por sector (splits) cuando el evento los tiene configurados.
+- Se actualiza automáticamente cada día a las 6:00 AM sin intervención manual.
+- Funciona en móvil y escritorio.
+
+---
+
+## Integración en una web
+
+Añade este código HTML donde quieras mostrar el widget:
+
+```html
+<div id="sportevents-results" data-prefix="nombre de tu organización" data-theme="dark"></div>
+<script src="https://alex98ys.github.io/sportevents-results/sportevents-results.js"></script>
+```
+
+### Parámetros disponibles
+
+| Atributo | Valores | Descripción |
+|---|---|---|
+| `data-prefix` | texto | Filtra los eventos cuyo nombre empiece por este texto (ej. `"strong race"`) |
+| `data-theme` | `dark` / `light` | Tema visual del widget (por defecto: `dark`) |
+
+---
+
+## Actualización de datos
+
+Los resultados se descargan automáticamente cada día desde la API de RaceResult y se publican en GitHub Pages. No es necesario hacer nada manualmente.
+
+Si necesitas forzar una actualización inmediata:
+1. Ve a [Actions](https://github.com/alex98ys/sportevents-results/actions)
+2. Selecciona **Refresh Race Data**
+3. Haz clic en **Run workflow**
+
+---
+
+## Tecnología
+
+- React + TypeScript + MUI v5
+- Datos servidos como JSON estático desde GitHub Pages
+- Automatización mediante GitHub Actions
+- Sin servidor propio necesario
+
 
 ---
 
