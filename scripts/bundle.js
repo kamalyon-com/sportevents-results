@@ -69,7 +69,6 @@ const hardeningCSS = `
 /* Sport Events Widget — CSS isolation hardening (injected last) */
 #sportevents-results,#kamalyon-race-results{font-family:'Exo 2','Roboto',Helvetica,Arial,sans-serif!important;background:transparent!important;}
 #sportevents-results h1,#sportevents-results h2,#sportevents-results h3,#sportevents-results h4,#sportevents-results h5,#sportevents-results h6,#kamalyon-race-results h1,#kamalyon-race-results h2,#kamalyon-race-results h3,#kamalyon-race-results h4,#kamalyon-race-results h5,#kamalyon-race-results h6{color:inherit!important;font-family:'Exo 2','Roboto',Helvetica,Arial,sans-serif!important;}
-#sportevents-results [class*="MuiTypography-root"],#kamalyon-race-results [class*="MuiTypography-root"]{color:inherit!important;}
 #sportevents-results fieldset,#kamalyon-race-results fieldset{border-color:rgba(128,128,128,0.3)!important;}
 #sportevents-results [class*="Mui-focused"] fieldset,#kamalyon-race-results [class*="Mui-focused"] fieldset{border-color:#00A3E0!important;}
 #sportevents-results hr,#kamalyon-race-results hr{background-color:transparent!important;border-top-style:solid!important;border-top-width:thin!important;}
