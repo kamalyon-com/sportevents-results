@@ -1,6 +1,5 @@
 import React, { useMemo, useEffect } from 'react';
 import {
-  Box,
   CssBaseline,
   GlobalStyles,
   ThemeProvider,
@@ -158,15 +157,6 @@ function App({ eventPrefix, theme: themeProp = 'dark' }: { eventPrefix?: string;
         },
       }} />
       <CssBaseline />
-      {/* Gradient mesh background */}
-      <Box
-        sx={{
-          minHeight: '100vh',
-          background: isDark
-            ? 'radial-gradient(ellipse at 15% 25%, rgba(0,163,224,0.09) 0%, transparent 50%), radial-gradient(ellipse at 85% 80%, rgba(255,140,66,0.07) 0%, transparent 50%)'
-            : 'radial-gradient(ellipse at 15% 25%, rgba(0,163,224,0.07) 0%, transparent 50%), radial-gradient(ellipse at 85% 80%, rgba(255,140,66,0.05) 0%, transparent 50%)',
-        }}
-      >
       <Container maxWidth="xl" sx={{ py: { xs: 1, md: 4 } }}>
         <Paper
           variant="outlined"
@@ -190,7 +180,6 @@ function App({ eventPrefix, theme: themeProp = 'dark' }: { eventPrefix?: string;
           />
         </Paper>
       </Container>
-      </Box>
     </ThemeProvider>
   );
 }
