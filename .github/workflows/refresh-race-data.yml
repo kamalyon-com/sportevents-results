@@ -14,6 +14,8 @@ on:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repo
@@ -33,15 +35,15 @@ jobs:
           REACT_APP_RR_API_KEY: ${{ secrets.RR_API_KEY }}
         run: npm run prefetch
 
-      - name: Upload JSON data files to WordPress via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Build bundle (so build/ has fresh JSONs)
+        env:
+          REACT_APP_RR_API_KEY: ${{ secrets.RR_API_KEY }}
+          CI: false
+        run: npm run bundle
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./public/
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
-          # Only upload JSON data files — never overwrite the JS bundle from this job
-          include: '["**.json"]'
-          exclude: '[]'
-          log-level: minimal
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          keep_files: false
