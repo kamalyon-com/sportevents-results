@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import {
   Alert,
-  Avatar,
   Box,
   Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardHeader,
   Chip,
   CircularProgress,
   Divider,
@@ -23,7 +18,6 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 import GroupsIcon from '@mui/icons-material/Groups';
 import PersonIcon from '@mui/icons-material/Person';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import { RREventConfig } from '../lib/types';
 
 interface SearchFormProps {
@@ -44,7 +38,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({
   const eventKey = (ev: RREventConfig) => `${ev.eventId}_${ev.contest ?? 0}`;
 
   const theme = useTheme();
-  const isDark = theme.palette.mode === 'dark';
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   // Unique race names in order of first appearance
@@ -117,53 +110,19 @@ export const SearchForm: React.FC<SearchFormProps> = ({
 
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ width: '100%', maxWidth: 580, mx: 'auto' }}>
-      <Card
-        sx={{
-          border: `1px solid ${primaryColor}28`,
-          boxShadow: isDark
-            ? `0 0 0 1px ${primaryColor}14, 0 24px 56px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.04)`
-            : `0 0 0 1px ${primaryColor}14, 0 24px 56px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.9)`,
-          backdropFilter: 'blur(20px)',
-          background: isDark ? 'rgba(22,22,22,0.85)' : 'rgba(255,255,255,0.92)',
-          borderRadius: 3,
-          overflow: 'hidden',
-        }}
-      >
+      <Box>
         {/* ── Header ── */}
-        <CardHeader
-          avatar={
-            <Avatar
-              sx={{
-                background: `linear-gradient(135deg, ${primaryColor} 0%, ${primaryColor}bb 100%)`,
-                boxShadow: `0 4px 16px ${primaryColor}55`,
-                borderRadius: 2,
-                width: { xs: 36, sm: 44 },
-                height: { xs: 36, sm: 44 },
-              }}
-            >
-              <EmojiEventsIcon />
-            </Avatar>
-          }
-          title="Listas de Resultados"
-          subheader="SELECCIONA UN EVENTO"
-          titleTypographyProps={{ variant: 'subtitle1', fontWeight: 700, lineHeight: 1.3 }}
-          subheaderTypographyProps={{
-            sx: { fontSize: 10, letterSpacing: 2, color: primaryColor, textTransform: 'uppercase', mt: 0.25 },
-          }}
-          sx={{
-            px: { xs: 2, sm: 3 },
-            py: { xs: 1.5, sm: 2.5 },
-            background: isDark
-              ? `linear-gradient(135deg, rgba(0,0,0,0) 0%, ${primaryColor}10 100%)`
-              : `linear-gradient(135deg, ${primaryColor}0a 0%, ${primaryColor}18 100%)`,
-          }}
-        />
-
-        <Divider sx={{ borderColor: `${primaryColor}25` }} />
-
+        <Box sx={{ px: { xs: 2, sm: 3 }, py: { xs: 1.5, sm: 2.5 } }}>
+          <Typography variant="h6" sx={{ fontWeight: 700, lineHeight: 1.3 }}>
+            Listas de Resultados
+          </Typography>
+          <Typography sx={{ fontSize: 11, letterSpacing: 2, color: primaryColor, textTransform: 'uppercase', mt: 0.25 }}>
+            Selecciona un evento
+          </Typography>
+        </Box>
+        <Divider />
         {/* ── Form fields ── */}
-        <CardContent sx={{ p: 0, '&:last-child': { pb: 0 } }}>
-          <Stack spacing={0} divider={<Divider />}>
+        <Stack spacing={0} divider={<Divider />}>
             {/* Race name */}
             <FormRow label="Evento">
               <FormControl fullWidth size="medium" variant="outlined">
@@ -228,13 +187,12 @@ export const SearchForm: React.FC<SearchFormProps> = ({
                 disabled={loading}
               />
             </FormRow>
-          </Stack>
-        </CardContent>
+        </Stack>
 
         <Divider />
 
         {/* ── Submit ── */}
-        <CardActions sx={{ justifyContent: 'center', px: { xs: 2, sm: 3 }, py: { xs: 2, sm: 2.5 } }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', px: { xs: 2, sm: 3 }, py: { xs: 2, sm: 2.5 } }}>
           <Button
             type="submit"
             variant="contained"
@@ -263,8 +221,8 @@ export const SearchForm: React.FC<SearchFormProps> = ({
           >
             {loading ? 'Cargando…' : 'Mostrar Resultados'}
           </Button>
-        </CardActions>
-      </Card>
+        </Box>
+      </Box>
 
       {error && (
         <Alert severity="error" sx={{ mt: 2, borderRadius: 2 }}>
