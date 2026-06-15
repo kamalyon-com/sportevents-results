@@ -111,16 +111,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ width: '100%', maxWidth: 580, mx: 'auto' }}>
       <Box>
-        {/* ── Header ── */}
-        <Box sx={{ px: { xs: 2, sm: 3 }, py: { xs: 1.5, sm: 2.5 } }}>
-          <Typography variant="h6" sx={{ fontWeight: 700, lineHeight: 1.3 }}>
-            Listas de Resultados
-          </Typography>
-          <Typography sx={{ fontSize: 11, letterSpacing: 2, color: primaryColor, textTransform: 'uppercase', mt: 0.25 }}>
-            Selecciona un evento
-          </Typography>
-        </Box>
-        <Divider />
         {/* ── Form fields ── */}
         <Stack spacing={0} divider={<Divider />}>
             {/* Race name */}
