@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import {
   Box,
   CssBaseline,
@@ -7,11 +7,7 @@ import {
   createTheme,
   Container,
   Paper,
-  IconButton,
-  Tooltip,
 } from '@mui/material';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
 import { RaceResultsWidget } from './components/RaceResultsWidget';
 
 // ─── Theme factory ────────────────────────────────────────────────────────────
@@ -116,8 +112,8 @@ function buildTheme(mode: 'dark' | 'light') {
 
 // ─── Dev preview — mirrors how the widget is embedded on a real page ──────────
 
-function App({ eventPrefix }: { eventPrefix?: string }) {
-  const [mode, setMode] = useState<'dark' | 'light'>('dark');
+function App({ eventPrefix, theme: themeProp = 'dark' }: { eventPrefix?: string; theme?: 'dark' | 'light' }) {
+  const mode = themeProp;
   const theme = useMemo(() => buildTheme(mode), [mode]);
   const isDark = mode === 'dark';
 
@@ -185,23 +181,6 @@ function App({ eventPrefix }: { eventPrefix?: string }) {
               : '0 32px 64px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06)',
           }}
         >
-          {/* Theme toggle — integrated in top-right corner */}
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: { xs: 0.5, md: 1 } }}>
-            <Tooltip title={isDark ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'}>
-              <IconButton
-                onClick={() => setMode(isDark ? 'light' : 'dark')}
-                size="small"
-                sx={{
-                  backgroundColor: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)',
-                  '&:hover': {
-                    backgroundColor: isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.10)',
-                  },
-                }}
-              >
-                {isDark ? <LightModeIcon fontSize="small" /> : <DarkModeIcon fontSize="small" />}
-              </IconButton>
-            </Tooltip>
-          </Box>
           <RaceResultsWidget
             apiKey={process.env.REACT_APP_RR_API_KEY}
             title="Buscador de Resultados"

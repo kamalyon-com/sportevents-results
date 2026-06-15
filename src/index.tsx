@@ -10,11 +10,13 @@ const mountEl =
   document.getElementById('root');
 
 const eventPrefix = mountEl?.getAttribute('data-prefix') ?? undefined;
+const themeAttr = mountEl?.getAttribute('data-theme');
+const initialTheme: 'dark' | 'light' = themeAttr === 'light' ? 'light' : 'dark';
 
 const root = ReactDOM.createRoot(mountEl as HTMLElement);
 root.render(
   <React.StrictMode>
-    <App eventPrefix={eventPrefix} />
+    <App eventPrefix={eventPrefix} theme={initialTheme} />
   </React.StrictMode>
 );
 
