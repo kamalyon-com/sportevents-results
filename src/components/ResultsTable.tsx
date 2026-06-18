@@ -60,6 +60,7 @@ export const ResultsTable: React.FC<ResultsTableProps> = ({
   const displayRank = (athlete: Athlete) => genderFilter ? athlete.rank_gender : athlete.rank_overall;
 
   const pagedAthletes = athletes.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
+  const hasAgeGroup = athletes.some((a) => !!a.age_group);
 
   const handleChangePage = (_: unknown, newPage: number) => setPage(newPage);
   const handleChangeRowsPerPage = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -128,6 +129,7 @@ export const ResultsTable: React.FC<ResultsTableProps> = ({
               <TableCell sx={thSx}>{sortCell('rank_overall', 'Pos.')}</TableCell>
               {!isMobile && <TableCell sx={thSx}>{sortCell('bib', 'Dorsal')}</TableCell>}
               <TableCell sx={thSx}>{sortCell('name', raceFormat === 'pairs' ? 'Pareja' : raceFormat === 'teams' ? 'Equipo' : 'Atleta')}</TableCell>
+              {!isMobile && hasAgeGroup && <TableCell sx={thSx}>{sortCell('category', 'Categ.')}</TableCell>}
               <TableCell sx={{ ...thSx }}>{sortCell('finish_time', isMobile ? 'Tiempo' : 'Tiempo Total')}</TableCell>
               {!isMobile && (
                 <TableCell sx={thSx} align="center">Detalle</TableCell>
@@ -181,17 +183,41 @@ export const ResultsTable: React.FC<ResultsTableProps> = ({
                   {isMobile ? (
                     <Box>
                       <Typography variant="body2" sx={{ fontWeight: 600, lineHeight: 1.3 }}>{athlete.name}</Typography>
+                      {athlete.members && athlete.members.map((m, i) => (
+                        <Box key={i} sx={{ display: 'flex', alignItems: 'baseline', gap: 0.5, pl: 1.5 }}>
+                          <Typography variant="caption" sx={{ color: 'text.secondary' }}>{m.name}</Typography>
+                          {m.club && <Typography variant="caption" sx={{ color: 'text.disabled' }}>· {m.club}</Typography>}
+                        </Box>
+                      ))}
+                      {athlete.age_group && (
+                        <Typography variant="caption" sx={{ color: 'text.disabled' }}>{athlete.age_group}</Typography>
+                      )}
                       <Typography variant="caption" sx={{ color: 'text.disabled', fontFamily: 'monospace' }}>#{athlete.bib}</Typography>
                     </Box>
                   ) : (
-                    <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
-                      <Avatar sx={{ width: 32, height: 32, fontSize: 13, bgcolor: `${primaryColor}1a`, color: primaryColor, border: `1px solid ${primaryColor}35`, borderRadius: 1.5, flexShrink: 0 }}>
-                        {athlete.name.charAt(0).toUpperCase()}
-                      </Avatar>
+                    <Box>
                       <Typography variant="body2" sx={{ fontWeight: 600 }}>{athlete.name}</Typography>
-                    </Stack>
+                      {athlete.members && athlete.members.map((m, i) => (
+                        <Box key={i} sx={{ display: 'flex', alignItems: 'baseline', gap: 0.5 }}>
+                          <Typography variant="caption" sx={{ color: 'text.secondary', lineHeight: 1.5 }}>{m.name}</Typography>
+                          {m.club && <Typography variant="caption" sx={{ color: 'text.disabled', lineHeight: 1.5 }}>· {m.club}</Typography>}
+                        </Box>
+                      ))}
+                      {!athlete.members && athlete.club && (
+                        <Typography variant="caption" sx={{ color: 'text.disabled', lineHeight: 1.5 }}>{athlete.club}</Typography>
+                      )}
+                    </Box>
                   )}
                 </TableCell>
+
+                {/* Category / age group — desktop only, when data exists */}
+                {!isMobile && hasAgeGroup && (
+                  <TableCell sx={tdSx}>
+                    {athlete.age_group && (
+                      <Typography variant="caption" sx={{ color: 'text.secondary', whiteSpace: 'nowrap' }}>{athlete.age_group}</Typography>
+                    )}
+                  </TableCell>
+                )}
 
                 {/* Time */}
                 <TableCell sx={tdSx}>

@@ -35,7 +35,7 @@ export const SearchForm: React.FC<SearchFormProps> = ({
   primaryColor,
   onSearch,
 }) => {
-  const eventKey = (ev: RREventConfig) => `${ev.eventId}_${ev.contest ?? 0}`;
+  const eventKey = (ev: RREventConfig) => `${ev.eventId}_${ev.contest ?? 0}_${ev.initialCategory ?? ''}`;
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));

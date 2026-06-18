@@ -9,7 +9,7 @@ export interface Split {
 export interface Athlete {
   bib: string;
   name: string;
-  gender?: 'M' | 'F';
+  gender?: 'M' | 'F' | 'Mixta';
   age_group: string; // e.g. "30-34"
   category: string; // e.g. "HYROX Men Open"
   nationality: string; // ISO 3166-1 alpha-2
@@ -19,6 +19,9 @@ export interface Athlete {
   rank_category: number;
   splits: Split[];
   event_id: string;
+  club?: string;
+  /** Member entries for pairs/teams contests — each member's name and optional club. */
+  members?: Array<{ name: string; club?: string }>;
 }
 
 export interface EventInfo {
@@ -41,6 +44,8 @@ export interface EventInfo {
   contestName?: string;
   /** True when the list returned 0 rows at prefetch time (results not published yet) */
   noResults?: boolean;
+  /** Gender categories present in this contest (e.g. ["Femenina", "Mixta"]) */
+  genderCategories?: string[];
 }
 
 /**
@@ -99,6 +104,8 @@ export interface RREventConfig {
   fileKey?: string;
   /** True when no results were available at prefetch time */
   noResults?: boolean;
+  /** Pre-applied category filter when this entry was expanded from a gender category */
+  initialCategory?: string;
 }
 
 export interface WidgetConfig {
@@ -133,7 +140,7 @@ export interface SortConfig {
 export interface FilterState {
   search: string;
   eventId: string;
-  gender: '' | 'M' | 'F';
+  gender: '' | 'M' | 'F' | 'Mixta';
   ageGroup: string;
   category: string;
   nationality: string;

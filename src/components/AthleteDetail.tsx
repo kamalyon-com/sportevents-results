@@ -242,6 +242,16 @@ export const AthleteDetail: React.FC<AthleteDetailProps> = ({
             <Typography variant="h5" sx={{ fontWeight: 800, lineHeight: 1.2, letterSpacing: -0.3 }}>
               {athlete.name}
             </Typography>
+            {athlete.members && (
+              <Box sx={{ mt: 0.5 }}>
+                {athlete.members.map((m, i) => (
+                  <Box key={i} sx={{ display: 'flex', alignItems: 'baseline', gap: 0.5 }}>
+                    <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.5 }}>{m.name}</Typography>
+                    {m.club && <Typography variant="body2" sx={{ color: 'text.disabled', lineHeight: 1.5 }}>· {m.club}</Typography>}
+                  </Box>
+                ))}
+              </Box>
+            )}
             <Typography variant="body2" sx={{ color: primaryColor, opacity: 0.8 }}>
               {event?.name ?? athlete.event_id}
             </Typography>
@@ -281,29 +291,59 @@ export const AthleteDetail: React.FC<AthleteDetailProps> = ({
       >
         {/* �"?�"? Left column �"?�"? */}
         <Stack spacing={3}>
-          {/* Participant */}
-          <Paper elevation={1} sx={{ p: 2, borderRadius: 2 }}>
-            <SectionTitle>Participante</SectionTitle>
-            <InfoRow label="Nombre" value={athlete.name} />
-            <InfoRow label="Dorsal" value={`#${athlete.bib}`} />
-            {(athlete.gender || athlete.nationality || athlete.age_group) && (
-              <Stack direction="row" spacing={0.75} sx={{ mt: 1.5, flexWrap: 'wrap', gap: 0.75 }}>
-                {athlete.gender && (
-                  <Chip
-                    size="small"
-                    label={athlete.gender === 'M' ? '♂ Masculino' : '♀ Femenino'}
-                    sx={{ bgcolor: `${primaryColor}20`, color: primaryColor, borderRadius: 1 }}
-                  />
+          {athlete.members ? (
+            <>
+              {/* Team section */}
+              <Paper elevation={1} sx={{ p: 2, borderRadius: 2 }}>
+                <SectionTitle>Equipo</SectionTitle>
+                <InfoRow label="Nombre" value={athlete.name} />
+                <InfoRow label="Dorsal" value={`#${athlete.bib}`} />
+                {(athlete.age_group || athlete.nationality) && (
+                  <Stack direction="row" spacing={0.75} sx={{ mt: 1.5, flexWrap: 'wrap', gap: 0.75 }}>
+                    {athlete.age_group && (
+                      <Chip size="small" label={athlete.age_group} variant="outlined" sx={{ borderRadius: 1 }} />
+                    )}
+                    {athlete.nationality && (
+                      <Chip size="small" label={athlete.nationality} variant="outlined" sx={{ borderRadius: 1 }} />
+                    )}
+                  </Stack>
                 )}
-                {athlete.age_group && (
-                  <Chip size="small" label={athlete.age_group} variant="outlined" sx={{ borderRadius: 1 }} />
-                )}
-                {athlete.nationality && (
-                  <Chip size="small" label={athlete.nationality} variant="outlined" sx={{ borderRadius: 1 }} />
-                )}
-              </Stack>
-            )}
-          </Paper>
+              </Paper>
+
+              {/* One section per member */}
+              {athlete.members.map((m, i) => (
+                <Paper key={i} elevation={1} sx={{ p: 2, borderRadius: 2 }}>
+                  <SectionTitle>Participante {i + 1}</SectionTitle>
+                  <InfoRow label="Nombre" value={m.name} />
+                  {m.club && <InfoRow label="Club" value={m.club} />}
+                </Paper>
+              ))}
+            </>
+          ) : (
+            /* Individual athlete */
+            <Paper elevation={1} sx={{ p: 2, borderRadius: 2 }}>
+              <SectionTitle>Participante</SectionTitle>
+              <InfoRow label="Nombre" value={athlete.name} />
+              <InfoRow label="Dorsal" value={`#${athlete.bib}`} />
+              {(athlete.gender || athlete.nationality || athlete.age_group) && (
+                <Stack direction="row" spacing={0.75} sx={{ mt: 1.5, flexWrap: 'wrap', gap: 0.75 }}>
+                  {athlete.gender && (
+                    <Chip
+                      size="small"
+                      label={athlete.gender === 'M' ? '♂ Masculino' : '♀ Femenino'}
+                      sx={{ bgcolor: `${primaryColor}20`, color: primaryColor, borderRadius: 1 }}
+                    />
+                  )}
+                  {athlete.age_group && (
+                    <Chip size="small" label={athlete.age_group} variant="outlined" sx={{ borderRadius: 1 }} />
+                  )}
+                  {athlete.nationality && (
+                    <Chip size="small" label={athlete.nationality} variant="outlined" sx={{ borderRadius: 1 }} />
+                  )}
+                </Stack>
+              )}
+            </Paper>
+          )}
 
           {/* Race Details */}
           <Paper elevation={1} sx={{ p: 2, borderRadius: 2 }}>

@@ -87,6 +87,16 @@ export const AthleteModal: React.FC<AthleteModalProps> = ({
             <Typography variant="h5" component="div" sx={{ fontWeight: 700 }}>
               {athlete.name}
             </Typography>
+            {athlete.members && (
+              <Box sx={{ mt: 0.5 }}>
+                {athlete.members.map((m, i) => (
+                  <Box key={i} sx={{ display: 'flex', alignItems: 'baseline', gap: 0.5 }}>
+                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>{m.name}</Typography>
+                    {m.club && <Typography variant="body2" sx={{ color: 'text.disabled' }}>· {m.club}</Typography>}
+                  </Box>
+                ))}
+              </Box>
+            )}
             <Stack direction="row" spacing={1} sx={{ mt: 0.5, flexWrap: 'wrap' }}>
               <Chip label={`#${athlete.bib}`} size="small" variant="outlined" />
               <Chip label={athlete.category} size="small" color="primary" variant="outlined" />

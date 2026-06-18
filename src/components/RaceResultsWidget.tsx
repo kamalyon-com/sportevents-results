@@ -1,8 +1,13 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import {
   Box,
   Button,
+  FormControl,
   IconButton,
+  InputLabel,
+  LinearProgress,
+  MenuItem,
+  Select,
   Tooltip,
   Stack,
   Typography,
@@ -57,6 +62,57 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
   const [selectedAthlete, setSelectedAthlete] = useState<Athlete | null>(null);
   const [activeEventCfg, setActiveEventCfg] = useState<RREventConfig | null>(null);
 
+  // ─── In-results event/modality selector ────────────────────────────────────
+  const eventsForSelector = rrEvents && rrEvents.length > 0 ? rrEvents : availableEvents;
+  const selectorEventKey = (ev: RREventConfig) => `${ev.eventId}_${ev.contest ?? 0}_${ev.initialCategory ?? ''}`;
+  const selectorFormatLabel = (ev: RREventConfig) =>
+    ev.contestName ?? (ev.format === 'pairs' ? 'Parejas' : ev.format === 'teams' ? 'Equipos' : 'Individual');
+  const selectorRaceNames = useMemo(() => {
+    const seen = new Set<string>();
+    return eventsForSelector.reduce<string[]>((acc, ev) => {
+      const n = ev.name ?? String(ev.eventId);
+      if (!seen.has(n)) { seen.add(n); acc.push(n); }
+      return acc;
+    }, []);
+  }, [eventsForSelector]);
+  const [selectorRace, setSelectorRace] = useState<string>('');
+  const [selectorKey, setSelectorKey] = useState<string>('');
+  useEffect(() => {
+    if (activeEventCfg) {
+      setSelectorRace(activeEventCfg.name ?? String(activeEventCfg.eventId));
+      setSelectorKey(selectorEventKey(activeEventCfg));
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeEventCfg]);
+  const selectorModalities = useMemo(
+    () => eventsForSelector.filter((ev) => (ev.name ?? String(ev.eventId)) === selectorRace),
+    [eventsForSelector, selectorRace],
+  );
+  const [inResultsLoading, setInResultsLoading] = useState(false);
+  useEffect(() => {
+    if (phase === 'results') setInResultsLoading(false);
+  }, [phase]);
+
+  const handleSelectorRaceChange = (newRace: string) => {
+    setSelectorRace(newRace);
+    const mods = eventsForSelector.filter((ev) => (ev.name ?? String(ev.eventId)) === newRace);
+    if (mods.length === 1) {
+      setSelectorKey(selectorEventKey(mods[0]));
+      setInResultsLoading(true);
+      handleSearch(mods[0], '');
+    } else {
+      setSelectorKey('');
+    }
+  };
+  const handleSelectorModalityChange = (newKey: string) => {
+    setSelectorKey(newKey);
+    const ev = selectorModalities.find((e) => selectorEventKey(e) === newKey);
+    if (ev) {
+      setInResultsLoading(true);
+      handleSearch(ev, '');
+    }
+  };
+
   const handleAthleteClick = useCallback((athlete: Athlete) => {
     setSelectedAthlete(athlete);
   }, []);
@@ -77,8 +133,12 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
     (eventCfg: RREventConfig, name: string) => {
       setActiveEventCfg(eventCfg);
       setSelectedAthlete(null);
+      const genderFromCat = eventCfg.initialCategory === 'Femenina' ? 'F' :
+                            eventCfg.initialCategory === 'Masculina' ? 'M' :
+                            eventCfg.initialCategory === 'Mixta' ? 'Mixta' : undefined;
       executeSearch(eventCfg, {
         search: name,
+        ...(genderFromCat ? { gender: genderFromCat } : {}),
       });
     },
     [executeSearch],
@@ -116,7 +176,7 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
   );
 
   // ─── SEARCH phase ───────────────────────────────────────────────────────────
-  if (phase === 'search' || phase === 'loading') {
+  if ((phase === 'search' || phase === 'loading') && !inResultsLoading) {
     return (
       <Box sx={{ fontFamily: 'inherit' }}>
         {header}
@@ -163,21 +223,11 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
             {title}
           </Typography>
           {activeEvent && (
-            <>
-              <Typography variant="h5" component="h2" sx={{ fontWeight: 800, letterSpacing: -0.5, lineHeight: 1.2, mt: 0.5 }}>
-                {activeEvent.name}
-                {activeEventCfg?.contestName && (
-                  <Box component="span" sx={{ ml: 1.5, px: 1.5, py: 0.3, borderRadius: 1.5, backgroundColor: `${primaryColor}22`, color: primaryColor, fontWeight: 700, fontSize: 14, letterSpacing: 0.5, verticalAlign: 'middle' }}>
-                    {activeEventCfg.contestName}
-                  </Box>
-                )}
-              </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5 }}>
-                <Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: primaryColor, display: 'inline-block', flexShrink: 0, boxShadow: `0 0 6px ${primaryColor}` }} />
-                {activeEvent.location ? `${activeEvent.location}` : ''}
-                {activeEvent.date ? ` · ${activeEvent.date.split('-').reverse().join('/')}` : ''}
-              </Typography>
-            </>
+            <Typography variant="body2" color="text.secondary" sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5 }}>
+              <Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: primaryColor, display: 'inline-block', flexShrink: 0, boxShadow: `0 0 6px ${primaryColor}` }} />
+              {activeEvent.location ? `${activeEvent.location}` : ''}
+              {activeEvent.date ? ` · ${activeEvent.date.split('-').reverse().join('/')}` : ''}
+            </Typography>
           )}
         </Box>
 
@@ -221,37 +271,99 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
         </Stack>
       </Stack>
 
-      {/* Inline filters */}
-      <Filters
-        filters={filters}
-        setFilters={setFilters}
-        clearFilters={clearFilters}
-        genderOptions={genderOptions}
-        categoryOptions={categoryOptions}
-        ageGroupOptions={ageGroupOptions}
-        nationalityOptions={nationalityOptions}
-        resultsCount={filteredAthletes.length}
-      />
-
-      {/* Results table — or "no results yet" message */}
-      {filteredAthletes.length === 0 && !filters.search && !filters.gender && !filters.category && !filters.ageGroup && !filters.nationality ? (
-        <Box sx={{ py: 6, textAlign: 'center', color: 'text.secondary' }}>
-          <Typography variant="h6" gutterBottom>Resultados no disponibles</Typography>
-          <Typography variant="body2">Los resultados de este evento aún no han sido publicados.</Typography>
-          <Typography variant="body2" sx={{ mt: 0.5 }}>Vuelve más tarde o pulsa RECARGAR.</Typography>
-        </Box>
-      ) : (
-      <ResultsTable
-        athletes={filteredAthletes}
-        loading={false}
-        sortConfig={sortConfig}
-        onSort={handleSort}
-        onAthleteClick={handleAthleteClick}
-        raceFormat={activeEventCfg?.format}
-        primaryColor={primaryColor}
-        genderFilter={filters.gender}
-      />
+      {/* Event/Modality selectors */}
+      {(selectorRaceNames.length > 1 || selectorModalities.length > 1) && (
+        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} sx={{ mb: 2 }}>
+          {selectorRaceNames.length > 1 && (
+            <FormControl size="small" sx={{ flex: 1 }}>
+              <InputLabel id="selector-race-label">Evento</InputLabel>
+              <Select
+                labelId="selector-race-label"
+                label="Evento"
+                value={selectorRace}
+                onChange={(e) => handleSelectorRaceChange(e.target.value)}
+                disabled={inResultsLoading}
+              >
+                {selectorRaceNames.map((n) => (
+                  <MenuItem key={n} value={n}>
+                    <Typography variant="body2" sx={{ fontWeight: 600 }}>{n}</Typography>
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          )}
+          {selectorModalities.length > 1 && (
+            <FormControl size="small" sx={{ flex: 1 }}>
+              <InputLabel id="selector-modality-label">Modalidad</InputLabel>
+              <Select
+                labelId="selector-modality-label"
+                label="Modalidad"
+                value={selectorKey}
+                onChange={(e) => handleSelectorModalityChange(e.target.value)}
+                disabled={inResultsLoading}
+                displayEmpty
+                renderValue={(val) => {
+                  if (!val) return <em style={{ opacity: 0.45 }}>Modalidad…</em>;
+                  const ev = selectorModalities.find((e) => selectorEventKey(e) === val);
+                  return ev ? selectorFormatLabel(ev) : val;
+                }}
+              >
+                {selectorModalities.map((ev) => (
+                  <MenuItem key={selectorEventKey(ev)} value={selectorEventKey(ev)}>
+                    <Typography variant="body2" sx={{ fontWeight: 600 }}>{selectorFormatLabel(ev)}</Typography>
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          )}
+        </Stack>
       )}
+
+      {/* Smooth loading indicator for in-results refresh */}
+      {inResultsLoading && (
+        <LinearProgress
+          sx={{
+            mb: 1.5,
+            borderRadius: 1,
+            backgroundColor: `${primaryColor}22`,
+            '& .MuiLinearProgress-bar': { backgroundColor: primaryColor },
+          }}
+        />
+      )}
+
+      {/* Inline filters */}
+      <Box sx={{ opacity: inResultsLoading ? 0.45 : 1, transition: 'opacity 0.25s', pointerEvents: inResultsLoading ? 'none' : undefined }}>
+        <Filters
+          filters={filters}
+          setFilters={setFilters}
+          clearFilters={clearFilters}
+          genderOptions={genderOptions}
+          categoryOptions={categoryOptions}
+          ageGroupOptions={ageGroupOptions}
+          nationalityOptions={nationalityOptions}
+          resultsCount={filteredAthletes.length}
+        />
+
+        {/* Results table — or "no results yet" message */}
+        {filteredAthletes.length === 0 && !filters.search && !filters.gender && !filters.category && !filters.ageGroup && !filters.nationality ? (
+          <Box sx={{ py: 6, textAlign: 'center', color: 'text.secondary' }}>
+            <Typography variant="h6" gutterBottom>Resultados no disponibles</Typography>
+            <Typography variant="body2">Los resultados de este evento aún no han sido publicados.</Typography>
+            <Typography variant="body2" sx={{ mt: 0.5 }}>Vuelve más tarde o pulsa RECARGAR.</Typography>
+          </Box>
+        ) : (
+          <ResultsTable
+            athletes={filteredAthletes}
+            loading={false}
+            sortConfig={sortConfig}
+            onSort={handleSort}
+            onAthleteClick={handleAthleteClick}
+            raceFormat={activeEventCfg?.format}
+            primaryColor={primaryColor}
+            genderFilter={filters.gender}
+          />
+        )}
+      </Box>
 
       {/* Footer action buttons */}
       <Stack direction="row" spacing={2} sx={{ mt: 2, pt: 2, borderTop: '1px solid', borderColor: 'divider' }}>

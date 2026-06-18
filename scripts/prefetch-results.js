@@ -386,6 +386,238 @@ function attachSplits(rows, splitsMap) {
   }
 }
 
+// ─── Member-names helpers (pairs / teams) ────────────────────────────────────
+
+/**
+ * Fetch a map of bib → string[] of member full names for all participants in
+ * an event.  Uses data/list with Firstname1..3 / Lastname1..3 fields.
+ *
+ * A record only appears when Firstname2 is non-empty (pareja/team).
+ * Returns empty maps silently on any error.
+ */
+const _membersMapCache = {};
+async function fetchMembersMap(sessionId, eventId) {
+  if (_membersMapCache[eventId] !== undefined) return _membersMapCache[eventId];
+  const empty = { bibMap: {}, memberNameMap: {} };
+  try {
+    // Firstname = team/group name (e.g. "Joan Miquel y Joan Andreu")
+    // Firstname1/Lastname1 = member 1, Firstname2/Lastname2 = member 2, etc.
+    // Club = individual club; Club1/Club2/Club3 = per-member clubs for pairs/teams
+    // Categoria = category/age-group name; Sex = team sex category (f/m/x set by organizer)
+    // GeneroPareja = user-defined field (if defined by organizer): "Parejas Femeninas" / "Parejas Masculinas" / "Parejas Mixtas"
+    // TipoPareja   = registration field: "Pareja Femenina" / "Pareja Masculina" / "Pareja Mixta" (most accurate)
+    const fields = [
+      'Bib', 'Firstname',
+      'Firstname1', 'Lastname1',
+      'Firstname2', 'Lastname2',
+      'Firstname3', 'Lastname3',
+      'Club',
+      'Categoria',
+      'Club1', 'Club2', 'Club3',
+      'Sex',
+      'GeneroPareja',
+      'TipoPareja',
+    ];
+    // Index map:
+    //  0=Bib  1=Firstname  2=Firstname1  3=Lastname1
+    //  4=Firstname2  5=Lastname2  6=Firstname3  7=Lastname3
+    //  8=Club  9=Categoria  10=Club1  11=Club2  12=Club3
+    //  13=Sex  14=GeneroPareja  15=TipoPareja
+    const params = new URLSearchParams();
+    params.append('fields', JSON.stringify(fields));
+    params.append('listFormat', 'JSON');
+    const resp = await fetch(
+      `https://${SERVER}/_${eventId}/api/data/list?${params}`,
+      { headers: { Authorization: `Bearer ${sessionId}` } },
+    );
+    if (!resp.ok) { _membersMapCache[eventId] = empty; return empty; }
+    const rows = await resp.json();
+    if (!Array.isArray(rows) || rows.length === 0) { _membersMapCache[eventId] = empty; return empty; }
+
+    // Index: 0=Bib, 1=Firstname(teamName), 2=Firstname1, 3=Lastname1,
+    //        4=Firstname2, 5=Lastname2, 6=Firstname3, 7=Lastname3, 8=Club
+    //        9=Categoria, 10=Club1, 11=Club2, 12=Club3
+    // RaceResult returns integer 0 for empty fields — treat "0" as empty.
+    const clean = (v) => {
+      const s = String(v ?? '').trim();
+      return s === '0' ? '' : s;
+    };
+    const buildName = (f, l) => [clean(f), clean(l)].filter(Boolean).join(' ');
+
+    const bibMap = {};
+    const bibClubMap = {};
+    const bibCategoryMap = {};
+    const memberNameMap = {};
+    let pairsCount = 0;
+
+    for (const row of rows) {
+      const bib       = String(row[0] ?? '');
+      const teamName  = clean(row[1]);
+      const club      = clean(row[8]);   // Club (individual or team)
+      const categoria = clean(row[9]);   // Categoria
+      const club1     = clean(row[10]);  // Club1 (member 1)
+      const club2     = clean(row[11]);  // Club2 (member 2)
+      const club3     = clean(row[12]);  // Club3 (member 3)
+      const sexRaw       = clean(row[13]).toLowerCase();  // Sex (f/m/x assigned by organizer)
+      const generoPareja = clean(row[14]);                 // User-defined field (e.g. "Parejas Femeninas")
+      const tipoPareja   = clean(row[15]);                 // Registration field: "Pareja Femenina/Masculina/Mixta"
+      const f2           = clean(row[4]);
+
+      // Compute pair gender label — priority:
+      // 1. TipoPareja registration field (most accurate: "Pareja Femenina"/"Pareja Masculina"/"Pareja Mixta")
+      // 2. GeneroPareja user-defined field (strip "Parejas " prefix + trailing s)
+      // 3. Sex field: f→Femenina, m→Masculina, x/other→Mixta
+      const pairGender = (() => {
+        if (tipoPareja) return tipoPareja.replace(/^Pareja[s]?\s+/i, '').trim();
+        if (generoPareja) return generoPareja.replace(/^Parejas\s+/i, '').replace(/s$/i, '').trim();
+        if (sexRaw === 'f') return 'Femenina';
+        if (sexRaw === 'm') return 'Masculina';
+        if (sexRaw) return 'Mixta';
+        return '';
+      })();
+
+      // Club for individual: prefer Club, fall back to Club1
+      // Club for pairs: smart-merge Club1/Club2 (show unique clubs only)
+      const effectiveClub = (() => {
+        if (!f2) return club || club1; // individual
+        // pairs/teams: collect unique non-empty clubs
+        const clubs = [...new Set([club1, club2, club3].filter(Boolean))];
+        return clubs.length ? clubs.join(' / ') : (club || '');
+      })();
+
+      if (bib && effectiveClub) bibClubMap[bib] = effectiveClub;
+      if (bib && categoria) bibCategoryMap[bib] = categoria;
+
+      if (!f2) continue; // individual — skip pairs logic
+
+      const m1 = buildName(row[2], row[3]);
+      const m2 = buildName(row[4], row[5]);
+      const m3 = buildName(row[6], row[7]);
+      // Build per-member objects so the UI can show each member's club inline
+      const memberObjs = [
+        m1 ? { name: m1, club: club1 || undefined } : null,
+        m2 ? { name: m2, club: club2 || undefined } : null,
+        m3 ? { name: m3, club: club3 || undefined } : null,
+      ].filter(Boolean);
+      if (memberObjs.length < 2) continue;
+
+      const entry = { teamName: teamName || memberObjs.map(mo => mo.name).join(' / '), members: memberObjs, club: effectiveClub, category: categoria, pairGender };
+      bibMap[bib] = entry;
+
+      // Reverse lookup: normalised member name → team entry
+      for (const mo of memberObjs) {
+        const key = normalizeName(mo.name);
+        if (key) memberNameMap[key] = { bib, ...entry };
+      }
+      pairsCount++;
+    }
+    if (pairsCount > 0) {
+      process.stdout.write(` [Members: ${pairsCount} pairs/teams]`);
+    }
+    const result = { bibMap, bibClubMap, bibCategoryMap, memberNameMap };
+    _membersMapCache[eventId] = result;
+    return result;
+  } catch (e) {
+    console.log(`  (members map error: ${e.message})`);
+    _membersMapCache[eventId] = empty;
+    return empty;
+  }
+}
+
+/**
+ * Attach member names to rows and, for per-member lists (no Dorsal), collapse
+ * duplicate team rows down to one.
+ *
+ * Two matching strategies:
+ *   1. Bib (Dorsal) match  — lists like Hybiza/Cobra where one row = one team
+ *   2. Member-name match   — lists like SAC where one row = one member
+ *      → deduplicates so only the first row per team survives;
+ *        replaces Nombre with the team name and injects a Dorsal.
+ *
+ * Returns (possibly shorter) array of rows.
+ */
+function attachMembers(rows, mapsResult) {
+  const { bibMap, memberNameMap } = mapsResult;
+  if (Object.keys(bibMap).length === 0 && Object.keys(memberNameMap).length === 0) return rows;
+
+  const seenBibs = new Set();
+  const out = [];
+
+  for (const row of rows) {
+    // ── Strategy 1: match by Dorsal ───────────────────────────────────────
+    const bibRaw = String(row['Dorsal'] ?? row['Bib'] ?? row['Startnr.'] ?? '').replace(/\D/g, '');
+    if (bibRaw && bibMap[bibRaw]) {
+      const entry = bibMap[bibRaw];
+      row['_members'] = entry.members;
+      if (entry.teamName)              row['Nombre']      = entry.teamName;
+      if (entry.pairGender)            row['_pairGender'] = entry.pairGender;
+      if (entry.club     && !row['Club'])      row['_club']     = entry.club;
+      if (entry.category && !row['Categoria']) row['_category'] = entry.category;
+      out.push(row);
+      continue;
+    }
+
+    // ── Strategy 2: match by member name (per-member list) ────────────────
+    const nombre = normalizeName(String(row['Nombre'] ?? row['Name'] ?? ''));
+    const teamEntry = nombre ? memberNameMap[nombre] : null;
+    if (teamEntry) {
+      if (seenBibs.has(teamEntry.bib)) continue; // deduplicate
+      seenBibs.add(teamEntry.bib);
+      row['Nombre']    = teamEntry.teamName;
+      row['Dorsal']    = Number(teamEntry.bib) || teamEntry.bib;
+      row['_members']  = teamEntry.members;
+      if (teamEntry.pairGender)                        row['_pairGender'] = teamEntry.pairGender;
+      if (teamEntry.club     && !row['Club'])     row['_club']     = teamEntry.club;
+      if (teamEntry.category && !row['Categoria']) row['_category'] = teamEntry.category;
+      out.push(row);
+      continue;
+    }
+
+    out.push(row);
+  }
+  return out;
+}
+
+/**
+ * Attach club names to rows that have a Dorsal/Bib but no Club column.
+ * Uses the bibClubMap built in fetchMembersMap.
+ */
+function attachClub(rows, bibClubMap) {
+  if (!bibClubMap || Object.keys(bibClubMap).length === 0) return;
+  for (const row of rows) {
+    if (row['Club'] || row['_club']) continue; // already set
+    const bib = String(row['Dorsal'] ?? row['Bib'] ?? row['Startnr.'] ?? '').replace(/\D/g, '');
+    if (bib && bibClubMap[bib]) row['_club'] = bibClubMap[bib];
+  }
+}
+
+/**
+ * Attach category names to rows that have no Categoria column.
+ * Uses the bibCategoryMap built in fetchMembersMap.
+ */
+function attachCategory(rows, bibCategoryMap) {
+  if (!bibCategoryMap || Object.keys(bibCategoryMap).length === 0) return;
+  for (const row of rows) {
+    if (row['Categoria'] || row['Categoría'] || row['_category']) continue; // already set
+    const bib = String(row['Dorsal'] ?? row['Bib'] ?? row['Startnr.'] ?? '').replace(/\D/g, '');
+    if (bib && bibCategoryMap[bib]) row['_category'] = bibCategoryMap[bib];
+  }
+}
+
+/**
+ * Derive format from rows that have _members attached.
+ * Returns 'teams' if any row has 3+ members, 'pairs' if 2, otherwise falls
+ * back to the name-based detection.
+ */
+function detectFormatFromMembers(rows, fallbackFormat) {
+  for (const row of rows) {
+    const m = row['_members'];
+    if (Array.isArray(m) && m.length >= 3) return 'teams';
+    if (Array.isArray(m) && m.length >= 2) return 'pairs';
+  }
+  return fallbackFormat;
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -437,7 +669,7 @@ async function main() {
         const fileKey = `${eventId}_${slug}`;
         process.stdout.write(`  → contest ${variant.contest} "${variant.format}" (key: ${fileKey}) — fetching... `);
         try {
-          const { rows, usedListName } = await fetchListWithFallback(sessionId, eventId, defaultList, variant.contest, allListNames);
+          let { rows, usedListName } = await fetchListWithFallback(sessionId, eventId, defaultList, variant.contest, allListNames);
           if (rows.length === 0) {
             console.log('0 rows — added to index (no results yet).');
             const info = {
@@ -458,14 +690,20 @@ async function main() {
             const splitsMap = await fetchDetailSplitsMap(sessionId, eventId, detailListName, variant.contest);
             attachSplits(rows, splitsMap);
           }
+          rows = attachMembers(rows, await fetchMembersMap(sessionId, eventId));
+          attachClub(rows, (await fetchMembersMap(sessionId, eventId)).bibClubMap);
+          attachCategory(rows, (await fetchMembersMap(sessionId, eventId)).bibCategoryMap);
           attachAgeGroups(rows, await fetchAgeGroupMap(sessionId, eventId));
+          const resolvedFormat = detectFormatFromMembers(rows, variant.format);
+          const genderCategories = [...new Set(rows.map(r => r._pairGender).filter(Boolean))].sort();
           const info = {
             id: String(eventId), fileKey,
             name: ev.EventName,
             date: ev.EventDate ? ev.EventDate.slice(0, 10) : '',
             location: ev.EventLocation ?? '',
             listName: usedListName, contest: variant.contest,
-            format: variant.format,
+            format: resolvedFormat,
+            ...(genderCategories.length > 0 && { genderCategories }),
           };
           const eventPath = path.join(ROOT, 'public', `race-data-${fileKey}.json`);
           fs.writeFileSync(eventPath, JSON.stringify({ info, rows }, null, 2), 'utf8');
@@ -489,7 +727,7 @@ async function main() {
         const format  = contestFormat(c.Name);
         process.stdout.write(`  → contest ${c.ID} "${c.Name}" (${format}, key: ${fileKey}) — fetching... `);
         try {
-          const { rows, usedListName } = await fetchListWithFallback(sessionId, eventId, defaultList, c.ID, allListNames);
+          let { rows, usedListName } = await fetchListWithFallback(sessionId, eventId, defaultList, c.ID, allListNames);
           if (rows.length === 0) {
             console.log('0 rows — added to index (no results yet).');
             const info = {
@@ -512,7 +750,12 @@ async function main() {
             const splitsMap = await fetchDetailSplitsMap(sessionId, eventId, detailListName, c.ID);
             attachSplits(rows, splitsMap);
           }
+          rows = attachMembers(rows, await fetchMembersMap(sessionId, eventId));
+          attachClub(rows, (await fetchMembersMap(sessionId, eventId)).bibClubMap);
+          attachCategory(rows, (await fetchMembersMap(sessionId, eventId)).bibCategoryMap);
           attachAgeGroups(rows, await fetchAgeGroupMap(sessionId, eventId));
+          const resolvedFormat = detectFormatFromMembers(rows, format);
+          const genderCategories = [...new Set(rows.map(r => r._pairGender).filter(Boolean))].sort();
           const info = {
             id: String(eventId), fileKey,
             name:        ev.EventName,
@@ -521,7 +764,8 @@ async function main() {
             location:    ev.EventLocation ?? '',
             listName:    usedListName,
             contest:     c.ID,
-            format,
+            format:      resolvedFormat,
+            ...(genderCategories.length > 0 && { genderCategories }),
           };
           const eventPath = path.join(ROOT, 'public', `race-data-${fileKey}.json`);
           fs.writeFileSync(eventPath, JSON.stringify({ info, rows }, null, 2), 'utf8');
@@ -537,7 +781,7 @@ async function main() {
       const fileKey = String(eventId);
       process.stdout.write(`  → "${defaultList}" [all, format=${format}] — fetching... `);
       try {
-        const { rows, usedListName } = await fetchListWithFallback(sessionId, eventId, defaultList, 0, allListNames);
+        let { rows, usedListName } = await fetchListWithFallback(sessionId, eventId, defaultList, 0, allListNames);
         if (rows.length === 0) {
           console.log('0 rows — added to index (no results yet).');
           const info = {
@@ -559,7 +803,12 @@ async function main() {
             const splitsMap = await fetchDetailSplitsMap(sessionId, eventId, detailListName, 0);
             attachSplits(rows, splitsMap);
           }
+          rows = attachMembers(rows, await fetchMembersMap(sessionId, eventId));
+          attachClub(rows, (await fetchMembersMap(sessionId, eventId)).bibClubMap);
+          attachCategory(rows, (await fetchMembersMap(sessionId, eventId)).bibCategoryMap);
           attachAgeGroups(rows, await fetchAgeGroupMap(sessionId, eventId));
+          const resolvedFormat = detectFormatFromMembers(rows, format);
+          const genderCategories = [...new Set(rows.map(r => r._pairGender).filter(Boolean))].sort();
           const info = {
             id:       String(eventId),
             name:     ev.EventName,
@@ -567,7 +816,8 @@ async function main() {
             location: ev.EventLocation ?? '',
             listName: usedListName,
             contest:  0,
-            format,
+            format:   resolvedFormat,
+            ...(genderCategories.length > 0 && { genderCategories }),
           };
           const eventPath = path.join(ROOT, 'public', `race-data-${fileKey}.json`);
           fs.writeFileSync(eventPath, JSON.stringify({ info, rows }, null, 2), 'utf8');

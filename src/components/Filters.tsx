@@ -49,13 +49,17 @@ export const Filters: React.FC<FiltersProps> = ({
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  // Only show ageGroup filter when its options differ from category options
+  const showAgeGroup = ageGroupOptions.length > 1 &&
+    JSON.stringify([...ageGroupOptions].sort()) !== JSON.stringify([...categoryOptions].sort());
+
   const hasActiveFilters =
     !!filters.gender || !!filters.ageGroup || !!filters.category || !!filters.nationality;
   const activeFilterCount = [filters.gender, filters.ageGroup, filters.category, filters.nationality].filter(Boolean).length;
   const hasDropdownFilters =
-    genderOptions.length > 0 || categoryOptions.length > 0 || ageGroupOptions.length > 0 || nationalityOptions.length > 0;
+    genderOptions.length > 1 || categoryOptions.length > 1 || showAgeGroup || nationalityOptions.length > 1;
 
-  const genderLabel = (g: string) => (g === 'M' ? 'Hombres' : g === 'F' ? 'Mujeres' : g);
+  const genderLabel = (g: string) => (g === 'M' ? 'Hombres' : g === 'F' ? 'Mujeres' : g === 'Mixta' ? 'Mixtas' : g);
 
   const searchField = (fullWidth: boolean) => (
     <TextField
@@ -154,7 +158,7 @@ export const Filters: React.FC<FiltersProps> = ({
             </IconButton>
           </Stack>
           <Stack spacing={1.5}>
-            {genderOptions.length > 0 && (
+            {genderOptions.length > 1 && (
               <FormControl size="small" fullWidth>
                 <InputLabel>Género</InputLabel>
                 <Select label="Género" value={filters.gender} onChange={(e) => setFilters((f) => ({ ...f, gender: e.target.value }))}>
@@ -163,7 +167,7 @@ export const Filters: React.FC<FiltersProps> = ({
                 </Select>
               </FormControl>
             )}
-            {categoryOptions.length > 0 && (
+            {categoryOptions.length > 1 && (
               <FormControl size="small" fullWidth>
                 <InputLabel>Categoría</InputLabel>
                 <Select label="Categoría" value={filters.category} onChange={(e) => setFilters((f) => ({ ...f, category: e.target.value }))}>
@@ -172,7 +176,7 @@ export const Filters: React.FC<FiltersProps> = ({
                 </Select>
               </FormControl>
             )}
-            {ageGroupOptions.length > 0 && (
+            {showAgeGroup && (
               <FormControl size="small" fullWidth>
                 <InputLabel>Grupo de Edad</InputLabel>
                 <Select label="Grupo de Edad" value={filters.ageGroup} onChange={(e) => setFilters((f) => ({ ...f, ageGroup: e.target.value }))}>
@@ -181,7 +185,7 @@ export const Filters: React.FC<FiltersProps> = ({
                 </Select>
               </FormControl>
             )}
-            {nationalityOptions.length > 0 && (
+            {nationalityOptions.length > 1 && (
               <FormControl size="small" fullWidth>
                 <InputLabel>Nación</InputLabel>
                 <Select label="Nación" value={filters.nationality} onChange={(e) => setFilters((f) => ({ ...f, nationality: e.target.value }))}>
@@ -217,7 +221,7 @@ export const Filters: React.FC<FiltersProps> = ({
       >
         {searchField(false)}
 
-        {genderOptions.length > 0 && (
+        {genderOptions.length > 1 && (
           <FormControl size="small" sx={{ minWidth: 120 }}>
             <InputLabel>Género</InputLabel>
             <Select
@@ -233,7 +237,7 @@ export const Filters: React.FC<FiltersProps> = ({
           </FormControl>
         )}
 
-        {categoryOptions.length > 0 && (
+        {categoryOptions.length > 1 && (
           <FormControl size="small" sx={{ minWidth: 160 }}>
             <InputLabel>Categoría</InputLabel>
             <Select
@@ -249,7 +253,7 @@ export const Filters: React.FC<FiltersProps> = ({
           </FormControl>
         )}
 
-        {ageGroupOptions.length > 0 && (
+        {showAgeGroup && (
           <FormControl size="small" sx={{ minWidth: 140 }}>
             <InputLabel>Grupo de Edad</InputLabel>
             <Select
@@ -265,7 +269,7 @@ export const Filters: React.FC<FiltersProps> = ({
           </FormControl>
         )}
 
-        {nationalityOptions.length > 0 && (
+        {nationalityOptions.length > 1 && (
           <FormControl size="small" sx={{ minWidth: 130 }}>
             <InputLabel>Nación</InputLabel>
             <Select
