@@ -20,27 +20,29 @@ function buildTheme(mode: 'dark' | 'light') {
   return createTheme({
     palette: {
       mode,
-      primary: { main: '#00A3E0' },
+      primary: { main: '#9fd4f9', contrastText: '#000000' },
       secondary: { main: '#FF8C42' },
       background: isDark
-        ? { default: '#0d0d0d', paper: '#161616' }
+        ? { default: '#000000', paper: '#0a0a0a' }
         : { default: '#f0f4f8', paper: '#ffffff' },
-      divider: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.08)',
+      divider: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)',
     },
     typography: {
-      fontFamily: '"Exo 2", "Roboto", "Helvetica", "Arial", sans-serif',
-      h1: { fontFamily: '"Exo 2", sans-serif', fontWeight: 800 },
-      h2: { fontFamily: '"Exo 2", sans-serif', fontWeight: 700 },
-      h3: { fontFamily: '"Exo 2", sans-serif', fontWeight: 700 },
-      h4: { fontFamily: '"Exo 2", sans-serif', fontWeight: 700 },
-      h5: { fontFamily: '"Exo 2", sans-serif', fontWeight: 700 },
-      h6: { fontFamily: '"Exo 2", sans-serif', fontWeight: 700 },
+      fontFamily: '"Barlow Condensed", "Barlow", "Roboto", "Arial", sans-serif',
+      h1: { fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase' as const },
+      h2: { fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const },
+      h3: { fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700, letterSpacing: '0.05em' },
+      h4: { fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700, letterSpacing: '0.04em' },
+      h5: { fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700, letterSpacing: '0.04em' },
+      h6: { fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700, letterSpacing: '0.03em' },
+      overline: { fontFamily: '"Barlow Condensed", sans-serif', letterSpacing: '0.22em', fontWeight: 700 },
+      button: { fontFamily: '"Barlow Condensed", sans-serif', letterSpacing: '0.12em', fontWeight: 700 },
     },
-    shape: { borderRadius: 8 },
+    shape: { borderRadius: 2 },
     components: {
       MuiMenuItem: {
         styleOverrides: {
-          root: { fontFamily: '"Exo 2", "Roboto", "Helvetica", "Arial", sans-serif' },
+          root: { fontFamily: '"Barlow Condensed", "Barlow", "Roboto", "Arial", sans-serif', letterSpacing: '0.04em' },
         },
       },
       MuiCardHeader: {
@@ -48,12 +50,27 @@ function buildTheme(mode: 'dark' | 'light') {
       },
       MuiButton: {
         styleOverrides: {
-          root: { borderRadius: 8, textTransform: 'none', fontWeight: 700, letterSpacing: 0.4 },
+          root: {
+            borderRadius: 2,
+            textTransform: 'uppercase',
+            fontWeight: 700,
+            fontFamily: '"Barlow Condensed", sans-serif',
+            letterSpacing: '0.12em',
+            fontSize: '0.85rem',
+          },
           contained: { '&:hover': { boxShadow: 'none' } },
+          outlined: { borderWidth: '1.5px', '&:hover': { borderWidth: '1.5px' } },
         },
       },
       MuiChip: {
-        styleOverrides: { root: { fontWeight: 600 } },
+        styleOverrides: {
+          root: {
+            fontWeight: 700,
+            fontFamily: '"Barlow Condensed", sans-serif',
+            letterSpacing: '0.05em',
+            borderRadius: 2,
+          },
+        },
       },
       MuiTableCell: {
         styleOverrides: {
@@ -63,8 +80,13 @@ function buildTheme(mode: 'dark' | 'light') {
       MuiTableRow: {
         styleOverrides: {
           root: {
-            '&.MuiTableRow-hover:hover': { backgroundColor: 'rgba(0, 163, 224, 0.06)' },
+            '&.MuiTableRow-hover:hover': { backgroundColor: 'rgba(159, 212, 249, 0.06)' },
           },
+        },
+      },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: { fontFamily: '"Barlow Condensed", sans-serif', letterSpacing: '0.06em', fontWeight: 700 },
         },
       },
       MuiPaper: {
@@ -90,7 +112,7 @@ function buildTheme(mode: 'dark' | 'light') {
           root: {
             '& fieldset': { borderColor: `${inputBorder} !important` },
             '&:hover fieldset': { borderColor: `${inputBorderHover} !important` },
-            '&.Mui-focused fieldset': { borderColor: '#00A3E0 !important' },
+            '&.Mui-focused fieldset': { borderColor: '#9fd4f9 !important' },
           },
           notchedOutline: { borderColor: `${inputBorder} !important` },
         },
@@ -118,7 +140,7 @@ function App({ eventPrefix, theme: themeProp = 'dark' }: { eventPrefix?: string;
 
   // Inject Google Fonts link once on mount
   useEffect(() => {
-    const FONT_URL = 'https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap';
+    const FONT_URL = 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Barlow:wght@400;500;600&display=swap';
     const id = 'sport-events-google-fonts';
     if (!document.getElementById(id)) {
       const link = document.createElement('link');
@@ -162,19 +184,18 @@ function App({ eventPrefix, theme: themeProp = 'dark' }: { eventPrefix?: string;
           variant="outlined"
           sx={{
             p: { xs: 1.5, md: 4 },
-            borderColor: isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.09)',
-            borderRadius: 4,
-            backdropFilter: 'blur(24px)',
-            background: isDark ? 'rgba(18,18,18,0.88)' : 'rgba(255,255,255,0.90)',
+            borderColor: isDark ? 'rgba(159,212,249,0.12)' : 'rgba(0,0,0,0.09)',
+            borderRadius: 0,
+            background: isDark ? '#000000' : '#ffffff',
             boxShadow: isDark
-              ? '0 32px 64px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04)'
-              : '0 32px 64px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06)',
+              ? '0 0 0 1px rgba(159,212,249,0.08), 0 32px 80px rgba(0,0,0,0.9)'
+              : '0 32px 64px rgba(0,0,0,0.08)',
           }}
         >
           <RaceResultsWidget
             apiKey={process.env.REACT_APP_RR_API_KEY}
             title="Buscador de Resultados"
-            primaryColor="#00A3E0"
+            primaryColor="#9fd4f9"
             showCertificate={true}
             eventPrefix={eventPrefix}
           />
