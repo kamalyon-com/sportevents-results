@@ -33,6 +33,7 @@ interface FiltersProps {
   ageGroupOptions: string[];
   nationalityOptions: string[];
   resultsCount: number;
+  selectorRow?: React.ReactNode;
 }
 
 export const Filters: React.FC<FiltersProps> = ({
@@ -44,6 +45,7 @@ export const Filters: React.FC<FiltersProps> = ({
   ageGroupOptions,
   nationalityOptions,
   resultsCount,
+  selectorRow,
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -118,6 +120,11 @@ export const Filters: React.FC<FiltersProps> = ({
   if (isMobile) {
     return (
       <Box sx={{ mb: 1.5 }}>
+        {selectorRow && (
+          <Box sx={{ mb: 1, pb: 1, borderBottom: '1px solid', borderColor: 'divider' }}>
+            {selectorRow}
+          </Box>
+        )}
         {/* Search bar + filter icon */}
         <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1 }}>
           <Box sx={{ flex: 1 }}>{searchField(true)}</Box>
@@ -214,6 +221,11 @@ export const Filters: React.FC<FiltersProps> = ({
       variant="outlined"
       sx={{ mb: 2.5, p: 2, borderRadius: 2.5, borderColor: 'divider' }}
     >
+      {selectorRow && (
+        <Box sx={{ mb: 1.5, pb: 1.5, borderBottom: '1px solid', borderColor: 'divider' }}>
+          {selectorRow}
+        </Box>
+      )}
       <Stack
         direction="row"
         spacing={1.5}
