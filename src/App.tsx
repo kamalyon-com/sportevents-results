@@ -28,21 +28,21 @@ function buildTheme(mode: 'dark' | 'light') {
       divider: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)',
     },
     typography: {
-      fontFamily: '"Barlow Condensed", "Barlow", "Roboto", "Arial", sans-serif',
-      h1: { fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase' as const },
-      h2: { fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const },
-      h3: { fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700, letterSpacing: '0.05em' },
-      h4: { fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700, letterSpacing: '0.04em' },
-      h5: { fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700, letterSpacing: '0.04em' },
-      h6: { fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700, letterSpacing: '0.03em' },
-      overline: { fontFamily: '"Barlow Condensed", sans-serif', letterSpacing: '0.22em', fontWeight: 700 },
-      button: { fontFamily: '"Barlow Condensed", sans-serif', letterSpacing: '0.12em', fontWeight: 700 },
+      fontFamily: '"Panton", "Barlow Condensed", "Roboto", "Arial", sans-serif',
+      h1: { fontFamily: '"Panton", sans-serif', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' as const },
+      h2: { fontFamily: '"Panton", sans-serif', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const },
+      h3: { fontFamily: '"Panton", sans-serif', fontWeight: 700, letterSpacing: '0.05em' },
+      h4: { fontFamily: '"Panton", sans-serif', fontWeight: 700, letterSpacing: '0.04em' },
+      h5: { fontFamily: '"Panton", sans-serif', fontWeight: 700, letterSpacing: '0.04em' },
+      h6: { fontFamily: '"Panton", sans-serif', fontWeight: 700, letterSpacing: '0.03em' },
+      overline: { fontFamily: '"Panton", sans-serif', letterSpacing: '0.22em', fontWeight: 700 },
+      button: { fontFamily: '"Panton", sans-serif', letterSpacing: '0.12em', fontWeight: 700 },
     },
     shape: { borderRadius: 2 },
     components: {
       MuiMenuItem: {
         styleOverrides: {
-          root: { fontFamily: '"Barlow Condensed", "Barlow", "Roboto", "Arial", sans-serif', letterSpacing: '0.04em' },
+          root: { fontFamily: '"Panton", "Barlow Condensed", "Roboto", "Arial", sans-serif', letterSpacing: '0.04em' },
         },
       },
       MuiCardHeader: {
@@ -51,22 +51,38 @@ function buildTheme(mode: 'dark' | 'light') {
       MuiButton: {
         styleOverrides: {
           root: {
-            borderRadius: 2,
+            borderRadius: 0,
             textTransform: 'uppercase',
             fontWeight: 700,
-            fontFamily: '"Barlow Condensed", sans-serif',
+            fontFamily: '"Panton", sans-serif',
             letterSpacing: '0.12em',
             fontSize: '0.85rem',
+            boxShadow: 'none',
+            '&:hover': { boxShadow: 'none' },
           },
-          contained: { '&:hover': { boxShadow: 'none' } },
-          outlined: { borderWidth: '1.5px', '&:hover': { borderWidth: '1.5px' } },
+          contained: {
+            '&:hover': {
+              backgroundColor: '#ffffff',
+              color: '#000000',
+              boxShadow: 'none',
+            },
+          },
+          outlined: {
+            borderWidth: '1.5px',
+            '&:hover': {
+              borderWidth: '1.5px',
+              backgroundColor: '#ffffff',
+              color: '#000000',
+              borderColor: '#ffffff',
+            },
+          },
         },
       },
       MuiChip: {
         styleOverrides: {
           root: {
             fontWeight: 700,
-            fontFamily: '"Barlow Condensed", sans-serif',
+            fontFamily: '"Panton", sans-serif',
             letterSpacing: '0.05em',
             borderRadius: 2,
           },
@@ -86,7 +102,7 @@ function buildTheme(mode: 'dark' | 'light') {
       },
       MuiInputLabel: {
         styleOverrides: {
-          root: { fontFamily: '"Barlow Condensed", sans-serif', letterSpacing: '0.06em', fontWeight: 700 },
+          root: { fontFamily: '"Panton", sans-serif', letterSpacing: '0.06em', fontWeight: 700 },
         },
       },
       MuiPaper: {
@@ -138,16 +154,23 @@ function App({ eventPrefix, theme: themeProp = 'dark' }: { eventPrefix?: string;
   const theme = useMemo(() => buildTheme(mode), [mode]);
   const isDark = mode === 'dark';
 
-  // Inject Google Fonts link once on mount
+  // Inject self-hosted Panton Bold @font-face once on mount
   useEffect(() => {
-    const FONT_URL = 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Barlow:wght@400;500;600&display=swap';
-    const id = 'sport-events-google-fonts';
+    const id = 'sport-events-panton-font';
     if (!document.getElementById(id)) {
-      const link = document.createElement('link');
-      link.id = id;
-      link.rel = 'stylesheet';
-      link.href = FONT_URL;
-      document.head.appendChild(link);
+      const fontUrl = new URL('./fonts/Panton Bold.ttf', document.baseURI).href;
+      const style = document.createElement('style');
+      style.id = id;
+      style.textContent = [
+        '@font-face {',
+        `  font-family: 'Panton';`,
+        `  src: url('${fontUrl}') format('truetype');`,
+        `  font-weight: 700;`,
+        `  font-style: normal;`,
+        `  font-display: swap;`,
+        '}',
+      ].join('\n');
+      document.head.appendChild(style);
     }
   }, []);
 

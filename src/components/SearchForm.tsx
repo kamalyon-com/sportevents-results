@@ -193,20 +193,18 @@ export const SearchForm: React.FC<SearchFormProps> = ({
             sx={{
               px: isMobile ? 2 : 6,
               whiteSpace: 'nowrap',
-              background: canSubmit
-                ? `linear-gradient(135deg, ${primaryColor} 0%, ${primaryColor}cc 100%)`
-                : undefined,
-              boxShadow: `0 4px 20px ${primaryColor}44`,
+              backgroundColor: canSubmit ? primaryColor : undefined,
+              color: canSubmit ? '#000000' : undefined,
+              borderRadius: 0,
+              boxShadow: 'none',
               fontSize: 14,
-              letterSpacing: 1,
-              borderRadius: 2,
+              letterSpacing: '0.12em',
               '&:hover': {
-                background: `linear-gradient(135deg, ${primaryColor}ee 0%, ${primaryColor}aa 100%)`,
-                boxShadow: `0 8px 32px ${primaryColor}66`,
-                transform: 'translateY(-1px)',
+                backgroundColor: '#ffffff',
+                color: '#000000',
+                boxShadow: 'none',
               },
-              transition: 'all 0.2s ease',
-              '&.Mui-disabled': { boxShadow: 'none', transform: 'none' },
+              '&.Mui-disabled': { boxShadow: 'none' },
             }}
           >
             {loading ? 'Cargando…' : 'Mostrar Resultados'}
@@ -231,7 +229,7 @@ function FormRow({ label, children }: { label: string; children: React.ReactNode
       sx={{ alignItems: { sm: 'center' }, px: { xs: 2, sm: 3 }, py: { xs: 1.5, sm: 2 }, gap: { xs: 0.75, sm: 0 } }}
     >
       <Box sx={{ width: { sm: 160 }, flexShrink: 0 }}>
-        <Typography variant="body2" sx={{ fontWeight: 700, letterSpacing: 0.3, color: 'text.secondary', fontSize: 12, textTransform: 'uppercase' }}>
+        <Typography component="div" variant="body2" sx={{ fontWeight: 700, letterSpacing: 0.3, color: 'text.secondary', fontSize: 12, textTransform: 'uppercase' }}>
           {label}
         </Typography>
       </Box>

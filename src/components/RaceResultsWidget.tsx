@@ -253,7 +253,7 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
                 variant="outlined"
                 startIcon={<ArrowBackIcon />}
                 onClick={backToSearch}
-                sx={{ borderColor: `${primaryColor}60`, color: primaryColor, whiteSpace: 'nowrap', '&:hover': { borderColor: primaryColor, backgroundColor: `${primaryColor}15` } }}
+                sx={{ borderColor: `${primaryColor}60`, color: primaryColor, whiteSpace: 'nowrap' }}
               >
                 NUEVA BÚSQUEDA
               </Button>
@@ -262,7 +262,7 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
                 variant="outlined"
                 startIcon={<RefreshIcon />}
                 onClick={reload}
-                sx={{ borderColor: `${primaryColor}60`, color: primaryColor, whiteSpace: 'nowrap', '&:hover': { borderColor: primaryColor, backgroundColor: `${primaryColor}15` } }}
+                sx={{ borderColor: `${primaryColor}60`, color: primaryColor, whiteSpace: 'nowrap' }}
               >
                 RECARGAR
               </Button>
@@ -294,52 +294,50 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
           ageGroupOptions={ageGroupOptions}
           nationalityOptions={nationalityOptions}
           resultsCount={filteredAthletes.length}
-          selectorRow={
-            (selectorRaceNames.length > 1 || selectorModalities.length > 1) ? (
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
-                {selectorRaceNames.length > 1 && (
-                  <FormControl size="small" sx={{ flex: 1 }}>
-                    <InputLabel id="selector-race-label">Evento</InputLabel>
-                    <Select
-                      labelId="selector-race-label"
-                      label="Evento"
-                      value={selectorRace}
-                      onChange={(e) => handleSelectorRaceChange(e.target.value)}
-                      disabled={inResultsLoading}
-                    >
-                      {selectorRaceNames.map((n) => (
-                        <MenuItem key={n} value={n}>
-                          <Typography variant="body2" sx={{ fontWeight: 600 }}>{n}</Typography>
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                )}
-                {selectorModalities.length > 1 && (
-                  <FormControl size="small" sx={{ flex: 1 }}>
-                    <InputLabel id="selector-modality-label">Modalidad</InputLabel>
-                    <Select
-                      labelId="selector-modality-label"
-                      label="Modalidad"
-                      value={selectorKey}
-                      onChange={(e) => handleSelectorModalityChange(e.target.value)}
-                      disabled={inResultsLoading}
-                      displayEmpty
-                      renderValue={(val) => {
-                        if (!val) return <em style={{ opacity: 0.45 }}>Modalidad…</em>;
-                        const ev = selectorModalities.find((e) => selectorEventKey(e) === val);
-                        return ev ? selectorFormatLabel(ev) : val;
-                      }}
-                    >
-                      {selectorModalities.map((ev) => (
-                        <MenuItem key={selectorEventKey(ev)} value={selectorEventKey(ev)}>
-                          <Typography variant="body2" sx={{ fontWeight: 600 }}>{selectorFormatLabel(ev)}</Typography>
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                )}
-              </Stack>
+          eventSelector={
+            selectorRaceNames.length > 1 ? (
+              <FormControl size="small" sx={{ flex: 1, minWidth: 120 }}>
+                <InputLabel id="selector-race-label">Evento</InputLabel>
+                <Select
+                  labelId="selector-race-label"
+                  label="Evento"
+                  value={selectorRace}
+                  onChange={(e) => handleSelectorRaceChange(e.target.value)}
+                  disabled={inResultsLoading}
+                >
+                  {selectorRaceNames.map((n) => (
+                    <MenuItem key={n} value={n}>
+                      <Typography variant="body2" sx={{ fontWeight: 600 }}>{n}</Typography>
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            ) : undefined
+          }
+          modalitySelector={
+            selectorModalities.length > 1 ? (
+              <FormControl size="small" sx={{ flex: 1, minWidth: 110 }}>
+                <InputLabel id="selector-modality-label">Modalidad</InputLabel>
+                <Select
+                  labelId="selector-modality-label"
+                  label="Modalidad"
+                  value={selectorKey}
+                  onChange={(e) => handleSelectorModalityChange(e.target.value)}
+                  disabled={inResultsLoading}
+                  displayEmpty
+                  renderValue={(val) => {
+                    if (!val) return <em style={{ opacity: 0.45 }}>Modalidad…</em>;
+                    const ev = selectorModalities.find((e) => selectorEventKey(e) === val);
+                    return ev ? selectorFormatLabel(ev) : val;
+                  }}
+                >
+                  {selectorModalities.map((ev) => (
+                    <MenuItem key={selectorEventKey(ev)} value={selectorEventKey(ev)}>
+                      <Typography variant="body2" sx={{ fontWeight: 600 }}>{selectorFormatLabel(ev)}</Typography>
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
             ) : undefined
           }
         />

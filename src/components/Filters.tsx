@@ -33,19 +33,21 @@ interface FiltersProps {
   ageGroupOptions: string[];
   nationalityOptions: string[];
   resultsCount: number;
-  selectorRow?: React.ReactNode;
+  eventSelector?: React.ReactNode;
+  modalitySelector?: React.ReactNode;
 }
 
 export const Filters: React.FC<FiltersProps> = ({
   filters,
   setFilters,
   clearFilters,
-  genderOptions,
+  genderOptions: _genderOptions,
   categoryOptions,
   ageGroupOptions,
   nationalityOptions,
   resultsCount,
-  selectorRow,
+  eventSelector,
+  modalitySelector,
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -56,12 +58,10 @@ export const Filters: React.FC<FiltersProps> = ({
     JSON.stringify([...ageGroupOptions].sort()) !== JSON.stringify([...categoryOptions].sort());
 
   const hasActiveFilters =
-    !!filters.gender || !!filters.ageGroup || !!filters.category || !!filters.nationality;
-  const activeFilterCount = [filters.gender, filters.ageGroup, filters.category, filters.nationality].filter(Boolean).length;
+    !!filters.ageGroup || !!filters.category || !!filters.nationality;
+  const activeFilterCount = [filters.ageGroup, filters.category, filters.nationality].filter(Boolean).length;
   const hasDropdownFilters =
-    genderOptions.length > 1 || categoryOptions.length > 1 || showAgeGroup || nationalityOptions.length > 1;
-
-  const genderLabel = (g: string) => (g === 'M' ? 'Hombres' : g === 'F' ? 'Mujeres' : g === 'Mixta' ? 'Mixtas' : g);
+    categoryOptions.length > 1 || showAgeGroup || nationalityOptions.length > 1;
 
   const searchField = (fullWidth: boolean) => (
     <TextField
@@ -71,7 +71,7 @@ export const Filters: React.FC<FiltersProps> = ({
       value={filters.search}
       onChange={(e) => setFilters((f) => ({ ...f, search: e.target.value }))}
       fullWidth={fullWidth}
-      sx={fullWidth ? undefined : { minWidth: 200 }}
+      sx={fullWidth ? undefined : { flex: 1, minWidth: 160 }}
       slotProps={{
         input: {
           startAdornment: (
@@ -102,9 +102,6 @@ export const Filters: React.FC<FiltersProps> = ({
 
   const activeChips = (
     <>
-      {filters.gender && (
-        <Chip size="small" label={genderLabel(filters.gender)} onDelete={() => setFilters((f) => ({ ...f, gender: '' }))} />
-      )}
       {filters.category && (
         <Chip size="small" label={filters.category} onDelete={() => setFilters((f) => ({ ...f, category: '' }))} />
       )}
@@ -120,15 +117,10 @@ export const Filters: React.FC<FiltersProps> = ({
   if (isMobile) {
     return (
       <Box sx={{ mb: 1.5 }}>
-        {selectorRow && (
-          <Box sx={{ mb: 1, pb: 1, borderBottom: '1px solid', borderColor: 'divider' }}>
-            {selectorRow}
-          </Box>
-        )}
         {/* Search bar + filter icon */}
         <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1 }}>
           <Box sx={{ flex: 1 }}>{searchField(true)}</Box>
-          {hasDropdownFilters && (
+          {(hasDropdownFilters || eventSelector || modalitySelector) && (
             <Badge badgeContent={activeFilterCount} color="primary" invisible={activeFilterCount === 0}>
               <IconButton
                 size="medium"
@@ -165,15 +157,8 @@ export const Filters: React.FC<FiltersProps> = ({
             </IconButton>
           </Stack>
           <Stack spacing={1.5}>
-            {genderOptions.length > 1 && (
-              <FormControl size="small" fullWidth>
-                <InputLabel>Género</InputLabel>
-                <Select label="Género" value={filters.gender} onChange={(e) => setFilters((f) => ({ ...f, gender: e.target.value }))}>
-                  <MenuItem value="">Todos</MenuItem>
-                  {genderOptions.map((g) => <MenuItem key={g} value={g}>{genderLabel(g)}</MenuItem>)}
-                </Select>
-              </FormControl>
-            )}
+            {eventSelector && eventSelector}
+            {modalitySelector && modalitySelector}
             {categoryOptions.length > 1 && (
               <FormControl size="small" fullWidth>
                 <InputLabel>Categoría</InputLabel>
@@ -221,36 +206,16 @@ export const Filters: React.FC<FiltersProps> = ({
       variant="outlined"
       sx={{ mb: 2.5, p: 2, borderRadius: 2.5, borderColor: 'divider' }}
     >
-      {selectorRow && (
-        <Box sx={{ mb: 1.5, pb: 1.5, borderBottom: '1px solid', borderColor: 'divider' }}>
-          {selectorRow}
-        </Box>
-      )}
       <Stack
         direction="row"
         spacing={1.5}
-        sx={{ alignItems: 'center', flexWrap: 'wrap' }}
+        sx={{ alignItems: 'center', flexWrap: 'nowrap' }}
       >
-        {searchField(false)}
-
-        {genderOptions.length > 1 && (
-          <FormControl size="small" sx={{ minWidth: 120 }}>
-            <InputLabel>Género</InputLabel>
-            <Select
-              label="Género"
-              value={filters.gender}
-              onChange={(e) => setFilters((f) => ({ ...f, gender: e.target.value }))}
-            >
-              <MenuItem value="">Todos</MenuItem>
-              {genderOptions.map((g) => (
-                <MenuItem key={g} value={g}>{genderLabel(g)}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        )}
+        {eventSelector}
+        {modalitySelector}
 
         {categoryOptions.length > 1 && (
-          <FormControl size="small" sx={{ minWidth: 160 }}>
+          <FormControl size="small" sx={{ flex: 1, minWidth: 120 }}>
             <InputLabel>Categoría</InputLabel>
             <Select
               label="Categoría"
@@ -266,7 +231,7 @@ export const Filters: React.FC<FiltersProps> = ({
         )}
 
         {showAgeGroup && (
-          <FormControl size="small" sx={{ minWidth: 140 }}>
+          <FormControl size="small" sx={{ flex: 1, minWidth: 110 }}>
             <InputLabel>Grupo de Edad</InputLabel>
             <Select
               label="Grupo de Edad"
@@ -282,7 +247,7 @@ export const Filters: React.FC<FiltersProps> = ({
         )}
 
         {nationalityOptions.length > 1 && (
-          <FormControl size="small" sx={{ minWidth: 130 }}>
+          <FormControl size="small" sx={{ flex: 1, minWidth: 100 }}>
             <InputLabel>Nación</InputLabel>
             <Select
               label="Nación"
@@ -302,6 +267,8 @@ export const Filters: React.FC<FiltersProps> = ({
             Limpiar
           </Button>
         )}
+
+        {searchField(false)}
       </Stack>
 
       <Stack direction="row" spacing={1} sx={{ mt: 1.5, alignItems: 'center', flexWrap: 'wrap', gap: 0.5 }}>
