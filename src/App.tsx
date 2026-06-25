@@ -158,7 +158,18 @@ function App({ eventPrefix, theme: themeProp = 'dark' }: { eventPrefix?: string;
   useEffect(() => {
     const id = 'sport-events-panton-font';
     if (!document.getElementById(id)) {
-      const fontUrl = new URL('./fonts/Panton Bold.ttf', document.baseURI).href;
+      // Use base URL set by the bundle preamble (works when embedded on external sites),
+      // falling back to script tag detection, then document.baseURI
+      const w = window as any;
+      const base: string = w.__SPORT_EVENTS_BASE_URL__
+        ? String(w.__SPORT_EVENTS_BASE_URL__).replace(/\/$/, '')
+        : (() => {
+            const scriptEl = document.querySelector('script[src*="sportevents-results"]') as HTMLScriptElement | null;
+            return scriptEl
+              ? scriptEl.src.replace(/[^/]+$/, '').replace(/\/$/, '')
+              : new URL('.', document.baseURI).href.replace(/\/$/, '');
+          })();
+      const fontUrl = `${base}/fonts/Panton%20Bold.ttf`;
       const style = document.createElement('style');
       style.id = id;
       style.textContent = [

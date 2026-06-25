@@ -40,14 +40,15 @@ parts.push(`(function(){
   window.__SPORT_EVENTS_BASE_URL__ = me ? me.src.replace(/[^\\/]+$/, '') : './';
 })();`);
 
-// ── Google Fonts: inject Barlow + Barlow Condensed ──────────────────────────
+// ── Panton Bold @font-face: inject using the detected base URL ──────────────
 parts.push(`(function(){
-  var id='sport-events-google-fonts';
+  var id='sport-events-panton-font';
   if(!document.getElementById(id)){
-    var l=document.createElement('link');
-    l.id=id;l.rel='stylesheet';
-    l.href='https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap';
-    document.head.appendChild(l);
+    var base=(window.__SPORT_EVENTS_BASE_URL__||'./').replace(/\/$/,'');
+    var s=document.createElement('style');
+    s.id=id;
+    s.textContent='@font-face{font-family:\'Panton\';src:url(\'' + base + '/fonts/Panton%20Bold.ttf\') format(\'truetype\');font-weight:700;font-style:normal;font-display:swap;}';
+    document.head.appendChild(s);
   }
 })();`);
 for (const rel of cssFiles) {
@@ -67,18 +68,18 @@ for (const rel of ordered) {
 // ── Hardening CSS: injected LAST so it wins over any WordPress/theme overrides ──
 const hardeningCSS = `
 /* Sport Events Widget — CSS isolation hardening (injected last) */
-#sportevents-results,#kamalyon-race-results{font-family:'Exo 2','Roboto',Helvetica,Arial,sans-serif!important;background:transparent!important;}
-#sportevents-results h1,#sportevents-results h2,#sportevents-results h3,#sportevents-results h4,#sportevents-results h5,#sportevents-results h6,#kamalyon-race-results h1,#kamalyon-race-results h2,#kamalyon-race-results h3,#kamalyon-race-results h4,#kamalyon-race-results h5,#kamalyon-race-results h6{color:inherit!important;font-family:'Exo 2','Roboto',Helvetica,Arial,sans-serif!important;}
+#sportevents-results,#kamalyon-race-results{font-family:'Panton','Barlow Condensed','Roboto',Helvetica,Arial,sans-serif!important;background:transparent!important;}
+#sportevents-results h1,#sportevents-results h2,#sportevents-results h3,#sportevents-results h4,#sportevents-results h5,#sportevents-results h6,#kamalyon-race-results h1,#kamalyon-race-results h2,#kamalyon-race-results h3,#kamalyon-race-results h4,#kamalyon-race-results h5,#kamalyon-race-results h6{color:inherit!important;font-family:'Panton','Barlow Condensed','Roboto',Helvetica,Arial,sans-serif!important;}
 #sportevents-results fieldset,#kamalyon-race-results fieldset{border-color:rgba(128,128,128,0.3)!important;}
 #sportevents-results [class*="Mui-focused"] fieldset,#kamalyon-race-results [class*="Mui-focused"] fieldset{border-color:#00A3E0!important;}
 #sportevents-results hr,#kamalyon-race-results hr{background-color:transparent!important;border-top-style:solid!important;border-top-width:thin!important;}
 #sportevents-results table,#sportevents-results td,#sportevents-results th,#kamalyon-race-results table,#kamalyon-race-results td,#kamalyon-race-results th{border:none!important;}
 #sportevents-results [class*="MuiTableCell-root"],#kamalyon-race-results [class*="MuiTableCell-root"]{border-bottom:1px solid rgba(255,255,255,0.06)!important;}
-[class*="MuiPopover-root"] [class*="MuiMenuItem-root"],[class*="MuiMenu-root"] [class*="MuiMenuItem-root"],[class*="MuiAutocomplete-popper"] [class*="MuiAutocomplete-option"]{font-family:'Exo 2','Roboto',Helvetica,Arial,sans-serif!important;}
-[class*="MuiPopover-root"] [class*="MuiMenuItem-root"] *,[class*="MuiMenu-root"] [class*="MuiMenuItem-root"] *{font-family:'Exo 2','Roboto',Helvetica,Arial,sans-serif!important;}
-#sportevents-results input,#kamalyon-race-results input{border:none!important;outline:none!important;box-shadow:none!important;background:transparent!important;box-sizing:content-box!important;font-family:'Exo 2','Roboto',Helvetica,Arial,sans-serif!important;}
-#sportevents-results button,#kamalyon-race-results button{font-family:'Exo 2','Roboto',Helvetica,Arial,sans-serif!important;}
-#sportevents-results select,#kamalyon-race-results select,#sportevents-results textarea,#kamalyon-race-results textarea{font-family:'Exo 2','Roboto',Helvetica,Arial,sans-serif!important;}
+[class*="MuiPopover-root"] [class*="MuiMenuItem-root"],[class*="MuiMenu-root"] [class*="MuiMenuItem-root"],[class*="MuiAutocomplete-popper"] [class*="MuiAutocomplete-option"]{font-family:'Panton','Barlow Condensed','Roboto',Helvetica,Arial,sans-serif!important;}
+[class*="MuiPopover-root"] [class*="MuiMenuItem-root"] *,[class*="MuiMenu-root"] [class*="MuiMenuItem-root"] *{font-family:'Panton','Barlow Condensed','Roboto',Helvetica,Arial,sans-serif!important;}
+#sportevents-results input,#kamalyon-race-results input{border:none!important;outline:none!important;box-shadow:none!important;background:transparent!important;box-sizing:content-box!important;font-family:'Panton','Barlow Condensed','Roboto',Helvetica,Arial,sans-serif!important;}
+#sportevents-results button,#kamalyon-race-results button{font-family:'Panton','Barlow Condensed','Roboto',Helvetica,Arial,sans-serif!important;}
+#sportevents-results select,#kamalyon-race-results select,#sportevents-results textarea,#kamalyon-race-results textarea{font-family:'Panton','Barlow Condensed','Roboto',Helvetica,Arial,sans-serif!important;}
 #sportevents-results [class*="MuiInputBase-input"],#kamalyon-race-results [class*="MuiInputBase-input"]{padding:16.5px 14px!important;}
 #sportevents-results [class*="MuiInputBase-sizeSmall"] [class*="MuiInputBase-input"],#kamalyon-race-results [class*="MuiInputBase-sizeSmall"] [class*="MuiInputBase-input"]{padding:8.5px 14px!important;}
 #sportevents-results a,#kamalyon-race-results a{color:inherit!important;text-decoration:none!important;}
