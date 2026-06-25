@@ -166,7 +166,7 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
           variant="overline"
           sx={{ color: primaryColor, letterSpacing: 2.5, display: 'block', lineHeight: 1.2, fontSize: 10 }}
         >
-          SPORT EVENTS
+          RANKING
         </Typography>
         <Typography variant="h5" component="h1" sx={{ fontWeight: 800, letterSpacing: -0.5, lineHeight: 1.2, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
           {title}
