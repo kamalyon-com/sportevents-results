@@ -254,7 +254,12 @@ export const ResultsTable: React.FC<ResultsTableProps> = ({
         rowsPerPageOptions={isMobile ? [] : [25, 50, 100]}
         labelRowsPerPage={isMobile ? '' : 'Filas:'}
         labelDisplayedRows={({ from, to, count }) => isMobile ? `${from}–${to} / ${count}` : `${from}–${to} de ${count}`}
-        sx={isMobile ? { '& .MuiTablePagination-toolbar': { minHeight: 40, px: 1 }, '& .MuiTablePagination-displayedRows': { fontSize: 12 } } : undefined}
+        sx={{
+          '& .MuiTablePagination-toolbar': { alignItems: 'center', ...(isMobile && { minHeight: 40, px: 1 }) },
+          '& .MuiTablePagination-selectLabel': { m: 0 },
+          '& .MuiTablePagination-displayedRows': { m: 0, ...(isMobile && { fontSize: 12 }) },
+          '& .MuiTablePagination-select': { paddingTop: '4px', paddingBottom: '4px' },
+        }}
       />
     </Paper>
   );
