@@ -44,10 +44,11 @@ parts.push(`(function(){
 parts.push(`(function(){
   var id='sport-events-panton-font';
   if(!document.getElementById(id)){
-    var base=(window.__SPORT_EVENTS_BASE_URL__||'./').replace(/\/$/,'');
+    var base=window.__SPORT_EVENTS_BASE_URL__||'';
+    if(base.charAt(base.length-1)==='/'){base=base.slice(0,-1);}
     var s=document.createElement('style');
     s.id=id;
-    s.textContent='@font-face{font-family:\'Panton\';src:url(\'' + base + '/fonts/Panton%20Bold.ttf\') format(\'truetype\');font-weight:700;font-style:normal;font-display:swap;}';
+    s.textContent="@font-face{font-family:'Panton';src:url('" + base + "/fonts/Panton%20Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap;}";
     document.head.appendChild(s);
   }
 })();`);
