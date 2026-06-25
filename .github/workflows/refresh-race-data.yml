@@ -11,6 +11,10 @@ on:
       - 'scripts/prefetch-results.js'
       - 'package.json'
 
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
 jobs:
   refresh:
     runs-on: ubuntu-latest

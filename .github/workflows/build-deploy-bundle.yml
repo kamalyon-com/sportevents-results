@@ -10,6 +10,10 @@ on:
       - 'scripts/bundle.js'
       - 'package.json'
 
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
