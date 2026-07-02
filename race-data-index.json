@@ -1,0 +1,270 @@
+{
+  "fetchedAt": "2026-07-02T09:24:25.396Z",
+  "events": [
+    {
+      "id": "376173",
+      "fileKey": "376173_1",
+      "name": "race|result 12 Beispiel",
+      "contestName": "Marathon",
+      "date": "2018-05-23",
+      "location": "Pfinztal",
+      "listName": "Ergebnislisten|Altersklassensieger",
+      "contest": 1,
+      "format": "individual"
+    },
+    {
+      "id": "376173",
+      "fileKey": "376173_2",
+      "name": "race|result 12 Beispiel",
+      "contestName": "Halbmarathon",
+      "date": "2018-05-23",
+      "location": "Pfinztal",
+      "listName": "Ergebnislisten|Altersklassensieger",
+      "contest": 2,
+      "format": "individual"
+    },
+    {
+      "id": "376173",
+      "fileKey": "376173_3",
+      "name": "race|result 12 Beispiel",
+      "contestName": "10km-Lauf",
+      "date": "2018-05-23",
+      "location": "Pfinztal",
+      "listName": "Ergebnislisten|Altersklassensieger",
+      "contest": 3,
+      "format": "individual"
+    },
+    {
+      "id": "376174",
+      "fileKey": "376174_1",
+      "name": "Strong Race Abril 2026",
+      "contestName": "Élite",
+      "date": "2026-04-11",
+      "location": "Palma",
+      "listName": "Resultados|01.LIVE",
+      "contest": 1,
+      "format": "pairs",
+      "genderCategories": [
+        "Femenina",
+        "Masculina",
+        "Mixta"
+      ]
+    },
+    {
+      "id": "376174",
+      "fileKey": "376174_2",
+      "name": "Strong Race Abril 2026",
+      "contestName": "Open",
+      "date": "2026-04-11",
+      "location": "Palma",
+      "listName": "Resultados|01.LIVE",
+      "contest": 2,
+      "format": "pairs",
+      "genderCategories": [
+        "Femenina",
+        "Masculina"
+      ]
+    },
+    {
+      "id": "376174",
+      "fileKey": "376174_3",
+      "name": "Strong Race Abril 2026",
+      "contestName": "Open",
+      "date": "2026-04-11",
+      "location": "Palma",
+      "listName": "Resultados|01.LIVE",
+      "contest": 3,
+      "format": "pairs",
+      "genderCategories": [
+        "Mixta"
+      ]
+    },
+    {
+      "id": "376174",
+      "fileKey": "376174_4",
+      "name": "Strong Race Abril 2026",
+      "contestName": "Strong Kids",
+      "date": "2026-04-11",
+      "location": "Palma",
+      "listName": "Resultados|01.LIVE",
+      "contest": 4,
+      "format": "pairs",
+      "genderCategories": [
+        "Femenina",
+        "Masculina"
+      ],
+      "noGenderSplit": true
+    },
+    {
+      "id": "396560",
+      "fileKey": "396560_1",
+      "name": "Hybiza Race 2026",
+      "contestName": "Élite",
+      "date": "2026-05-09",
+      "location": "Ibiza",
+      "listName": "Resultados|01.LIVE",
+      "contest": 1,
+      "format": "pairs",
+      "genderCategories": [
+        "Femenina",
+        "Masculina"
+      ]
+    },
+    {
+      "id": "396560",
+      "fileKey": "396560_2",
+      "name": "Hybiza Race 2026",
+      "contestName": "Parejas",
+      "date": "2026-05-09",
+      "location": "Ibiza",
+      "listName": "Resultados|01.LIVE",
+      "contest": 2,
+      "format": "pairs",
+      "genderCategories": [
+        "Femenina",
+        "Masculina",
+        "Mixta"
+      ]
+    },
+    {
+      "id": "396560",
+      "fileKey": "396560_3",
+      "name": "Hybiza Race 2026",
+      "contestName": "Equipos",
+      "date": "2026-05-09",
+      "location": "Ibiza",
+      "listName": "Resultados|01.LIVE",
+      "contest": 3,
+      "format": "teams",
+      "genderCategories": [
+        "Femenina",
+        "Masculina",
+        "Mixta"
+      ]
+    },
+    {
+      "id": "398871",
+      "fileKey": "398871_1",
+      "name": "Cobra Race Mayo 2026",
+      "contestName": "Individual",
+      "date": "2026-05-30",
+      "location": "Marratxí",
+      "listName": "Resultados|01.LIVE",
+      "contest": 1,
+      "format": "pairs",
+      "genderCategories": [
+        "Masculina"
+      ]
+    },
+    {
+      "id": "398871",
+      "fileKey": "398871_2",
+      "name": "Cobra Race Mayo 2026",
+      "contestName": "Parejas",
+      "date": "2026-05-30",
+      "location": "Marratxí",
+      "listName": "Resultados|01.LIVE",
+      "contest": 2,
+      "format": "pairs",
+      "genderCategories": [
+        "Femenina",
+        "Masculina",
+        "Mixta"
+      ]
+    },
+    {
+      "id": "398871",
+      "fileKey": "398871_3",
+      "name": "Cobra Race Mayo 2026",
+      "contestName": "Equipos",
+      "date": "2026-05-30",
+      "location": "Marratxí",
+      "listName": "Resultados|01.LIVE",
+      "contest": 3,
+      "format": "teams",
+      "noResults": true
+    },
+    {
+      "id": "403612",
+      "fileKey": "403612_1",
+      "name": "SAC Series Junio 2026",
+      "contestName": "Individual",
+      "date": "2026-06-05",
+      "location": "Pollença",
+      "listName": "Resultados|Resultados",
+      "contest": 1,
+      "format": "pairs"
+    },
+    {
+      "id": "403612",
+      "fileKey": "403612_2",
+      "name": "SAC Series Junio 2026",
+      "contestName": "Parejas",
+      "date": "2026-06-05",
+      "location": "Pollença",
+      "listName": "Resultados|Resultados",
+      "contest": 2,
+      "format": "pairs",
+      "genderCategories": [
+        "Femenina",
+        "Masculina"
+      ]
+    },
+    {
+      "id": "403612",
+      "fileKey": "403612_3",
+      "name": "SAC Series Junio 2026",
+      "contestName": "Equipos",
+      "date": "2026-06-05",
+      "location": "Pollença",
+      "listName": "Resultados|01.LIVE",
+      "contest": 3,
+      "format": "teams",
+      "genderCategories": [
+        "Femenina",
+        "Masculina"
+      ]
+    },
+    {
+      "id": "409310",
+      "fileKey": "409310_1",
+      "name": "DEKA Happy Gym Calvià 2026",
+      "contestName": "Individual",
+      "date": "2026-07-04",
+      "location": "Calvià",
+      "listName": "Resultados|Resultados",
+      "contest": 1,
+      "format": "pairs"
+    },
+    {
+      "id": "409310",
+      "fileKey": "409310_2",
+      "name": "DEKA Happy Gym Calvià 2026",
+      "contestName": "Parejas",
+      "date": "2026-07-04",
+      "location": "Calvià",
+      "listName": "Resultados|Resultados",
+      "contest": 2,
+      "format": "pairs",
+      "genderCategories": [
+        "Femenina",
+        "Masculina"
+      ]
+    },
+    {
+      "id": "409310",
+      "fileKey": "409310_3",
+      "name": "DEKA Happy Gym Calvià 2026",
+      "contestName": "Equipos",
+      "date": "2026-07-04",
+      "location": "Calvià",
+      "listName": "Resultados|01.LIVE",
+      "contest": 3,
+      "format": "teams",
+      "genderCategories": [
+        "Femenina",
+        "Masculina"
+      ]
+    }
+  ]
+}
