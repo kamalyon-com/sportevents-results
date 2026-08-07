@@ -13,6 +13,8 @@
 
 # generated race data (fetched at build/deploy time by prefetch script)
 /public/race-data-*.json
+# preserve historical results for contests where the live list is no longer available
+!/public/race-data-376174_2.json
 
 # misc
 .DS_Store

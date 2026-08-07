@@ -101,6 +101,16 @@ const CONTEST_NO_GENDER_SPLIT = {
   '376174': [4],   // Strong Kids: show as single combined entry
 };
 
+/**
+ * fileKeys cuyo fichero de datos se conserva tal cual (no se borra ni se re-descarga).
+ * Útil cuando el listado 01.LIVE ya no devuelve resultados tras el evento
+ * pero tenemos los datos históricos guardados en git.
+ * Formato: Set de fileKey strings, ej. '376174_2'
+ */
+const CONTEST_PRESERVE_DATA = new Set([
+  '376174_2',  // Open Sábado: 01.LIVE vacío tras el evento; datos históricos en git
+]);
+
 // ─── Contest-based format detection ──────────────────────────────────────────
 // Each event's contests are fetched from the API.  The contest NAME determines
 // the format.  Contest names containing 'pareja/duo/doble' → 'pairs';
@@ -679,10 +689,13 @@ async function main() {
   const index = { fetchedAt, events: [] };
   let saved = 0;
 
-  // Remove stale per-event files from a previous run
+  // Remove stale per-event files from a previous run (skip preserved files)
   for (const f of fs.readdirSync(path.join(ROOT, 'public'))) {
     if (f.startsWith('race-data-') && f.endsWith('.json') && f !== 'race-data-index.json') {
-      fs.unlinkSync(path.join(ROOT, 'public', f));
+      const fKey = f.replace('race-data-', '').replace('.json', '');
+      if (!CONTEST_PRESERVE_DATA.has(fKey)) {
+        fs.unlinkSync(path.join(ROOT, 'public', f));
+      }
     }
   }
 
@@ -771,6 +784,32 @@ async function main() {
       for (const c of allContests) {
         const fileKey = `${eventId}_${c.ID}`;
         const format  = contestFormat(c.Name);
+
+        // Preserved contest: leer datos guardados en git, no descargar de la API
+        if (CONTEST_PRESERVE_DATA.has(fileKey)) {
+          process.stdout.write(`  → contest ${c.ID} "${c.Name}" (preserved, key: ${fileKey}) — `);
+          try {
+            const existing = JSON.parse(fs.readFileSync(path.join(ROOT, 'public', `race-data-${fileKey}.json`), 'utf8'));
+            const contestDisplayNameP = (CONTEST_NAME_OVERRIDES[String(eventId)] ?? {})[String(c.ID)] ?? c.Name;
+            const forcedCatsP = (CONTEST_GENDER_CATEGORIES[String(eventId)] ?? {})[String(c.ID)];
+            const autoCatsP = [...new Set(existing.rows.map(extractPairGender).filter(Boolean))].sort();
+            const genderCategoriesP = forcedCatsP ?? autoCatsP;
+            const isNoGenderSplitP = (CONTEST_NO_GENDER_SPLIT[String(eventId)] ?? []).includes(c.ID);
+            const infoP = {
+              ...existing.info,
+              contestName: contestDisplayNameP,
+              ...(genderCategoriesP.length > 0 ? { genderCategories: genderCategoriesP } : {}),
+              ...(isNoGenderSplitP ? { noGenderSplit: true } : {}),
+            };
+            delete infoP.noResults;
+            fs.writeFileSync(path.join(ROOT, 'public', `race-data-${fileKey}.json`), JSON.stringify({ info: infoP, rows: existing.rows }, null, 2), 'utf8');
+            console.log(`${existing.rows.length} rows (preserved)`);
+            index.events.push(infoP);
+            saved++;
+          } catch (e) { console.log(`FAILED to read preserved data — ${e.message}`); }
+          continue;
+        }
+
         process.stdout.write(`  → contest ${c.ID} "${c.Name}" (${format}, key: ${fileKey}) — fetching... `);
         try {
           let { rows, usedListName } = await fetchListWithFallback(sessionId, eventId, defaultList, c.ID, allListNames);
