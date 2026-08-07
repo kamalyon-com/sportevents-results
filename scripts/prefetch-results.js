@@ -82,6 +82,17 @@ const CONTEST_NAME_OVERRIDES = {
 };
 
 /**
+ * Forzar manualmente genderCategories para contests donde la detección automática
+ * falla (p.ej. la lista de resultados no tiene _pairGender ni Gender útil).
+ * Format: { '<eventId>': { '<contestId>': ['Femenina', 'Masculina', ...] } }
+ */
+const CONTEST_GENDER_CATEGORIES = {
+  '376174': {
+    '2': ['Femenina', 'Masculina'],  // Open Sábado: 01.LIVE vacío; forzar categorías
+  },
+};
+
+/**
  * Contests that should NOT be split by gender in the results selector.
  * They appear as a single combined entry regardless of genderCategories.
  * Format: { '<eventId>': [contestId1, contestId2, ...] }
@@ -195,7 +206,7 @@ async function fetchList(sessionId, eventId, listName, contest = 0) {
  * Patterns that identify non-result lists (detail, check, presenter, podium, etc.)
  * These are skipped when looking for a fallback results list.
  */
-const SKIP_LIST_PATTERN = /DETAIL LIST|^Checks\||^Presenter\||^Otros\||^Participantes\||^Listas de|PODIUM|PHOTOCALL|VIDEO|CHIP|SPLITS|Pr\u00f3ximas|Llegadas/i;
+const SKIP_LIST_PATTERN = /DETAIL LIST|^Checks\||^Presenter\||^Otros\||^Participantes\||^Listas de|PODIUM|PHOTOCALL|VIDEO|CHIP|SPLITS|Pr\u00f3ximas|Llegadas|Desglose/i;
 
 /**
  * Try to fetch a contest's results from the primary list.
@@ -765,16 +776,21 @@ async function main() {
           let { rows, usedListName } = await fetchListWithFallback(sessionId, eventId, defaultList, c.ID, allListNames);
           if (rows.length === 0) {
             console.log('0 rows — added to index (no results yet).');
+            const contestDisplayName0 = (CONTEST_NAME_OVERRIDES[String(eventId)] ?? {})[String(c.ID)] ?? c.Name;
+            const forcedGenderCats0 = (CONTEST_GENDER_CATEGORIES[String(eventId)] ?? {})[String(c.ID)];
+            const isNoGenderSplit0 = (CONTEST_NO_GENDER_SPLIT[String(eventId)] ?? []).includes(c.ID);
             const info = {
               id: String(eventId), fileKey,
               name:        ev.EventName,
-              contestName: c.Name,
+              contestName: contestDisplayName0,
               date:        ev.EventDate ? ev.EventDate.slice(0, 10) : '',
               location:    ev.EventLocation ?? '',
               listName:    usedListName,
               contest:     c.ID,
               format,
               noResults:   true,
+              ...(forcedGenderCats0 && { genderCategories: forcedGenderCats0 }),
+              ...(isNoGenderSplit0 && { noGenderSplit: true }),
             };
             index.events.push(info);
             saved++;
@@ -790,7 +806,9 @@ async function main() {
           attachCategory(rows, (await fetchMembersMap(sessionId, eventId)).bibCategoryMap);
           attachAgeGroups(rows, await fetchAgeGroupMap(sessionId, eventId));
           const resolvedFormat = detectFormatFromMembers(rows, format);
-          const genderCategories = [...new Set(rows.map(extractPairGender).filter(Boolean))].sort();
+          const autoCats = [...new Set(rows.map(extractPairGender).filter(Boolean))].sort();
+          const forcedCats = (CONTEST_GENDER_CATEGORIES[String(eventId)] ?? {})[String(c.ID)];
+          const genderCategories = forcedCats ?? autoCats;
           const contestDisplayName = (CONTEST_NAME_OVERRIDES[String(eventId)] ?? {})[String(c.ID)] ?? c.Name;
           const isNoGenderSplit = (CONTEST_NO_GENDER_SPLIT[String(eventId)] ?? []).includes(c.ID);
           const info = {
