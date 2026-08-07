@@ -640,6 +640,19 @@ function detectFormatFromMembers(rows, fallbackFormat) {
   return fallbackFormat;
 }
 
+/**
+ * Extrae la categoría de género de una fila: usa _pairGender si está presente;
+ * si no, intenta leerlo del campo "Gender" (ej. "Parejas Masculinas" → "Masculina").
+ */
+function extractPairGender(row) {
+  if (row._pairGender) return row._pairGender;
+  const g = String(row['Gender'] ?? row['Género'] ?? '').toLowerCase();
+  if (g.includes('femen')) return 'Femenina';
+  if (g.includes('mascul')) return 'Masculina';
+  if (g.includes('mixt')) return 'Mixta';
+  return null;
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -717,7 +730,7 @@ async function main() {
           attachCategory(rows, (await fetchMembersMap(sessionId, eventId)).bibCategoryMap);
           attachAgeGroups(rows, await fetchAgeGroupMap(sessionId, eventId));
           const resolvedFormat = detectFormatFromMembers(rows, variant.format);
-          const genderCategories = [...new Set(rows.map(r => r._pairGender).filter(Boolean))].sort();
+          const genderCategories = [...new Set(rows.map(extractPairGender).filter(Boolean))].sort();
           const info = {
             id: String(eventId), fileKey,
             name: ev.EventName,
@@ -777,7 +790,7 @@ async function main() {
           attachCategory(rows, (await fetchMembersMap(sessionId, eventId)).bibCategoryMap);
           attachAgeGroups(rows, await fetchAgeGroupMap(sessionId, eventId));
           const resolvedFormat = detectFormatFromMembers(rows, format);
-          const genderCategories = [...new Set(rows.map(r => r._pairGender).filter(Boolean))].sort();
+          const genderCategories = [...new Set(rows.map(extractPairGender).filter(Boolean))].sort();
           const contestDisplayName = (CONTEST_NAME_OVERRIDES[String(eventId)] ?? {})[String(c.ID)] ?? c.Name;
           const isNoGenderSplit = (CONTEST_NO_GENDER_SPLIT[String(eventId)] ?? []).includes(c.ID);
           const info = {
@@ -833,7 +846,7 @@ async function main() {
           attachCategory(rows, (await fetchMembersMap(sessionId, eventId)).bibCategoryMap);
           attachAgeGroups(rows, await fetchAgeGroupMap(sessionId, eventId));
           const resolvedFormat = detectFormatFromMembers(rows, format);
-          const genderCategories = [...new Set(rows.map(r => r._pairGender).filter(Boolean))].sort();
+          const genderCategories = [...new Set(rows.map(extractPairGender).filter(Boolean))].sort();
           const info = {
             id:       String(eventId),
             name:     ev.EventName,

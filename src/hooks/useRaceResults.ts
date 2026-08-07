@@ -180,6 +180,10 @@ function mapRowToAthlete(row: RRRow, rank: number, eventId: string, mapping: RRF
     if (pairGenderRaw === 'Mixta') return 'Mixta' as const;
     if (genderRaw === 'M' || genderRaw === 'MALE' || genderRaw === 'H' || genderRaw === 'HOMBRE') return 'M' as const;
     if (genderRaw === 'F' || genderRaw === 'W' || genderRaw === 'FEMALE' || genderRaw === 'MUJER') return 'F' as const;
+    // Valores descriptivos como "Parejas Masculinas" / "Parejas Femeninas"
+    if (genderRaw.includes('MASCULIN')) return 'M' as const;
+    if (genderRaw.includes('FEMEN')) return 'F' as const;
+    if (genderRaw.includes('MIXT')) return 'Mixta' as const;
     // Infer from category if gender field is absent
     const cat = category.toLowerCase();
     if (cat.includes('femen') || cat.includes('women') || cat.includes('mujer') || cat.includes(' f ') || cat.endsWith(' f')) return 'F' as const;
