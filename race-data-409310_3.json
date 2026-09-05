@@ -1,0 +1,246 @@
+{
+  "info": {
+    "id": "409310",
+    "fileKey": "409310_3",
+    "name": "DEKA Happy Gym Calvià 2026",
+    "contestName": "DEKA STRONG",
+    "date": "2026-07-04",
+    "location": "Calvià",
+    "listName": "Resultados|01.LIVE",
+    "contest": 3,
+    "format": "pairs",
+    "genderCategories": [
+      "Femenina",
+      "Mixta"
+    ]
+  },
+  "rows": [
+    {
+      "AUTORANK.p": "1.",
+      "Nombre": "Berni Bustos",
+      "Dorsal": 5,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "13:45"
+    },
+    {
+      "AUTORANK.p": "2.",
+      "Nombre": "Matias Veliz",
+      "Dorsal": 9,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "14:49"
+    },
+    {
+      "AUTORANK.p": "3.",
+      "Nombre": "ALBERTO ALZAMORA",
+      "Dorsal": 12,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "15:21"
+    },
+    {
+      "AUTORANK.p": "4.",
+      "Nombre": "Amanda Brito",
+      "Dorsal": 24,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "18:42"
+    },
+    {
+      "AUTORANK.p": "5.",
+      "Nombre": "Fran Ruiz",
+      "Dorsal": 15,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "18:44"
+    },
+    {
+      "AUTORANK.p": "6.",
+      "Nombre": "Annabelle Brook / Matias Veliz tapia",
+      "Dorsal": 90,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "18:54",
+      "_members": [
+        {
+          "name": "Annabelle Brook"
+        },
+        {
+          "name": "Matias Veliz tapia"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "7.",
+      "Nombre": "Evelin Castao",
+      "Dorsal": 20,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "19:28"
+    },
+    {
+      "AUTORANK.p": "8.",
+      "Nombre": "Sheni Gadzhalova",
+      "Dorsal": 25,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:03"
+    },
+    {
+      "AUTORANK.p": "9.",
+      "Nombre": "Jaume Vidal Roca",
+      "Dorsal": 4,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:09"
+    },
+    {
+      "AUTORANK.p": "10.",
+      "Nombre": "Anta Fuentes Lago",
+      "Dorsal": 18,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:13"
+    },
+    {
+      "AUTORANK.p": "11.",
+      "Nombre": "Lara Cabrer Cabanillas",
+      "Dorsal": 23,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:36"
+    },
+    {
+      "AUTORANK.p": "12.",
+      "Nombre": "Pascual Ruben Lluch Gonzalez",
+      "Dorsal": 2,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:38"
+    },
+    {
+      "AUTORANK.p": "13.",
+      "Nombre": "MIQUEL PACHECO",
+      "Dorsal": 8,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:13"
+    },
+    {
+      "AUTORANK.p": "14.",
+      "Nombre": "Neus Cardos / Natalia Godines",
+      "Dorsal": 101,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:15",
+      "_members": [
+        {
+          "name": "Neus Cardos"
+        },
+        {
+          "name": "Natalia Godines"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "15.",
+      "Nombre": "Marc Galmes",
+      "Dorsal": 3,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:24"
+    },
+    {
+      "AUTORANK.p": "16.",
+      "Nombre": "Javier Sastre",
+      "Dorsal": 7,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:58"
+    },
+    {
+      "AUTORANK.p": "17.",
+      "Nombre": "Mireya Caldentey",
+      "Dorsal": 16,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "22:15"
+    },
+    {
+      "AUTORANK.p": "18.",
+      "Nombre": "Alexandra Quiros",
+      "Dorsal": 26,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "23:15"
+    },
+    {
+      "AUTORANK.p": "19.",
+      "Nombre": "Miquel Esteva Mart",
+      "Dorsal": 13,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "24:01"
+    },
+    {
+      "AUTORANK.p": "20.",
+      "Nombre": "Desiree Fernandez / Laia Fajeda Reina",
+      "Dorsal": 80,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "25:05",
+      "_members": [
+        {
+          "name": "Desiree Fernandez"
+        },
+        {
+          "name": "Laia Fajeda Reina"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "21.",
+      "Nombre": "Marga Vara Martorell",
+      "Dorsal": 14,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "25:13"
+    },
+    {
+      "AUTORANK.p": "23.",
+      "Nombre": "Nathaly Porras Palacios",
+      "Dorsal": 21,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "26:18"
+    },
+    {
+      "AUTORANK.p": "24.",
+      "Nombre": "MARINA Crespi Jimenez",
+      "Dorsal": 27,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "26:31"
+    },
+    {
+      "AUTORANK.p": "25.",
+      "Nombre": "Wilson Pardo espitia",
+      "Dorsal": 6,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "28:00"
+    },
+    {
+      "AUTORANK.p": "26.",
+      "Nombre": "Jesus Bozada",
+      "Dorsal": 1,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "30:51"
+    }
+  ]
+}
