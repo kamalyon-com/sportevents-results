@@ -5,15 +5,13 @@ import {
   Button,
   Chip,
   CircularProgress,
-  Divider,
   FormControl,
+  InputAdornment,
+  InputLabel,
   MenuItem,
   Select,
   Stack,
   TextField,
-  Typography,
-  useTheme,
-  useMediaQuery,
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import GroupsIcon from '@mui/icons-material/Groups';
@@ -37,27 +35,55 @@ export const SearchForm: React.FC<SearchFormProps> = ({
 }) => {
   const eventKey = (ev: RREventConfig) => `${ev.eventId}_${ev.contest ?? 0}_${ev.initialCategory ?? ''}`;
 
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const [year, setYear] = useState('');
+  const [location, setLocation] = useState('');
+
+  const years = React.useMemo(
+    () =>
+      Array.from(new Set(events.map((ev) => ev.date?.slice(0, 4)).filter(Boolean) as string[])).sort(
+        (a, b) => b.localeCompare(a),
+      ),
+    [events],
+  );
+
+  const locations = React.useMemo(
+    () => Array.from(new Set(events.map((ev) => ev.location).filter(Boolean) as string[])).sort(),
+    [events],
+  );
+
+  // Eventos que pasan los filtros previos; alimentan el desplegable de evento
+  const matchingEvents = React.useMemo(
+    () =>
+      events.filter(
+        (ev) =>
+          (!year || ev.date?.slice(0, 4) === year) && (!location || ev.location === location),
+      ),
+    [events, year, location],
+  );
 
   // Unique race names in order of first appearance
   const uniqueRaceNames = React.useMemo(() => {
     const seen = new Set<string>();
-    return events.reduce<string[]>((acc, ev) => {
+    return matchingEvents.reduce<string[]>((acc, ev) => {
       const n = ev.name ?? String(ev.eventId);
       if (!seen.has(n)) { seen.add(n); acc.push(n); }
       return acc;
     }, []);
-  }, [events]);
+  }, [matchingEvents]);
 
   const [selectedRaceName, setSelectedRaceName] = useState<string>(() =>
     uniqueRaceNames.length === 1 ? uniqueRaceNames[0] : '',
   );
 
+  // Si el evento elegido deja de estar disponible tras cambiar año o ubicación, se limpia
+  React.useEffect(() => {
+    if (selectedRaceName && !uniqueRaceNames.includes(selectedRaceName)) setSelectedRaceName('');
+  }, [uniqueRaceNames, selectedRaceName]);
+
   // Modalities available for the selected race
   const modalities = React.useMemo(
-    () => events.filter((ev) => (ev.name ?? String(ev.eventId)) === selectedRaceName),
-    [events, selectedRaceName],
+    () => matchingEvents.filter((ev) => (ev.name ?? String(ev.eventId)) === selectedRaceName),
+    [matchingEvents, selectedRaceName],
   );
 
   const [selectedKey, setSelectedKey] = useState<string>(() => {
@@ -109,108 +135,138 @@ export const SearchForm: React.FC<SearchFormProps> = ({
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ width: '100%', maxWidth: 580, mx: 'auto' }}>
-      <Box>
-        {/* ── Form fields ── */}
-        <Stack spacing={0} divider={<Divider />}>
-            {/* Race name */}
-            <FormRow label="Evento">
-              <FormControl fullWidth size="medium" variant="outlined">
-                <Select
-                  displayEmpty
-                  value={selectedRaceName}
-                  onChange={(e) => setSelectedRaceName(e.target.value)}
-                  disabled={loading}
-                  renderValue={(val) =>
-                    val ? val : <em style={{ opacity: 0.45 }}>Seleccionar evento…</em>
-                  }
-                >
-                  {uniqueRaceNames.map((n) => (
-                    <MenuItem key={n} value={n}>
-                      <Typography variant="body2" sx={{ fontWeight: 600 }}>{n}</Typography>
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-            </FormRow>
+    <Box component="form" onSubmit={handleSubmit} sx={{ width: '100%' }}>
+      <Stack direction="row" sx={{ flexWrap: 'wrap', gap: 1, alignItems: 'center' }}>
+        {/* Año */}
+        {years.length > 1 && (
+          <FormControl size="small" sx={{ minWidth: 110, flex: '1 1 110px' }}>
+            <InputLabel>Año</InputLabel>
+            <Select
+              label="Año"
+              value={year}
+              onChange={(e) => setYear(e.target.value)}
+              disabled={loading}
+            >
+              <MenuItem value="">Cualquier año</MenuItem>
+              {years.map((y) => (
+                <MenuItem key={y} value={y}>
+                  {y}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        )}
 
-            {/* Modality — only shown when the selected race has multiple formats */}
-            {selectedRaceName && modalities.length > 1 && (
-              <FormRow label="Modalidad">
-                <FormControl fullWidth size="medium" variant="outlined">
-                  <Select
-                    displayEmpty
-                    value={selectedKey}
-                    onChange={(e) => setSelectedKey(e.target.value)}
-                    disabled={loading}
-                    renderValue={(val) => {
-                      if (!val) return <em style={{ opacity: 0.45 }}>Seleccionar modalidad…</em>;
-                      const ev = modalities.find((e) => eventKey(e) === val);
-                      if (!ev) return val;
-                      return formatLabel(ev);
-                    }}
-                  >
-                    {modalities.map((ev) => (
-                      <MenuItem key={eventKey(ev)} value={eventKey(ev)}>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                          <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                            {formatLabel(ev)}
-                          </Typography>
-                          {!ev.contestName && formatChip(ev.format)}
-                        </Box>
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-              </FormRow>
-            )}
+        {/* Ubicación */}
+        {locations.length > 1 && (
+          <FormControl size="small" sx={{ minWidth: 140, flex: '1 1 140px' }}>
+            <InputLabel>Ubicación</InputLabel>
+            <Select
+              label="Ubicación"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              disabled={loading}
+            >
+              <MenuItem value="">Cualquier ubicación</MenuItem>
+              {locations.map((l) => (
+                <MenuItem key={l} value={l}>
+                  {l}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        )}
 
-            {/* Name */}
-            <FormRow label="Nombre / Apellido">
-              <TextField
-                fullWidth
-                size="medium"
-                variant="outlined"
-                placeholder="Buscar por nombre…"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                disabled={loading}
-              />
-            </FormRow>
-        </Stack>
-
-        <Divider />
-
-        {/* ── Submit ── */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', px: { xs: 2, sm: 3 }, py: { xs: 2, sm: 2.5 } }}>
-          <Button
-            type="submit"
-            variant="contained"
-            size="large"
-            fullWidth={isMobile}
-            disabled={!canSubmit}
-            startIcon={loading ? <CircularProgress size={18} color="inherit" /> : <SearchIcon />}
-            sx={{
-              px: isMobile ? 2 : 6,
-              whiteSpace: 'nowrap',
-              backgroundColor: canSubmit ? primaryColor : undefined,
-              color: canSubmit ? '#000000' : undefined,
-              borderRadius: 0,
-              boxShadow: 'none',
-              fontSize: 14,
-              letterSpacing: '0.12em',
-              '&:hover': {
-                backgroundColor: '#ffffff',
-                color: '#000000',
-                boxShadow: 'none',
-              },
-              '&.Mui-disabled': { boxShadow: 'none' },
-            }}
+        {/* Evento */}
+        <FormControl size="small" sx={{ minWidth: 190, flex: '2 1 220px' }}>
+          <InputLabel>Evento</InputLabel>
+          <Select
+            label="Evento"
+            value={selectedRaceName}
+            onChange={(e) => setSelectedRaceName(e.target.value)}
+            disabled={loading}
           >
-            {loading ? 'Cargando…' : 'Mostrar Resultados'}
-          </Button>
-        </Box>
-      </Box>
+            {uniqueRaceNames.map((n) => (
+              <MenuItem key={n} value={n}>
+                {n}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
+        {/* Modalidad — solo si el evento elegido tiene varias */}
+        {selectedRaceName && modalities.length > 1 && (
+          <FormControl size="small" sx={{ minWidth: 160, flex: '1 1 160px' }}>
+            <InputLabel>Modalidad</InputLabel>
+            <Select
+              label="Modalidad"
+              value={selectedKey}
+              onChange={(e) => setSelectedKey(e.target.value)}
+              disabled={loading}
+              renderValue={(val) => {
+                const ev = modalities.find((e) => eventKey(e) === val);
+                return ev ? formatLabel(ev) : val;
+              }}
+            >
+              {modalities.map((ev) => (
+                <MenuItem key={eventKey(ev)} value={eventKey(ev)}>
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    {formatLabel(ev)}
+                    {!ev.contestName && formatChip(ev.format)}
+                  </Box>
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        )}
+
+        {/* Nombre / dorsal */}
+        <TextField
+          size="small"
+          variant="outlined"
+          label="Nombre / Dorsal"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          disabled={loading}
+          sx={{ minWidth: 170, flex: '1 1 170px' }}
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon fontSize="small" />
+                </InputAdornment>
+              ),
+            },
+          }}
+        />
+
+        <Button
+          type="submit"
+          variant="contained"
+          disabled={!canSubmit}
+          startIcon={loading ? <CircularProgress size={16} color="inherit" /> : <SearchIcon />}
+          sx={{
+            flex: { xs: '1 1 100%', sm: '0 0 auto' },
+            height: 40,
+            px: 3,
+            whiteSpace: 'nowrap',
+            backgroundColor: canSubmit ? primaryColor : undefined,
+            color: canSubmit ? '#000000' : undefined,
+            borderRadius: 0,
+            boxShadow: 'none',
+            fontSize: 13,
+            letterSpacing: '0.1em',
+            '&:hover': {
+              backgroundColor: '#ffffff',
+              color: '#000000',
+              boxShadow: 'none',
+            },
+            '&.Mui-disabled': { boxShadow: 'none' },
+          }}
+        >
+          {loading ? 'Cargando…' : 'Ver resultados'}
+        </Button>
+      </Stack>
 
       {error && (
         <Alert severity="error" sx={{ mt: 2, borderRadius: 2 }}>
@@ -220,20 +276,3 @@ export const SearchForm: React.FC<SearchFormProps> = ({
     </Box>
   );
 };
-
-// ─── Helper: labelled form row ────────────────────────────────────────────────
-function FormRow({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <Stack
-      direction={{ xs: 'column', sm: 'row' }}
-      sx={{ alignItems: { sm: 'center' }, px: { xs: 2, sm: 3 }, py: { xs: 1.5, sm: 2 }, gap: { xs: 0.75, sm: 0 } }}
-    >
-      <Box sx={{ width: { sm: 160 }, flexShrink: 0 }}>
-        <Typography component="div" variant="body2" sx={{ fontWeight: 700, letterSpacing: 0.3, color: 'text.secondary', fontSize: 12, textTransform: 'uppercase' }}>
-          {label}
-        </Typography>
-      </Box>
-      <Box sx={{ flex: 1 }}>{children}</Box>
-    </Stack>
-  );
-}

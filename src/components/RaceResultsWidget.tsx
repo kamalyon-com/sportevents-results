@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import {
   Box,
   Button,
@@ -7,6 +7,7 @@ import {
   InputLabel,
   LinearProgress,
   MenuItem,
+  Paper,
   Select,
   Tooltip,
   Stack,
@@ -17,6 +18,7 @@ import {
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import RefreshIcon from '@mui/icons-material/Refresh';
+import SearchIcon from '@mui/icons-material/Search';
 import { useRaceResults } from '../hooks/useRaceResults';
 import { SearchForm } from './SearchForm';
 import { Filters } from './Filters';
@@ -24,7 +26,10 @@ import { ResultsTable } from './ResultsTable';
 import { AthleteDetail } from './AthleteDetail';
 import { Athlete, RREventConfig, SortField, WidgetConfig } from '../lib/types';
 
-interface RaceResultsWidgetProps extends WidgetConfig {}
+interface RaceResultsWidgetProps extends WidgetConfig {
+  /** Oculta la cabecera propia del widget cuando el contenedor ya muestra una. */
+  showHeader?: boolean;
+}
 
 export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
   eventIds,
@@ -35,6 +40,7 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
   primaryColor = '#1976d2',
   showCertificate = true,
   eventPrefix,
+  showHeader = true,
 }) => {
   const {
     phase,
@@ -144,6 +150,14 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
     [executeSearch],
   );
 
+  // Carga el evento más reciente al entrar para no mostrar la página vacía
+  const autoLoadedRef = useRef(false);
+  useEffect(() => {
+    if (autoLoadedRef.current || eventsForSelector.length === 0) return;
+    autoLoadedRef.current = true;
+    handleSearch(eventsForSelector[0], '');
+  }, [eventsForSelector, handleSearch]);
+
   // ─── Shared header ─────────────────────────────────────────────────────────
   const header = (
     <Stack
@@ -179,14 +193,25 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
   if ((phase === 'search' || phase === 'loading') && !inResultsLoading) {
     return (
       <Box sx={{ fontFamily: 'inherit' }}>
-        {header}
-        <SearchForm
-          events={rrEvents && rrEvents.length > 0 ? rrEvents : availableEvents}
-          loading={phase === 'loading'}
-          error={error}
-          primaryColor={primaryColor}
-          onSearch={handleSearch}
-        />
+        {showHeader && header}
+        <Paper variant="outlined" sx={{ borderColor: 'divider', borderRadius: 2, p: { xs: 1.5, sm: 2 } }}>
+          <Typography variant="overline" sx={{ color: primaryColor, letterSpacing: 2, fontSize: 10, display: 'block', mb: 1 }}>
+            Buscar resultados
+          </Typography>
+          <SearchForm
+            events={rrEvents && rrEvents.length > 0 ? rrEvents : availableEvents}
+            loading={phase === 'loading'}
+            error={error}
+            primaryColor={primaryColor}
+            onSearch={handleSearch}
+          />
+        </Paper>
+        <Box sx={{ textAlign: 'center', py: 6, color: 'text.disabled' }}>
+          <SearchIcon sx={{ fontSize: 40, opacity: 0.4 }} />
+          <Typography variant="body2" sx={{ mt: 1 }}>
+            Elige un evento para ver la clasificación completa.
+          </Typography>
+        </Box>
       </Box>
     );
   }
@@ -216,11 +241,12 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
         sx={{ alignItems: 'flex-start', justifyContent: 'space-between', mb: { xs: 1.5, sm: 2.5 } }}
       >
         <Box sx={{ flex: 1, minWidth: 0 }}>
-          {logoUrl && (
+          {showHeader && logoUrl && (
             <Avatar src={logoUrl} alt="Logo" sx={{ width: 36, height: 36, borderRadius: 1, mb: 0.5, boxShadow: `0 0 8px ${primaryColor}44` }} variant="square" />
           )}
-          <Typography variant="h6" component="h1" sx={{ fontWeight: 800, letterSpacing: -0.3, lineHeight: 1.2 }}>
-            {title}
+          {/* Sin cabecera propia mostramos el evento activo para no perder contexto */}
+          <Typography variant="h6" component={showHeader ? 'h1' : 'h2'} sx={{ fontWeight: 800, letterSpacing: -0.3, lineHeight: 1.2 }}>
+            {showHeader ? title : activeEvent?.name ?? title}
           </Typography>
           {activeEvent && (
             <Typography variant="body2" color="text.secondary" sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5 }}>
