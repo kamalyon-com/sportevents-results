@@ -7,7 +7,7 @@ import {
   Container,
   Paper,
 } from '@mui/material';
-import { RaceResultsWidget } from './components/RaceResultsWidget';
+import { AppShell } from './components/AppShell';
 
 // ─── Theme factory ────────────────────────────────────────────────────────────
 function buildTheme(mode: 'dark' | 'light') {
@@ -226,7 +226,7 @@ function App({ eventPrefix, theme: themeProp = 'dark' }: { eventPrefix?: string;
               : '0 32px 64px rgba(0,0,0,0.08)',
           }}
         >
-          <RaceResultsWidget
+          <AppShell
             apiKey={process.env.REACT_APP_RR_API_KEY}
             title="Buscador de Resultados"
             primaryColor="#9fd4f9"
