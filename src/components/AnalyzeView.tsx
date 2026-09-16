@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
+  Alert,
   Box,
   Button,
   Chip,
@@ -225,6 +226,12 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
   const zoneStations = stations.filter((s) => s.kind === 'zone');
   const otherStations = stations.filter((s) => s.kind === 'other');
 
+  // Si el atleta elegido no tiene esa sección, se vuelve a Totales
+  useEffect(() => {
+    if (section === 'runs' && runStations.length === 0) setSection('totals');
+    if (section === 'zones' && zoneStations.length === 0) setSection('totals');
+  }, [section, runStations.length, zoneStations.length]);
+
   // ─── Selección de evento ───────────────────────────────────────────────────
   if (phase === 'search' || phase === 'loading') {
     return (
@@ -330,32 +337,44 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
                 </Typography>
               </Stack>
 
-              <Tabs
-                value={section}
-                onChange={(_, v) => setSection(v)}
-                aria-label="Categorías de análisis"
-                sx={{
-                  minHeight: 0,
-                  mb: 2.5,
-                  borderBottom: '1px solid',
-                  borderColor: 'divider',
-                  '& .MuiTabs-indicator': { height: 2, backgroundColor: primaryColor },
-                  '& .MuiTab-root': {
+              {runStations.length === 0 && zoneStations.length === 0 ? (
+                <Alert severity="info" variant="outlined" sx={{ mb: 2.5, borderRadius: 2 }}>
+                  Este evento no publica tiempos parciales, así que solo puede mostrarse el tiempo total.
+                </Alert>
+              ) : (
+                <Tabs
+                  value={section}
+                  onChange={(_, v) => setSection(v)}
+                  aria-label="Categorías de análisis"
+                  sx={{
                     minHeight: 0,
-                    py: 1,
-                    px: 2,
-                    fontSize: 12,
-                    fontWeight: 700,
-                    letterSpacing: '0.1em',
-                    color: 'text.secondary',
-                    '&.Mui-selected': { color: primaryColor },
-                  },
-                }}
-              >
-                <Tab value="totals" label="Totales" disableRipple />
-                <Tab value="runs" label="Carreras" disableRipple disabled={runStations.length === 0} />
-                <Tab value="zones" label="Zonas" disableRipple disabled={zoneStations.length === 0} />
-              </Tabs>
+                    mb: 2.5,
+                    borderBottom: '1px solid',
+                    borderColor: 'divider',
+                    '& .MuiTabs-indicator': { height: 2, backgroundColor: primaryColor },
+                    '& .MuiTab-root': {
+                      minHeight: 0,
+                      py: 1,
+                      px: 2,
+                      fontSize: 12,
+                      fontWeight: 700,
+                      letterSpacing: '0.1em',
+                      color: 'text.secondary',
+                      '&.Mui-selected': { color: primaryColor },
+                    },
+                  }}
+                >
+                  {[
+                    <Tab key="totals" value="totals" label="Totales" disableRipple />,
+                    ...(runStations.length > 0
+                      ? [<Tab key="runs" value="runs" label="Carreras" disableRipple />]
+                      : []),
+                    ...(zoneStations.length > 0
+                      ? [<Tab key="zones" value="zones" label="Zonas" disableRipple />]
+                      : []),
+                  ]}
+                </Tabs>
+              )}
 
               {section === 'totals' && (
                 <Stack spacing={2}>
