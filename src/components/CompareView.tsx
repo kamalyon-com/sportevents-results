@@ -19,7 +19,9 @@ import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import { useRaceResults } from '../hooks/useRaceResults';
 import { SearchForm } from './SearchForm';
 import { AthletePicker } from './AthletePicker';
+import { ChartLegend, MultiPositionChart, StationBarsChart } from './AnalyzeCharts';
 import { formatDelta, toSeconds } from '../lib/time';
+import { shortLabel } from '../lib/stations';
 import { Athlete, RREventConfig, WidgetConfig } from '../lib/types';
 
 /** Máximo de atletas comparables a la vez — más columnas no caben en pantalla. */
@@ -100,6 +102,60 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
 
   const sectorOf = (athlete: Athlete, station: string) =>
     athlete.splits.find((s) => s.station === station)?.sector || '';
+
+  // Estaciones con parciales utilizables por todos los gráficos
+  const chartStations = useMemo(
+    () => stations.filter((st) => selected.some((a) => toSeconds(sectorOf(a, st)) > 0)),
+    [stations, selected],
+  );
+
+  const seriesColor = (i: number) => COLUMN_COLORS[i % COLUMN_COLORS.length];
+
+  /** Posición de cada atleta tras cada estación, según el tiempo acumulado. */
+  const positionSeries = useMemo(() => {
+    const labels: string[] = [];
+    const ranksPerAthlete: (number | null)[][] = selected.map(() => []);
+    let total = 0;
+
+    for (const st of chartStations) {
+      const field = athletes
+        .map((a) => toSeconds(a.splits.find((s) => s.station === st)?.time || ''))
+        .filter((v) => isFinite(v) && v > 0);
+      if (field.length < 2) continue;
+      labels.push(shortLabel(st));
+      total = Math.max(total, field.length);
+      selected.forEach((a, i) => {
+        const own = toSeconds(a.splits.find((s) => s.station === st)?.time || '');
+        ranksPerAthlete[i].push(
+          isFinite(own) && own > 0 ? field.filter((v) => v < own).length + 1 : null,
+        );
+      });
+    }
+
+    if (labels.length < 2) return null;
+    return {
+      labels,
+      total,
+      series: selected.map((a, i) => ({ name: a.name, color: seriesColor(i), values: ranksPerAthlete[i] })),
+    };
+  }, [chartStations, selected, athletes]);
+
+  /** Tiempo de sector de cada atleta en cada estación. */
+  const stationSeries = useMemo(() => {
+    if (chartStations.length === 0) return null;
+    return {
+      labels: chartStations.map(shortLabel),
+      fullLabels: chartStations,
+      series: selected.map((a, i) => ({
+        name: a.name,
+        color: seriesColor(i),
+        values: chartStations.map((st) => {
+          const v = toSeconds(sectorOf(a, st));
+          return isFinite(v) && v > 0 ? v : null;
+        }),
+      })),
+    };
+  }, [chartStations, selected]);
 
   // ─── Selección de evento ───────────────────────────────────────────────────
   if (phase === 'search' || phase === 'loading') {
@@ -220,12 +276,42 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
               </Typography>
             </Box>
           ) : (
-            <ComparisonTable
-              selected={selected}
-              stations={stations}
-              sectorOf={sectorOf}
-              primaryColor={primaryColor}
-            />
+            <Stack spacing={2}>
+              {positionSeries && (
+                <Paper variant="outlined" sx={{ p: 2, borderColor: 'divider' }}>
+                  <Typography variant="body2" sx={{ fontWeight: 800, color: primaryColor, mb: 1 }}>
+                    Evolución de la posición
+                  </Typography>
+                  <ChartLegend series={positionSeries.series} />
+                  <MultiPositionChart
+                    labels={positionSeries.labels}
+                    series={positionSeries.series}
+                    total={positionSeries.total}
+                  />
+                </Paper>
+              )}
+
+              {stationSeries && (
+                <Paper variant="outlined" sx={{ p: 2, borderColor: 'divider' }}>
+                  <Typography variant="body2" sx={{ fontWeight: 800, color: primaryColor, mb: 1 }}>
+                    Tiempo por estación
+                  </Typography>
+                  <ChartLegend series={stationSeries.series} />
+                  <StationBarsChart
+                    labels={stationSeries.labels}
+                    fullLabels={stationSeries.fullLabels}
+                    series={stationSeries.series}
+                  />
+                </Paper>
+              )}
+
+              <ComparisonTable
+                selected={selected}
+                stations={stations}
+                sectorOf={sectorOf}
+                primaryColor={primaryColor}
+              />
+            </Stack>
           )}
         </>
       )}

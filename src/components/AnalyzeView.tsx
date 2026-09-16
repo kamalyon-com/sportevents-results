@@ -18,30 +18,13 @@ import { SearchForm } from './SearchForm';
 import { AthletePicker } from './AthletePicker';
 import { DistributionChart, PositionEvolutionChart, RadarChart } from './AnalyzeCharts';
 import { formatDelta, formatDuration, toSeconds } from '../lib/time';
+import { StationKind, shortLabel, stationKind } from '../lib/stations';
 import { Athlete, RREventConfig, WidgetConfig } from '../lib/types';
 
 const RUN_COLOR = '#FF8C42';
 const ZONE_COLOR = '#7BD389';
 
 const athleteKey = (a: Athlete) => `${a.event_id}-${a.bib}`;
-
-type StationKind = 'run' | 'zone' | 'other';
-
-function stationKind(station: string): StationKind {
-  const s = station.trim();
-  if (/^(carrera|run)\b/i.test(s)) return 'run';
-  if (/^(zona|zone)\b/i.test(s)) return 'zone';
-  return 'other';
-}
-
-/** Etiqueta corta para ejes con poco espacio: "Carrera 3" → "C3", "Zona 2 - Row" → "Z2". */
-function shortLabel(station: string): string {
-  const run = station.match(/^(?:carrera|run)\s*(\d+)/i);
-  if (run) return `C${run[1]}`;
-  const zone = station.match(/^(?:zona|zone)\s*(\d+)/i);
-  if (zone) return `Z${zone[1]}`;
-  return station.length > 7 ? `${station.slice(0, 7)}…` : station;
-}
 
 interface Metric {
   label: string;

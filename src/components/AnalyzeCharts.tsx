@@ -309,3 +309,163 @@ export function RadarChart({
     </Box>
   );
 }
+
+// ─── Series multi-atleta ─────────────────────────────────────────────────────
+
+export interface ChartSeries {
+  name: string;
+  color: string;
+  /** Un valor por etiqueta; null cuando el atleta no tiene ese parcial. */
+  values: (number | null)[];
+}
+
+/** Evolución de la posición de varios atletas a la vez. */
+export function MultiPositionChart({
+  labels,
+  series,
+  total,
+}: {
+  labels: string[];
+  series: ChartSeries[];
+  total: number;
+}) {
+  const theme = useTheme();
+  const W = 760;
+  const H = 260;
+  const PAD_L = 40;
+  const PAD_R = 12;
+  const TOP = 16;
+  const BOTTOM = H - 34;
+
+  const all = series.flatMap((s) => s.values).filter((v): v is number => v !== null);
+  if (labels.length < 2 || all.length === 0) {
+    return (
+      <Box sx={{ py: 3, textAlign: 'center', color: 'text.disabled', fontSize: 12 }}>
+        Sin parciales suficientes
+      </Box>
+    );
+  }
+
+  const margin = Math.max(1, Math.round((Math.max(...all) - Math.min(...all)) * 0.25));
+  const lo = Math.max(1, Math.min(...all) - margin);
+  const hi = Math.min(total, Math.max(...all) + margin);
+  const span = Math.max(1, hi - lo);
+
+  const xOf = (i: number) => PAD_L + (i / (labels.length - 1)) * (W - PAD_L - PAD_R);
+  const yOf = (rank: number) => TOP + ((rank - lo) / span) * (BOTTOM - TOP);
+  const labelStep = labels.length > 12 ? 2 : 1;
+  const yTicks = Array.from(new Set([lo, Math.round((lo + hi) / 2), hi]));
+
+  return (
+    <Box
+      component="svg"
+      viewBox={`0 0 ${W} ${H}`}
+      sx={{ width: '100%', height: 'auto', display: 'block', overflow: 'visible' }}
+      role="img"
+      aria-label="Evolución de la posición de los atletas seleccionados"
+    >
+      {yTicks.map((t) => (
+        <g key={t}>
+          <line x1={PAD_L} y1={yOf(t)} x2={W - PAD_R} y2={yOf(t)} stroke={theme.palette.divider} strokeWidth="1" strokeDasharray="3 4" />
+          <text x={PAD_L - 8} y={yOf(t) + 4} textAnchor="end" fill={theme.palette.text.secondary} fontSize="11" fontFamily="monospace">
+            {`#${t}`}
+          </text>
+        </g>
+      ))}
+      {series.map((s) => {
+        const pts = s.values
+          .map((v, i) => (v === null ? null : `${xOf(i).toFixed(1)},${yOf(v).toFixed(1)}`))
+          .filter((p): p is string => p !== null);
+        return (
+          <g key={s.name}>
+            <polyline points={pts.join(' ')} fill="none" stroke={s.color} strokeWidth="2" strokeLinejoin="round" />
+            {s.values.map((v, i) =>
+              v === null ? null : (
+                <circle key={i} cx={xOf(i)} cy={yOf(v)} r="3.5" fill={theme.palette.background.paper} stroke={s.color} strokeWidth="2">
+                  <title>{`${s.name} — ${labels[i]}: #${v}/${total}`}</title>
+                </circle>
+              ),
+            )}
+          </g>
+        );
+      })}
+      {labels.map((l, i) =>
+        i % labelStep === 0 ? (
+          <text key={l + i} x={xOf(i)} y={BOTTOM + 18} textAnchor="middle" fill={theme.palette.text.secondary} fontSize="11">
+            {l}
+          </text>
+        ) : null,
+      )}
+    </Box>
+  );
+}
+
+/** Barras agrupadas: tiempo de cada atleta en cada estación. */
+export function StationBarsChart({
+  labels,
+  fullLabels,
+  series,
+}: {
+  labels: string[];
+  fullLabels: string[];
+  series: ChartSeries[];
+}) {
+  const theme = useTheme();
+  const PAD_L = 46;
+  const PAD_R = 12;
+  const ROW_H = 13;
+  const GROUP_GAP = 12;
+  const W = 760;
+  const groupH = series.length * ROW_H + GROUP_GAP;
+  const H = labels.length * groupH + 24;
+
+  const max = Math.max(...series.flatMap((s) => s.values).filter((v): v is number => v !== null), 1);
+
+  return (
+    <Box
+      component="svg"
+      viewBox={`0 0 ${W} ${H}`}
+      sx={{ width: '100%', height: 'auto', display: 'block', overflow: 'visible' }}
+      role="img"
+      aria-label="Tiempo por estación de los atletas seleccionados"
+    >
+      {labels.map((l, gi) => {
+        const top = gi * groupH + 8;
+        return (
+          <g key={l + gi}>
+            <text x={PAD_L - 8} y={top + (series.length * ROW_H) / 2 + 4} textAnchor="end" fill={theme.palette.text.secondary} fontSize="11">
+              {l}
+              <title>{fullLabels[gi]}</title>
+            </text>
+            {series.map((s, si) => {
+              const v = s.values[gi];
+              const y = top + si * ROW_H;
+              const w = v === null ? 0 : (v / max) * (W - PAD_L - PAD_R);
+              return (
+                <rect key={s.name} x={PAD_L} y={y} width={Math.max(w, 1)} height={ROW_H - 3} fill={s.color} rx="1">
+                  <title>{`${s.name} — ${fullLabels[gi]}: ${v === null ? '—' : formatDuration(v)}`}</title>
+                </rect>
+              );
+            })}
+          </g>
+        );
+      })}
+    </Box>
+  );
+}
+
+/** Leyenda compartida por los gráficos multi-atleta. */
+export function ChartLegend({ series }: { series: ChartSeries[] }) {
+  return (
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, mb: 1 }}>
+      {series.map((s) => (
+        <Box key={s.name} sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}>
+          <Box sx={{ width: 10, height: 10, borderRadius: '2px', backgroundColor: s.color, flexShrink: 0 }} />
+          <Box component="span" sx={{ fontSize: 12, color: 'text.secondary' }}>
+            {s.name}
+          </Box>
+        </Box>
+      ))}
+    </Box>
+  );
+}
