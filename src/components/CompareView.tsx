@@ -378,25 +378,42 @@ function ComparisonTable({
           <TableHead>
             <TableRow>
               <TableCell sx={thSx} />
-              {selected.map((a, i) => (
-                <TableCell key={athleteKey(a)} sx={{ ...thSx, borderTop: `3px solid ${COLUMN_COLORS[i % COLUMN_COLORS.length]}` }} align="center">
-                  <Typography variant="body2" sx={{ fontWeight: 700, color: 'text.primary', textTransform: 'none', letterSpacing: 0 }}>
-                    {a.name}
-                  </Typography>
-                  {a.members?.map((m, j) => (
-                    <Typography
-                      key={j}
-                      variant="caption"
-                      sx={{ display: 'block', color: 'text.secondary', textTransform: 'none', letterSpacing: 0, lineHeight: 1.4 }}
-                    >
-                      {m.name}
-                    </Typography>
-                  ))}
-                  <Typography variant="caption" sx={{ fontFamily: 'monospace', color: 'text.disabled' }}>
-                    #{a.bib}
-                  </Typography>
-                </TableCell>
-              ))}
+              {selected.map((a, i) => {
+                const accent = COLUMN_COLORS[i % COLUMN_COLORS.length];
+                return (
+                  <TableCell key={athleteKey(a)} sx={{ ...thSx, borderTop: `3px solid ${accent}` }} align="center">
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.75, flexWrap: 'wrap' }}>
+                      <Box
+                        component="span"
+                        sx={{
+                          fontFamily: 'monospace',
+                          fontSize: 10,
+                          fontWeight: 700,
+                          lineHeight: 1.7,
+                          px: 0.6,
+                          borderRadius: 0.75,
+                          color: accent,
+                          backgroundColor: `${accent}1f`,
+                        }}
+                      >
+                        #{a.bib}
+                      </Box>
+                      <Typography variant="body2" sx={{ fontWeight: 700, color: 'text.primary', textTransform: 'none', letterSpacing: 0 }}>
+                        {a.name}
+                      </Typography>
+                    </Box>
+                    {a.members?.map((m, j) => (
+                      <Typography
+                        key={j}
+                        variant="caption"
+                        sx={{ display: 'block', color: 'text.secondary', textTransform: 'none', letterSpacing: 0, lineHeight: 1.4 }}
+                      >
+                        {m.name}
+                      </Typography>
+                    ))}
+                  </TableCell>
+                );
+              })}
             </TableRow>
           </TableHead>
           <TableBody>
