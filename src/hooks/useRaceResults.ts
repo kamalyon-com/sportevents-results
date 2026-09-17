@@ -300,6 +300,15 @@ async function fetchAthletesForRREvent(
 
 export type Phase = 'search' | 'loading' | 'results';
 
+/** Filtros que impone la modalidad elegida: las entradas por género traen su categoría fija. */
+export function presetFiltersFor(eventCfg: RREventConfig, search = ''): Partial<FilterState> {
+  const gender =
+    eventCfg.initialCategory === 'Femenina' ? 'F' :
+    eventCfg.initialCategory === 'Masculina' ? 'M' :
+    eventCfg.initialCategory === 'Mixta' ? 'Mixta' : undefined;
+  return { search, ...(gender ? { gender } : {}) };
+}
+
 interface UseRaceResultsReturn {
   phase: Phase;
   executeSearch: (eventCfg: RREventConfig, initialFilters?: Partial<FilterState>) => void;
@@ -394,10 +403,14 @@ export function useRaceResults(config: WidgetConfig): UseRaceResultsReturn {
   // Keep a ref to the last search params so reload() can repeat it
   const lastSearchRef = React.useRef<{ eventCfg: RREventConfig; initialFilters?: Partial<FilterState> } | null>(null);
 
+  /** Filtros impuestos por la modalidad elegida: no se descartan aunque queden sin opciones. */
+  const presetFiltersRef = React.useRef<Partial<FilterState>>({});
+
   const doLoad = useCallback(
     async (eventCfg: RREventConfig, initialFilters?: Partial<FilterState>) => {
       setPhase('loading');
       setError(null);
+      presetFiltersRef.current = initialFilters ?? {};
 
       // Event is registered but has no results published yet
       if (eventCfg.noResults) {
@@ -460,42 +473,68 @@ export function useRaceResults(config: WidgetConfig): UseRaceResultsReturn {
     [],
   );
 
-  const genderOptions = useMemo(
-    () => Array.from(new Set(athletes.map((a) => a.gender).filter(Boolean))).sort() as string[],
-    [athletes],
-  );
-  const categoryOptions = useMemo(
-    () => Array.from(new Set(athletes.map((a) => a.category).filter(Boolean))).sort(),
-    [athletes],
-  );
-  const ageGroupOptions = useMemo(
-    () => Array.from(new Set(athletes.map((a) => a.age_group).filter(Boolean))).sort(),
-    [athletes],
-  );
-  const nationalityOptions = useMemo(
-    () => Array.from(new Set(athletes.map((a) => a.nationality).filter(Boolean))).sort(),
-    [athletes],
-  );
+  /** Un predicado por filtro, para poder aplicarlos todos o todos menos uno. */
+  const matchers = useMemo(() => {
+    const q = filters.search.trim().toLowerCase();
+    return {
+      gender: (a: Athlete) => !filters.gender || a.gender === filters.gender,
+      ageGroup: (a: Athlete) => !filters.ageGroup || a.age_group === filters.ageGroup,
+      category: (a: Athlete) => !filters.category || a.category === filters.category,
+      nationality: (a: Athlete) => !filters.nationality || a.nationality === filters.nationality,
+      search: (a: Athlete) =>
+        !q ||
+        a.name.toLowerCase().includes(q) ||
+        a.bib.toLowerCase().includes(q) ||
+        a.category.toLowerCase().includes(q),
+    };
+  }, [filters]);
+
+  /**
+   * Opciones de cada filtro calculadas sobre los atletas que pasan el resto de filtros.
+   * Un filtro se deja vacío (y la interfaz lo oculta) si algún atleta no tiene ese dato,
+   * porque entonces filtrar por él escondería gente sin que se note.
+   */
+  const facets = useMemo(() => {
+    const keys = Object.keys(matchers) as Array<keyof typeof matchers>;
+    const optionsFor = (own: keyof typeof matchers, value: (a: Athlete) => string | undefined) => {
+      const others = keys.filter((k) => k !== own).map((k) => matchers[k]);
+      const pool = athletes.filter((a) => others.every((fn) => fn(a)));
+      if (pool.length === 0 || pool.some((a) => !value(a))) return [];
+      return Array.from(new Set(pool.map(value) as string[])).sort();
+    };
+    return {
+      genderOptions: optionsFor('gender', (a) => a.gender),
+      categoryOptions: optionsFor('category', (a) => a.category),
+      ageGroupOptions: optionsFor('ageGroup', (a) => a.age_group),
+      nationalityOptions: optionsFor('nationality', (a) => a.nationality),
+    };
+  }, [athletes, matchers]);
+
+  const { genderOptions, categoryOptions, ageGroupOptions, nationalityOptions } = facets;
+
+  // Descarta un filtro que ha dejado de ofrecerse, para no vaciar la lista sin explicación
+  useEffect(() => {
+    setFilters((f) => {
+      const preset = presetFiltersRef.current;
+      const next = { ...f };
+      if (f.gender && !preset.gender && !genderOptions.includes(f.gender)) next.gender = '';
+      if (f.category && !preset.category && !categoryOptions.includes(f.category)) next.category = '';
+      if (f.ageGroup && !preset.ageGroup && !ageGroupOptions.includes(f.ageGroup)) next.ageGroup = '';
+      if (f.nationality && !preset.nationality && !nationalityOptions.includes(f.nationality)) next.nationality = '';
+      const changed =
+        next.gender !== f.gender ||
+        next.category !== f.category ||
+        next.ageGroup !== f.ageGroup ||
+        next.nationality !== f.nationality;
+      return changed ? next : f;
+    });
+  }, [genderOptions, categoryOptions, ageGroupOptions, nationalityOptions]);
 
   const filteredAthletes = useMemo(() => {
-    let result = athletes;
+    const checks = Object.values(matchers);
+    const result = athletes.filter((a) => checks.every((fn) => fn(a)));
 
-    if (filters.gender) result = result.filter((a) => a.gender === filters.gender);
-    if (filters.ageGroup) result = result.filter((a) => a.age_group === filters.ageGroup);
-    if (filters.category) result = result.filter((a) => a.category === filters.category);
-    if (filters.nationality) result = result.filter((a) => a.nationality === filters.nationality);
-
-    if (filters.search.trim()) {
-      const q = filters.search.trim().toLowerCase();
-      result = result.filter(
-        (a) =>
-          a.name.toLowerCase().includes(q) ||
-          a.bib.toLowerCase().includes(q) ||
-          a.category.toLowerCase().includes(q),
-      );
-    }
-
-    result = [...result].sort((a, b) => {
+    return result.sort((a, b) => {
       let valA: string | number;
       let valB: string | number;
       switch (sortConfig.field) {
@@ -509,9 +548,7 @@ export function useRaceResults(config: WidgetConfig): UseRaceResultsReturn {
       const cmp = valA < valB ? -1 : valA > valB ? 1 : 0;
       return sortConfig.direction === 'asc' ? cmp : -cmp;
     });
-
-    return result;
-  }, [athletes, filters, sortConfig]);
+  }, [athletes, matchers, sortConfig]);
 
   return {
     phase,

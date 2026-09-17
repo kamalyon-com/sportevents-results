@@ -80,6 +80,9 @@ export const AthletePicker: React.FC<AthletePickerProps> = ({
   const visible = athletes.slice(0, limit);
   const full = max !== undefined && selected.length >= max;
 
+  // Sin género para todos los atletas el dato no es fiable, así que ni se filtra ni se muestra
+  const showGender = genderOptions.length > 0;
+
   // El grupo de edad solo aporta información si no coincide con la categoría
   const showAgeGroup =
     ageGroupOptions.length > 1 &&
@@ -239,7 +242,7 @@ export const AthletePicker: React.FC<AthletePickerProps> = ({
                   </Typography>
                   <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block' }}>
                     #{a.bib}
-                    {a.gender ? ` · ${GENDER_LABELS[a.gender] ?? a.gender}` : ''}
+                    {showGender && a.gender ? ` · ${GENDER_LABELS[a.gender] ?? a.gender}` : ''}
                     {a.age_group ? ` · ${a.age_group}` : ''}
                     {a.category ? ` · ${a.category}` : ''}
                   </Typography>
