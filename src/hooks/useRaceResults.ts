@@ -233,7 +233,7 @@ function mapRowToAthlete(row: RRRow, rank: number, eventId: string, mapping: RRF
   };
 }
 
-async function fetchAthletesForRREvent(
+export async function fetchAthletesForRREvent(
   eventCfg: RREventConfig,
   apiKey: string,
 ): Promise<{ athletes: Athlete[]; eventInfo: EventInfo }> {

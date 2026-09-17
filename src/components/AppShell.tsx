@@ -12,17 +12,20 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import InsightsIcon from '@mui/icons-material/Insights';
+import HistoryIcon from '@mui/icons-material/History';
 import { RaceResultsWidget } from './RaceResultsWidget';
 import { CompareView } from './CompareView';
 import { AnalyzeView } from './AnalyzeView';
+import { HistoryView } from './HistoryView';
 import { WidgetConfig } from '../lib/types';
 
-type TabKey = 'search' | 'compare' | 'analyze';
+type TabKey = 'search' | 'compare' | 'analyze' | 'history';
 
 const TABS: Array<{ key: TabKey; label: string; icon: React.ReactElement }> = [
   { key: 'search', label: 'Buscar', icon: <SearchIcon fontSize="small" /> },
   { key: 'compare', label: 'Comparar', icon: <CompareArrowsIcon fontSize="small" /> },
   { key: 'analyze', label: 'Analizar', icon: <InsightsIcon fontSize="small" /> },
+  { key: 'history', label: 'Trayectoria', icon: <HistoryIcon fontSize="small" /> },
 ];
 
 // ─── Panel: se mantiene montado para no perder el estado al cambiar de tab ───
@@ -139,6 +142,13 @@ export const AppShell: React.FC<AppShellProps> = (config) => {
       <TabPanel active={tab === 'analyze'}>
         <AnalyzeView {...config} />
       </TabPanel>
+
+      {/* Se monta solo al entrar: descarga todas las carreras y no conviene hacerlo de fondo */}
+      {tab === 'history' && (
+        <TabPanel active>
+          <HistoryView {...config} />
+        </TabPanel>
+      )}
     </Box>
   );
 };

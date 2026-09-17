@@ -789,6 +789,136 @@ export function StationBarsChart({
   );
 }
 
+/** Una carrera dentro de la trayectoria de una persona. */
+export interface ProgressionPoint {
+  label: string;
+  fullLabel: string;
+  seconds: number;
+  rank: number;
+  total: number;
+}
+
+// ─── Progresión del tiempo carrera a carrera ─────────────────────────────────
+
+export function ProgressionChart({ points, color }: { points: ProgressionPoint[]; color: string }) {
+  const theme = useTheme();
+  const [tip, setTip] = useState<TipState | null>(null);
+  const [hover, setHover] = useState<number | null>(null);
+  const W = 760;
+  const H = 220;
+  const PAD_L = 52;
+  const PAD_R = 12;
+  const TOP = 16;
+  const BOTTOM = H - 38;
+
+  if (points.length < 2) {
+    return (
+      <Box sx={{ py: 3, textAlign: 'center', color: 'text.disabled', fontSize: 12 }}>
+        Hace falta más de una carrera para ver la progresión
+      </Box>
+    );
+  }
+
+  const times = points.map((p) => p.seconds);
+  const min = Math.min(...times);
+  const max = Math.max(...times);
+  const margin = Math.max(30, (max - min) * 0.2);
+  const lo = Math.max(0, min - margin);
+  const hi = max + margin;
+  const span = Math.max(1, hi - lo);
+
+  const xOf = (i: number) => PAD_L + (i / (points.length - 1)) * (W - PAD_L - PAD_R);
+  // Menos tiempo, más arriba: mejorar sube la línea
+  const yOf = (s: number) => TOP + ((s - lo) / span) * (BOTTOM - TOP);
+  const yTicks = [lo, (lo + hi) / 2, hi];
+  const labelStep = points.length > 10 ? 2 : 1;
+
+  const handleMove = (e: React.MouseEvent<SVGSVGElement> | React.TouchEvent<SVGSVGElement>) => {
+    const { vx, py, flip, scale } = pointerPos(e, W, H);
+    const step = (W - PAD_L - PAD_R) / (points.length - 1);
+    const i = Math.min(Math.max(Math.round((vx - PAD_L) / step), 0), points.length - 1);
+    const p = points[i];
+    const first = points[0].seconds;
+    const rows: TipRow[] = [
+      { color, label: 'Tiempo', value: formatDuration(p.seconds) },
+      { label: 'Posición', value: p.total > 0 ? `#${p.rank} / ${p.total}` : `#${p.rank}` },
+    ];
+    if (i > 0) {
+      const delta = p.seconds - first;
+      rows.push({ label: 'Desde la primera', value: `${delta >= 0 ? '+' : '−'}${formatDuration(Math.abs(delta))}` });
+    }
+    setHover(i);
+    setTip({ x: xOf(i) * scale, y: py, flip, title: p.fullLabel, rows });
+  };
+
+  const handleLeave = () => {
+    setTip(null);
+    setHover(null);
+  };
+
+  return (
+    <ChartFrame tip={tip}>
+      <Box
+        component="svg"
+        viewBox={`0 0 ${W} ${H}`}
+        sx={{ width: '100%', height: 'auto', display: 'block', overflow: 'visible', touchAction: 'pan-y' }}
+        role="img"
+        aria-label="Progresión de los tiempos"
+        onMouseMove={handleMove}
+        onMouseLeave={handleLeave}
+        onTouchStart={handleMove}
+        onTouchMove={handleMove}
+        onTouchEnd={handleLeave}
+      >
+        {yTicks.map((t) => (
+          <g key={t}>
+            <line x1={PAD_L} y1={yOf(t)} x2={W - PAD_R} y2={yOf(t)} stroke={theme.palette.divider} strokeWidth="1" strokeDasharray="3 4" />
+            <text x={PAD_L - 8} y={yOf(t) + 4} textAnchor="end" fill={theme.palette.text.secondary} fontSize="11" fontFamily="monospace">
+              {formatDuration(t)}
+            </text>
+          </g>
+        ))}
+        {hover !== null && (
+          <line x1={xOf(hover)} y1={TOP} x2={xOf(hover)} y2={BOTTOM} stroke={color} strokeWidth="1" strokeDasharray="3 3" />
+        )}
+        <polyline
+          points={points.map((p, i) => `${xOf(i).toFixed(1)},${yOf(p.seconds).toFixed(1)}`).join(' ')}
+          fill="none"
+          stroke={color}
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+        {points.map((p, i) => (
+          <circle
+            key={i}
+            cx={xOf(i)}
+            cy={yOf(p.seconds)}
+            r={hover === i ? 5.5 : 3.5}
+            fill={theme.palette.background.paper}
+            stroke={color}
+            strokeWidth="2"
+          />
+        ))}
+        {points.map((p, i) =>
+          i % labelStep === 0 ? (
+            <text
+              key={p.label + i}
+              x={xOf(i)}
+              y={BOTTOM + 18}
+              textAnchor={i === 0 ? 'start' : i === points.length - 1 ? 'end' : 'middle'}
+              fill={hover === i ? color : theme.palette.text.secondary}
+              fontSize="11"
+            >
+              {p.label}
+            </text>
+          ) : null,
+        )}
+        <rect x="0" y="0" width={W} height={H} fill="transparent" />
+      </Box>
+    </ChartFrame>
+  );
+}
+
 /** Leyenda compartida por los gráficos multi-atleta. */
 export function ChartLegend({ series }: { series: ChartSeries[] }) {
   return (

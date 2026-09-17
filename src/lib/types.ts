@@ -22,6 +22,14 @@ export interface Athlete {
   club?: string;
   /** Member entries for pairs/teams contests — each member's name and optional club. */
   members?: Array<{ name: string; club?: string }>;
+  /** Fichero de datos del que sale la fila; identifica la carrera al mezclar eventos. */
+  source_key?: string;
+  /** Nombre, fecha y modalidad de la carrera de origen. */
+  event_name?: string;
+  event_date?: string;
+  event_modality?: string;
+  /** Participantes en su carrera, para poder decir "#12 de 85". */
+  field_size?: number;
 }
 
 export interface EventInfo {
