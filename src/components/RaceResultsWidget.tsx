@@ -95,9 +95,11 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
     [eventsForSelector, selectorRace],
   );
   const [inResultsLoading, setInResultsLoading] = useState(false);
+  // Un evento sin resultados pasa de 'loading' a 'results' en el mismo lote, así que
+  // también hay que mirar los datos cargados para no dejar el indicador girando
   useEffect(() => {
-    if (phase === 'results') setInResultsLoading(false);
-  }, [phase]);
+    if (phase !== 'loading') setInResultsLoading(false);
+  }, [phase, activeEvent, filteredAthletes]);
 
   const handleSelectorRaceChange = (newRace: string) => {
     setSelectorRace(newRace);
