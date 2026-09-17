@@ -383,7 +383,16 @@ function ComparisonTable({
                   <Typography variant="body2" sx={{ fontWeight: 700, color: 'text.primary', textTransform: 'none', letterSpacing: 0 }}>
                     {a.name}
                   </Typography>
-                  <Typography variant="caption" sx={{ fontFamily: 'monospace', color: 'text.secondary' }}>
+                  {a.members?.map((m, j) => (
+                    <Typography
+                      key={j}
+                      variant="caption"
+                      sx={{ display: 'block', color: 'text.secondary', textTransform: 'none', letterSpacing: 0, lineHeight: 1.4 }}
+                    >
+                      {m.name}
+                    </Typography>
+                  ))}
+                  <Typography variant="caption" sx={{ fontFamily: 'monospace', color: 'text.disabled' }}>
                     #{a.bib}
                   </Typography>
                 </TableCell>

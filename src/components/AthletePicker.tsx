@@ -240,7 +240,12 @@ export const AthletePicker: React.FC<AthletePickerProps> = ({
                   >
                     {a.name}
                   </Typography>
-                  <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block' }}>
+                  {a.members && (
+                    <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', lineHeight: 1.4 }}>
+                      {a.members.map((m) => m.name).join(' · ')}
+                    </Typography>
+                  )}
+                  <Typography variant="caption" color="text.disabled" noWrap sx={{ display: 'block' }}>
                     #{a.bib}
                     {showGender && a.gender ? ` · ${GENDER_LABELS[a.gender] ?? a.gender}` : ''}
                     {a.age_group ? ` · ${a.age_group}` : ''}
