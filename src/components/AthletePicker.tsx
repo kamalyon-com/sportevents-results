@@ -191,6 +191,14 @@ export const AthletePicker: React.FC<AthletePickerProps> = ({
             const isSelected = selectedKeys.has(athleteKey(a));
             const disabled = !isSelected && full;
             const accent = isSelected ? colorOf?.(a) ?? primaryColor : primaryColor;
+            // Categoría y grupo de edad suelen coincidir; repetirlos no aporta nada
+            const detail = [
+              showGender && a.gender ? GENDER_LABELS[a.gender] ?? a.gender : null,
+              a.age_group,
+              a.category !== a.age_group ? a.category : null,
+            ]
+              .filter(Boolean)
+              .join(' · ');
             const CheckedIcon = mode === 'single' ? RadioButtonCheckedIcon : CheckBoxIcon;
             const UncheckedIcon = mode === 'single' ? RadioButtonUncheckedIcon : CheckBoxOutlineBlankIcon;
             return (
@@ -233,24 +241,41 @@ export const AthletePicker: React.FC<AthletePickerProps> = ({
                   {a.rank_overall ? `${a.rank_overall}º` : '—'}
                 </Typography>
                 <Box sx={{ minWidth: 0, flexGrow: 1 }}>
-                  <Typography
-                    variant="body2"
-                    sx={{ fontWeight: isSelected ? 700 : 500, color: isSelected ? accent : 'text.primary', lineHeight: 1.3 }}
-                    noWrap
-                  >
-                    {a.name}
-                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, minWidth: 0 }}>
+                    <Box
+                      component="span"
+                      sx={{
+                        fontFamily: 'monospace',
+                        fontSize: 10,
+                        fontWeight: 700,
+                        lineHeight: 1.7,
+                        px: 0.6,
+                        borderRadius: 0.75,
+                        flexShrink: 0,
+                        color: isSelected ? accent : 'text.secondary',
+                        backgroundColor: isSelected ? `${accent}1f` : 'action.selected',
+                      }}
+                    >
+                      #{a.bib}
+                    </Box>
+                    <Typography
+                      variant="body2"
+                      sx={{ fontWeight: isSelected ? 700 : 500, color: isSelected ? accent : 'text.primary', lineHeight: 1.3 }}
+                      noWrap
+                    >
+                      {a.name}
+                    </Typography>
+                  </Box>
                   {a.members && (
                     <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', lineHeight: 1.4 }}>
                       {a.members.map((m) => m.name).join(' · ')}
                     </Typography>
                   )}
-                  <Typography variant="caption" color="text.disabled" noWrap sx={{ display: 'block' }}>
-                    #{a.bib}
-                    {showGender && a.gender ? ` · ${GENDER_LABELS[a.gender] ?? a.gender}` : ''}
-                    {a.age_group ? ` · ${a.age_group}` : ''}
-                    {a.category ? ` · ${a.category}` : ''}
-                  </Typography>
+                  {detail && (
+                    <Typography variant="caption" color="text.disabled" noWrap sx={{ display: 'block' }}>
+                      {detail}
+                    </Typography>
+                  )}
                 </Box>
                 <Typography
                   variant="body2"
