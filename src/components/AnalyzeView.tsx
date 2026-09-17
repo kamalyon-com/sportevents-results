@@ -163,6 +163,7 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
   const positionEvolution = useMemo(() => {
     if (!selected) return null;
     const labels: string[] = [];
+    const fullLabels: string[] = [];
     const ranks: number[] = [];
     let total = 0;
     selected.splits.forEach((split, i) => {
@@ -174,10 +175,11 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
         .filter((v) => isFinite(v) && v > 0);
       if (others.length < 2) return;
       labels.push(shortLabel(split.station));
+      fullLabels.push(split.station);
       ranks.push(others.filter((v) => v < own).length + 1);
       total = Math.max(total, others.length);
     });
-    return ranks.length >= 2 ? { labels, ranks, total } : null;
+    return ranks.length >= 2 ? { labels, fullLabels, ranks, total } : null;
   }, [selected, athletes]);
 
   const radar = useMemo(() => {
@@ -378,6 +380,7 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
                         </Stack>
                         <PositionEvolutionChart
                           labels={positionEvolution.labels}
+                          fullLabels={positionEvolution.fullLabels}
                           ranks={positionEvolution.ranks}
                           total={positionEvolution.total}
                           color={primaryColor}

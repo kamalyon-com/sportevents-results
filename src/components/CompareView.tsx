@@ -114,6 +114,7 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
   /** Posición de cada atleta tras cada estación, según el tiempo acumulado. */
   const positionSeries = useMemo(() => {
     const labels: string[] = [];
+    const fullLabels: string[] = [];
     const ranksPerAthlete: (number | null)[][] = selected.map(() => []);
     let total = 0;
 
@@ -123,6 +124,7 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
         .filter((v) => isFinite(v) && v > 0);
       if (field.length < 2) continue;
       labels.push(shortLabel(st));
+      fullLabels.push(st);
       total = Math.max(total, field.length);
       selected.forEach((a, i) => {
         const own = toSeconds(a.splits.find((s) => s.station === st)?.time || '');
@@ -135,6 +137,7 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
     if (labels.length < 2) return null;
     return {
       labels,
+      fullLabels,
       total,
       series: selected.map((a, i) => ({ name: a.name, color: seriesColor(i), values: ranksPerAthlete[i] })),
     };
@@ -285,6 +288,7 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
                   <ChartLegend series={positionSeries.series} />
                   <MultiPositionChart
                     labels={positionSeries.labels}
+                    fullLabels={positionSeries.fullLabels}
                     series={positionSeries.series}
                     total={positionSeries.total}
                   />
