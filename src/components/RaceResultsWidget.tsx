@@ -19,7 +19,7 @@ import {
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import SearchIcon from '@mui/icons-material/Search';
-import { useRaceResults } from '../hooks/useRaceResults';
+import { useRaceResults, presetFiltersFor } from '../hooks/useRaceResults';
 import { SearchForm } from './SearchForm';
 import { Filters } from './Filters';
 import { ResultsTable } from './ResultsTable';
@@ -139,13 +139,7 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
     (eventCfg: RREventConfig, name: string) => {
       setActiveEventCfg(eventCfg);
       setSelectedAthlete(null);
-      const genderFromCat = eventCfg.initialCategory === 'Femenina' ? 'F' :
-                            eventCfg.initialCategory === 'Masculina' ? 'M' :
-                            eventCfg.initialCategory === 'Mixta' ? 'Mixta' : undefined;
-      executeSearch(eventCfg, {
-        search: name,
-        ...(genderFromCat ? { gender: genderFromCat } : {}),
-      });
+      executeSearch(eventCfg, presetFiltersFor(eventCfg, name));
     },
     [executeSearch],
   );

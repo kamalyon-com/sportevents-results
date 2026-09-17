@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
-import { useRaceResults } from '../hooks/useRaceResults';
+import { useRaceResults, presetFiltersFor } from '../hooks/useRaceResults';
 import { SearchForm } from './SearchForm';
 import { AthletePicker } from './AthletePicker';
 import { ChartLegend, MultiPositionChart, StationBarsChart } from './AnalyzeCharts';
@@ -63,12 +63,12 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
   useEffect(() => {
     if (autoLoadedRef.current || events.length === 0) return;
     autoLoadedRef.current = true;
-    executeSearch(events[0]);
+    executeSearch(events[0], presetFiltersFor(events[0]));
   }, [events, executeSearch]);
 
   const handleSearch = (eventCfg: RREventConfig, name: string) => {
     setSelected([]);
-    executeSearch(eventCfg, { search: name });
+    executeSearch(eventCfg, presetFiltersFor(eventCfg, name));
   };
 
   const handleBack = () => {

@@ -13,7 +13,7 @@ import {
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import InsightsIcon from '@mui/icons-material/Insights';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import { useRaceResults } from '../hooks/useRaceResults';
+import { useRaceResults, presetFiltersFor } from '../hooks/useRaceResults';
 import { SearchForm } from './SearchForm';
 import { AthletePicker } from './AthletePicker';
 import { DistributionChart, PositionEvolutionChart, RadarChart } from './AnalyzeCharts';
@@ -79,12 +79,12 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
   useEffect(() => {
     if (autoLoadedRef.current || events.length === 0) return;
     autoLoadedRef.current = true;
-    executeSearch(events[0]);
+    executeSearch(events[0], presetFiltersFor(events[0]));
   }, [events, executeSearch]);
 
   const handleSearch = (eventCfg: RREventConfig, name: string) => {
     setSelected(null);
-    executeSearch(eventCfg, { search: name });
+    executeSearch(eventCfg, presetFiltersFor(eventCfg, name));
   };
 
   const handleBack = () => {
