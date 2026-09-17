@@ -20,14 +20,14 @@ Añade este código HTML donde quieras mostrar el widget:
 
 ```html
 <div id="sportevents-results" data-prefix="nombre de tu organización" data-theme="dark"></div>
-<script src="https://alex98ys.github.io/sportevents-results/sportevents-results.js"></script>
+<script src="https://kamalyon-com.github.io/sportevents-results/sportevents-results.js"></script>
 ```
 
 ### Parámetros disponibles
 
 | Atributo | Valores | Descripción |
 |---|---|---|
-| `data-prefix` | texto | Filtra los eventos cuyo nombre empiece por este texto (ej. `"strong race"`) |
+| `data-prefix` | texto | Muestra solo los eventos cuyo nombre contenga este texto, sin distinguir mayúsculas (ej. `"strong race"`). Afecta a las tres pestañas: buscador, comparativa y análisis |
 | `data-theme` | `dark` / `light` | Tema visual del widget (por defecto: `dark`) |
 
 ---
@@ -37,7 +37,7 @@ Añade este código HTML donde quieras mostrar el widget:
 Los resultados se descargan automáticamente cada día desde la API de RaceResult y se publican en GitHub Pages. No es necesario hacer nada manualmente.
 
 Si necesitas forzar una actualización inmediata:
-1. Ve a [Actions](https://github.com/alex98ys/sportevents-results/actions)
+1. Ve a [Actions](https://github.com/kamalyon-com/sportevents-results/actions)
 2. Selecciona **Refresh Race Data**
 3. Haz clic en **Run workflow**
 
