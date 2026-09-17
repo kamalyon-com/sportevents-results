@@ -23,7 +23,7 @@ import { Athlete, FilterState } from '../lib/types';
 
 const PAGE_SIZE = 40;
 
-const athleteKey = (a: Athlete) => `${a.event_id}-${a.bib}`;
+const athleteKey = (a: Athlete) => `${a.source_key ?? a.event_id}-${a.bib}`;
 
 const GENDER_LABELS: Record<string, string> = {
   M: 'Masculino',
@@ -193,6 +193,8 @@ export const AthletePicker: React.FC<AthletePickerProps> = ({
             const accent = isSelected ? colorOf?.(a) ?? primaryColor : primaryColor;
             // Categoría y grupo de edad suelen coincidir; repetirlos no aporta nada
             const detail = [
+              // Solo viene informado al buscar entre varias carreras
+              a.event_name,
               showGender && a.gender ? GENDER_LABELS[a.gender] ?? a.gender : null,
               a.age_group,
               a.category !== a.age_group ? a.category : null,

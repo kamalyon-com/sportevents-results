@@ -1,11 +1,14 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Alert,
   Box,
   Button,
   Chip,
+  FormControlLabel,
+  LinearProgress,
   Paper,
   Stack,
+  Switch,
   Table,
   TableBody,
   TableCell,
@@ -17,6 +20,7 @@ import {
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import { useRaceResults, presetFiltersFor } from '../hooks/useRaceResults';
+import { matchesQuery, normalizeName, useGlobalAthletes } from '../hooks/useGlobalAthletes';
 import { SearchForm } from './SearchForm';
 import { AthletePicker } from './AthletePicker';
 import { ChartLegend, MultiPositionChart, StationBarsChart } from './AnalyzeCharts';
@@ -30,7 +34,10 @@ const MAX_ATHLETES = 5;
 /** Colores de columna para distinguir a cada atleta. */
 const COLUMN_COLORS = ['#9fd4f9', '#FF8C42', '#7BD389', '#C792EA', '#FFD166'];
 
-const athleteKey = (a: Athlete) => `${a.event_id}-${a.bib}`;
+/** Tope de resultados de la búsqueda entre carreras, para no volcar miles de filas. */
+const CROSS_LIMIT = 200;
+
+const athleteKey = (a: Athlete) => `${a.source_key ?? a.event_id}-${a.bib}`;
 
 interface CompareViewProps extends WidgetConfig {}
 
@@ -55,8 +62,46 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
   } = useRaceResults(config);
 
   const [selected, setSelected] = useState<Athlete[]>([]);
+  const [crossEvent, setCrossEvent] = useState(false);
 
   const events = config.rrEvents && config.rrEvents.length > 0 ? config.rrEvents : availableEvents;
+  const { sources, loading: crossLoading, progress, loadAll } = useGlobalAthletes(events, config.apiKey);
+
+  // Al activar la búsqueda entre carreras hay que descargar todas las que haya en el índice
+  const handleCrossToggle = (on: boolean) => {
+    setCrossEvent(on);
+    setSelected([]);
+    if (on) loadAll();
+  };
+
+  /** Atletas de cualquier carrera que coinciden con el texto buscado. */
+  const crossPool = useMemo(() => {
+    if (!crossEvent) return null;
+    const q = normalizeName(filters.search);
+    if (q.length < 2) return [];
+    const out: Athlete[] = [];
+    for (const source of sources) {
+      for (const a of source.athletes) {
+        if (matchesQuery(a.name, q) || a.members?.some((m) => matchesQuery(m.name, q))) {
+          out.push(a);
+          if (out.length >= CROSS_LIMIT) return out;
+        }
+      }
+    }
+    return out;
+  }, [crossEvent, sources, filters.search]);
+
+  /** Pelotón con el que se compara cada atleta: el de su propia carrera. */
+  const poolOf = useCallback(
+    (a: Athlete) => (a.source_key ? sources.find((s) => s.key === a.source_key)?.athletes ?? [] : athletes),
+    [sources, athletes],
+  );
+
+  /** Cuando se mezclan carreras, las posiciones no son comparables entre sí. */
+  const mixedEvents = useMemo(
+    () => new Set(selected.map((a) => a.source_key ?? a.event_id)).size > 1,
+    [selected],
+  );
 
   // Carga el evento más reciente al entrar para no empezar con la lista vacía
   const autoLoadedRef = useRef(false);
@@ -113,13 +158,16 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
 
   /** Posición de cada atleta tras cada estación, según el tiempo acumulado. */
   const positionSeries = useMemo(() => {
+    // Con atletas de carreras distintas las posiciones no se pueden dibujar juntas
+    if (selected.length === 0 || mixedEvents) return null;
+    const field0 = poolOf(selected[0]);
     const labels: string[] = [];
     const fullLabels: string[] = [];
     const ranksPerAthlete: (number | null)[][] = selected.map(() => []);
     let total = 0;
 
     for (const st of chartStations) {
-      const field = athletes
+      const field = field0
         .map((a) => toSeconds(a.splits.find((s) => s.station === st)?.time || ''))
         .filter((v) => isFinite(v) && v > 0);
       if (field.length < 2) continue;
@@ -141,7 +189,7 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
       total,
       series: selected.map((a, i) => ({ name: a.name, color: seriesColor(i), values: ranksPerAthlete[i] })),
     };
-  }, [chartStations, selected, athletes]);
+  }, [chartStations, selected, mixedEvents, poolOf]);
 
   /** Tiempo de sector de cada atleta en cada estación. */
   const stationSeries = useMemo(() => {
@@ -224,6 +272,41 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
         </Box>
       ) : (
         <>
+          <Box sx={{ mb: 1.5 }}>
+            <FormControlLabel
+              control={
+                <Switch
+                  size="small"
+                  checked={crossEvent}
+                  onChange={(e) => handleCrossToggle(e.target.checked)}
+                  sx={{ '& .Mui-checked': { color: primaryColor }, '& .Mui-checked + .MuiSwitch-track': { backgroundColor: primaryColor } }}
+                />
+              }
+              label={
+                <Typography variant="caption" color="text.secondary">
+                  Buscar atletas en todas las carreras
+                </Typography>
+              }
+            />
+            {crossEvent && crossLoading && (
+              <Box sx={{ mt: 0.5 }}>
+                <LinearProgress
+                  variant={progress.total ? 'determinate' : 'indeterminate'}
+                  value={progress.total ? (progress.done / progress.total) * 100 : 0}
+                  sx={{ height: 3, '& .MuiLinearProgress-bar': { backgroundColor: primaryColor } }}
+                />
+                <Typography variant="caption" color="text.disabled">
+                  Cargando carreras… {progress.done} de {progress.total}
+                </Typography>
+              </Box>
+            )}
+            {crossEvent && !crossLoading && filters.search.trim().length < 2 && (
+              <Typography variant="caption" color="text.disabled" sx={{ display: 'block' }}>
+                Escribe un nombre en el buscador para encontrar atletas entre las {sources.length} carreras.
+              </Typography>
+            )}
+          </Box>
+
           {selected.length > 0 && (
             <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap', gap: 1, mb: 2 }}>
               {selected.map((a, index) => (
@@ -244,20 +327,20 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
           )}
 
           <AthletePicker
-            athletes={filteredAthletes}
-            total={athletes.length}
+            athletes={crossPool ?? filteredAthletes}
+            total={crossPool ? crossPool.length : athletes.length}
             selected={selected}
             onToggle={toggleAthlete}
             primaryColor={primaryColor}
             max={MAX_ATHLETES}
-            label="Atletas a comparar"
+            label={crossEvent ? 'Atletas de cualquier carrera' : 'Atletas a comparar'}
             filters={filters}
             setFilters={setFilters}
             clearFilters={clearFilters}
-            genderOptions={genderOptions}
-            categoryOptions={categoryOptions}
-            ageGroupOptions={ageGroupOptions}
-            nationalityOptions={nationalityOptions}
+            genderOptions={crossEvent ? [] : genderOptions}
+            categoryOptions={crossEvent ? [] : categoryOptions}
+            ageGroupOptions={crossEvent ? [] : ageGroupOptions}
+            nationalityOptions={crossEvent ? [] : nationalityOptions}
             colorOf={(a) => {
               const index = selected.findIndex((s) => athleteKey(s) === athleteKey(a));
               return COLUMN_COLORS[(index < 0 ? 0 : index) % COLUMN_COLORS.length];
@@ -280,6 +363,12 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
             </Box>
           ) : (
             <Stack spacing={2}>
+              {mixedEvents && (
+                <Alert severity="info" sx={{ borderRadius: 0 }}>
+                  Estás comparando atletas de carreras distintas: los recorridos y el nivel del pelotón
+                  cambian, así que los tiempos y las posiciones son solo orientativos.
+                </Alert>
+              )}
               {positionSeries && (
                 <Paper variant="outlined" sx={{ p: 2, borderColor: 'divider' }}>
                   <Typography variant="body2" sx={{ fontWeight: 800, color: primaryColor, mb: 1 }}>
@@ -314,6 +403,7 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
                 stations={stations}
                 sectorOf={sectorOf}
                 primaryColor={primaryColor}
+                showEvent={mixedEvents}
               />
             </Stack>
           )}
@@ -330,11 +420,13 @@ function ComparisonTable({
   stations,
   sectorOf,
   primaryColor,
+  showEvent,
 }: {
   selected: Athlete[];
   stations: string[];
   sectorOf: (athlete: Athlete, station: string) => string;
   primaryColor: string;
+  showEvent?: boolean;
 }) {
   const thSx = {
     fontWeight: 700,
@@ -417,11 +509,36 @@ function ComparisonTable({
             </TableRow>
           </TableHead>
           <TableBody>
+            {showEvent && (
+              <TableRow hover>
+                <TableCell sx={labelSx}>Carrera</TableCell>
+                {selected.map((a) => (
+                  <TableCell key={athleteKey(a)} align="center">
+                    <Typography variant="caption" sx={{ fontWeight: 600, display: 'block' }}>
+                      {a.event_name || '—'}
+                    </Typography>
+                    <Typography variant="caption" color="text.disabled">
+                      {[a.event_date ? a.event_date.split('-').reverse().join('/') : '', a.event_modality]
+                        .filter(Boolean)
+                        .join(' · ')}
+                    </Typography>
+                  </TableCell>
+                ))}
+              </TableRow>
+            )}
+
             <TableRow hover>
               <TableCell sx={labelSx}>Posición</TableCell>
               {selected.map((a) => (
                 <TableCell key={athleteKey(a)} align="center">
-                  <Typography variant="body2" sx={{ fontWeight: 700 }}>#{a.rank_overall}</Typography>
+                  <Typography variant="body2" sx={{ fontWeight: 700 }}>
+                    #{a.rank_overall}
+                    {a.field_size ? (
+                      <Typography component="span" variant="caption" color="text.disabled">
+                        {` / ${a.field_size}`}
+                      </Typography>
+                    ) : null}
+                  </Typography>
                 </TableCell>
               ))}
             </TableRow>
