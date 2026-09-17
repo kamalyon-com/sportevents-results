@@ -62,15 +62,19 @@ export const AppShell: React.FC<AppShellProps> = (config) => {
         '& .MuiTabs-indicator': { height: 2, backgroundColor: primaryColor },
         '& .MuiTab-root': {
           minHeight: 0,
-          px: { xs: 1, sm: 2 },
-          py: 1.25,
-          fontSize: { xs: 11, sm: 12 },
+          px: { xs: 0.5, sm: 2 },
+          py: { xs: 0.75, sm: 1.25 },
+          gap: { xs: 0.25, sm: 1 },
+          // El rótulo más largo tiene que caber en pantallas estrechas
+          fontSize: { xs: 'clamp(8px, 2.6vw, 10px)', sm: 12 },
           fontWeight: 700,
-          letterSpacing: '0.12em',
+          // En móvil los rótulos van apilados bajo el icono y no caben separados
+          letterSpacing: { xs: '0.02em', sm: '0.12em' },
           textTransform: 'uppercase',
           color: 'text.secondary',
           minWidth: 0,
           '&.Mui-selected': { color: primaryColor },
+          '& .MuiTab-icon': { mb: 0, mr: 0 },
         },
       }}
     >
@@ -80,7 +84,7 @@ export const AppShell: React.FC<AppShellProps> = (config) => {
           value={t.key}
           label={t.label}
           icon={t.icon}
-          iconPosition="start"
+          iconPosition={isMobile ? 'top' : 'start'}
           disableRipple
         />
       ))}
