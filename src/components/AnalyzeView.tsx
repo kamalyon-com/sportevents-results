@@ -4,10 +4,12 @@ import {
   Box,
   Button,
   Chip,
+  MenuItem,
   Paper,
   Stack,
   Tab,
   Tabs,
+  TextField,
   Typography,
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -24,7 +26,15 @@ import { Athlete, RREventConfig, WidgetConfig } from '../lib/types';
 const RUN_COLOR = '#FF8C42';
 const ZONE_COLOR = '#7BD389';
 
-const athleteKey = (a: Athlete) => `${a.event_id}-${a.bib}`;
+const athleteKey = (a: Athlete) => `${a.source_key ?? a.event_id}-${a.bib}`;
+
+/** Campos por los que se puede acotar el pelotón de comparación. */
+type CohortKey = 'all' | 'gender' | 'age_group' | 'category';
+const COHORTS: Array<{ key: Exclude<CohortKey, 'all'>; label: string }> = [
+  { key: 'gender', label: 'Mi género' },
+  { key: 'age_group', label: 'Mi grupo de edad' },
+  { key: 'category', label: 'Mi categoría' },
+];
 
 interface Metric {
   label: string;
@@ -71,6 +81,31 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
 
   const [selected, setSelected] = useState<Athlete | null>(null);
   const [section, setSection] = useState<'totals' | 'runs' | 'zones'>('totals');
+  const [cohort, setCohort] = useState<CohortKey>('all');
+
+  /** Grupos con los que tiene sentido compararse: solo si hay variedad en la carrera. */
+  const cohortOptions = useMemo(() => {
+    const list: Array<{ key: CohortKey; label: string }> = [{ key: 'all', label: 'Toda la carrera' }];
+    if (!selected) return list;
+    for (const { key, label } of COHORTS) {
+      const own = selected[key];
+      if (!own) continue;
+      const values = new Set(athletes.map((a) => a[key]).filter(Boolean));
+      const mine = athletes.filter((a) => a[key] === own).length;
+      if (values.size > 1 && mine >= 5) list.push({ key, label });
+    }
+    return list;
+  }, [selected, athletes]);
+
+  // Si el atleta elegido no tiene el grupo seleccionado, se vuelve a toda la carrera
+  const activeCohort = cohortOptions.some((o) => o.key === cohort) ? cohort : 'all';
+
+  /** Pelotón contra el que se miden todas las métricas. */
+  const pool = useMemo(() => {
+    if (activeCohort === 'all' || !selected) return athletes;
+    const own = selected[activeCohort];
+    return athletes.filter((a) => a[activeCohort] === own);
+  }, [athletes, selected, activeCohort]);
 
   const events = config.rrEvents && config.rrEvents.length > 0 ? config.rrEvents : availableEvents;
 
@@ -99,7 +134,7 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
 
   const fieldByStation = useMemo(() => {
     const map = new Map<string, number[]>();
-    for (const a of athletes) {
+    for (const a of pool) {
       for (const s of a.splits) {
         if (!s.station) continue;
         const secs = toSeconds(s.sector || s.time);
@@ -111,7 +146,7 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
     }
     map.forEach((list) => list.sort((a, b) => a - b));
     return map;
-  }, [athletes]);
+  }, [pool]);
 
   const stations = useMemo<StationMetric[]>(() => {
     if (!selected) return [];
@@ -138,13 +173,13 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
         .filter((s) => s.station && stationKind(s.station) === kind)
         .reduce((acc, s) => acc + toSeconds(s.sector || s.time), 0);
     const fieldOf = (kind: StationKind) =>
-      athletes.map((a) => sumOf(a, kind)).filter((n) => isFinite(n) && n > 0).sort((a, b) => a - b);
+      pool.map((a) => sumOf(a, kind)).filter((n) => isFinite(n) && n > 0).sort((a, b) => a - b);
 
     const list: Metric[] = [
       {
         label: 'Tiempo total',
         seconds: toSeconds(selected.finish_time),
-        field: athletes.map((a) => toSeconds(a.finish_time)).filter(isFinite).sort((a, b) => a - b),
+        field: pool.map((a) => toSeconds(a.finish_time)).filter(isFinite).sort((a, b) => a - b),
         color: primaryColor,
       },
     ];
@@ -157,7 +192,7 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
       list.push({ label: 'Tiempo total en zonas', seconds: sumOf(selected, 'zone'), field: zoneField, color: ZONE_COLOR });
     }
     return list;
-  }, [selected, athletes, primaryColor]);
+  }, [selected, pool, primaryColor]);
 
   /** Posición del atleta tras cada estación, usando el tiempo acumulado. */
   const positionEvolution = useMemo(() => {
@@ -170,7 +205,7 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
       if (!split.station) return;
       const own = toSeconds(split.time);
       if (!isFinite(own) || own <= 0) return;
-      const others = athletes
+      const others = pool
         .map((a) => (a.splits[i]?.station === split.station ? toSeconds(a.splits[i].time) : Infinity))
         .filter((v) => isFinite(v) && v > 0);
       if (others.length < 2) return;
@@ -180,7 +215,15 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
       total = Math.max(total, others.length);
     });
     return ranks.length >= 2 ? { labels, fullLabels, ranks, total } : null;
-  }, [selected, athletes]);
+  }, [selected, pool]);
+
+  /** Posición dentro del pelotón elegido (con "toda la carrera" es la oficial). */
+  const poolRank = useMemo(() => {
+    if (!selected) return 0;
+    if (activeCohort === 'all') return selected.rank_overall;
+    const own = toSeconds(selected.finish_time);
+    return pool.filter((a) => toSeconds(a.finish_time) < own).length + 1;
+  }, [selected, pool, activeCohort]);
 
   const radar = useMemo(() => {
     const usable = stations.filter((s) => isFinite(s.seconds) && s.field.length > 1);
@@ -317,9 +360,25 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
                     Desglose de carrera
                   </Typography>
                 </Box>
-                <Typography variant="body2" color="text.secondary">
-                  Comparado con {athletes.length} atletas
-                </Typography>
+                {cohortOptions.length > 1 ? (
+                  <TextField
+                    select
+                    size="small"
+                    label="Comparar contra"
+                    value={activeCohort}
+                    onChange={(e) => setCohort(e.target.value as CohortKey)}
+                    helperText={`${pool.length} atletas`}
+                    sx={{ minWidth: 190 }}
+                  >
+                    {cohortOptions.map((o) => (
+                      <MenuItem key={o.key} value={o.key}>{o.label}</MenuItem>
+                    ))}
+                  </TextField>
+                ) : (
+                  <Typography variant="body2" color="text.secondary">
+                    Comparado con {pool.length} atletas
+                  </Typography>
+                )}
               </Stack>
 
               {runStations.length === 0 && zoneStations.length === 0 ? (
@@ -375,7 +434,7 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = (config) => {
                             Evolución de la posición
                           </Typography>
                           <Typography variant="body2" sx={{ fontWeight: 800, color: primaryColor, fontFamily: 'monospace' }}>
-                            #{selected.rank_overall}/{athletes.length}
+                            #{poolRank}/{pool.length}
                           </Typography>
                         </Stack>
                         <PositionEvolutionChart
