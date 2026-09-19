@@ -1,0 +1,4548 @@
+{
+  "info": {
+    "id": "403612",
+    "fileKey": "403612_2",
+    "name": "SAC Series Junio 2026",
+    "contestName": "Parejas",
+    "date": "2026-06-05",
+    "location": "Pollença",
+    "listName": "Resultados|Resultados",
+    "contest": 2,
+    "format": "pairs",
+    "genderCategories": [
+      "Femenina",
+      "Masculina"
+    ]
+  },
+  "rows": [
+    {
+      "Pos.": "",
+      "Nombre": "PERRACAS TEAM",
+      "Club": "",
+      "Tiempo": "1:03:18",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1993-09-24",
+      "_splits": null,
+      "Dorsal": 32,
+      "_members": [
+        {
+          "name": "MARIA DE LA PAU SBERT LLINÀS"
+        },
+        {
+          "name": "Cristina Pieras Espases"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Girl Power",
+      "Club": "",
+      "Tiempo": "1:10:11",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1998-05-01",
+      "_splits": null,
+      "Dorsal": 36,
+      "_members": [
+        {
+          "name": "Shadee Leskens"
+        },
+        {
+          "name": "Caterina M Llompart"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Soraya y Ariadna",
+      "Club": "",
+      "Tiempo": "1:11:52",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1990-02-16",
+      "_splits": null,
+      "Dorsal": 34,
+      "_members": [
+        {
+          "name": "Soraya Padilla"
+        },
+        {
+          "name": "Ariadna cerda morales"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Pollencins Power",
+      "Club": "",
+      "Tiempo": "1:01:44",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1989-02-26",
+      "_splits": null,
+      "Dorsal": 354,
+      "_members": [
+        {
+          "name": "Marcos Alejos Roman"
+        },
+        {
+          "name": "MARIONA TERRASA"
+        },
+        {
+          "name": "KARINA GOMEZ DIXON"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Frikis de les 6",
+      "Club": "",
+      "Tiempo": "1:01:44",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1976-12-30",
+      "_splits": null,
+      "Dorsal": 314,
+      "_members": [
+        {
+          "name": "Aina Llobera Barea"
+        },
+        {
+          "name": "Margalida Socias Martí"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Sac Queens",
+      "Club": "",
+      "Tiempo": "1:18:58",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1977-11-19",
+      "_splits": null,
+      "Dorsal": 33,
+      "_members": [
+        {
+          "name": "susana ojosnegros"
+        },
+        {
+          "name": "raquel"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "FOCUS MUY FOCUS",
+      "Club": "",
+      "Tiempo": "55:33",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1996-10-23",
+      "_splits": null,
+      "Dorsal": 7,
+      "_members": [
+        {
+          "name": "Nacho Dosil Mayol"
+        },
+        {
+          "name": "Juan Rosselló"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "zipizape",
+      "Club": "",
+      "Tiempo": "58:35",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1993-12-26",
+      "_splits": null,
+      "Dorsal": 8,
+      "_members": [
+        {
+          "name": "sergio gómez socias"
+        },
+        {
+          "name": "Alberto mora"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Marcos y Sebastià",
+      "Club": "",
+      "Tiempo": "1:02:13",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2001-01-20",
+      "_splits": null,
+      "Dorsal": 9,
+      "_members": [
+        {
+          "name": "Marcos Alejos Roman"
+        },
+        {
+          "name": "Sebastià Plomer Riutort"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Team Darlem",
+      "Club": "",
+      "Tiempo": "1:03:23",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2000-10-02",
+      "_splits": null,
+      "Dorsal": 13,
+      "_members": [
+        {
+          "name": "Guillem Carbonell Ferriol"
+        },
+        {
+          "name": "Bernat Darder Quetgles"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "NoPuedoTengoPadel",
+      "Club": "",
+      "Tiempo": "1:06:02",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2004-01-02",
+      "_splits": null,
+      "Dorsal": 11,
+      "_members": [
+        {
+          "name": "Marc Sabater Jimenez"
+        },
+        {
+          "name": "Nicolas Calvo Trujillo"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Los shavale",
+      "Club": "",
+      "Tiempo": "1:08:36",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1996-08-03",
+      "_splits": null,
+      "Dorsal": 10,
+      "_members": [
+        {
+          "name": "Álvaro Díaz Osuna"
+        },
+        {
+          "name": "Juan Luis Ramírez"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Val la pena",
+      "Club": "",
+      "Tiempo": "50:04",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-02-05",
+      "_splits": null,
+      "Dorsal": 17,
+      "_members": [
+        {
+          "name": "Lucas Perelló Caballero"
+        },
+        {
+          "name": "Alberto Pareja García"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "LOS +23",
+      "Club": "",
+      "Tiempo": "53:34",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1996-05-13",
+      "_splits": null,
+      "Dorsal": 6,
+      "_members": [
+        {
+          "name": "Angel Coll"
+        },
+        {
+          "name": "MARCO TULIO MACIEL EVANGELISTA"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "J&A",
+      "Club": "",
+      "Tiempo": "55:22",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1994-12-26",
+      "_splits": null,
+      "Dorsal": 4,
+      "_members": [
+        {
+          "name": "Jaume Perello Mestre"
+        },
+        {
+          "name": "Adrian Herrera Guerrero"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "TOR",
+      "Club": "",
+      "Tiempo": "57:32",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1987-01-02",
+      "_splits": null,
+      "Dorsal": 372,
+      "_members": [
+        {
+          "name": "borja fernandez gonzalez"
+        },
+        {
+          "name": "juan mari crespo martin"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Biel y Tolo",
+      "Club": "",
+      "Tiempo": "58:31",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1992-04-24",
+      "_splits": null,
+      "Dorsal": 2,
+      "_members": [
+        {
+          "name": "Biel Oliver Ramon"
+        },
+        {
+          "name": "Tolo Bosch del castillo"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Joan Miquel y Joan Andreu",
+      "Club": "",
+      "Tiempo": "1:02:48",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1990-10-30",
+      "_splits": null,
+      "Dorsal": 1,
+      "_members": [
+        {
+          "name": "Joan Miquel Seguí Torrandell"
+        },
+        {
+          "name": "Joan Andreu Morro Aguilar"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "De Calostros",
+      "Club": "",
+      "Tiempo": "1:13:29",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-12-06",
+      "_splits": null,
+      "Dorsal": 14,
+      "_members": [
+        {
+          "name": "Ivan Cabeza Alvarez"
+        },
+        {
+          "name": "Sebastià Cabanellas Cerdà"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Pitja fort",
+      "Club": "",
+      "Tiempo": "1:12:53",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1983-01-30",
+      "_splits": null,
+      "Dorsal": 371,
+      "_members": [
+        {
+          "name": "MIQUEL ANGEL CANAVES CAIMARI"
+        },
+        {
+          "name": "RAMON CERDÀ"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Xaloc",
+      "Club": "",
+      "Tiempo": "1:20:40",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1987-03-13",
+      "_splits": null,
+      "Dorsal": 3,
+      "_members": [
+        {
+          "name": "Marcus Christiansen"
+        },
+        {
+          "name": "Richard Browbek"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "KG",
+      "Club": "",
+      "Tiempo": "1:41:16",
+      "Penalización": "03:00",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1984-08-12",
+      "_splits": null,
+      "Dorsal": 251,
+      "_members": [
+        {
+          "name": "Kate Elston"
+        },
+        {
+          "name": "Gilles Silva"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Fuck cancer",
+      "Club": "",
+      "Tiempo": "1:41:16",
+      "Penalización": "03:00",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1986-09-28",
+      "_splits": null,
+      "Dorsal": 5,
+      "_members": [
+        {
+          "name": "Gilles silva"
+        },
+        {
+          "name": "Vicente colomera ferragut"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "LOS TORRIJAS",
+      "Club": "",
+      "Tiempo": "1:08:09",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1976-11-27",
+      "_splits": null,
+      "Dorsal": 12,
+      "_members": [
+        {
+          "name": "Marcos Ayerra Vives"
+        },
+        {
+          "name": "MARTI RAMIS CIFRE"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Alba y Eva",
+      "Club": "",
+      "Tiempo": "26:21",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1999-08-11",
+      "_splits": null,
+      "Dorsal": 120,
+      "_members": [
+        {
+          "name": "Alba Lora Gomez"
+        },
+        {
+          "name": "Eva gomez socias"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Juanis",
+      "Club": "",
+      "Tiempo": "31:01",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2100-01-01",
+      "_splits": null,
+      "Dorsal": 81,
+      "_members": [
+        {
+          "name": "Joana Maria Vives Plomer"
+        },
+        {
+          "name": "Joana Margalida Estrany Villalonga"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Candela y Paqui",
+      "Club": "",
+      "Tiempo": "32:04",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2009-07-17",
+      "_splits": null,
+      "Dorsal": 86,
+      "_members": [
+        {
+          "name": "Candela Sanchez Cardona"
+        },
+        {
+          "name": "Paqui Moya"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Hermanadels",
+      "Club": "",
+      "Tiempo": "32:36",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1998-05-28",
+      "_splits": null,
+      "Dorsal": 112,
+      "_members": [
+        {
+          "name": "Mar Marqués Miralles"
+        },
+        {
+          "name": "Paula Marqués Miralles"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Selina y Marta",
+      "Club": "",
+      "Tiempo": "34:49",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2002-10-23",
+      "_splits": null,
+      "Dorsal": 91,
+      "_members": [
+        {
+          "name": "Selina Ana Jofre Henkel"
+        },
+        {
+          "name": "Marta Osuna Lebron"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Les dotze i mitja",
+      "Club": "",
+      "Tiempo": "34:56",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2001-09-29",
+      "_splits": null,
+      "Dorsal": 100,
+      "_members": [
+        {
+          "name": "Paula Vallespir Seguí"
+        },
+        {
+          "name": "Maria Isabel Perelló Martínez"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Ariadna y Montse",
+      "Club": "",
+      "Tiempo": "35:20",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2006-09-15",
+      "_splits": null,
+      "Dorsal": 83,
+      "_members": [
+        {
+          "name": "Ariadna Castro Rodriguez"
+        },
+        {
+          "name": "Montse Alegre Morillo"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Team Carbonell",
+      "Club": "",
+      "Tiempo": "27:03",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2002-01-23",
+      "_splits": null,
+      "Dorsal": 103,
+      "_members": [
+        {
+          "name": "Marta Carbonell Font"
+        },
+        {
+          "name": "Catalina Maria Carbonell Cifre"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Las Antonias",
+      "Club": "",
+      "Tiempo": "29:40",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1987-11-17",
+      "_splits": null,
+      "Dorsal": 84,
+      "_members": [
+        {
+          "name": "Judith Seoane Rivas"
+        },
+        {
+          "name": "Alicia Alcolea herraiz"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Marina y Leire",
+      "Club": "",
+      "Tiempo": "30:22",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1997-01-02",
+      "_splits": null,
+      "Dorsal": 113,
+      "_members": [
+        {
+          "name": "MARINA CRESPÍ JIMÉNEZ"
+        },
+        {
+          "name": "LEIRE UGARTE ARRUTI"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Shirley y María del Mar",
+      "Club": "",
+      "Tiempo": "30:42",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1987-05-14",
+      "_splits": null,
+      "Dorsal": 89,
+      "_members": [
+        {
+          "name": "MARIA DEL MAR FERNÁNDEZ RIAN"
+        },
+        {
+          "name": "CATALINA COLL MORANTA"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Macar’s team",
+      "Club": "",
+      "Tiempo": "32:01",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-10-18",
+      "_splits": null,
+      "Dorsal": 102,
+      "_members": [
+        {
+          "name": "Marta Trias Ferrer"
+        },
+        {
+          "name": "Carmen Torrens Vidal"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Cris Queens",
+      "Club": "",
+      "Tiempo": "32:45",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1989-06-19",
+      "_splits": null,
+      "Dorsal": 107,
+      "_members": [
+        {
+          "name": "Cristina Martorell Capó"
+        },
+        {
+          "name": "Cristina Mestre Rosario"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Tronades del Nord",
+      "Club": "",
+      "Tiempo": "33:09",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1995-07-31",
+      "_splits": null,
+      "Dorsal": 95,
+      "_members": [
+        {
+          "name": "Maria del Mar Vera Vives"
+        },
+        {
+          "name": "Marina Bonnín Robles"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Fussion",
+      "Club": "",
+      "Tiempo": "33:25",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1997-02-01",
+      "_splits": null,
+      "Dorsal": 90,
+      "_members": [
+        {
+          "name": "Sofía Nikiema Lidzell"
+        },
+        {
+          "name": "Shirley Ariadna Guzmán Lopez"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Educa Partners",
+      "Club": "",
+      "Tiempo": "33:31",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1998-11-16",
+      "_splits": null,
+      "Dorsal": 121,
+      "_members": [
+        {
+          "name": "Júlia Martínez Torres"
+        },
+        {
+          "name": "Cristina Fernandez Socias"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Glow Gang",
+      "Club": "",
+      "Tiempo": "36:16",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1990-05-06",
+      "_splits": null,
+      "Dorsal": 93,
+      "_members": [
+        {
+          "name": "Lidia cruz alcover"
+        },
+        {
+          "name": "Maria antoni domenech viedma"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "El Yin y el Yang",
+      "Club": "",
+      "Tiempo": "38:51",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-02-19",
+      "_splits": null,
+      "Dorsal": 99,
+      "_members": [
+        {
+          "name": "Brenda Pérez Domínguez"
+        },
+        {
+          "name": "María de lluch Calvo Martín"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Las ChiquiBurpees",
+      "Club": "",
+      "Tiempo": "38:58",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1995-06-15",
+      "_splits": null,
+      "Dorsal": 105,
+      "_members": [
+        {
+          "name": "Ana-Estera Lavric"
+        },
+        {
+          "name": "Jessica Suárez"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Les JEMAC",
+      "Club": "",
+      "Tiempo": "39:50",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1986-05-04",
+      "_splits": null,
+      "Dorsal": 96,
+      "_members": [
+        {
+          "name": "Maria Antònia Cerdà March"
+        },
+        {
+          "name": "Joana Esteva Moranta"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Las Burpees",
+      "Club": "",
+      "Tiempo": "25:25",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1985-01-31",
+      "_splits": null,
+      "Dorsal": 118,
+      "_members": [
+        {
+          "name": "Neus Moragues Ferrer"
+        },
+        {
+          "name": "Francisca Cuenca Muñoz"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Sanchez",
+      "Club": "",
+      "Tiempo": "26:20",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1984-06-02",
+      "_splits": null,
+      "Dorsal": 114,
+      "_members": [
+        {
+          "name": "Ines Sánchez martin"
+        },
+        {
+          "name": "Esmeralda sanchez martin"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Ses Marqueses",
+      "Club": "",
+      "Tiempo": "29:52",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1980-09-30",
+      "_splits": null,
+      "Dorsal": 98,
+      "_members": [
+        {
+          "name": "Magdalena Marquès Alaminos"
+        },
+        {
+          "name": "M Àngels Marquès Alaminos"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "The magic team 11:11",
+      "Club": "",
+      "Tiempo": "30:08",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1980-07-17",
+      "_splits": null,
+      "Dorsal": 122,
+      "_members": [
+        {
+          "name": "Nazaret Rodriguez Crespillo"
+        },
+        {
+          "name": "Maria Soledad Gonzalez"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Pura casualidad 💪!!!",
+      "Club": "",
+      "Tiempo": "30:44",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1980-12-12",
+      "_splits": null,
+      "Dorsal": 87,
+      "_members": [
+        {
+          "name": "MARIA ALEJANDRA SAGRERA CORREA"
+        },
+        {
+          "name": "Debora cubero ruiz"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Kiwi Team",
+      "Club": "",
+      "Tiempo": "32:57",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1981-11-03",
+      "_splits": null,
+      "Dorsal": 85,
+      "_members": [
+        {
+          "name": "Veronica Fernandez"
+        },
+        {
+          "name": "Barbara Torres"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Go",
+      "Club": "",
+      "Tiempo": "33:07",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1962-05-02",
+      "_splits": null,
+      "Dorsal": 101,
+      "_members": [
+        {
+          "name": "Ana Isabel Colom Salamanca"
+        },
+        {
+          "name": "Teodora Llorens López"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "LADYS FER",
+      "Club": "",
+      "Tiempo": "33:59",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1989-04-08",
+      "_splits": null,
+      "Dorsal": 123,
+      "_members": [
+        {
+          "name": "Maria Fernandez Serra"
+        },
+        {
+          "name": "Caterina Ferrer Vilanova"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Noelia y Conchi",
+      "Club": "",
+      "Tiempo": "35:39",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1986-09-30",
+      "_splits": null,
+      "Dorsal": 110,
+      "_members": [
+        {
+          "name": "Noelia Tabarez"
+        },
+        {
+          "name": "Conchi Núñez Lozano"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Las últimas de la fila",
+      "Club": "",
+      "Tiempo": "38:10",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1976-12-26",
+      "_splits": null,
+      "Dorsal": 117,
+      "_members": [
+        {
+          "name": "Rocío Seijas Núñez"
+        },
+        {
+          "name": "Elionor Cladera Arbós"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "No run just fun",
+      "Club": "",
+      "Tiempo": "38:43",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1983-05-25",
+      "_splits": null,
+      "Dorsal": 92,
+      "_members": [
+        {
+          "name": "Catalina Pons Seguí"
+        },
+        {
+          "name": "Aina Marquès Munar"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Prillinas",
+      "Club": "",
+      "Tiempo": "39:57",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1979-11-06",
+      "_splits": null,
+      "Dorsal": 104,
+      "_members": [
+        {
+          "name": "Elena Prieto Pons"
+        },
+        {
+          "name": "Sandra Llinás Mut"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "MABU TEAM",
+      "Club": "",
+      "Tiempo": "43:15",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1999-10-01",
+      "_splits": null,
+      "Dorsal": 111,
+      "_members": [
+        {
+          "name": "Marta Jofre Payeras"
+        },
+        {
+          "name": "Margarita Vives Seguiy"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "ses que faltaven",
+      "Club": "",
+      "Tiempo": "49:53",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1995-10-07",
+      "_splits": null,
+      "Dorsal": 97,
+      "_members": [
+        {
+          "name": "Carme Navas Campomar"
+        },
+        {
+          "name": "Xisca campomar calafat"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Las Pons",
+      "Club": "",
+      "Tiempo": "30:21",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1981-01-27",
+      "_splits": null,
+      "Dorsal": 119,
+      "_members": [
+        {
+          "name": "Malén Pons Manera"
+        },
+        {
+          "name": "Marga Pons de Ves"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Rogelias",
+      "Club": "",
+      "Tiempo": "32:26",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1974-02-01",
+      "_splits": null,
+      "Dorsal": 82,
+      "_members": [
+        {
+          "name": "Ina Rigo Alfaro"
+        },
+        {
+          "name": "Gemma Sánchez López"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "60",
+      "Club": "",
+      "Tiempo": "40:21",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1963-09-26",
+      "_splits": null,
+      "Dorsal": 88,
+      "_members": [
+        {
+          "name": "Tania Mellado Mañas"
+        },
+        {
+          "name": "Elena Garcia Pinel"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Dues Generacions",
+      "Club": "",
+      "Tiempo": "41:35",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1961-08-02",
+      "_splits": null,
+      "Dorsal": 94,
+      "_members": [
+        {
+          "name": "Jerònia Tugores Cifré"
+        },
+        {
+          "name": "Maria Lluïsa Pons Tugores"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Las Divinas",
+      "Club": "",
+      "Tiempo": "50:28",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1979-10-07",
+      "_splits": null,
+      "Dorsal": 116,
+      "_members": [
+        {
+          "name": "Elena Revenga"
+        },
+        {
+          "name": "Carmen Garzón"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "2 Jaumes",
+      "Club": "",
+      "Tiempo": "28:05",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "",
+      "_splits": null,
+      "Dorsal": 42,
+      "_members": [
+        {
+          "name": "Jaume Marques"
+        },
+        {
+          "name": "Jaume Garcia Serra"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Puntx&Pelotx",
+      "Club": "",
+      "Tiempo": "33:05",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1998-12-13",
+      "_splits": null,
+      "Dorsal": 51,
+      "_members": [
+        {
+          "name": "Jaume Reynés Vega"
+        },
+        {
+          "name": "Daniel Cuenca Cabello"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Super papis",
+      "Club": "",
+      "Tiempo": "20:30",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1992-01-22",
+      "_splits": null,
+      "Dorsal": 50,
+      "_members": [
+        {
+          "name": "Miquel mas martorell"
+        },
+        {
+          "name": "Marti ramis pons"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Fibris&Moreno",
+      "Club": "",
+      "Tiempo": "22:11",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1990-10-15",
+      "_splits": null,
+      "Dorsal": 44,
+      "_members": [
+        {
+          "name": "Gabriel Cantarellas Reig"
+        },
+        {
+          "name": "Antoni Ramon Rotger"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "W/Kg by Nu'u Training",
+      "Club": "",
+      "Tiempo": "24:58",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1988-08-02",
+      "_splits": null,
+      "Dorsal": 49,
+      "_members": [
+        {
+          "name": "Joan Pomar Pons"
+        },
+        {
+          "name": "Miquel Ventayol Espinazo"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Miquel y Jaume",
+      "Club": "",
+      "Tiempo": "25:21",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-05-06",
+      "_splits": null,
+      "Dorsal": 48,
+      "_members": [
+        {
+          "name": "Miquel Angel Canaves"
+        },
+        {
+          "name": "Jaume Mas Fuster"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Verros",
+      "Club": "",
+      "Tiempo": "26:16",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1992-11-27",
+      "_splits": null,
+      "Dorsal": 46,
+      "_members": [
+        {
+          "name": "Toni soler"
+        },
+        {
+          "name": "Pere ignasi font"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Reventats",
+      "Club": "",
+      "Tiempo": "35:46",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1997-11-02",
+      "_splits": null,
+      "Dorsal": 54,
+      "_members": [
+        {
+          "name": "Pedro Pellicer Corbalan"
+        },
+        {
+          "name": "David Álvarez Leiva"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Joan Miquel y Joan",
+      "Club": "",
+      "Tiempo": "24:52",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1990-10-30",
+      "_splits": null,
+      "Dorsal": 53,
+      "_members": [
+        {
+          "name": "JOAN MIQUEL SEGUI TORANDELL"
+        },
+        {
+          "name": "JOAN CANAVES LLITRA"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "ELS MATINERS",
+      "Club": "",
+      "Tiempo": "38:45",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1986-07-22",
+      "_splits": null,
+      "Dorsal": 52,
+      "_members": [
+        {
+          "name": "Miguel Llabrés Flexas"
+        },
+        {
+          "name": "Juan Jose Guerris Tortella"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Strongers 6.0",
+      "Club": "",
+      "Tiempo": "29:09",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1970-09-14",
+      "_splits": null,
+      "Dorsal": 43,
+      "_members": [
+        {
+          "name": "David Pérez Priego"
+        },
+        {
+          "name": "Juan Carlos Veiga"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Germans gonzalez",
+      "Club": "",
+      "Tiempo": "49:38",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1968-01-25",
+      "_splits": null,
+      "Dorsal": 47,
+      "_members": [
+        {
+          "name": "Felix Nicolau Gonzalez Gomila"
+        },
+        {
+          "name": "Juan Luis Gonzalez Gomila"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Jaume&Barce",
+      "Club": "",
+      "Tiempo": "44:38",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1955-02-08",
+      "_splits": null,
+      "Dorsal": 75,
+      "_members": [
+        {
+          "name": "Jaume Bennasar Cespí"
+        },
+        {
+          "name": "Magdalena Barcelo Oliver"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "M&M (em an em)",
+      "Club": "",
+      "Tiempo": "28:58",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1999-06-18",
+      "_splits": null,
+      "Dorsal": 79,
+      "_members": [
+        {
+          "name": "Maru Favasuli"
+        },
+        {
+          "name": "Mariano Favasuli"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Los crespos",
+      "Club": "",
+      "Tiempo": "39:19",
+      "Penalización": "00:45",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1989-03-13",
+      "_splits": null,
+      "Dorsal": 72,
+      "_members": [
+        {
+          "name": "Tatiana lourido castillo"
+        },
+        {
+          "name": "Johann sebastian barros lourido"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "No limits. Team CN",
+      "Club": "",
+      "Tiempo": "41:09",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-11-02",
+      "_splits": null,
+      "Dorsal": 65,
+      "_members": [
+        {
+          "name": "Neus Barceló Gomila"
+        },
+        {
+          "name": "Cristian Álvarez Esteban"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "ErMa",
+      "Club": "",
+      "Tiempo": "46:26",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1970-08-28",
+      "_splits": null,
+      "Dorsal": 60,
+      "_members": [
+        {
+          "name": "Magdalena Siquier"
+        },
+        {
+          "name": "Erwin Müeller"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "LOS PADAWNS",
+      "Club": "",
+      "Tiempo": "27:32",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2001-09-21",
+      "_splits": null,
+      "Dorsal": 76,
+      "_members": [
+        {
+          "name": "LEO PUERTA BOTELLA"
+        },
+        {
+          "name": "MAR PRATS VICENS"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "HC",
+      "Club": "",
+      "Tiempo": "29:44",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1989-09-06",
+      "_splits": null,
+      "Dorsal": 64,
+      "_members": [
+        {
+          "name": "SEBASTIA COLL BORRAS"
+        },
+        {
+          "name": "Cristina Coll Borras"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Hermanos Piza",
+      "Club": "",
+      "Tiempo": "30:07",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1990-10-25",
+      "_splits": null,
+      "Dorsal": 74,
+      "_members": [
+        {
+          "name": "Carmen Piza Sitges"
+        },
+        {
+          "name": "Jordi Piza Sitges"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Team Rocket",
+      "Club": "",
+      "Tiempo": "30:27",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1992-12-18",
+      "_splits": null,
+      "Dorsal": 78,
+      "_members": [
+        {
+          "name": "Angela Rodríguez"
+        },
+        {
+          "name": "Francisco Jesús Villodres gomez"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Toy'S",
+      "Club": "",
+      "Tiempo": "43:24",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1992-01-30",
+      "_splits": null,
+      "Dorsal": 77,
+      "_members": [
+        {
+          "name": "Ivan Martínez Muñoz"
+        },
+        {
+          "name": "Yaiza Alba Romero"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Amparo y Francisco",
+      "Club": "",
+      "Tiempo": "43:52",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1996-05-20",
+      "_splits": null,
+      "Dorsal": 68,
+      "_members": [
+        {
+          "name": "AMPARO LLOFRIU MARTINEZ"
+        },
+        {
+          "name": "FRANCISCO DONCEL CARMONA"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "No mos perseguia ningú",
+      "Club": "",
+      "Tiempo": "45:37",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1994-04-13",
+      "_splits": null,
+      "Dorsal": 67,
+      "_members": [
+        {
+          "name": "Antoni lluis Garcia Exposito"
+        },
+        {
+          "name": "Kathleen Patricia Helguera Level"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Espadas",
+      "Club": "",
+      "Tiempo": "54:22",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1984-11-09",
+      "_splits": null,
+      "Dorsal": 66,
+      "_members": [
+        {
+          "name": "Mario Jimenez de la Espada Martin"
+        },
+        {
+          "name": "Antonia Servera Mayol"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Miro&Sheni",
+      "Club": "",
+      "Tiempo": "23:23",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1981-05-15",
+      "_splits": null,
+      "Dorsal": 73,
+      "_members": [
+        {
+          "name": "Miro"
+        },
+        {
+          "name": "Sheni"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Psicotes",
+      "Club": "",
+      "Tiempo": "27:55",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1981-03-11",
+      "_splits": null,
+      "Dorsal": 70,
+      "_members": [
+        {
+          "name": "Xisco Barne Marques"
+        },
+        {
+          "name": "Leticia Calle Bolivar"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Nautic Training2",
+      "Club": "",
+      "Tiempo": "29:51",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1979-07-16",
+      "_splits": null,
+      "Dorsal": 62,
+      "_members": [
+        {
+          "name": "Dani Granados Balle"
+        },
+        {
+          "name": "Nuria Suarez Pons"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "M&B GROUP",
+      "Club": "",
+      "Tiempo": "29:54",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1977-02-10",
+      "_splits": null,
+      "Dorsal": 61,
+      "_members": [
+        {
+          "name": "María Bover"
+        },
+        {
+          "name": "Miquel Buades"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Nautic Training Room",
+      "Club": "",
+      "Tiempo": "29:54",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1980-08-24",
+      "_splits": null,
+      "Dorsal": 63,
+      "_members": [
+        {
+          "name": "Talio Orell"
+        },
+        {
+          "name": "Paloma Amelivia"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Dolor Compartido",
+      "Club": "",
+      "Tiempo": "35:16",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1980-07-09",
+      "_splits": null,
+      "Dorsal": 71,
+      "_members": [
+        {
+          "name": "Enrique Palop Perez"
+        },
+        {
+          "name": "Mónica Fernández López"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "casi no llegamos",
+      "Club": "",
+      "Tiempo": "34:13",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1981-12-17",
+      "_splits": null,
+      "Dorsal": 69,
+      "_members": [
+        {
+          "name": "Elisa M. Marchena Giraldez"
+        },
+        {
+          "name": "Emili Gonzalez Forteza"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Older  Stars",
+      "Club": "",
+      "Tiempo": "1:25:25",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1964-07-19",
+      "_splits": null,
+      "Dorsal": 364,
+      "_members": [
+        {
+          "name": "Jovita Carballo Quintana"
+        },
+        {
+          "name": "Francisca Navarro Diez del Valle"
+        },
+        {
+          "name": "Ángel Francisco Fernández Armenta"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Paula y Sofia",
+      "Club": "",
+      "Tiempo": "1:08:03",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2000-12-09",
+      "_splits": null,
+      "Dorsal": 312,
+      "_members": [
+        {
+          "name": "Paula Manuz"
+        },
+        {
+          "name": "Sofía Bosch"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Dúo L&M",
+      "Club": "",
+      "Tiempo": "1:08:54",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1998-04-23",
+      "_splits": null,
+      "Dorsal": 320,
+      "_members": [
+        {
+          "name": "María Isabel Pérez Caballero"
+        },
+        {
+          "name": "Lorea Álvarez Valdivielso"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Running late",
+      "Club": "",
+      "Tiempo": "1:10:47",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1998-08-05",
+      "_splits": null,
+      "Dorsal": 309,
+      "_members": [
+        {
+          "name": "Marina Cifre Lorenzo"
+        },
+        {
+          "name": "Caterina Morro Bauça"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Crackers",
+      "Club": "",
+      "Tiempo": "1:13:43",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1999-01-01",
+      "_splits": null,
+      "Dorsal": 330,
+      "_members": [
+        {
+          "name": "Angela Maria Garau Jaume"
+        },
+        {
+          "name": "Laura Alguacil Sánchez"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Iron ladies",
+      "Club": "",
+      "Tiempo": "1:15:53",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2000-01-12",
+      "_splits": null,
+      "Dorsal": 300,
+      "_members": [
+        {
+          "name": "Marina Plomer Orejuela"
+        },
+        {
+          "name": "Aina Crespí Cerdà"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Popins i Marta",
+      "Club": "",
+      "Tiempo": "1:19:26",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2000-06-22",
+      "_splits": null,
+      "Dorsal": 305,
+      "_members": [
+        {
+          "name": "Maria Angels Bennasar Cifre"
+        },
+        {
+          "name": "Marta Domingo Villalongo"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "manolosteam",
+      "Club": "",
+      "Tiempo": "1:21:45",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1994-05-18",
+      "_splits": null,
+      "Dorsal": 295,
+      "_members": [
+        {
+          "name": "Júlia Pastor Sancho"
+        },
+        {
+          "name": "Marina Mestre Ribot"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Elisabeth y Teresa",
+      "Club": "",
+      "Tiempo": "1:22:45",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1997-01-15",
+      "_splits": null,
+      "Dorsal": 297,
+      "_members": [
+        {
+          "name": "Elisabeth Llompart Colom"
+        },
+        {
+          "name": "Teresa Vallori Servera"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Curly sisters",
+      "Club": "",
+      "Tiempo": "1:05:17",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1996-05-03",
+      "_splits": null,
+      "Dorsal": 315,
+      "_members": [
+        {
+          "name": "Sigrún Juan agorreta"
+        },
+        {
+          "name": "Esperança Mas Alcover"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "RHB Team!",
+      "Club": "",
+      "Tiempo": "1:06:32",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-12-31",
+      "_splits": null,
+      "Dorsal": 301,
+      "_members": [
+        {
+          "name": "Maria del mar bennassar pascual"
+        },
+        {
+          "name": "Joana chacon"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Lorena y Aina",
+      "Club": "",
+      "Tiempo": "1:07:08",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1999-01-04",
+      "_splits": null,
+      "Dorsal": 319,
+      "_members": [
+        {
+          "name": "Lorena Ares Barragan"
+        },
+        {
+          "name": "Aina Alemany Riera"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Xisca i Vir",
+      "Club": "",
+      "Tiempo": "1:09:43",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1994-01-08",
+      "_splits": null,
+      "Dorsal": 332,
+      "_members": [
+        {
+          "name": "Xisca Torrens Vadell"
+        },
+        {
+          "name": "Virginia Rebassa Gelabert"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "TimNegrillas",
+      "Club": "",
+      "Tiempo": "1:10:58",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1993-06-02",
+      "_splits": null,
+      "Dorsal": 304,
+      "_members": [
+        {
+          "name": "Jessica Jiménez Fernández"
+        },
+        {
+          "name": "Tania Jiménez Fernández"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Nuu' girls",
+      "Club": "",
+      "Tiempo": "1:15:13",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1990-07-16",
+      "_splits": null,
+      "Dorsal": 302,
+      "_members": [
+        {
+          "name": "Jessica Bahillo Golby"
+        },
+        {
+          "name": "Neus Ferragut Piris"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Aina y Xisca",
+      "Club": "",
+      "Tiempo": "1:16:27",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1987-12-18",
+      "_splits": null,
+      "Dorsal": 310,
+      "_members": [
+        {
+          "name": "Aina Mora Torrens"
+        },
+        {
+          "name": "Xisca Ribot Mulet"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Las Lauris",
+      "Club": "",
+      "Tiempo": "1:17:21",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1992-01-18",
+      "_splits": null,
+      "Dorsal": 303,
+      "_members": [
+        {
+          "name": "Laura Carrobles Sanchez"
+        },
+        {
+          "name": "Laura Canaves Gomez"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Las Juaneras",
+      "Club": "",
+      "Tiempo": "1:24:54",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1988-11-15",
+      "_splits": null,
+      "Dorsal": 298,
+      "_members": [
+        {
+          "name": "Blanca Martín Vaquero"
+        },
+        {
+          "name": "Susana Seguí Domínguez"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "JALEO",
+      "Club": "",
+      "Tiempo": "1:31:29",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1998-04-09",
+      "_splits": null,
+      "Dorsal": 311,
+      "_members": [
+        {
+          "name": "Catalina Maria Canaves Martorell"
+        },
+        {
+          "name": "Fernanda Mahona"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Si lo sé, no vengo...",
+      "Club": "",
+      "Tiempo": "1:05:15",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1975-11-19",
+      "_splits": null,
+      "Dorsal": 317,
+      "_members": [
+        {
+          "name": "Sandra Jordà Nebot"
+        },
+        {
+          "name": "Marta Colomer Ferrer"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Techno Delfinas Team",
+      "Club": "",
+      "Tiempo": "1:07:38",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1979-09-11",
+      "_splits": null,
+      "Dorsal": 306,
+      "_members": [
+        {
+          "name": "Verónica Pumarega Martínez"
+        },
+        {
+          "name": "Cristina Barranco"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Chicas YEYE",
+      "Club": "",
+      "Tiempo": "1:10:17",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1980-11-27",
+      "_splits": null,
+      "Dorsal": 299,
+      "_members": [
+        {
+          "name": "Ana María Monserrat Jaume"
+        },
+        {
+          "name": "Margalida Sureda Forteza"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Sonrisita y a correr",
+      "Club": "",
+      "Tiempo": "1:14:18",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1982-11-27",
+      "_splits": null,
+      "Dorsal": 322,
+      "_members": [
+        {
+          "name": "Cristina Lahuerta Villar"
+        },
+        {
+          "name": "Neus Garcias Montoya"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "No Fear",
+      "Club": "",
+      "Tiempo": "1:16:40",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1982-02-22",
+      "_splits": null,
+      "Dorsal": 327,
+      "_members": [
+        {
+          "name": "Mariana Cotelo Ramirez"
+        },
+        {
+          "name": "Maria Albalat Llabres"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "M & M",
+      "Club": "",
+      "Tiempo": "1:17:31",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1981-11-14",
+      "_splits": null,
+      "Dorsal": 324,
+      "_members": [
+        {
+          "name": "Melissa Craig"
+        },
+        {
+          "name": "Melani Moreno"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Vanesa y Andrea",
+      "Club": "",
+      "Tiempo": "1:17:41",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1983-03-13",
+      "_splits": null,
+      "Dorsal": 326,
+      "_members": [
+        {
+          "name": "Vanesa Paola"
+        },
+        {
+          "name": "Andrea Bazet Marcos"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Chicas al poder",
+      "Club": "",
+      "Tiempo": "1:19:17",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1976-12-20",
+      "_splits": null,
+      "Dorsal": 318,
+      "_members": [
+        {
+          "name": "Irene Caballero Moreno"
+        },
+        {
+          "name": "Silvia perez segui"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Gladis&Rosa",
+      "Club": "",
+      "Tiempo": "1:22:47",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1973-07-15",
+      "_splits": null,
+      "Dorsal": 329,
+      "_members": [
+        {
+          "name": "Gladis Morales Marin"
+        },
+        {
+          "name": "Rosa Martinez Martinez"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Too fast too furius",
+      "Club": "",
+      "Tiempo": "1:24:09",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1975-08-27",
+      "_splits": null,
+      "Dorsal": 296,
+      "_members": [
+        {
+          "name": "Alexandra quiros Pablo"
+        },
+        {
+          "name": "Ney Montoya"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Esperanza y Margalida",
+      "Club": "",
+      "Tiempo": "1:33:21",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1984-04-25",
+      "_splits": null,
+      "Dorsal": 325,
+      "_members": [
+        {
+          "name": "Esperanza Rodríguez Marqués"
+        },
+        {
+          "name": "Margalida Lluís Peñacerada"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Espinagada coenta",
+      "Club": "",
+      "Tiempo": "1:13:25",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1967-08-18",
+      "_splits": null,
+      "Dorsal": 328,
+      "_members": [
+        {
+          "name": "Isabel Pericàs Crespi"
+        },
+        {
+          "name": "Juana Payeras Crespi"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "LASQ",
+      "Club": "",
+      "Tiempo": "1:15:51",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1976-05-12",
+      "_splits": null,
+      "Dorsal": 316,
+      "_members": [
+        {
+          "name": "MARISA ARRIAZA GONZALEZ"
+        },
+        {
+          "name": "MARIAN BLANCO MARQUET"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Good vibes",
+      "Club": "",
+      "Tiempo": "1:22:24",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1967-02-18",
+      "_splits": null,
+      "Dorsal": 321,
+      "_members": [
+        {
+          "name": "Fina Perez Martin"
+        },
+        {
+          "name": "Catalina Eugenia Payeras Cañellas"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Maria y Joana",
+      "Club": "",
+      "Tiempo": "1:45:25",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1975-06-26",
+      "_splits": null,
+      "Dorsal": 307,
+      "_members": [
+        {
+          "name": "María Mercedes García Ojaos"
+        },
+        {
+          "name": "Joana María Cerdà Jiménez"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Maria Antonia y Maria",
+      "Club": "",
+      "Tiempo": "1:46:35",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1961-06-25",
+      "_splits": null,
+      "Dorsal": 308,
+      "_members": [
+        {
+          "name": "MARIA ANTONIA NAVARRO DIEZ DEL VALLE"
+        },
+        {
+          "name": "MARIA ROTGER ARBONA"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Diamonds",
+      "Club": "",
+      "Tiempo": "55:36",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2002-11-19",
+      "_splits": null,
+      "Dorsal": 160,
+      "_members": [
+        {
+          "name": "Francesc Villamayor Bonnín"
+        },
+        {
+          "name": "Pedro Ferrer"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Los Primo’",
+      "Club": "",
+      "Tiempo": "57:05",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2001-01-19",
+      "_splits": null,
+      "Dorsal": 175,
+      "_members": [
+        {
+          "name": "Marc Nieto Antich"
+        },
+        {
+          "name": "Pedro Bonacasa Requena"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Run&Bar",
+      "Club": "",
+      "Tiempo": "1:01:59",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2007-12-30",
+      "_splits": null,
+      "Dorsal": 157,
+      "_members": [
+        {
+          "name": "Jeroni Llaneras Martínez"
+        },
+        {
+          "name": "Pau Botello Carmona"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "BICHIBOYS",
+      "Club": "",
+      "Tiempo": "1:03:49",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1997-03-29",
+      "_splits": null,
+      "Dorsal": 135,
+      "_members": [
+        {
+          "name": "Oscar Jimenez Fernanz"
+        },
+        {
+          "name": "Jose Angel Lopez Herradon"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "LOS DE LA NASA",
+      "Club": "",
+      "Tiempo": "1:04:53",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2004-07-30",
+      "_splits": null,
+      "Dorsal": 162,
+      "_members": [
+        {
+          "name": "Juan Luis Pereira Sagrera"
+        },
+        {
+          "name": "Jesus Vidal Soler"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "M&M",
+      "Club": "",
+      "Tiempo": "1:05:55",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1999-10-01",
+      "_splits": null,
+      "Dorsal": 140,
+      "_members": [
+        {
+          "name": "Miquel Vives"
+        },
+        {
+          "name": "Mikel Badillo Moya"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "PyL",
+      "Club": "",
+      "Tiempo": "1:09:07",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1999-06-23",
+      "_splits": null,
+      "Dorsal": 168,
+      "_members": [
+        {
+          "name": "Ismael Lagar Hidalgo"
+        },
+        {
+          "name": "Carlos Peso Guzmán"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "HERMANO, RESPIRA",
+      "Club": "",
+      "Tiempo": "1:09:52",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1996-10-10",
+      "_splits": null,
+      "Dorsal": 141,
+      "_members": [
+        {
+          "name": "Jaume Pericas Amengual"
+        },
+        {
+          "name": "Joan Pericás Amengual"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Jose Joan",
+      "Club": "",
+      "Tiempo": "1:12:19",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1996-08-21",
+      "_splits": null,
+      "Dorsal": 171,
+      "_members": [
+        {
+          "name": "Jose Parrado Ramirez"
+        },
+        {
+          "name": "Joan Martorell Torres"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Alejandro y Javier",
+      "Club": "",
+      "Tiempo": "1:17:00",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2000-08-31",
+      "_splits": null,
+      "Dorsal": 136,
+      "_members": [
+        {
+          "name": "Alejandro González Valverde"
+        },
+        {
+          "name": "Javier Carmona Torres"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Es Reventats",
+      "Club": "",
+      "Tiempo": "1:24:37",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1999-06-08",
+      "_splits": null,
+      "Dorsal": 190,
+      "_members": [
+        {
+          "name": "Bartolome Huguet Bergas"
+        },
+        {
+          "name": "Zakary Gelabert Ramsay"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Cadets Diaita",
+      "Club": "",
+      "Tiempo": "1:36:09",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2010-08-30",
+      "_splits": null,
+      "Dorsal": 138,
+      "_members": [
+        {
+          "name": "Jordi Cladera Crespí"
+        },
+        {
+          "name": "Bernat Socias Isern"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Miro y Marco",
+      "Club": "",
+      "Tiempo": "52:55",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1981-05-15",
+      "_splits": null,
+      "Dorsal": 139,
+      "_members": [
+        {
+          "name": "Miro Gadzhalov"
+        },
+        {
+          "name": "Marco Antonio Aliaga"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Bestias Level",
+      "Club": "",
+      "Tiempo": "54:34",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1982-03-22",
+      "_splits": null,
+      "Dorsal": 184,
+      "_members": [
+        {
+          "name": "Xavi Bonin"
+        },
+        {
+          "name": "Alex nunes"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Next Level Team",
+      "Club": "",
+      "Tiempo": "54:39",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1993-04-26",
+      "_splits": null,
+      "Dorsal": 356,
+      "_members": [
+        {
+          "name": "Adrian Sanchez Marina"
+        },
+        {
+          "name": "Jaume Robles Morey"
+        },
+        {
+          "name": "Gabriela Vallejo Guaman"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Los incansables",
+      "Club": "",
+      "Tiempo": "54:39",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1986-05-29",
+      "_splits": null,
+      "Dorsal": 192,
+      "_members": [
+        {
+          "name": "Jaume Robles Morey"
+        },
+        {
+          "name": "Adrian Sánchez Marina"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Després d'això, menjarem meló",
+      "Club": "",
+      "Tiempo": "55:19",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1990-08-31",
+      "_splits": null,
+      "Dorsal": 186,
+      "_members": [
+        {
+          "name": "Sebastià Cirer Crespí"
+        },
+        {
+          "name": "Jaume Llabrés Flexas"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Los Sin frenos",
+      "Club": "",
+      "Tiempo": "57:51",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1996-12-16",
+      "_splits": null,
+      "Dorsal": 165,
+      "_members": [
+        {
+          "name": "Raúl García Carriles"
+        },
+        {
+          "name": "Pedro Juan Riera"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "MACHACADAS",
+      "Club": "",
+      "Tiempo": "58:14",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1994-09-08",
+      "_splits": null,
+      "Dorsal": 176,
+      "_members": [
+        {
+          "name": "Matías Cantarero Martínez"
+        },
+        {
+          "name": "alejandro vega ALVAREZ"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Team NietoMartí",
+      "Club": "",
+      "Tiempo": "1:02:34",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2005-11-14",
+      "_splits": null,
+      "Dorsal": 137,
+      "_members": [
+        {
+          "name": "Martí Crespí Crespí"
+        },
+        {
+          "name": "David Nieto de Tena Calero"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Anonimos",
+      "Club": "",
+      "Tiempo": "1:02:43",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1986-03-22",
+      "_splits": null,
+      "Dorsal": 145,
+      "_members": [
+        {
+          "name": "Fran Muñoz Sánchez"
+        },
+        {
+          "name": "Lucas Elías kuni"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Chipirón",
+      "Club": "",
+      "Tiempo": "1:03:29",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1978-09-17",
+      "_splits": null,
+      "Dorsal": 181,
+      "_members": [
+        {
+          "name": "José ibarra viveros"
+        },
+        {
+          "name": "Santi soler"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Pecho Lapida & The Nife",
+      "Club": "",
+      "Tiempo": "1:03:44",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1988-12-18",
+      "_splits": null,
+      "Dorsal": 148,
+      "_members": [
+        {
+          "name": "Marcus Schmidmeier Arquelladas"
+        },
+        {
+          "name": "Adrian Gomez Sans"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "ELS EXTERNS",
+      "Club": "",
+      "Tiempo": "1:04:50",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-04-11",
+      "_splits": null,
+      "Dorsal": 151,
+      "_members": [
+        {
+          "name": "Sebastià Amer Esteva"
+        },
+        {
+          "name": "Pau Bibiloni Crespí"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Team 86",
+      "Club": "",
+      "Tiempo": "1:05:33",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1986-10-11",
+      "_splits": null,
+      "Dorsal": 158,
+      "_members": [
+        {
+          "name": "Xavier Ginard Torres"
+        },
+        {
+          "name": "Roberto Ohriuela Dominguez"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Los Angeles de Juanjo",
+      "Club": "",
+      "Tiempo": "1:05:45",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1994-02-08",
+      "_splits": null,
+      "Dorsal": 179,
+      "_members": [
+        {
+          "name": "Antoni Cifre Gili"
+        },
+        {
+          "name": "Pau Cladera Cladera"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "aWODjetas_team",
+      "Club": "",
+      "Tiempo": "1:05:57",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1989-08-17",
+      "_splits": null,
+      "Dorsal": 174,
+      "_members": [
+        {
+          "name": "Jose Antonio Rodriguez Turpin"
+        },
+        {
+          "name": "Marc Terrassa Picornell"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "LOS PAREOS DE CHARLY",
+      "Club": "",
+      "Tiempo": "1:08:24",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1982-09-23",
+      "_splits": null,
+      "Dorsal": 178,
+      "_members": [
+        {
+          "name": "Sebastian Ortiz"
+        },
+        {
+          "name": "Elian Ortiz"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Mañaneros",
+      "Club": "",
+      "Tiempo": "1:08:50",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1989-04-23",
+      "_splits": null,
+      "Dorsal": 144,
+      "_members": [
+        {
+          "name": "Lluis Berga Mayol"
+        },
+        {
+          "name": "Alejandro Mendez Contreras"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Daniel y Francesc",
+      "Club": "",
+      "Tiempo": "1:09:21",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1990-12-09",
+      "_splits": null,
+      "Dorsal": 150,
+      "_members": [
+        {
+          "name": "Daniel parrado Ramírez"
+        },
+        {
+          "name": "Francesc canaves amengual"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "TEAM FERRER",
+      "Club": "",
+      "Tiempo": "1:10:09",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1969-09-27",
+      "_splits": null,
+      "Dorsal": 156,
+      "_members": [
+        {
+          "name": "Joan Ferrer Martorell"
+        },
+        {
+          "name": "Miquel Ferrer Martínez"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Bro2bro",
+      "Club": "",
+      "Tiempo": "1:10:45",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1992-12-21",
+      "_splits": null,
+      "Dorsal": 183,
+      "_members": [
+        {
+          "name": "John Moreno Martinez"
+        },
+        {
+          "name": "Ruben Moreno Martinez"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Juan y Joan",
+      "Club": "",
+      "Tiempo": "1:10:55",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-01-22",
+      "_splits": null,
+      "Dorsal": 147,
+      "_members": [
+        {
+          "name": "juan cruz lliteras"
+        },
+        {
+          "name": "joan toni artigues flaquer"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Pollitos de Mar",
+      "Club": "",
+      "Tiempo": "1:13:24",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1992-09-10",
+      "_splits": null,
+      "Dorsal": 355,
+      "_members": [
+        {
+          "name": "Lucas Torres"
+        },
+        {
+          "name": "Florencia Crende Zagaglia"
+        },
+        {
+          "name": "Luis Adrián Caizalitin Castro"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "TWO TOWERS",
+      "Club": "",
+      "Tiempo": "1:13:24",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1998-07-21",
+      "_splits": null,
+      "Dorsal": 170,
+      "_members": [
+        {
+          "name": "Lucas Torres"
+        },
+        {
+          "name": "Luis Adrian Caizalitin Castro"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "CrossBros",
+      "Club": "",
+      "Tiempo": "1:16:18",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1997-03-02",
+      "_splits": null,
+      "Dorsal": 159,
+      "_members": [
+        {
+          "name": "Nicolás Jonathán Cerda Donoso"
+        },
+        {
+          "name": "Rubén Pérez Rodríguez"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Perros de presa",
+      "Club": "",
+      "Tiempo": "1:19:44",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-07-24",
+      "_splits": null,
+      "Dorsal": 182,
+      "_members": [
+        {
+          "name": "Benjamin Esteras Benitez"
+        },
+        {
+          "name": "Marcos Gómez Luque"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Nutrias Team",
+      "Club": "",
+      "Tiempo": "1:22:15",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-11-25",
+      "_splits": null,
+      "Dorsal": 167,
+      "_members": [
+        {
+          "name": "Matias Llado Chia"
+        },
+        {
+          "name": "Marc Piña Monserrat"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "ARCS TEAM",
+      "Club": "",
+      "Tiempo": "1:22:16",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-07-04",
+      "_splits": null,
+      "Dorsal": 163,
+      "_members": [
+        {
+          "name": "IVÁN BRONCANO SUREDA"
+        },
+        {
+          "name": "MARIO DEL VALLE ALFARO"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Jaume y Martí",
+      "Club": "",
+      "Tiempo": "58:42",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1989-08-24",
+      "_splits": null,
+      "Dorsal": 154,
+      "_members": [
+        {
+          "name": "Jaume Bestard Amengual"
+        },
+        {
+          "name": "Martí Bibiloni de la Casa"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Two Guys Bay",
+      "Club": "",
+      "Tiempo": "1:07:05",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1981-01-29",
+      "_splits": null,
+      "Dorsal": 152,
+      "_members": [
+        {
+          "name": "Pedro Álvarez de Sotomayor"
+        },
+        {
+          "name": "Mike Weber"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "José y Mateo",
+      "Club": "",
+      "Tiempo": "1:07:32",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1990-01-31",
+      "_splits": null,
+      "Dorsal": 187,
+      "_members": [
+        {
+          "name": "José Bernat Rodriguez"
+        },
+        {
+          "name": "Mateo Campaña Coll"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "El que vulguis Team",
+      "Club": "",
+      "Tiempo": "1:10:20",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1985-10-03",
+      "_splits": null,
+      "Dorsal": 189,
+      "_members": [
+        {
+          "name": "Emilio  López Vílchez"
+        },
+        {
+          "name": "Miguel Angel Solá Truyols"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Dúo Férreo",
+      "Club": "",
+      "Tiempo": "1:10:48",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1975-07-07",
+      "_splits": null,
+      "Dorsal": 164,
+      "_members": [
+        {
+          "name": "Juanma Pérez"
+        },
+        {
+          "name": "Javi Pérez"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "9867",
+      "Club": "",
+      "Tiempo": "1:11:02",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1988-03-12",
+      "_splits": null,
+      "Dorsal": 353,
+      "_members": [
+        {
+          "name": "Aina Seguí Monterde"
+        },
+        {
+          "name": "Toni Mayrata Andreu"
+        },
+        {
+          "name": "David Bonnin Hernandez"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Sera y Miguel",
+      "Club": "",
+      "Tiempo": "1:11:17",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1979-12-28",
+      "_splits": null,
+      "Dorsal": 169,
+      "_members": [
+        {
+          "name": "Miguel Enseñat Mestre"
+        },
+        {
+          "name": "Serafín Guindos Trujillo"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "DELACALE",
+      "Club": "",
+      "Tiempo": "1:11:32",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1983-01-08",
+      "_splits": null,
+      "Dorsal": 166,
+      "_members": [
+        {
+          "name": "Sergio Leon Fernández"
+        },
+        {
+          "name": "Santiago de la Cal Perez"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "P&P",
+      "Club": "",
+      "Tiempo": "1:15:37",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1985-12-05",
+      "_splits": null,
+      "Dorsal": 172,
+      "_members": [
+        {
+          "name": "Paco Ferrer Gayà"
+        },
+        {
+          "name": "Pep Moyà Navarro"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Capllonch",
+      "Club": "",
+      "Tiempo": "1:16:02",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1982-10-05",
+      "_splits": null,
+      "Dorsal": 153,
+      "_members": [
+        {
+          "name": "Toni Xavier Capllonch"
+        },
+        {
+          "name": "Llorenç Capllonch"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "TRIBE",
+      "Club": "",
+      "Tiempo": "1:16:24",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1981-11-23",
+      "_splits": null,
+      "Dorsal": 185,
+      "_members": [
+        {
+          "name": "Raúl Valero Cano"
+        },
+        {
+          "name": "Andoni Quintana Avelleira"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Las niñas",
+      "Club": "",
+      "Tiempo": "1:18:06",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1978-01-24",
+      "_splits": null,
+      "Dorsal": 161,
+      "_members": [
+        {
+          "name": "Kisco González"
+        },
+        {
+          "name": "Estebe Lasa Illarramendi"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "SIXSEVEN",
+      "Club": "",
+      "Tiempo": "1:22:54",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1979-04-29",
+      "_splits": null,
+      "Dorsal": 149,
+      "_members": [
+        {
+          "name": "Jose Mazuelas Guerrero"
+        },
+        {
+          "name": "Emilio Jose Sanchez Molina"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Pau y Jaume",
+      "Club": "",
+      "Tiempo": "1:30:36",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1980-09-12",
+      "_splits": null,
+      "Dorsal": 177,
+      "_members": [
+        {
+          "name": "Pau Salord Amer"
+        },
+        {
+          "name": "Jaume Viver Piza"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "MACS DE TORRENT",
+      "Club": "",
+      "Tiempo": "59:20",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1976-09-02",
+      "_splits": null,
+      "Dorsal": 173,
+      "_members": [
+        {
+          "name": "Jordi Ramis Canals"
+        },
+        {
+          "name": "Pedro Antonio Pou"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "PALMA SPORT TENIS CLUB",
+      "Club": "",
+      "Tiempo": "59:29",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1973-05-11",
+      "_splits": null,
+      "Dorsal": 142,
+      "_members": [
+        {
+          "name": "Manuel Monclus Marcellan"
+        },
+        {
+          "name": "Joan Riusech Sanchez"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Sin caducidad",
+      "Club": "",
+      "Tiempo": "1:11:43",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1972-06-10",
+      "_splits": null,
+      "Dorsal": 180,
+      "_members": [
+        {
+          "name": "José Manuel López Ramírez"
+        },
+        {
+          "name": "Eduardo Moreno Serra"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Unbrok3n",
+      "Club": "",
+      "Tiempo": "1:14:16",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1975-04-06",
+      "_splits": null,
+      "Dorsal": 143,
+      "_members": [
+        {
+          "name": "Oscar Mascaro"
+        },
+        {
+          "name": "Víctor Gonzalez"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Born to run",
+      "Club": "",
+      "Tiempo": "1:19:02",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1966-06-25",
+      "_splits": null,
+      "Dorsal": 188,
+      "_members": [
+        {
+          "name": "Rafel Crespí Terrassa"
+        },
+        {
+          "name": "Manuel Aguilar Berrocal"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "WOLVES",
+      "Club": "",
+      "Tiempo": "1:19:13",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1972-12-02",
+      "_splits": null,
+      "Dorsal": 191,
+      "_members": [
+        {
+          "name": "JOSE ANTONIO CADENAS QUINTERO"
+        },
+        {
+          "name": "JUAN JOSE LUCENA TORRES"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "PARDO | Muscle & Mind",
+      "Club": "",
+      "Tiempo": "59:30",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1995-07-08",
+      "_splits": null,
+      "Dorsal": 241,
+      "_members": [
+        {
+          "name": "Pepe Pardo"
+        },
+        {
+          "name": "Alejandra Bonacasa"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Macarrons",
+      "Club": "",
+      "Tiempo": "1:03:03",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2009-08-05",
+      "_splits": null,
+      "Dorsal": 280,
+      "_members": [
+        {
+          "name": "Mariona Terrasa Torandell"
+        },
+        {
+          "name": "Llorenç Capó Romero"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Los más competitivos",
+      "Club": "",
+      "Tiempo": "1:05:09",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2002-08-21",
+      "_splits": null,
+      "Dorsal": 284,
+      "_members": [
+        {
+          "name": "Marina Canals Ferré"
+        },
+        {
+          "name": "Kilian Crespí Vázquez"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Kaos i km",
+      "Club": "",
+      "Tiempo": "1:07:59",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1994-01-29",
+      "_splits": null,
+      "Dorsal": 271,
+      "_members": [
+        {
+          "name": "Andreu Vaquer Vadell"
+        },
+        {
+          "name": "Maria Coloma Pascual Mut"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Sense límits",
+      "Club": "",
+      "Tiempo": "1:07:59",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2000-12-17",
+      "_splits": null,
+      "Dorsal": 352,
+      "_members": [
+        {
+          "name": "Maria Coloma Pascual Mut"
+        },
+        {
+          "name": "Laura Fuster Sánchez"
+        },
+        {
+          "name": "Mateu Rebassa Bosch"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Pichis",
+      "Club": "",
+      "Tiempo": "1:08:46",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1995-09-30",
+      "_splits": null,
+      "Dorsal": 261,
+      "_members": [
+        {
+          "name": "Miguel Amer Perello"
+        },
+        {
+          "name": "Julieta Torres Daniel"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Diaita",
+      "Club": "",
+      "Tiempo": "1:08:47",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2006-10-20",
+      "_splits": null,
+      "Dorsal": 250,
+      "_members": [
+        {
+          "name": "Carme Cladera Mir"
+        },
+        {
+          "name": "Jaume Bennassar Lopez"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Alba y el lastre",
+      "Club": "",
+      "Tiempo": "1:11:54",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1998-05-17",
+      "_splits": null,
+      "Dorsal": 259,
+      "_members": [
+        {
+          "name": "Alba Mora Bustos"
+        },
+        {
+          "name": "Joan Cerdà"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "leveluppx2",
+      "Club": "",
+      "Tiempo": "1:12:11",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2001-01-18",
+      "_splits": null,
+      "Dorsal": 242,
+      "_members": [
+        {
+          "name": "Laura Fuster Sanchez"
+        },
+        {
+          "name": "Mateu Rebassa Bosch"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "De ca'n Llebre",
+      "Club": "",
+      "Tiempo": "1:14:42",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1999-08-31",
+      "_splits": null,
+      "Dorsal": 245,
+      "_members": [
+        {
+          "name": "JOANA MARIA VERGER FIOL"
+        },
+        {
+          "name": "JAUME VERGER FIOL"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "M&M's team",
+      "Club": "",
+      "Tiempo": "1:17:32",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1997-04-17",
+      "_splits": null,
+      "Dorsal": 266,
+      "_members": [
+        {
+          "name": "Maria Sánchez"
+        },
+        {
+          "name": "Marc López Nicolau"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "ADN-Ferrer",
+      "Club": "",
+      "Tiempo": "1:19:33",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1997-08-28",
+      "_splits": null,
+      "Dorsal": 287,
+      "_members": [
+        {
+          "name": "Antoni Ferrer"
+        },
+        {
+          "name": "Paula Maria Ferrer Siquier"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Rep-tiles",
+      "Club": "",
+      "Tiempo": "1:20:27",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2008-06-23",
+      "_splits": null,
+      "Dorsal": 276,
+      "_members": [
+        {
+          "name": "Colau Abrines Rotger"
+        },
+        {
+          "name": "Jennifer Parra Bermúdez"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Team Tusi",
+      "Club": "",
+      "Tiempo": "1:21:05",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2001-09-09",
+      "_splits": null,
+      "Dorsal": 258,
+      "_members": [
+        {
+          "name": "Celine Zerwas"
+        },
+        {
+          "name": "Manou Tom Hölter"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Aurelia",
+      "Club": "",
+      "Tiempo": "1:22:05",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2000-11-28",
+      "_splits": null,
+      "Dorsal": 283,
+      "_members": [
+        {
+          "name": "Francesc Borras"
+        },
+        {
+          "name": "Malena Pardo Ortiz"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "ZaiLis",
+      "Club": "",
+      "Tiempo": "1:26:15",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1999-01-02",
+      "_splits": null,
+      "Dorsal": 265,
+      "_members": [
+        {
+          "name": "Lisandro Rocha Tau"
+        },
+        {
+          "name": "Zahira Souidi Ouai"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Farem un pensament",
+      "Club": "",
+      "Tiempo": "1:26:17",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1998-12-12",
+      "_splits": null,
+      "Dorsal": 262,
+      "_members": [
+        {
+          "name": "Adrià Ferrer Notario"
+        },
+        {
+          "name": "Lucía Maldonado Escalera"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "BN TEAM",
+      "Club": "",
+      "Tiempo": "1:26:58",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1996-04-10",
+      "_splits": null,
+      "Dorsal": 272,
+      "_members": [
+        {
+          "name": "Joan Ferrer Notario"
+        },
+        {
+          "name": "Aina Gayà Serra"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Carlos y Jana",
+      "Club": "",
+      "Tiempo": "1:30:14",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1987-03-13",
+      "_splits": null,
+      "Dorsal": 260,
+      "_members": [
+        {
+          "name": "Carlos Ortega Castaño"
+        },
+        {
+          "name": "Jana Bunces"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "TRIBE",
+      "Club": "",
+      "Tiempo": "1:01:27",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1996-06-07",
+      "_splits": null,
+      "Dorsal": 243,
+      "_members": [
+        {
+          "name": "Gerard Pou Soler"
+        },
+        {
+          "name": "Sandra Pérez Del Río"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Saiyans FC",
+      "Club": "",
+      "Tiempo": "1:05:11",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1997-03-25",
+      "_splits": null,
+      "Dorsal": 248,
+      "_members": [
+        {
+          "name": "Natalia Marmy Novel"
+        },
+        {
+          "name": "Juan Pedro Romera Fullana"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Alienz",
+      "Club": "",
+      "Tiempo": "1:07:27",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1988-02-22",
+      "_splits": null,
+      "Dorsal": 281,
+      "_members": [
+        {
+          "name": "Alicia Vallcaneras Cubero"
+        },
+        {
+          "name": "Enzo Kolaroff"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "JORDERI",
+      "Club": "",
+      "Tiempo": "1:08:28",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1983-02-16",
+      "_splits": null,
+      "Dorsal": 273,
+      "_members": [
+        {
+          "name": "ERIKA VÁZQUEZ MORALES"
+        },
+        {
+          "name": "JORDI GONZALEZ CAMPOS"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Paubefit",
+      "Club": "",
+      "Tiempo": "1:08:59",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-08-30",
+      "_splits": null,
+      "Dorsal": 286,
+      "_members": [
+        {
+          "name": "Paula Bargay Pizarro"
+        },
+        {
+          "name": "Adrian Castro Ortega"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Si quieres puedes.",
+      "Club": "",
+      "Tiempo": "1:10:33",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1983-11-08",
+      "_splits": null,
+      "Dorsal": 268,
+      "_members": [
+        {
+          "name": "Marta Álvarez estrada"
+        },
+        {
+          "name": "Jonatan Morales armas"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Eva y Rafa",
+      "Club": "",
+      "Tiempo": "1:12:19",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1994-03-21",
+      "_splits": null,
+      "Dorsal": 292,
+      "_members": [
+        {
+          "name": "Eva Martín"
+        },
+        {
+          "name": "Rafa Rey"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "AntifrágiL",
+      "Club": "",
+      "Tiempo": "1:14:00",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1994-08-22",
+      "_splits": null,
+      "Dorsal": 247,
+      "_members": [
+        {
+          "name": "Francisco Ruano Gutiérrez"
+        },
+        {
+          "name": "Polina Nikolaeva"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Sweat Regret Repeat",
+      "Club": "",
+      "Tiempo": "1:14:17",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1982-11-11",
+      "_splits": null,
+      "Dorsal": 285,
+      "_members": [
+        {
+          "name": "Neil Alan Selway"
+        },
+        {
+          "name": "Claudia Aura Rodrigo"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Tira tira",
+      "Club": "",
+      "Tiempo": "1:16:01",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1992-06-18",
+      "_splits": null,
+      "Dorsal": 279,
+      "_members": [
+        {
+          "name": "Josune Fernández Lobo"
+        },
+        {
+          "name": "Jaume Simó Payeras"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "CrossFat",
+      "Club": "",
+      "Tiempo": "1:17:28",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1990-06-20",
+      "_splits": null,
+      "Dorsal": 291,
+      "_members": [
+        {
+          "name": "Elisabet Tegeo Molina"
+        },
+        {
+          "name": "Rafael Alejandro Raya Quetglas"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Strong match",
+      "Club": "",
+      "Tiempo": "1:18:05",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1994-08-28",
+      "_splits": null,
+      "Dorsal": 267,
+      "_members": [
+        {
+          "name": "VIOLETA GUERRERO GARCÍA"
+        },
+        {
+          "name": "Germán Darío González Garzón"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Next level",
+      "Club": "",
+      "Tiempo": "1:18:30",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1993-10-16",
+      "_splits": null,
+      "Dorsal": 288,
+      "_members": [
+        {
+          "name": "Aina trias ferrer"
+        },
+        {
+          "name": "Llorenç Bauza"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Verger Team",
+      "Club": "",
+      "Tiempo": "1:22:05",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1977-06-20",
+      "_splits": null,
+      "Dorsal": 246,
+      "_members": [
+        {
+          "name": "TONI VERGER MIRALLES"
+        },
+        {
+          "name": "antonella OCCHIPINTI"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Potreínos",
+      "Club": "",
+      "Tiempo": "1:23:17",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1993-01-01",
+      "_splits": null,
+      "Dorsal": 277,
+      "_members": [
+        {
+          "name": "Marta Pericás Font"
+        },
+        {
+          "name": "David Capó Calafell"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Los reemplazables",
+      "Club": "",
+      "Tiempo": "1:23:43",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1991-01-06",
+      "_splits": null,
+      "Dorsal": 249,
+      "_members": [
+        {
+          "name": "Juan Carlos Bonet Mas"
+        },
+        {
+          "name": "Maria del Mar Navarro Bibiloni"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Jo sempre més",
+      "Club": "",
+      "Tiempo": "1:25:41",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2010-09-24",
+      "_splits": null,
+      "Dorsal": 289,
+      "_members": [
+        {
+          "name": "Pep Pons Bergas"
+        },
+        {
+          "name": "Ana María  Bergas Bassa"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "CMI team",
+      "Club": "",
+      "Tiempo": "1:28:39",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1985-10-23",
+      "_splits": null,
+      "Dorsal": 274,
+      "_members": [
+        {
+          "name": "María José iglesias"
+        },
+        {
+          "name": "Cristian parra"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Hakuna Masquat",
+      "Club": "",
+      "Tiempo": "1:29:03",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1993-11-04",
+      "_splits": null,
+      "Dorsal": 244,
+      "_members": [
+        {
+          "name": "Alejandro Alemany Jara"
+        },
+        {
+          "name": "Cristina Puga Martorell"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Jaime y Xisca",
+      "Club": "",
+      "Tiempo": "1:03:25",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1976-07-20",
+      "_splits": null,
+      "Dorsal": 275,
+      "_members": [
+        {
+          "name": "Jaime Reina Cladera"
+        },
+        {
+          "name": "Xisca Cifre Roig"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "VIVES&CARBONELL",
+      "Club": "",
+      "Tiempo": "1:04:24",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1979-03-23",
+      "_splits": null,
+      "Dorsal": 269,
+      "_members": [
+        {
+          "name": "CATI VIVES VIVES"
+        },
+        {
+          "name": "PEDRO CARBONELL DURAN"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Fast & Fearless",
+      "Club": "",
+      "Tiempo": "1:09:06",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1979-12-11",
+      "_splits": null,
+      "Dorsal": 253,
+      "_members": [
+        {
+          "name": "Jose Luis Gallego Rey"
+        },
+        {
+          "name": "Catalina Crepí Núñez"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Son ganxo team",
+      "Club": "",
+      "Tiempo": "1:09:34",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "2001-09-28",
+      "_splits": null,
+      "Dorsal": 257,
+      "_members": [
+        {
+          "name": "sebastia esteso gelabert"
+        },
+        {
+          "name": "Cati Gelabert juan"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "LOS CUCHUS",
+      "Club": "",
+      "Tiempo": "1:11:47",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1980-08-20",
+      "_splits": null,
+      "Dorsal": 290,
+      "_members": [
+        {
+          "name": "FRANCISCO JAVIER CUESTA COSTA"
+        },
+        {
+          "name": "ESTEFANIA CUESTA OLIVARES"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Kris Kross",
+      "Club": "",
+      "Tiempo": "1:12:05",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1988-12-15",
+      "_splits": null,
+      "Dorsal": 252,
+      "_members": [
+        {
+          "name": "Cristina bravo santos"
+        },
+        {
+          "name": "Juan Antonio Cifre"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Grummpys",
+      "Club": "",
+      "Tiempo": "1:13:15",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1983-08-01",
+      "_splits": null,
+      "Dorsal": 270,
+      "_members": [
+        {
+          "name": "Julio Saorin Marin"
+        },
+        {
+          "name": "Sandra Hernandez"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Daniel y María",
+      "Club": "",
+      "Tiempo": "1:17:25",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1984-01-18",
+      "_splits": null,
+      "Dorsal": 278,
+      "_members": [
+        {
+          "name": "Daniel Morales Carrillo"
+        },
+        {
+          "name": "Maria del Mar Gallardo Cifre"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Duva Team",
+      "Club": "",
+      "Tiempo": "1:18:32",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1993-09-17",
+      "_splits": null,
+      "Dorsal": 282,
+      "_members": [
+        {
+          "name": "Carmen Castillo Salvador"
+        },
+        {
+          "name": "Rafa Bota Sanchez"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Jaume y Elionor",
+      "Club": "",
+      "Tiempo": "1:23:10",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1982-07-18",
+      "_splits": null,
+      "Dorsal": 254,
+      "_members": [
+        {
+          "name": "Jaume Gost Capo"
+        },
+        {
+          "name": "Elionor Maria Pol Cladera"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Con mi sis!",
+      "Club": "",
+      "Tiempo": "1:26:57",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1983-04-26",
+      "_splits": null,
+      "Dorsal": 255,
+      "_members": [
+        {
+          "name": "patricia redondo torrecilla"
+        },
+        {
+          "name": "guillermo redondo torrecilla"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "shambhala",
+      "Club": "",
+      "Tiempo": "1:13:26",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1968-06-15",
+      "_splits": null,
+      "Dorsal": 256,
+      "_members": [
+        {
+          "name": "bo cuellar hansen"
+        },
+        {
+          "name": "anabel perez paredes"
+        }
+      ]
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Perfect Blend",
+      "Club": "",
+      "Tiempo": "1:21:22",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1965-06-26",
+      "_splits": null,
+      "Dorsal": 263,
+      "_members": [
+        {
+          "name": "Angel Fco. Fernandez Armenta"
+        },
+        {
+          "name": "Maria Esperanza Bassa Ferra"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "Pos.": "",
+      "Nombre": "Mareas  Vivas",
+      "Club": "",
+      "Tiempo": "1:26:02",
+      "Penalización": "",
+      "if([{n}]=1;[DateOfBirth1];[DateOfBirth2])": "1964-01-07",
+      "_splits": null,
+      "Dorsal": 294,
+      "_members": [
+        {
+          "name": "VITO PINTO"
+        },
+        {
+          "name": "OBDULIA INSUA RODRIGUEZ"
+        }
+      ],
+      "_pairGender": "Masculina"
+    }
+  ]
+}
