@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { Athlete, EventInfo, FilterState, RREventConfig, RRFieldMapping, SortConfig, WidgetConfig } from '../lib/types';
+import { matchesQuery, normalizeName } from '../lib/text';
 import { rrFetchList, RRRow } from '../lib/raceResultApi';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -475,7 +476,7 @@ export function useRaceResults(config: WidgetConfig): UseRaceResultsReturn {
 
   /** Un predicado por filtro, para poder aplicarlos todos o todos menos uno. */
   const matchers = useMemo(() => {
-    const q = filters.search.trim().toLowerCase();
+    const q = normalizeName(filters.search);
     return {
       gender: (a: Athlete) => !filters.gender || a.gender === filters.gender,
       ageGroup: (a: Athlete) => !filters.ageGroup || a.age_group === filters.ageGroup,
@@ -483,9 +484,12 @@ export function useRaceResults(config: WidgetConfig): UseRaceResultsReturn {
       nationality: (a: Athlete) => !filters.nationality || a.nationality === filters.nationality,
       search: (a: Athlete) =>
         !q ||
-        a.name.toLowerCase().includes(q) ||
-        a.bib.toLowerCase().includes(q) ||
-        a.category.toLowerCase().includes(q),
+        matchesQuery(a.name, q) ||
+        matchesQuery(a.bib, q) ||
+        matchesQuery(a.category, q) ||
+        // En parejas y equipos se busca también por cada integrante y su club
+        (a.members ?? []).some((m) => matchesQuery(m.name, q) || matchesQuery(m.club ?? '', q)) ||
+        matchesQuery(a.club ?? '', q),
     };
   }, [filters]);
 

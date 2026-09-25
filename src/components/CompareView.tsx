@@ -20,7 +20,8 @@ import {
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import { useRaceResults, presetFiltersFor } from '../hooks/useRaceResults';
-import { matchesQuery, normalizeName, useGlobalAthletes } from '../hooks/useGlobalAthletes';
+import { useGlobalAthletes } from '../hooks/useGlobalAthletes';
+import { matchesQuery, normalizeName } from '../lib/text';
 import { SearchForm } from './SearchForm';
 import { AthletePicker } from './AthletePicker';
 import { ChartLegend, MultiPositionChart, StationBarsChart } from './AnalyzeCharts';

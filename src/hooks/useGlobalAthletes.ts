@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { Athlete, EventInfo, RREventConfig } from '../lib/types';
+import { matchesQuery, normalizeName } from '../lib/text';
 import { fetchAthletesForRREvent } from './useRaceResults';
 
 /** Una carrera ya cargada: los atletas vienen sellados con su procedencia. */
@@ -22,16 +23,6 @@ export interface PersonHit {
 export interface PersonHistory {
   person: string;
   hits: PersonHit[];
-}
-
-/** Sin acentos, ni mayúsculas, ni espacios de más: así se comparan los nombres. */
-export function normalizeName(name: string): string {
-  return name
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/\s+/g, ' ')
-    .trim();
 }
 
 /** Las variantes por género comparten fichero, así que solo se carga una vez cada uno. */
@@ -89,10 +80,6 @@ async function loadAllSources(
   };
   await Promise.all([...Array(Math.min(4, configs.length))].map(worker));
   return out;
-}
-
-export function matchesQuery(text: string, query: string): boolean {
-  return normalizeName(text).includes(query);
 }
 
 /** Busca personas por nombre en todas las carreras cargadas. */
