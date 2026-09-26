@@ -1,0 +1,785 @@
+{
+  "info": {
+    "id": "409310",
+    "fileKey": "409310_2",
+    "name": "DEKA Happy Gym Calvià 2026",
+    "contestName": "DEKA MILE TEAMS",
+    "date": "2026-07-04",
+    "location": "Calvià",
+    "listName": "Resultados|01.LIVE",
+    "contest": 2,
+    "format": "pairs",
+    "genderCategories": [
+      "Femenina",
+      "Masculina",
+      "Mixta"
+    ]
+  },
+  "rows": [
+    {
+      "AUTORANK.p": "1.",
+      "Nombre": "Eloy Maza Gil / Bernat Darder",
+      "Dorsal": 110,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "18:24",
+      "_members": [
+        {
+          "name": "Eloy Maza Gil"
+        },
+        {
+          "name": "Bernat Darder"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "2.",
+      "Nombre": "Isaac Escudero Fernández / Jesús Calvo Fernández",
+      "Dorsal": 68,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "18:55",
+      "_members": [
+        {
+          "name": "Isaac Escudero Fernández"
+        },
+        {
+          "name": "Jesús Calvo Fernández"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "3.",
+      "Nombre": "Alberto Villapalos Muñoz / Javier Cobo",
+      "Dorsal": 89,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "19:22",
+      "_members": [
+        {
+          "name": "Alberto Villapalos Muñoz"
+        },
+        {
+          "name": "Javier Cobo"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "4.",
+      "Nombre": "Miquel Angel Soler / Lluis Galmes",
+      "Dorsal": 88,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:13",
+      "_members": [
+        {
+          "name": "Miquel Angel Soler"
+        },
+        {
+          "name": "Lluis Galmes"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "5.",
+      "Nombre": "Sergio Salvador Pareja / Santiago Torres López",
+      "Dorsal": 107,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:33",
+      "_members": [
+        {
+          "name": "Sergio Salvador Pareja"
+        },
+        {
+          "name": "Santiago Torres López"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "6.",
+      "Nombre": "Annabelle Brook / Matias Veliz tapia",
+      "Dorsal": 90,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:58",
+      "_members": [
+        {
+          "name": "Annabelle Brook"
+        },
+        {
+          "name": "Matias Veliz tapia"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "7.",
+      "Nombre": "Margalida Pach Gomila / Pueyo Puyuelo",
+      "Dorsal": 82,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:10",
+      "_members": [
+        {
+          "name": "Margalida Pach Gomila"
+        },
+        {
+          "name": "Pueyo Puyuelo"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "8.",
+      "Nombre": "Miriam Selva lopez / Jaume Jaume Busquets",
+      "Dorsal": 94,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:18",
+      "_members": [
+        {
+          "name": "Miriam Selva lopez"
+        },
+        {
+          "name": "Jaume Jaume Busquets"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "9.",
+      "Nombre": "Isabel Martinez / Pedro Gallardo Pomar",
+      "Dorsal": 106,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:22",
+      "_members": [
+        {
+          "name": "Isabel Martinez"
+        },
+        {
+          "name": "Pedro Gallardo Pomar"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "10.",
+      "Nombre": "Natalia Marin / Rafael Servero",
+      "Dorsal": 84,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:23",
+      "_members": [
+        {
+          "name": "Natalia Marin"
+        },
+        {
+          "name": "Rafael Servero"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "11.",
+      "Nombre": "Lorenzo Jose Sastre Forteza / Sergio Garcia Encinas",
+      "Dorsal": 112,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:26",
+      "_members": [
+        {
+          "name": "Lorenzo Jose Sastre Forteza"
+        },
+        {
+          "name": "Sergio Garcia Encinas"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "12.",
+      "Nombre": "Lourdes Portell / Toni Manrique",
+      "Dorsal": 74,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:29",
+      "_members": [
+        {
+          "name": "Lourdes Portell"
+        },
+        {
+          "name": "Toni Manrique"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "13.",
+      "Nombre": "Natalia Rodriguez Muiños / David Lopez Jimenez",
+      "Dorsal": 73,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "22:06",
+      "_members": [
+        {
+          "name": "Natalia Rodriguez Muiños"
+        },
+        {
+          "name": "David Lopez Jimenez"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "14.",
+      "Nombre": "Mar Vera Gómez / Jaime Victory Peñalver",
+      "Dorsal": 93,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "22:12",
+      "_members": [
+        {
+          "name": "Mar Vera Gómez"
+        },
+        {
+          "name": "Jaime Victory Peñalver"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "15.",
+      "Nombre": "Marta Sanchez / Eloisa Pinel",
+      "Dorsal": 83,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "22:13",
+      "_members": [
+        {
+          "name": "Marta Sanchez"
+        },
+        {
+          "name": "Eloisa Pinel"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "16.",
+      "Nombre": "Peter Dawson / Jose Manuel Beltran Jimenez",
+      "Dorsal": 77,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "22:15",
+      "_members": [
+        {
+          "name": "Peter Dawson"
+        },
+        {
+          "name": "Jose Manuel Beltran Jimenez"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "17.",
+      "Nombre": "Marc Vives / Guillermo Payeras",
+      "Dorsal": 92,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "22:29",
+      "_members": [
+        {
+          "name": "Marc Vives"
+        },
+        {
+          "name": "Guillermo Payeras"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "18.",
+      "Nombre": "Juan Torrandell Servera / Juan Francisco López Morici",
+      "Dorsal": 87,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "22:39",
+      "_members": [
+        {
+          "name": "Juan Torrandell Servera"
+        },
+        {
+          "name": "Juan Francisco López Morici"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "19.",
+      "Nombre": "ANTONIO GONZALEZ BUENO / ALEJANDRO HERNANDEZ FEMENIAS",
+      "Dorsal": 108,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "22:40",
+      "_members": [
+        {
+          "name": "ANTONIO GONZALEZ BUENO"
+        },
+        {
+          "name": "ALEJANDRO HERNANDEZ FEMENIAS"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "20.",
+      "Nombre": "Sebastia Riera Roig / Xim Rodriguez Bergues",
+      "Dorsal": 113,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "22:40",
+      "_members": [
+        {
+          "name": "Sebastia Riera Roig"
+        },
+        {
+          "name": "Xim Rodriguez Bergues"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "21.",
+      "Nombre": "MANUEL BUENO VIVEROS / ALEJANDRO JOHN BUENO FRYER",
+      "Dorsal": 109,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "22:44",
+      "_members": [
+        {
+          "name": "MANUEL BUENO VIVEROS"
+        },
+        {
+          "name": "ALEJANDRO JOHN BUENO FRYER"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "22.",
+      "Nombre": "Daniel Martinez Rodriguez / Juan Carlos De Sousa",
+      "Dorsal": 85,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "23:02",
+      "_members": [
+        {
+          "name": "Daniel Martinez Rodriguez"
+        },
+        {
+          "name": "Juan Carlos De Sousa"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "23.",
+      "Nombre": "Barbara Hidalgo Vaquer / Elena González González",
+      "Dorsal": 104,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "23:06",
+      "_members": [
+        {
+          "name": "Barbara Hidalgo Vaquer"
+        },
+        {
+          "name": "Elena González González"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "24.",
+      "Nombre": "Rafael Gutierrez Lopez / juan massanet ramon",
+      "Dorsal": 111,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "23:15",
+      "_members": [
+        {
+          "name": "Rafael Gutierrez Lopez"
+        },
+        {
+          "name": "juan massanet ramon"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "25.",
+      "Nombre": "Pere Miquel Nadal / Miguel Angel Soler Bonnin",
+      "Dorsal": 70,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "23:26",
+      "_members": [
+        {
+          "name": "Pere Miquel Nadal"
+        },
+        {
+          "name": "Miguel Angel Soler Bonnin"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "26.",
+      "Nombre": "paco martinez / Jero Muñoz",
+      "Dorsal": 86,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "23:28",
+      "_members": [
+        {
+          "name": "paco martinez"
+        },
+        {
+          "name": "Jero Muñoz"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "27.",
+      "Nombre": "JESICA GONZALEZ BUENO / VLAMIR JHOSIMAR VIZCAINO MENDOZA",
+      "Dorsal": 102,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "23:42",
+      "_members": [
+        {
+          "name": "JESICA GONZALEZ BUENO"
+        },
+        {
+          "name": "VLAMIR JHOSIMAR VIZCAINO MENDOZA"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "28.",
+      "Nombre": "Isabel Leyton Luna / Neus Mesquida Campins",
+      "Dorsal": 97,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "23:52",
+      "_members": [
+        {
+          "name": "Isabel Leyton Luna"
+        },
+        {
+          "name": "Neus Mesquida Campins"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "29.",
+      "Nombre": "ROCIO ORDINAS ROMERO / JESUS BUENO VIVEROS",
+      "Dorsal": 103,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "24:03",
+      "_members": [
+        {
+          "name": "ROCIO ORDINAS ROMERO"
+        },
+        {
+          "name": "JESUS BUENO VIVEROS"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "30.",
+      "Nombre": "Cristina Puga Martorell / alejandro jara",
+      "Dorsal": 105,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "24:37",
+      "_members": [
+        {
+          "name": "Cristina Puga Martorell"
+        },
+        {
+          "name": "alejandro jara"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "31.",
+      "Nombre": "Ángel Villar Hernández / Kilian José Javier Puga Martin",
+      "Dorsal": 91,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "25:04",
+      "_members": [
+        {
+          "name": "Ángel Villar Hernández"
+        },
+        {
+          "name": "Kilian José Javier Puga Martin"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "32.",
+      "Nombre": "Patricia Capablo / Almudena Tasende",
+      "Dorsal": 79,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "25:18",
+      "_members": [
+        {
+          "name": "Patricia Capablo"
+        },
+        {
+          "name": "Almudena Tasende"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "33.",
+      "Nombre": "Jessica Sotolongo Dueñas / Pedro Morales Gómez",
+      "Dorsal": 95,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "25:33",
+      "_members": [
+        {
+          "name": "Jessica Sotolongo Dueñas"
+        },
+        {
+          "name": "Pedro Morales Gómez"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "34.",
+      "Nombre": "Patricia Trave Colorado / Nuria Zamudio Van Der Raad",
+      "Dorsal": 100,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "25:41",
+      "_members": [
+        {
+          "name": "Patricia Trave Colorado"
+        },
+        {
+          "name": "Nuria Zamudio Van Der Raad"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "35.",
+      "Nombre": "Antonia Botellas / Paula Sitges",
+      "Dorsal": 67,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "26:05",
+      "_members": [
+        {
+          "name": "Antonia Botellas"
+        },
+        {
+          "name": "Paula Sitges"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "36.",
+      "Nombre": "Maria Caballero Sanso / Javier Jimenez Mates",
+      "Dorsal": 72,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "26:17",
+      "_members": [
+        {
+          "name": "Maria Caballero Sanso"
+        },
+        {
+          "name": "Javier Jimenez Mates"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "37.",
+      "Nombre": "Beatriz Brocal / Pedro Femenías Aguiló",
+      "Dorsal": 76,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "26:51",
+      "_members": [
+        {
+          "name": "Beatriz Brocal"
+        },
+        {
+          "name": "Pedro Femenías Aguiló"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "38.",
+      "Nombre": "Desiree Fernandez / Laia Fajeda Reina",
+      "Dorsal": 80,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "26:53",
+      "_members": [
+        {
+          "name": "Desiree Fernandez"
+        },
+        {
+          "name": "Laia Fajeda Reina"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "39.",
+      "Nombre": "Maria Bellido Torres / Marc Mari Mena",
+      "Dorsal": 69,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "27:08",
+      "_members": [
+        {
+          "name": "Maria Bellido Torres"
+        },
+        {
+          "name": "Marc Mari Mena"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "40.",
+      "Nombre": "Catalina Nadal / Cris Moreno",
+      "Dorsal": 75,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "27:25",
+      "_members": [
+        {
+          "name": "Catalina Nadal"
+        },
+        {
+          "name": "Cris Moreno"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "41.",
+      "Nombre": "Marina Llompart Castañer / Coty Maruza Millán Cervera",
+      "Dorsal": 81,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "27:51",
+      "_members": [
+        {
+          "name": "Marina Llompart Castañer"
+        },
+        {
+          "name": "Coty Maruza Millán Cervera"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "42.",
+      "Nombre": "María de la Salud Nuñez Lopez / Victoria Carolina Barzola Sueldo",
+      "Dorsal": 65,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "29:10",
+      "_members": [
+        {
+          "name": "María de la Salud Nuñez Lopez"
+        },
+        {
+          "name": "Victoria Carolina Barzola Sueldo"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "43.",
+      "Nombre": "Alicia Fernandez Pabst / Fatima Fernández Sánchez",
+      "Dorsal": 78,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "29:13",
+      "_members": [
+        {
+          "name": "Alicia Fernandez Pabst"
+        },
+        {
+          "name": "Fatima Fernández Sánchez"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "44.",
+      "Nombre": "Carmen Gutierrez Marcos / Alicia Gutierrez Marcos",
+      "Dorsal": 66,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "29:53",
+      "_members": [
+        {
+          "name": "Carmen Gutierrez Marcos"
+        },
+        {
+          "name": "Alicia Gutierrez Marcos"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "45.",
+      "Nombre": "Laura Riera Puig / Jonatan Guerrero Garcia",
+      "Dorsal": 98,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "31:43",
+      "_members": [
+        {
+          "name": "Laura Riera Puig"
+        },
+        {
+          "name": "Jonatan Guerrero Garcia"
+        }
+      ],
+      "_pairGender": "Mixta"
+    }
+  ]
+}
