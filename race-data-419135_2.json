@@ -1,0 +1,2215 @@
+{
+  "info": {
+    "id": "419135",
+    "fileKey": "419135_2",
+    "name": "Cobra Race Ibiza Octubre 2026",
+    "contestName": "Parejas",
+    "date": "2026-10-03",
+    "location": "Marratxí",
+    "listName": "Resultados|01.LIVE",
+    "contest": 2,
+    "format": "pairs"
+  },
+  "rows": [
+    {
+      "AUTORANK.p": "1.",
+      "Nombre": "Bad Boys",
+      "Dorsal": "13007",
+      "Sector Actual": "Carrera 8",
+      "Penalización": "",
+      "Tiempo": "27:17",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:59",
+          "acc": "01:59"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:08",
+          "acc": "05:06"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:43",
+          "acc": "06:49"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:15",
+          "acc": "08:04"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:45",
+          "acc": "09:49"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:19",
+          "acc": "11:07"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:48",
+          "acc": "12:55"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:44",
+          "acc": "14:38"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:52",
+          "acc": "16:30"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "02:03",
+          "acc": "18:33"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:52",
+          "acc": "20:25"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "01:42",
+          "acc": "22:06"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "01:53",
+          "acc": "23:58"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "03:20",
+          "acc": "27:17"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "2.",
+      "Nombre": "Javier Y Michael",
+      "Dorsal": "13008",
+      "Sector Actual": "Ski",
+      "Penalización": "",
+      "Tiempo": "24:48",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:00",
+          "acc": "02:00"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:03",
+          "acc": "05:03"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:48",
+          "acc": "06:51"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:26",
+          "acc": "08:17"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:53",
+          "acc": "10:09"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:31",
+          "acc": "11:40"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:56",
+          "acc": "13:35"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:43",
+          "acc": "15:18"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:54",
+          "acc": "17:12"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "02:06",
+          "acc": "19:17"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:59",
+          "acc": "21:16"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "01:38",
+          "acc": "22:54"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "01:55",
+          "acc": "24:48"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "3.",
+      "Nombre": "Master at Work",
+      "Dorsal": "13001",
+      "Sector Actual": "Ski",
+      "Penalización": "",
+      "Tiempo": "25:47",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:06",
+          "acc": "02:06"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:07",
+          "acc": "05:13"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:59",
+          "acc": "07:11"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:26",
+          "acc": "08:36"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:06",
+          "acc": "10:42"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:21",
+          "acc": "12:02"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:10",
+          "acc": "14:12"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:46",
+          "acc": "15:58"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:13",
+          "acc": "18:11"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:48",
+          "acc": "19:58"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:12",
+          "acc": "22:10"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "01:30",
+          "acc": "23:39"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:08",
+          "acc": "25:47"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "4.",
+      "Nombre": "Los rosales team",
+      "Dorsal": "13003",
+      "Sector Actual": "Ski",
+      "Penalización": "",
+      "Tiempo": "26:46",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:12",
+          "acc": "02:12"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:09",
+          "acc": "05:21"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "02:04",
+          "acc": "07:24"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:35",
+          "acc": "08:59"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:02",
+          "acc": "11:01"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:06",
+          "acc": "12:06"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:15",
+          "acc": "14:20"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:54",
+          "acc": "16:13"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:12",
+          "acc": "18:24"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:56",
+          "acc": "20:20"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:22",
+          "acc": "22:42"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "01:46",
+          "acc": "24:27"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:20",
+          "acc": "26:46"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "5.",
+      "Nombre": "Big boys",
+      "Dorsal": "13004",
+      "Sector Actual": "Ski",
+      "Penalización": "",
+      "Tiempo": "27:20",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:06",
+          "acc": "02:06"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:08",
+          "acc": "05:13"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:58",
+          "acc": "07:11"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:30",
+          "acc": "08:40"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:07",
+          "acc": "10:46"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:31",
+          "acc": "12:17"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:12",
+          "acc": "14:28"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:56",
+          "acc": "16:24"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:19",
+          "acc": "18:43"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "02:15",
+          "acc": "20:58"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:15",
+          "acc": "23:13"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "01:53",
+          "acc": "25:05"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:15",
+          "acc": "27:20"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "6.",
+      "Nombre": "Gorillas",
+      "Dorsal": "13002",
+      "Sector Actual": "Carrera 7",
+      "Penalización": "",
+      "Tiempo": "27:20",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:23",
+          "acc": "02:23"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:15",
+          "acc": "05:38"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "02:08",
+          "acc": "07:46"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:37",
+          "acc": "09:22"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:16",
+          "acc": "11:38"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:31",
+          "acc": "13:09"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:29",
+          "acc": "15:37"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:53",
+          "acc": "17:29"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:39",
+          "acc": "20:08"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "02:41",
+          "acc": "22:48"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:40",
+          "acc": "25:27"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "01:53",
+          "acc": "27:20"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "7.",
+      "Nombre": "LA FUERZA ROBUSTA",
+      "Dorsal": "13006",
+      "Sector Actual": "DB Snatch",
+      "Penalización": "",
+      "Tiempo": "25:55",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:14",
+          "acc": "02:14"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:07",
+          "acc": "05:20"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "02:14",
+          "acc": "07:34"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:37",
+          "acc": "09:11"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:26",
+          "acc": "11:36"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:55",
+          "acc": "13:30"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:40",
+          "acc": "16:10"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:57",
+          "acc": "18:07"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:36",
+          "acc": "20:42"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "02:28",
+          "acc": "23:10"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:46",
+          "acc": "25:55"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "8.",
+      "Nombre": "Elite en grado de tentativa",
+      "Dorsal": "13005",
+      "Sector Actual": "DB Snatch",
+      "Penalización": "",
+      "Tiempo": "27:40",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:33",
+          "acc": "02:33"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:30",
+          "acc": "06:03"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "02:16",
+          "acc": "08:19"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:42",
+          "acc": "10:00"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:33",
+          "acc": "12:33"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:51",
+          "acc": "14:24"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:32",
+          "acc": "16:56"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "02:09",
+          "acc": "19:05"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:41",
+          "acc": "21:45"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "03:18",
+          "acc": "25:02"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:39",
+          "acc": "27:40"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "9.",
+      "Nombre": "the Hummers",
+      "Dorsal": "13102",
+      "Sector Actual": "Carrera 5",
+      "Penalización": "",
+      "Tiempo": "16:06",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:01",
+          "acc": "02:01"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:27",
+          "acc": "05:27"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:53",
+          "acc": "07:19"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:35",
+          "acc": "08:54"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:59",
+          "acc": "10:52"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:10",
+          "acc": "12:02"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:01",
+          "acc": "14:02"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "02:04",
+          "acc": "16:06"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "10.",
+      "Nombre": "Dúo Dinamita",
+      "Dorsal": "13105",
+      "Sector Actual": "Carrera 5",
+      "Penalización": "",
+      "Tiempo": "16:50",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:02",
+          "acc": "02:02"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:36",
+          "acc": "05:37"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:52",
+          "acc": "07:28"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:44",
+          "acc": "09:12"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:00",
+          "acc": "11:12"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:27",
+          "acc": "12:38"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:06",
+          "acc": "14:44"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "02:06",
+          "acc": "16:50"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "11.",
+      "Nombre": "Sangre latina",
+      "Dorsal": "13104",
+      "Sector Actual": "Carrera 5",
+      "Penalización": "",
+      "Tiempo": "17:23",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:28",
+          "acc": "02:28"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:34",
+          "acc": "06:01"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "02:07",
+          "acc": "08:08"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:39",
+          "acc": "09:47"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:10",
+          "acc": "11:56"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:17",
+          "acc": "13:13"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:14",
+          "acc": "15:26"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:57",
+          "acc": "17:23"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "12.",
+      "Nombre": "e50",
+      "Dorsal": "13101",
+      "Sector Actual": "Carrera 5",
+      "Penalización": "",
+      "Tiempo": "17:58",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:11",
+          "acc": "02:11"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:34",
+          "acc": "05:45"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "02:13",
+          "acc": "07:57"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:44",
+          "acc": "09:41"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:17",
+          "acc": "11:58"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:30",
+          "acc": "13:28"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:23",
+          "acc": "15:50"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "02:08",
+          "acc": "17:58"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "13.",
+      "Nombre": "Wenoris team",
+      "Dorsal": "13106",
+      "Sector Actual": "Airbike",
+      "Penalización": "",
+      "Tiempo": "16:41",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:29",
+          "acc": "02:29"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:34",
+          "acc": "06:02"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "02:20",
+          "acc": "08:21"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:28",
+          "acc": "09:49"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:40",
+          "acc": "12:28"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:30",
+          "acc": "13:57"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:44",
+          "acc": "16:41"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "14.",
+      "Nombre": "ONE GIRL & A COBRA",
+      "Dorsal": "13103",
+      "Sector Actual": "Carrera 4",
+      "Penalización": "",
+      "Tiempo": "16:17",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:36",
+          "acc": "02:36"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "04:00",
+          "acc": "06:36"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "03:01",
+          "acc": "09:36"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:53",
+          "acc": "11:29"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "03:02",
+          "acc": "14:31"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:47",
+          "acc": "16:17"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "1.",
+      "Nombre": "Y23 TEAM",
+      "Dorsal": "13203",
+      "Sector Actual": "Sled Push & Drag",
+      "Penalización": "",
+      "Tiempo": "07:05",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:05",
+          "acc": "02:05"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:05",
+          "acc": "05:09"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:56",
+          "acc": "07:05"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "2.",
+      "Nombre": "LEO",
+      "Dorsal": "13204",
+      "Sector Actual": "Sled Push & Drag",
+      "Penalización": "",
+      "Tiempo": "07:27",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:18",
+          "acc": "02:18"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:07",
+          "acc": "05:25"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "02:02",
+          "acc": "07:27"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "3.",
+      "Nombre": "CERO OXÍGENO",
+      "Dorsal": "13202",
+      "Sector Actual": "Carrera 2",
+      "Penalización": "",
+      "Tiempo": "06:35",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "03:08",
+          "acc": "03:08"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "03:27",
+          "acc": "06:35"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "4.",
+      "Nombre": "Los pendejos",
+      "Dorsal": "13201",
+      "Sector Actual": "Carrera 2",
+      "Penalización": "",
+      "Tiempo": "07:44",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "03:36",
+          "acc": "03:36"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "04:08",
+          "acc": "07:44"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "5.",
+      "Nombre": "Asterix y obelix",
+      "Dorsal": "13254",
+      "Sector Actual": "Row",
+      "Penalización": "",
+      "Tiempo": "02:02",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:02",
+          "acc": "02:02"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "6.",
+      "Nombre": "Shakar",
+      "Dorsal": "13253",
+      "Sector Actual": "Row",
+      "Penalización": "",
+      "Tiempo": "02:04",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:04",
+          "acc": "02:04"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "7.",
+      "Nombre": "SIGUEME SI PUEDES!",
+      "Dorsal": "13252",
+      "Sector Actual": "Row",
+      "Penalización": "",
+      "Tiempo": "02:14",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:14",
+          "acc": "02:14"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    },
+    {
+      "AUTORANK.p": "8.",
+      "Nombre": "Callejeros vv",
+      "Dorsal": "13251",
+      "Sector Actual": "Row",
+      "Penalización": "",
+      "Tiempo": "02:56",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "02:56",
+          "acc": "02:56"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "",
+          "acc": ""
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "",
+          "acc": ""
+        }
+      ]
+    }
+  ]
+}
