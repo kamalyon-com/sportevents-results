@@ -1,0 +1,190 @@
+{
+  "info": {
+    "id": "409310",
+    "fileKey": "409310_4",
+    "name": "DEKA Happy Gym Calvià 2026",
+    "contestName": "DEKA STRONG TEAMS",
+    "date": "2026-07-04",
+    "location": "Calvià",
+    "listName": "Resultados|01.LIVE",
+    "contest": 4,
+    "format": "pairs",
+    "genderCategories": [
+      "Femenina",
+      "Masculina",
+      "Mixta"
+    ]
+  },
+  "rows": [
+    {
+      "AUTORANK.p": "1.",
+      "Nombre": "Fede Sáiz / Pedro Delgado",
+      "Dorsal": 35,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "12:21",
+      "_members": [
+        {
+          "name": "Fede Sáiz"
+        },
+        {
+          "name": "Pedro Delgado"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "2.",
+      "Nombre": "sebastian jaume / Pau Roca",
+      "Dorsal": 34,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "15:26",
+      "_members": [
+        {
+          "name": "sebastian jaume"
+        },
+        {
+          "name": "Pau Roca"
+        }
+      ],
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "3.",
+      "Nombre": "AINHOA VEGA / XISCA GELLABERT",
+      "Dorsal": 39,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "15:46",
+      "_members": [
+        {
+          "name": "AINHOA VEGA"
+        },
+        {
+          "name": "XISCA GELLABERT"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "4.",
+      "Nombre": "Anabel Jimenez Sanchez / Cristina Salas vives",
+      "Dorsal": 30,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "16:09",
+      "_members": [
+        {
+          "name": "Anabel Jimenez Sanchez"
+        },
+        {
+          "name": "Cristina Salas vives"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "5.",
+      "Nombre": "Arwen Marekovi / Robert Marekovič",
+      "Dorsal": 37,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "16:47",
+      "_members": [
+        {
+          "name": "Arwen Marekovi"
+        },
+        {
+          "name": "Robert Marekovič"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "6.",
+      "Nombre": "Emma Grauches / Marta Sastre i Jaume",
+      "Dorsal": 32,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "17:30",
+      "_members": [
+        {
+          "name": "Emma Grauches"
+        },
+        {
+          "name": "Marta Sastre i Jaume"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "7.",
+      "Nombre": "Paula Luna / Lucia Guevara",
+      "Dorsal": 33,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "18:04",
+      "_members": [
+        {
+          "name": "Paula Luna"
+        },
+        {
+          "name": "Lucia Guevara"
+        }
+      ],
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "8.",
+      "Nombre": "Beatriz Brocal / Pedro Femenías Aguiló",
+      "Dorsal": 40,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "18:11",
+      "_members": [
+        {
+          "name": "Beatriz Brocal"
+        },
+        {
+          "name": "Pedro Femenías Aguiló"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "9.",
+      "Nombre": "Marcia Elizabeth Franco Romero / Antonio Francisco Suárez cabrera",
+      "Dorsal": 38,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "18:52",
+      "_members": [
+        {
+          "name": "Marcia Elizabeth Franco Romero"
+        },
+        {
+          "name": "Antonio Francisco Suárez cabrera"
+        }
+      ],
+      "_pairGender": "Mixta"
+    },
+    {
+      "AUTORANK.p": "10.",
+      "Nombre": "Desiree Fernandez / Javier Estrada Laje",
+      "Dorsal": 36,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:56",
+      "_members": [
+        {
+          "name": "Desiree Fernandez"
+        },
+        {
+          "name": "Javier Estrada Laje"
+        }
+      ],
+      "_pairGender": "Mixta"
+    }
+  ]
+}
