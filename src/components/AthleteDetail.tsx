@@ -181,6 +181,9 @@ export const AthleteDetail: React.FC<AthleteDetailProps> = ({
   showCertificate = false,
 }) => {
   const [certOpen, setCertOpen] = useState(false);
+  // Certificado oficial de RaceResult, si la carrera lo publica
+  const officialCertificateUrl =
+    event?.certificateUrl && athlete.pid ? event.certificateUrl.replace('{pid}', encodeURIComponent(athlete.pid)) : null;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -401,15 +404,32 @@ export const AthleteDetail: React.FC<AthleteDetailProps> = ({
               )}
             </Stack>
             {showCertificate && (
-              <Button
-                fullWidth
-                variant="contained"
-                startIcon={<WorkspacePremiumIcon />}
-                onClick={() => setCertOpen(true)}
-                sx={{ mt: 2, backgroundColor: primaryColor, boxShadow: `0 0 16px ${primaryColor}55`, '&:hover': { backgroundColor: primaryColor, filter: 'brightness(0.92)' } }}
-              >
-                Certificado
-              </Button>
+              <Stack spacing={1} sx={{ mt: 2 }}>
+                {officialCertificateUrl && (
+                  <Button
+                    fullWidth
+                    variant="contained"
+                    startIcon={<WorkspacePremiumIcon />}
+                    href={officialCertificateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{ backgroundColor: primaryColor, boxShadow: `0 0 16px ${primaryColor}55`, '&:hover': { backgroundColor: primaryColor, filter: 'brightness(0.92)' } }}
+                  >
+                    Certificado oficial
+                  </Button>
+                )}
+                <Button
+                  fullWidth
+                  variant={officialCertificateUrl ? 'outlined' : 'contained'}
+                  startIcon={<WorkspacePremiumIcon />}
+                  onClick={() => setCertOpen(true)}
+                  sx={officialCertificateUrl
+                    ? { borderColor: `${primaryColor}60`, color: primaryColor, '&:hover': { borderColor: primaryColor, backgroundColor: `${primaryColor}15` } }
+                    : { backgroundColor: primaryColor, boxShadow: `0 0 16px ${primaryColor}55`, '&:hover': { backgroundColor: primaryColor, filter: 'brightness(0.92)' } }}
+                >
+                  {officialCertificateUrl ? 'Certificado personalizado' : 'Certificado'}
+                </Button>
+              </Stack>
             )}
           </Paper>
         </Stack>

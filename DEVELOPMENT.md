@@ -59,6 +59,23 @@ Si el evento tiene una lista llamada `*DETAIL LIST*` configurada en RaceResult, 
 
 No se necesita ninguna petición extra al abrir el detalle.
 
+### Datos de cada participante (integrantes, género, categoría)
+
+El script lee además todos los participantes del evento vía `data/list` (ID, Bib, contest, integrantes `Firstname1..3`, `TipoPareja`, `Categoria`, `Sex`, tiempo…) y los cruza con cada fila de resultados **solo dentro del mismo contest**:
+
+1. Por dorsal, si el nombre coincide
+2. Por nombre (de equipo, completo o de los integrantes); entre equipos con el mismo nombre decide el tiempo final
+3. Por dorsal aunque el nombre no coincida, si por nombre no aparece nadie
+4. Por el nombre de un integrante (listas con una fila por integrante: se queda una fila por pareja)
+
+El dorsal de las listas no siempre es el `Bib` de RaceResult (algunas muestran otro número y otras no tienen columna de dorsal), por eso no basta con cruzar por dorsal.
+
+Una modalidad solo se divide por género en el selector si **todas** sus filas tienen género; si no, se dejaría fuera a quien no lo tiene.
+
+### Certificado oficial
+
+Si el evento publica en RaceResult el certificado `Certificados Hibridas`, el script guarda en el índice `certificateUrl` (`https://my.raceresult.com/{eventId}/details0/certificate/{pid}/Certificados%20Hibridas`) y el detalle del atleta muestra el botón **Certificado oficial**, que lo abre con el ID de participante (PID, no el dorsal). Los eventos anteriores a este certificado devuelven 404 y no muestran el botón.
+
 ---
 
 ## Desarrollo local

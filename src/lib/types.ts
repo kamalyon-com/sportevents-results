@@ -22,6 +22,8 @@ export interface Athlete {
   club?: string;
   /** Member entries for pairs/teams contests — each member's name and optional club. */
   members?: Array<{ name: string; club?: string }>;
+  /** RaceResult participant ID (PID), used for the official certificate URL. */
+  pid?: string;
   /** Fichero de datos del que sale la fila; identifica la carrera al mezclar eventos. */
   source_key?: string;
   /** Nombre, fecha y modalidad de la carrera de origen. */
@@ -56,6 +58,8 @@ export interface EventInfo {
   genderCategories?: string[];
   /** When true, don't split this contest into per-gender selector entries */
   noGenderSplit?: boolean;
+  /** Official RaceResult certificate URL with a "{pid}" placeholder, when the event publishes one */
+  certificateUrl?: string;
 }
 
 /**

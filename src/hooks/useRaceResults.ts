@@ -215,6 +215,7 @@ function mapRowToAthlete(row: RRRow, rank: number, eventId: string, mapping: RRF
   // Map pre-fetched member names for pairs/teams (stored as _members by the prefetch script)
   const rawMembers = (row as Record<string, unknown>)['_members'] as Array<{ name: string; club?: string }> | undefined;
   const members = rawMembers?.map((m) => ({ ...m, name: toTitleCase(m.name) }));
+  const pid = pickField(row, undefined, '_pid');
 
   return {
     bib: bibRaw || String(rank),
@@ -231,6 +232,7 @@ function mapRowToAthlete(row: RRRow, rank: number, eventId: string, mapping: RRF
     event_id: eventId,
     club: club || undefined,
     members: members && members.length > 0 ? members : undefined,
+    pid: pid || undefined,
   };
 }
 

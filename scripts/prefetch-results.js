@@ -249,12 +249,40 @@ async function fetchListWithFallback(sessionId, eventId, primaryList, contest, a
   return { rows: [], usedListName: primaryList };
 }
 
-// ─── Detail-list helpers (split times per participant) ────────────────────────
+// ─── Matching helpers ─────────────────────────────────────────────────────────
 
-/** Normalise a participant name for fuzzy matching. */
+/** Normalise a name for matching: lower-case, no accents, single spaces. */
 function normalizeName(n) {
-  return String(n).trim().toLowerCase().replace(/\s+/g, ' ');
+  return String(n ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .trim().toLowerCase().replace(/\s+/g, ' ');
 }
+
+/** "1:02:03" / "02:03" / "00:20:32" → seconds; null when it is not a time. */
+function timeToSeconds(t) {
+  const parts = String(t ?? '').trim().split(':');
+  if (parts.length < 2 || parts.some((p) => !/^\d+(\.\d+)?$/.test(p))) return null;
+  return Math.round(parts.reduce((acc, p) => acc * 60 + Number(p), 0));
+}
+
+/** Bib shown in a list row, without leading zeros ('' when the list has no bib column). */
+function rowBib(row) {
+  return String(row['Dorsal'] ?? row['Bib'] ?? row['Startnr.'] ?? '').replace(/\D/g, '').replace(/^0+/, '');
+}
+
+function rowTime(row) {
+  return timeToSeconds(row['Tiempo'] ?? row['Time'] ?? '');
+}
+
+/**
+ * Pick the first candidate not used yet, preferring the one whose finish time
+ * matches: several teams in the same contest can share a name ("Iron Queens").
+ */
+function pickCandidate(candidates, time, used) {
+  const free = (candidates ?? []).filter((c) => !used.has(c));
+  return free.find((c) => time != null && c.time === time) ?? free[0] ?? null;
+}
+
+// ─── Detail-list helpers (split times per participant) ────────────────────────
 
 /**
  * Scan the available list names for a "detail" list that contains per-sector
@@ -265,7 +293,7 @@ function findDetailListName(allListNames) {
 }
 
 /**
- * Fetch the detail list for a contest and build a map  name → split array.
+ * Fetch the detail list for a contest and build a map  name → [{ time, splits }].
  *
  * Each split is { label, sector, acc } where:
  *   label  — human-readable sector name, e.g. "Carrera 1" / "Zona 1 – Reverse Lounge"
@@ -287,6 +315,7 @@ async function fetchDetailSplitsMap(sessionId, eventId, detailListName, contest)
     if (!nameKey) return {};
 
     const map = {};
+    const add = (key, entry) => { (map[key] = map[key] ?? []).push(entry); };
     for (const row of detailRows) {
       // The name column value has two formats:
       //   Individual: "Paulo Andres Cano Jimenez: 0"  → key = part before ": " (name)
@@ -295,38 +324,29 @@ async function fetchDetailSplitsMap(sessionId, eventId, detailListName, contest)
       //                                                 which is what results list Nombre holds)
       const nameRaw = String(row[nameKey] ?? '');
       const colonIdx = nameRaw.indexOf(': ');
-      const nameBefore = normalizeName(colonIdx >= 0 ? nameRaw.slice(0, colonIdx) : nameRaw);
-      if (!nameBefore) continue;
-      // Alias used for map key (pairs: also index by member names after ": ")
+      const name = normalizeName(colonIdx >= 0 ? nameRaw.slice(0, colonIdx) : nameRaw);
+      if (!name) continue;
       const nameAfter = colonIdx >= 0 ? normalizeName(nameRaw.slice(colonIdx + 2)) : null;
-      const name = nameBefore; // kept for the splits-building block below
 
       const splits = [];
       for (let n = 1; n <= 10; n++) {
-        const runLabel = String(row[`Running${n}.LABEL`] ?? '').trim();
-        if (runLabel) {
-          splits.push({
-            label:  runLabel,
-            sector: String(row[`TIME${2000 + n}`] ?? ''),
-            acc:    String(row[`TIME${1000 + n}`] ?? ''),
-          });
-        }
-        const trackLabel = String(row[`Track${n}.LABEL`] ?? '').trim();
-        if (trackLabel) {
-          splits.push({
-            label:  trackLabel,
-            sector: String(row[`TIME${2010 + n}`] ?? ''),
-            acc:    String(row[`TIME${1010 + n}`] ?? ''),
-          });
-        }
+        // Some events leave the label of the last sectors empty while the times are there
+        const runSector = String(row[`TIME${2000 + n}`] ?? '');
+        const runAcc    = String(row[`TIME${1000 + n}`] ?? '');
+        const runLabel  = String(row[`Running${n}.LABEL`] ?? '').trim() || ((runSector || runAcc) ? `Carrera ${n}` : '');
+        if (runLabel) splits.push({ label: runLabel, sector: runSector, acc: runAcc });
+
+        const trackSector = String(row[`TIME${2010 + n}`] ?? '');
+        const trackAcc    = String(row[`TIME${1010 + n}`] ?? '');
+        const trackLabel  = String(row[`Track${n}.LABEL`] ?? '').trim() || ((trackSector || trackAcc) ? `Zona ${n}` : '');
+        if (trackLabel) splits.push({ label: trackLabel, sector: trackSector, acc: trackAcc });
       }
-      map[name] = splits;
+      const entry = { time: timeToSeconds(row['TIME1']), splits };
+      add(name, entry);
       // For pairs events the value after ": " holds the member names, which is
       // what the results list "Nombre" column contains.  Index by those too so
       // attachSplits can match regardless of whether it has team name or members.
-      if (nameAfter && !/^\d+$/.test(nameAfter.trim())) {
-        map[nameAfter] = splits;
-      }
+      if (nameAfter && !/^\d+$/.test(nameAfter.trim())) add(nameAfter, entry);
     }
     return map;
   } catch (e) {
@@ -336,282 +356,216 @@ async function fetchDetailSplitsMap(sessionId, eventId, detailListName, contest)
 }
 
 /**
- * Fetch a map of bib → age-group name for a given contest using data/list.
- * Returns {} silently on any error (age groups are optional).
- *
- * RaceResult stores the assigned age-group name in "AK.Name.1"
- * (first age-group set).  We also try "AK.ShortName.1" as fallback.
+ * Attach split data (from the detail list) to each row in-place.
+ * Matching is done by normalised participant name and, between namesakes, by finish time.
  */
+function attachSplits(rows, splitsMap) {
+  if (!splitsMap || Object.keys(splitsMap).length === 0) return;
+  const used = new Set();
+  for (const row of rows) {
+    const nombre = normalizeName(row['Nombre'] ?? row['Name'] ?? '');
+    if (!nombre) continue;
+    const entry = pickCandidate(splitsMap[nombre], rowTime(row), used) ?? splitsMap[nombre]?.[0];
+    if (entry) used.add(entry);
+    row._splits = entry ? entry.splits : null;
+  }
+}
+
+// ─── Participant data (members, gender, category, PID) ────────────────────────
+
 /**
- * Fetch a map of bib → age-group name for an event using:
- *   1. agegroups/get         → age-group ID → Name map
- *   2. data/list             → bib → AgeGroup1 ID
- *
- * Note: fields for data/list MUST be serialised as a JSON array string.
- * Returns {} silently on any error.
+ * Fields read for every participant through data/list.
+ *   Firstname            = team/group name for pairs/teams (e.g. "Joan Miquel y Joan Andreu")
+ *   Firstname1..3 / Lastname1..3 / Club1..3 = members of a pair/team
+ *   Categoria            = category / age group (e.g. "GGEE 30-39")
+ *   TipoPareja           = registration field "Pareja Femenina/Masculina/Mixta" (most accurate)
+ *   GeneroPareja         = user-defined field, e.g. "Parejas Femeninas"
+ *   Sex                  = f/m (unreliable for pairs in some events, used as last resort)
+ *   TIME1.TEXT           = finish time, to tell apart teams that share a name
+ * Unknown fields come back as 0, so events that lack some of them still work.
  */
-const _ageGroupMapCache = {};
-async function fetchAgeGroupMap(sessionId, eventId) {
-  if (_ageGroupMapCache[eventId] !== undefined) return _ageGroupMapCache[eventId];
+const PARTICIPANT_FIELDS = [
+  'ID', 'Bib', 'Contest', 'Firstname', 'Lastname',
+  'Firstname1', 'Lastname1', 'Firstname2', 'Lastname2', 'Firstname3', 'Lastname3',
+  'Club', 'Club1', 'Club2', 'Club3',
+  'Categoria', 'Sex', 'GeneroPareja', 'TipoPareja', 'AgeGroup1', 'TIME1.TEXT',
+];
+
+/** "Pareja Femenina" / "Parejas Masculinas" / "Equipo Mixto" → Femenina / Masculina / Mixta. */
+function genderLabel(s) {
+  const t = String(s ?? '').toLowerCase();
+  if (t.includes('femen')) return 'Femenina';
+  if (t.includes('mascul')) return 'Masculina';
+  if (t.includes('mixt')) return 'Mixta';
+  return '';
+}
+
+/** Age-group definitions of the event: ID → short name (e.g. "M30-34"). */
+async function fetchAgeGroupNames(sessionId, eventId) {
   try {
-    // Step 1: get age group definitions (ID → Name)
-    const agResp = await fetch(
+    const resp = await fetch(
       `https://${SERVER}/_${eventId}/api/agegroups/get?contest=0`,
       { headers: { Authorization: `Bearer ${sessionId}` } },
     );
-    if (!agResp.ok) return {};
-    const agDefs = await agResp.json();
-    if (!Array.isArray(agDefs) || agDefs.length === 0) return {};
+    if (!resp.ok) return {};
+    const defs = await resp.json();
     const idToName = {};
-    for (const ag of agDefs) {
-      if (ag.ID && (ag.Name || ag.NameShort)) {
-        idToName[ag.ID] = ag.NameShort || ag.Name;
-      }
+    for (const ag of Array.isArray(defs) ? defs : []) {
+      if (ag.ID && (ag.Name || ag.NameShort)) idToName[ag.ID] = ag.NameShort || ag.Name;
     }
-
-    // Step 2: get per-participant AgeGroup1 ID via data/list
-    const params = new URLSearchParams();
-    params.append('fields', JSON.stringify(['Bib', 'AgeGroup1']));
-    params.append('listFormat', 'JSON');
-    const partResp = await fetch(
-      `https://${SERVER}/_${eventId}/api/data/list?${params}`,
-      { headers: { Authorization: `Bearer ${sessionId}` } },
-    );
-    if (!partResp.ok) return {};
-    const rows = await partResp.json();
-    if (!Array.isArray(rows)) return {};
-
-    // Step 3: build bib → age-group name
-    const map = {};
-    for (const row of rows) {
-      if (!Array.isArray(row) || row.length < 2) continue;
-      const bib  = row[0];
-      const agId = row[1];
-      if (bib != null && agId && idToName[agId]) {
-        map[String(bib)] = idToName[agId];
-      }
-    }
-    if (Object.keys(map).length > 0) {
-      const sample = Object.values(map).slice(0, 2).join(', ');
-      process.stdout.write(` [AgeGroups: ${Object.keys(map).length} athletes, e.g. "${sample}"]`);
-    }
-    _ageGroupMapCache[eventId] = map;
-    return map;
+    return idToName;
   } catch {
-    _ageGroupMapCache[eventId] = {};
     return {};
   }
 }
 
-/**
- * Attach age-group data to each row in-place.
- * The bib is matched against "Dorsal", "Bib", or "Startnr." columns.
- */
-function attachAgeGroups(rows, ageGroupMap) {
-  if (!ageGroupMap || Object.keys(ageGroupMap).length === 0) return;
-  for (const row of rows) {
-    const bib = String(row['Dorsal'] ?? row['Bib'] ?? row['Startnr.'] ?? '').replace(/\D/g, '');
-    if (bib && ageGroupMap[bib]) {
-      row['_ageGroup'] = ageGroupMap[bib];
-    }
-  }
+function toParticipant(f, ageGroupNames) {
+  // RaceResult returns integer 0 for empty fields — treat "0" as empty.
+  const clean = (v) => {
+    const s = String(v ?? '').trim();
+    return s === '0' ? '' : s;
+  };
+  const join = (...parts) => parts.map(clean).filter(Boolean).join(' ');
+
+  const members = [
+    { name: join(f.Firstname1, f.Lastname1), club: clean(f.Club1) || undefined },
+    { name: join(f.Firstname2, f.Lastname2), club: clean(f.Club2) || undefined },
+    { name: join(f.Firstname3, f.Lastname3), club: clean(f.Club3) || undefined },
+  ].filter((m) => m.name);
+  const isGroup = members.length >= 2;
+
+  const name = isGroup
+    ? (clean(f.Firstname) || members.map((m) => m.name).join(' / '))
+    : join(f.Firstname, f.Lastname);
+
+  // Gender priority: TipoPareja → GeneroPareja → Sex (f/m; anything else is a mixed team)
+  const sex = clean(f.Sex).toLowerCase();
+  const gender = genderLabel(f.TipoPareja) || genderLabel(f.GeneroPareja) ||
+    (sex === 'f' || sex === 'w' ? 'Femenina' : sex === 'm' ? 'Masculina' : sex && isGroup ? 'Mixta' : '');
+
+  const club = isGroup
+    ? ([...new Set(members.map((m) => m.club).filter(Boolean))].join(' / ') || clean(f.Club))
+    : (clean(f.Club) || clean(f.Club1));
+
+  const nameKeys = new Set([name, join(f.Firstname, f.Lastname), join(f.Lastname, f.Firstname)]);
+  if (clean(f.Lastname)) nameKeys.add(`${clean(f.Lastname)}, ${clean(f.Firstname)}`);
+  if (isGroup) for (const sep of [' / ', ' & ', ' y ']) nameKeys.add(members.map((m) => m.name).join(sep));
+
+  return {
+    pid:      String(f.ID ?? ''),
+    bib:      clean(f.Bib).replace(/^0+/, ''),
+    contest:  Number(f.Contest) || 0,
+    name,
+    nameKeys: [...nameKeys].map(normalizeName).filter(Boolean),
+    members:  isGroup ? members : null,
+    gender,
+    club,
+    category: clean(f.Categoria),
+    ageGroup: ageGroupNames[f.AgeGroup1] ?? '',
+    time:     timeToSeconds(f['TIME1.TEXT']),
+  };
 }
 
 /**
- * Attach split data (from the detail list) to each row in-place.
- * Matching is done by normalised participant name.
+ * Fetch every participant of an event (all contests) with its PID, bib, contest,
+ * names, members, gender, club and category.  Returns [] silently on any error.
  */
-function attachSplits(rows, splitsMap) {
-  if (!splitsMap || Object.keys(splitsMap).length === 0) return;
-  for (const row of rows) {
-    const nombre = normalizeName(String(row['Nombre'] ?? row['Name'] ?? ''));
-    if (nombre) row._splits = splitsMap[nombre] ?? null;
-  }
-}
-
-// ─── Member-names helpers (pairs / teams) ────────────────────────────────────
-
-/**
- * Fetch a map of bib → string[] of member full names for all participants in
- * an event.  Uses data/list with Firstname1..3 / Lastname1..3 fields.
- *
- * A record only appears when Firstname2 is non-empty (pareja/team).
- * Returns empty maps silently on any error.
- */
-const _membersMapCache = {};
-async function fetchMembersMap(sessionId, eventId) {
-  if (_membersMapCache[eventId] !== undefined) return _membersMapCache[eventId];
-  const empty = { bibMap: {}, memberNameMap: {} };
+const _participantsCache = {};
+async function fetchParticipants(sessionId, eventId) {
+  if (_participantsCache[eventId]) return _participantsCache[eventId];
+  let participants = [];
   try {
-    // Firstname = team/group name (e.g. "Joan Miquel y Joan Andreu")
-    // Firstname1/Lastname1 = member 1, Firstname2/Lastname2 = member 2, etc.
-    // Club = individual club; Club1/Club2/Club3 = per-member clubs for pairs/teams
-    // Categoria = category/age-group name; Sex = team sex category (f/m/x set by organizer)
-    // GeneroPareja = user-defined field (if defined by organizer): "Parejas Femeninas" / "Parejas Masculinas" / "Parejas Mixtas"
-    // TipoPareja   = registration field: "Pareja Femenina" / "Pareja Masculina" / "Pareja Mixta" (most accurate)
-    const fields = [
-      'Bib', 'Firstname',
-      'Firstname1', 'Lastname1',
-      'Firstname2', 'Lastname2',
-      'Firstname3', 'Lastname3',
-      'Club',
-      'Categoria',
-      'Club1', 'Club2', 'Club3',
-      'Sex',
-      'GeneroPareja',
-      'TipoPareja',
-    ];
-    // Index map:
-    //  0=Bib  1=Firstname  2=Firstname1  3=Lastname1
-    //  4=Firstname2  5=Lastname2  6=Firstname3  7=Lastname3
-    //  8=Club  9=Categoria  10=Club1  11=Club2  12=Club3
-    //  13=Sex  14=GeneroPareja  15=TipoPareja
+    const ageGroupNames = await fetchAgeGroupNames(sessionId, eventId);
     const params = new URLSearchParams();
-    params.append('fields', JSON.stringify(fields));
+    params.append('fields', JSON.stringify(PARTICIPANT_FIELDS));
     params.append('listFormat', 'JSON');
     const resp = await fetch(
       `https://${SERVER}/_${eventId}/api/data/list?${params}`,
       { headers: { Authorization: `Bearer ${sessionId}` } },
     );
-    if (!resp.ok) { _membersMapCache[eventId] = empty; return empty; }
-    const rows = await resp.json();
-    if (!Array.isArray(rows) || rows.length === 0) { _membersMapCache[eventId] = empty; return empty; }
-
-    // Index: 0=Bib, 1=Firstname(teamName), 2=Firstname1, 3=Lastname1,
-    //        4=Firstname2, 5=Lastname2, 6=Firstname3, 7=Lastname3, 8=Club
-    //        9=Categoria, 10=Club1, 11=Club2, 12=Club3
-    // RaceResult returns integer 0 for empty fields — treat "0" as empty.
-    const clean = (v) => {
-      const s = String(v ?? '').trim();
-      return s === '0' ? '' : s;
-    };
-    const buildName = (f, l) => [clean(f), clean(l)].filter(Boolean).join(' ');
-
-    const bibMap = {};
-    const bibClubMap = {};
-    const bibCategoryMap = {};
-    const memberNameMap = {};
-    let pairsCount = 0;
-
-    for (const row of rows) {
-      const bib       = String(row[0] ?? '');
-      const teamName  = clean(row[1]);
-      const club      = clean(row[8]);   // Club (individual or team)
-      const categoria = clean(row[9]);   // Categoria
-      const club1     = clean(row[10]);  // Club1 (member 1)
-      const club2     = clean(row[11]);  // Club2 (member 2)
-      const club3     = clean(row[12]);  // Club3 (member 3)
-      const sexRaw       = clean(row[13]).toLowerCase();  // Sex (f/m/x assigned by organizer)
-      const generoPareja = clean(row[14]);                 // User-defined field (e.g. "Parejas Femeninas")
-      const tipoPareja   = clean(row[15]);                 // Registration field: "Pareja Femenina/Masculina/Mixta"
-      const f2           = clean(row[4]);
-
-      // Compute pair gender label — priority:
-      // 1. TipoPareja registration field (most accurate: "Pareja Femenina"/"Pareja Masculina"/"Pareja Mixta")
-      // 2. GeneroPareja user-defined field (strip "Parejas " prefix + trailing s)
-      // 3. Sex field: f→Femenina, m→Masculina, x/other→Mixta
-      const pairGender = (() => {
-        if (tipoPareja) return tipoPareja.replace(/^Pareja[s]?\s+/i, '').trim();
-        if (generoPareja) return generoPareja.replace(/^Parejas\s+/i, '').replace(/s$/i, '').trim();
-        if (sexRaw === 'f') return 'Femenina';
-        if (sexRaw === 'm') return 'Masculina';
-        if (sexRaw) return 'Mixta';
-        return '';
-      })();
-
-      // Club for individual: prefer Club, fall back to Club1
-      // Club for pairs: smart-merge Club1/Club2 (show unique clubs only)
-      const effectiveClub = (() => {
-        if (!f2) return club || club1; // individual
-        // pairs/teams: collect unique non-empty clubs
-        const clubs = [...new Set([club1, club2, club3].filter(Boolean))];
-        return clubs.length ? clubs.join(' / ') : (club || '');
-      })();
-
-      if (bib && effectiveClub) bibClubMap[bib] = effectiveClub;
-      if (bib && categoria) bibCategoryMap[bib] = categoria;
-
-      if (!f2) continue; // individual — skip pairs logic
-
-      const m1 = buildName(row[2], row[3]);
-      const m2 = buildName(row[4], row[5]);
-      const m3 = buildName(row[6], row[7]);
-      // Build per-member objects so the UI can show each member's club inline
-      const memberObjs = [
-        m1 ? { name: m1, club: club1 || undefined } : null,
-        m2 ? { name: m2, club: club2 || undefined } : null,
-        m3 ? { name: m3, club: club3 || undefined } : null,
-      ].filter(Boolean);
-      if (memberObjs.length < 2) continue;
-
-      const entry = { teamName: teamName || memberObjs.map(mo => mo.name).join(' / '), members: memberObjs, club: effectiveClub, category: categoria, pairGender };
-      bibMap[bib] = entry;
-
-      // Reverse lookup: normalised member name → team entry
-      for (const mo of memberObjs) {
-        const key = normalizeName(mo.name);
-        if (key) memberNameMap[key] = { bib, ...entry };
-      }
-      pairsCount++;
-    }
-    if (pairsCount > 0) {
-      process.stdout.write(` [Members: ${pairsCount} pairs/teams]`);
-    }
-    const result = { bibMap, bibClubMap, bibCategoryMap, memberNameMap };
-    _membersMapCache[eventId] = result;
-    return result;
+    const raw = resp.ok ? await resp.json() : [];
+    participants = (Array.isArray(raw) ? raw : [])
+      .filter(Array.isArray)
+      .map((r) => toParticipant(Object.fromEntries(PARTICIPANT_FIELDS.map((f, i) => [f, r[i]])), ageGroupNames));
   } catch (e) {
-    console.log(`  (members map error: ${e.message})`);
-    _membersMapCache[eventId] = empty;
-    return empty;
+    console.log(`  (participants error: ${e.message})`);
   }
+  const groups = participants.filter((p) => p.members).length;
+  if (participants.length > 0) process.stdout.write(` [Participants: ${participants.length}, pairs/teams: ${groups}]`);
+  _participantsCache[eventId] = participants;
+  return participants;
 }
 
 /**
- * Attach member names to rows and, for per-member lists (no Dorsal), collapse
- * duplicate team rows down to one.
+ * Attach participant data (PID, members, gender, club, category, age group) to
+ * list rows, only looking at participants of the same contest.
  *
- * Two matching strategies:
- *   1. Bib (Dorsal) match  — lists like Hybiza/Cobra where one row = one team
- *   2. Member-name match   — lists like SAC where one row = one member
- *      → deduplicates so only the first row per team survives;
- *        replaces Nombre with the team name and injects a Dorsal.
+ * The bib in results lists is not always RaceResult's Bib (some lists show a
+ * custom number, others have no bib column at all), so rows are matched by:
+ *   1. Bib, when the name agrees
+ *   2. Name (team name / full name / member names), finish time between namesakes
+ *   3. Bib alone, when the name finds nothing
+ *   4. A single member's name — lists with one row per member: only the first
+ *      row of each pair/team is kept, renamed to the team name.
  *
  * Returns (possibly shorter) array of rows.
  */
-function attachMembers(rows, mapsResult) {
-  const { bibMap, memberNameMap } = mapsResult;
-  if (Object.keys(bibMap).length === 0 && Object.keys(memberNameMap).length === 0) return rows;
+function attachParticipants(rows, participants, contest) {
+  const pool = Number(contest) ? participants.filter((p) => p.contest === Number(contest)) : participants;
+  if (pool.length === 0) return rows;
 
-  const seenBibs = new Set();
+  const byBib = new Map();
+  const byName = new Map();
+  const byMember = new Map();
+  const add = (map, key, p) => {
+    if (!key) return;
+    const list = map.get(key) ?? [];
+    if (!list.includes(p)) list.push(p);
+    map.set(key, list);
+  };
+  for (const p of pool) {
+    add(byBib, p.bib, p);
+    for (const k of p.nameKeys) add(byName, k, p);
+    for (const m of p.members ?? []) add(byMember, normalizeName(m.name), p);
+  }
+
+  const apply = (row, p, perMemberRow) => {
+    row['_pid'] = p.pid;
+    if (p.bib && (perMemberRow || !rowBib(row))) row['Dorsal'] = Number(p.bib) || p.bib;
+    if (p.members) {
+      row['_members'] = p.members;
+      row['Nombre']   = p.name;
+    }
+    if (p.gender)                                       row['_pairGender'] = p.gender;
+    if (p.club && !row['Club'])                         row['_club']       = p.club;
+    if (p.category && !row['Categoria'] && !row['Categoría']) row['_category'] = p.category;
+    if (p.ageGroup)                                     row['_ageGroup']   = p.ageGroup;
+  };
+
+  const used = new Set();
   const out = [];
-
   for (const row of rows) {
-    // ── Strategy 1: match by Dorsal ───────────────────────────────────────
-    const bibRaw = String(row['Dorsal'] ?? row['Bib'] ?? row['Startnr.'] ?? '').replace(/\D/g, '');
-    if (bibRaw && bibMap[bibRaw]) {
-      const entry = bibMap[bibRaw];
-      row['_members'] = entry.members;
-      if (entry.teamName)              row['Nombre']      = entry.teamName;
-      if (entry.pairGender)            row['_pairGender'] = entry.pairGender;
-      if (entry.club     && !row['Club'])      row['_club']     = entry.club;
-      if (entry.category && !row['Categoria']) row['_category'] = entry.category;
+    const name = normalizeName(row['Nombre'] ?? row['Name'] ?? '');
+    const bib  = rowBib(row);
+    const time = rowTime(row);
+
+    const bibHit = bib ? pickCandidate(byBib.get(bib), time, used) : null;
+    let p = bibHit && (!name || bibHit.nameKeys.includes(name)) ? bibHit : null;
+    if (!p && name) p = pickCandidate(byName.get(name), time, used);
+    if (!p) p = bibHit;
+    if (p) {
+      used.add(p);
+      apply(row, p, false);
       out.push(row);
       continue;
     }
 
-    // ── Strategy 2: match by member name (per-member list) ────────────────
-    const nombre = normalizeName(String(row['Nombre'] ?? row['Name'] ?? ''));
-    const teamEntry = nombre ? memberNameMap[nombre] : null;
-    if (teamEntry) {
-      if (seenBibs.has(teamEntry.bib)) continue; // deduplicate
-      seenBibs.add(teamEntry.bib);
-      row['Nombre']    = teamEntry.teamName;
-      row['Dorsal']    = Number(teamEntry.bib) || teamEntry.bib;
-      row['_members']  = teamEntry.members;
-      if (teamEntry.pairGender)                        row['_pairGender'] = teamEntry.pairGender;
-      if (teamEntry.club     && !row['Club'])     row['_club']     = teamEntry.club;
-      if (teamEntry.category && !row['Categoria']) row['_category'] = teamEntry.category;
+    const teams = name ? byMember.get(name) : null;
+    if (teams) {
+      const team = pickCandidate(teams, time, used);
+      if (!team) continue; // another member of a team already listed
+      used.add(team);
+      apply(row, team, true);
       out.push(row);
       continue;
     }
@@ -621,30 +575,30 @@ function attachMembers(rows, mapsResult) {
   return out;
 }
 
-/**
- * Attach club names to rows that have a Dorsal/Bib but no Club column.
- * Uses the bibClubMap built in fetchMembersMap.
- */
-function attachClub(rows, bibClubMap) {
-  if (!bibClubMap || Object.keys(bibClubMap).length === 0) return;
-  for (const row of rows) {
-    if (row['Club'] || row['_club']) continue; // already set
-    const bib = String(row['Dorsal'] ?? row['Bib'] ?? row['Startnr.'] ?? '').replace(/\D/g, '');
-    if (bib && bibClubMap[bib]) row['_club'] = bibClubMap[bib];
-  }
-}
+// ─── Official certificate ─────────────────────────────────────────────────────
 
 /**
- * Attach category names to rows that have no Categoria column.
- * Uses the bibCategoryMap built in fetchMembersMap.
+ * Certificate configured in RaceResult; it is published at a fixed URL per participant:
+ *   https://my.raceresult.com/{eventId}/details0/certificate/{pid}/{CERTIFICATE_NAME}
+ * Events created before it existed answer 404, so it is checked per event.
  */
-function attachCategory(rows, bibCategoryMap) {
-  if (!bibCategoryMap || Object.keys(bibCategoryMap).length === 0) return;
-  for (const row of rows) {
-    if (row['Categoria'] || row['Categoría'] || row['_category']) continue; // already set
-    const bib = String(row['Dorsal'] ?? row['Bib'] ?? row['Startnr.'] ?? '').replace(/\D/g, '');
-    if (bib && bibCategoryMap[bib]) row['_category'] = bibCategoryMap[bib];
-  }
+const CERTIFICATE_NAME = 'Certificados Hibridas';
+
+const _certificateCache = {};
+async function detectCertificateUrl(eventId, rows) {
+  if (_certificateCache[eventId] !== undefined) return _certificateCache[eventId];
+  const pid = rows.find((r) => r._pid)?._pid;
+  if (!pid) return null;
+  const template = `https://my.raceresult.com/${eventId}/details0/certificate/{pid}/${encodeURIComponent(CERTIFICATE_NAME)}`;
+  let available = false;
+  try {
+    const resp = await fetch(template.replace('{pid}', pid));
+    available = resp.ok && /pdf/i.test(resp.headers.get('content-type') ?? '');
+    await resp.body?.cancel();
+  } catch { /* no certificate */ }
+  if (available) process.stdout.write(' [Certificate]');
+  _certificateCache[eventId] = available ? template : null;
+  return _certificateCache[eventId];
 }
 
 /**
@@ -672,6 +626,16 @@ function extractPairGender(row) {
   if (g.includes('mascul')) return 'Masculina';
   if (g.includes('mixt')) return 'Mixta';
   return null;
+}
+
+/**
+ * Gender categories present in a contest, used to split it into one selector entry per gender.
+ * Empty when some row has no gender: splitting would hide those participants.
+ */
+function genderCategoriesOf(rows) {
+  const genders = rows.map(extractPairGender);
+  if (genders.some((g) => !g)) return [];
+  return [...new Set(genders)].sort();
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
@@ -749,12 +713,10 @@ async function main() {
             const splitsMap = await fetchDetailSplitsMap(sessionId, eventId, detailListName, variant.contest);
             attachSplits(rows, splitsMap);
           }
-          rows = attachMembers(rows, await fetchMembersMap(sessionId, eventId));
-          attachClub(rows, (await fetchMembersMap(sessionId, eventId)).bibClubMap);
-          attachCategory(rows, (await fetchMembersMap(sessionId, eventId)).bibCategoryMap);
-          attachAgeGroups(rows, await fetchAgeGroupMap(sessionId, eventId));
+          rows = attachParticipants(rows, await fetchParticipants(sessionId, eventId), variant.contest);
+          const certificateUrl = await detectCertificateUrl(eventId, rows);
           const resolvedFormat = detectFormatFromMembers(rows, variant.format);
-          const genderCategories = [...new Set(rows.map(extractPairGender).filter(Boolean))].sort();
+          const genderCategories = genderCategoriesOf(rows);
           const info = {
             id: String(eventId), fileKey,
             name: ev.EventName,
@@ -763,6 +725,7 @@ async function main() {
             listName: usedListName, contest: variant.contest,
             format: resolvedFormat,
             ...(genderCategories.length > 0 && { genderCategories }),
+            ...(certificateUrl && { certificateUrl }),
           };
           const eventPath = path.join(ROOT, 'public', `race-data-${fileKey}.json`);
           fs.writeFileSync(eventPath, JSON.stringify({ info, rows }, null, 2), 'utf8');
@@ -840,12 +803,10 @@ async function main() {
             const splitsMap = await fetchDetailSplitsMap(sessionId, eventId, detailListName, c.ID);
             attachSplits(rows, splitsMap);
           }
-          rows = attachMembers(rows, await fetchMembersMap(sessionId, eventId));
-          attachClub(rows, (await fetchMembersMap(sessionId, eventId)).bibClubMap);
-          attachCategory(rows, (await fetchMembersMap(sessionId, eventId)).bibCategoryMap);
-          attachAgeGroups(rows, await fetchAgeGroupMap(sessionId, eventId));
+          rows = attachParticipants(rows, await fetchParticipants(sessionId, eventId), c.ID);
+          const certificateUrl = await detectCertificateUrl(eventId, rows);
           const resolvedFormat = detectFormatFromMembers(rows, format);
-          const autoCats = [...new Set(rows.map(extractPairGender).filter(Boolean))].sort();
+          const autoCats = genderCategoriesOf(rows);
           const forcedCats = (CONTEST_GENDER_CATEGORIES[String(eventId)] ?? {})[String(c.ID)];
           const genderCategories = forcedCats ?? autoCats;
           const contestDisplayName = (CONTEST_NAME_OVERRIDES[String(eventId)] ?? {})[String(c.ID)] ?? c.Name;
@@ -861,6 +822,7 @@ async function main() {
             format:      resolvedFormat,
             ...(genderCategories.length > 0 && { genderCategories }),
             ...(isNoGenderSplit && { noGenderSplit: true }),
+            ...(certificateUrl && { certificateUrl }),
           };
           const eventPath = path.join(ROOT, 'public', `race-data-${fileKey}.json`);
           fs.writeFileSync(eventPath, JSON.stringify({ info, rows }, null, 2), 'utf8');
@@ -898,12 +860,10 @@ async function main() {
             const splitsMap = await fetchDetailSplitsMap(sessionId, eventId, detailListName, 0);
             attachSplits(rows, splitsMap);
           }
-          rows = attachMembers(rows, await fetchMembersMap(sessionId, eventId));
-          attachClub(rows, (await fetchMembersMap(sessionId, eventId)).bibClubMap);
-          attachCategory(rows, (await fetchMembersMap(sessionId, eventId)).bibCategoryMap);
-          attachAgeGroups(rows, await fetchAgeGroupMap(sessionId, eventId));
+          rows = attachParticipants(rows, await fetchParticipants(sessionId, eventId), 0);
+          const certificateUrl = await detectCertificateUrl(eventId, rows);
           const resolvedFormat = detectFormatFromMembers(rows, format);
-          const genderCategories = [...new Set(rows.map(extractPairGender).filter(Boolean))].sort();
+          const genderCategories = genderCategoriesOf(rows);
           const info = {
             id:       String(eventId),
             name:     ev.EventName,
@@ -913,6 +873,7 @@ async function main() {
             contest:  0,
             format:   resolvedFormat,
             ...(genderCategories.length > 0 && { genderCategories }),
+            ...(certificateUrl && { certificateUrl }),
           };
           const eventPath = path.join(ROOT, 'public', `race-data-${fileKey}.json`);
           fs.writeFileSync(eventPath, JSON.stringify({ info, rows }, null, 2), 'utf8');
