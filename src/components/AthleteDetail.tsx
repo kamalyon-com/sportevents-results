@@ -389,7 +389,7 @@ export const AthleteDetail: React.FC<AthleteDetailProps> = ({
               {athlete.rank_gender != null && athlete.gender && (
                 <Chip
                   size="small"
-                  label={`${athlete.gender === 'M' ? 'Masc.' : 'Fem.'} #${athlete.rank_gender}`}
+                  label={`${athlete.gender === 'M' ? 'Masc.' : athlete.gender === 'Mixta' ? 'Mixta' : 'Fem.'} #${athlete.rank_gender}`}
                   variant="outlined"
                   sx={{ borderRadius: 1, borderColor: `${primaryColor}45` }}
                 />

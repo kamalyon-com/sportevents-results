@@ -136,12 +136,15 @@ function detectGenderGroupsFromRanks(rows: RRRow[], rankKey: string): Map<number
 
 /**
  * Re-rank athletes by finish_time to produce a consistent overall rank.
- * Also recomputes per-gender rank within gender groups.
+ * Also recomputes per-gender rank within gender groups, and per-category rank
+ * within category + gender (categories like "GGEE 30-39" are shared by
+ * Femenina / Masculina / Mixta, each with its own classification).
  * Mutates the array in-place and returns it sorted by rank_overall.
  */
 function reRankAthletes(athletes: Athlete[]): Athlete[] {
-  // Sort by time ascending (DNF → Infinity → last)
-  athletes.sort((a, b) => parseFinishTime(a.finish_time) - parseFinishTime(b.finish_time));
+  // Sort by time ascending; non-finishers (partial time) and DNF (Infinity) go last
+  athletes.sort((a, b) =>
+    Number(!!a.dnf) - Number(!!b.dnf) || parseFinishTime(a.finish_time) - parseFinishTime(b.finish_time));
   athletes.forEach((a, i) => { a.rank_overall = i + 1; });
 
   // Per-gender ranking
@@ -151,6 +154,15 @@ function reRankAthletes(athletes: Athlete[]): Athlete[] {
     for (const a of athletes) {
       if (a.gender === g) { a.rank_gender = gRank++; }
     }
+  }
+
+  const categoryCounters = new Map<string, number>();
+  for (const a of athletes) {
+    if (!a.category) continue;
+    const key = `${a.gender ?? ''}|${a.category}`;
+    const next = (categoryCounters.get(key) ?? 0) + 1;
+    categoryCounters.set(key, next);
+    a.rank_category = next;
   }
   return athletes;
 }
@@ -216,6 +228,9 @@ function mapRowToAthlete(row: RRRow, rank: number, eventId: string, mapping: RRF
   const rawMembers = (row as Record<string, unknown>)['_members'] as Array<{ name: string; club?: string }> | undefined;
   const members = rawMembers?.map((m) => ({ ...m, name: toTitleCase(m.name) }));
   const pid = pickField(row, undefined, '_pid');
+  // Hybrid lists report the athlete's last sector; anything but "Meta" means they retired
+  const lastSector = pickField(row, undefined, 'Sector Actual', 'Último Sector');
+  const dnf = lastSector !== '' && lastSector.trim().toLowerCase() !== 'meta';
 
   return {
     bib: bibRaw || String(rank),
@@ -225,9 +240,11 @@ function mapRowToAthlete(row: RRRow, rank: number, eventId: string, mapping: RRF
     category,
     nationality,
     finish_time: finishTime,
+    ...(dnf && { dnf }),
     rank_overall: rankNum,
-    rank_gender: rankNum,   // per-gender rank not always available; use overall
-    rank_category: rankNum, // same
+    // Placeholders: reRankAthletes recomputes them from finish times
+    rank_gender: rankNum,
+    rank_category: rankNum,
     splits,
     event_id: eventId,
     club: club || undefined,

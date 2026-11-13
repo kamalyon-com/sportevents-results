@@ -14,6 +14,8 @@ export interface Athlete {
   category: string; // e.g. "HYROX Men Open"
   nationality: string; // ISO 3166-1 alpha-2
   finish_time: string; // "HH:MM:SS"
+  /** Retirado antes de meta: su tiempo es parcial y se clasifica detrás de quienes terminaron. */
+  dnf?: boolean;
   rank_overall: number;
   rank_gender: number;
   rank_category: number;

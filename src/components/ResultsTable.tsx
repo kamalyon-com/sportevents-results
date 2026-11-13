@@ -33,6 +33,7 @@ interface ResultsTableProps {
   raceFormat?: 'individual' | 'pairs' | 'teams';
   primaryColor?: string;
   genderFilter?: string;
+  categoryFilter?: string;
 }
 
 
@@ -45,6 +46,7 @@ export const ResultsTable: React.FC<ResultsTableProps> = ({
   raceFormat,
   primaryColor = '#1976d2',
   genderFilter,
+  categoryFilter,
 }) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(25);
@@ -55,9 +57,10 @@ export const ResultsTable: React.FC<ResultsTableProps> = ({
   const thSx = { fontWeight: 700, fontSize: 11, letterSpacing: 1, textTransform: 'uppercase' as const, background: `${primaryColor}1a`, borderBottom: `2px solid ${primaryColor}55`, color: 'text.secondary', whiteSpace: 'nowrap' as const, px: isMobile ? 1 : 2 };
   const tdSx = { px: isMobile ? 1 : 2 };
 
-  // When a gender filter is active, show rank_gender (rank within that gender group)
-  // otherwise show rank_overall (unified ranking by finish time)
-  const displayRank = (athlete: Athlete) => genderFilter ? athlete.rank_gender : athlete.rank_overall;
+  // Category filter → rank within category + gender; gender filter → rank within
+  // that gender; otherwise the overall rank by finish time
+  const displayRank = (athlete: Athlete) =>
+    categoryFilter ? athlete.rank_category : genderFilter ? athlete.rank_gender : athlete.rank_overall;
 
   const pagedAthletes = athletes.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
   const hasAgeGroup = athletes.some((a) => !!a.age_group);

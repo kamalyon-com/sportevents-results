@@ -381,6 +381,7 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
             raceFormat={activeEventCfg?.format}
             primaryColor={primaryColor}
             genderFilter={filters.gender}
+            categoryFilter={filters.category}
           />
         )}
       </Box>

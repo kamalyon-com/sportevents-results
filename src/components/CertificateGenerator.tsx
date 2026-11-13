@@ -191,7 +191,7 @@ export const CertificateGenerator: React.FC<CertificateGeneratorProps> = ({
               { label: 'Tiempo Total', value: athlete.finish_time || '—', accent: true },
               { label: 'Pos. General', value: `#${athlete.rank_overall}` },
               ...(athlete.gender
-                ? [{ label: `Pos. ${athlete.gender === 'M' ? 'Masc.' : 'Fem.'}`, value: `#${athlete.rank_gender}` }]
+                ? [{ label: `Pos. ${athlete.gender === 'M' ? 'Masc.' : athlete.gender === 'Mixta' ? 'Mixta' : 'Fem.'}`, value: `#${athlete.rank_gender}` }]
                 : []),
               ...(athlete.category
                 ? [{ label: 'Pos. Categoría', value: `#${athlete.rank_category}` }]
