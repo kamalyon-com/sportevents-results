@@ -1,0 +1,3741 @@
+{
+  "info": {
+    "id": "433616",
+    "fileKey": "433616_1",
+    "name": "Strong Race Noviembre 2026",
+    "contestName": "Élite",
+    "date": "2026-11-07",
+    "location": "Palma",
+    "listName": "Resultados|01.LIVE",
+    "contest": 1,
+    "format": "pairs",
+    "genderCategories": [
+      "Femenina",
+      "Masculina",
+      "Mixta"
+    ],
+    "certificateUrl": "https://my.raceresult.com/433616/details0/certificate/{pid}/Certificados%20Hibridas"
+  },
+  "rows": [
+    {
+      "AUTORANK.p": "1.",
+      "Nombre": "Las Rubias de Hope y RS",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "38:19",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:41",
+          "acc": "01:41"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:16",
+          "acc": "02:57"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:54",
+          "acc": "04:51"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "02:01",
+          "acc": "06:52"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:04",
+          "acc": "08:55"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:22",
+          "acc": "10:16"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:04",
+          "acc": "12:20"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:33",
+          "acc": "13:53"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:05",
+          "acc": "15:57"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:34",
+          "acc": "17:30"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:08",
+          "acc": "19:37"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:23",
+          "acc": "22:00"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:22",
+          "acc": "24:21"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:57",
+          "acc": "25:18"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:24",
+          "acc": "27:42"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:29",
+          "acc": "30:10"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:18",
+          "acc": "32:28"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:41",
+          "acc": "34:08"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:20",
+          "acc": "36:27"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:52",
+          "acc": "38:19"
+        }
+      ],
+      "_pid": "127",
+      "Dorsal": 127,
+      "_members": [
+        {
+          "name": "Neus Ramis",
+          "club": "RS Training"
+        },
+        {
+          "name": "Yolanda bisbal",
+          "club": "Hope"
+        }
+      ],
+      "_pairGender": "Femenina",
+      "_club": "RS Training / Hope",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "2.",
+      "Nombre": "DXB",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "38:30",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:39",
+          "acc": "01:39"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:16",
+          "acc": "02:55"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:52",
+          "acc": "04:46"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "02:22",
+          "acc": "07:08"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:59",
+          "acc": "09:06"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:27",
+          "acc": "10:32"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:59",
+          "acc": "12:31"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:38",
+          "acc": "14:08"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:57",
+          "acc": "16:05"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:41",
+          "acc": "17:46"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:02",
+          "acc": "19:47"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:23",
+          "acc": "22:10"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:16",
+          "acc": "24:25"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "01:02",
+          "acc": "25:27"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:16",
+          "acc": "27:42"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:24",
+          "acc": "30:05"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:14",
+          "acc": "32:18"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:51",
+          "acc": "34:09"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:07",
+          "acc": "36:16"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:14",
+          "acc": "38:30"
+        }
+      ],
+      "_pid": "133",
+      "Dorsal": 133,
+      "_members": [
+        {
+          "name": "Angélique Chetaneau",
+          "club": "-"
+        },
+        {
+          "name": "Bàrbara Amengual Frau",
+          "club": "-"
+        }
+      ],
+      "_pairGender": "Femenina",
+      "_club": "-",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "3.",
+      "Nombre": "Aurea",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "38:31",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:37",
+          "acc": "01:37"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:09",
+          "acc": "02:46"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:53",
+          "acc": "04:39"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "02:30",
+          "acc": "07:09"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:03",
+          "acc": "09:12"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:18",
+          "acc": "10:30"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:05",
+          "acc": "12:34"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:37",
+          "acc": "14:11"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:00",
+          "acc": "16:10"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:34",
+          "acc": "17:43"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:05",
+          "acc": "19:48"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:34",
+          "acc": "22:21"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:21",
+          "acc": "24:42"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:55",
+          "acc": "25:36"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:20",
+          "acc": "27:56"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:34",
+          "acc": "30:30"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:18",
+          "acc": "32:47"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:36",
+          "acc": "34:23"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:12",
+          "acc": "36:35"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:57",
+          "acc": "38:31"
+        }
+      ],
+      "_pid": "132",
+      "Dorsal": 132,
+      "_members": [
+        {
+          "name": "Maria Femenias Hernandez",
+          "club": "Viding Illes"
+        },
+        {
+          "name": "Cristina Carrasco Mollá",
+          "club": "Viding Illes"
+        }
+      ],
+      "_pairGender": "Femenina",
+      "_club": "Viding Illes",
+      "_category": "GGEE +60"
+    },
+    {
+      "AUTORANK.p": "4.",
+      "Nombre": "Vic&Su",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "39:15",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:49",
+          "acc": "01:49"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:14",
+          "acc": "03:03"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:54",
+          "acc": "04:57"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "02:14",
+          "acc": "07:10"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:01",
+          "acc": "09:11"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:26",
+          "acc": "10:36"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:03",
+          "acc": "12:38"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:45",
+          "acc": "14:23"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:03",
+          "acc": "16:25"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:35",
+          "acc": "18:00"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:05",
+          "acc": "20:05"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:23",
+          "acc": "22:27"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:22",
+          "acc": "24:48"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "01:00",
+          "acc": "25:48"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:20",
+          "acc": "28:08"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:34",
+          "acc": "30:41"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:21",
+          "acc": "33:02"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:43",
+          "acc": "34:45"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:17",
+          "acc": "37:01"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:14",
+          "acc": "39:15"
+        }
+      ],
+      "_pid": "130",
+      "Dorsal": 130,
+      "_members": [
+        {
+          "name": "Susana Merino Muñoz",
+          "club": "Summit"
+        },
+        {
+          "name": "Victoria Camacho Jaume",
+          "club": "Summit"
+        }
+      ],
+      "_pairGender": "Femenina",
+      "_club": "Summit",
+      "_category": "GGEE 40-49"
+    },
+    {
+      "AUTORANK.p": "5.",
+      "Nombre": "Hybridas",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "40:15",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:42",
+          "acc": "01:42"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:16",
+          "acc": "02:58"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:52",
+          "acc": "04:49"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "02:30",
+          "acc": "07:19"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:04",
+          "acc": "09:23"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:30",
+          "acc": "10:52"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:10",
+          "acc": "13:01"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:46",
+          "acc": "14:46"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:09",
+          "acc": "16:54"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:45",
+          "acc": "18:39"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:09",
+          "acc": "20:48"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:30",
+          "acc": "23:17"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:23",
+          "acc": "25:40"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "01:07",
+          "acc": "26:46"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:21",
+          "acc": "29:07"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:26",
+          "acc": "31:32"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:23",
+          "acc": "33:55"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:55",
+          "acc": "35:49"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:18",
+          "acc": "38:06"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:09",
+          "acc": "40:15"
+        }
+      ],
+      "_pid": "125",
+      "Dorsal": 125,
+      "_members": [
+        {
+          "name": "Lucia Ferreira Diaz",
+          "club": "Megasport"
+        },
+        {
+          "name": "Ana Turull",
+          "club": "Megasport"
+        }
+      ],
+      "_pairGender": "Femenina",
+      "_club": "Megasport",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "6.",
+      "Nombre": "Lokas Team",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "40:27",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:42",
+          "acc": "01:42"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:20",
+          "acc": "03:01"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:52",
+          "acc": "04:53"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "02:15",
+          "acc": "07:08"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:02",
+          "acc": "09:09"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:36",
+          "acc": "10:44"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:03",
+          "acc": "12:46"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "02:08",
+          "acc": "14:53"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:02",
+          "acc": "16:55"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:46",
+          "acc": "18:41"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:04",
+          "acc": "20:44"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:39",
+          "acc": "23:22"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:24",
+          "acc": "25:46"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "01:06",
+          "acc": "26:51"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:17",
+          "acc": "29:08"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:38",
+          "acc": "31:46"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:17",
+          "acc": "34:02"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:55",
+          "acc": "35:56"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:12",
+          "acc": "38:08"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:19",
+          "acc": "40:27"
+        }
+      ],
+      "_pid": "131",
+      "Dorsal": 131,
+      "_members": [
+        {
+          "name": "Valeria Andreini",
+          "club": "Megasport"
+        },
+        {
+          "name": "Alicia Vallcaneras Cubero",
+          "club": "Megasport"
+        }
+      ],
+      "_pairGender": "Femenina",
+      "_club": "Megasport",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "7.",
+      "Nombre": "Popitochas",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "40:39",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:49",
+          "acc": "01:49"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:09",
+          "acc": "02:58"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "02:00",
+          "acc": "04:58"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "02:05",
+          "acc": "07:03"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:11",
+          "acc": "09:14"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:39",
+          "acc": "10:52"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:15",
+          "acc": "13:06"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:33",
+          "acc": "14:39"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:15",
+          "acc": "16:54"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:31",
+          "acc": "18:24"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:22",
+          "acc": "20:46"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:29",
+          "acc": "23:14"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:45",
+          "acc": "25:58"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "01:02",
+          "acc": "26:59"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:37",
+          "acc": "29:36"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:26",
+          "acc": "32:01"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:32",
+          "acc": "34:33"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:48",
+          "acc": "36:20"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:28",
+          "acc": "38:48"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:51",
+          "acc": "40:39"
+        }
+      ],
+      "_pid": "128",
+      "Dorsal": 128,
+      "_members": [
+        {
+          "name": "Maripau Sbert Llinàs",
+          "club": "Crossfit sembat"
+        },
+        {
+          "name": "Marian Tous González",
+          "club": "Crossfit s’embat"
+        }
+      ],
+      "_pairGender": "Femenina",
+      "_club": "Crossfit sembat / Crossfit s’embat",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "8.",
+      "Nombre": "Lian Pardas",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "40:39",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:39",
+          "acc": "01:39"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:28",
+          "acc": "03:07"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:51",
+          "acc": "04:57"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "02:35",
+          "acc": "07:32"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:10",
+          "acc": "09:41"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:26",
+          "acc": "11:07"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:13",
+          "acc": "13:19"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:44",
+          "acc": "15:03"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:09",
+          "acc": "17:11"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:41",
+          "acc": "18:51"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:13",
+          "acc": "21:03"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:35",
+          "acc": "23:38"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:25",
+          "acc": "26:03"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "01:06",
+          "acc": "27:08"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:26",
+          "acc": "29:33"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:37",
+          "acc": "32:10"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:18",
+          "acc": "34:28"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:43",
+          "acc": "36:10"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:22",
+          "acc": "38:31"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:08",
+          "acc": "40:39"
+        }
+      ],
+      "_pid": "129",
+      "Dorsal": 129,
+      "_members": [
+        {
+          "name": "Sandra Sureda Bauza",
+          "club": "Viding illes"
+        },
+        {
+          "name": "Tamara La Hoz Moreno",
+          "club": "Viding illes"
+        }
+      ],
+      "_pairGender": "Femenina",
+      "_club": "Viding illes",
+      "_category": "GGEE 40-49"
+    },
+    {
+      "AUTORANK.p": "9.",
+      "Nombre": "Juntas más Fuertes",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "42:25",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:37",
+          "acc": "01:37"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:08",
+          "acc": "02:44"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:55",
+          "acc": "04:39"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "02:42",
+          "acc": "07:20"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:14",
+          "acc": "09:33"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:28",
+          "acc": "11:01"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:11",
+          "acc": "13:11"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "02:00",
+          "acc": "15:11"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:09",
+          "acc": "17:19"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "02:03",
+          "acc": "19:21"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:30",
+          "acc": "21:50"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:43",
+          "acc": "24:32"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:35",
+          "acc": "27:07"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "01:05",
+          "acc": "28:12"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:26",
+          "acc": "30:37"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:45",
+          "acc": "33:21"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:13",
+          "acc": "35:34"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:55",
+          "acc": "37:28"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:32",
+          "acc": "40:00"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:26",
+          "acc": "42:25"
+        }
+      ],
+      "_pid": "134",
+      "Dorsal": 134,
+      "_members": [
+        {
+          "name": "Alejandra Ruiz Arnau",
+          "club": "C23 Crossfit"
+        },
+        {
+          "name": "Natalia Fernández Naranjo",
+          "club": "Queen's Centre"
+        }
+      ],
+      "_pairGender": "Femenina",
+      "_club": "C23 Crossfit / Queen's Centre",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "10.",
+      "Nombre": "Strength and speed queens",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "43:48",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:49",
+          "acc": "01:49"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:21",
+          "acc": "03:09"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "02:11",
+          "acc": "05:20"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "02:22",
+          "acc": "07:41"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:35",
+          "acc": "10:15"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:29",
+          "acc": "11:44"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:42",
+          "acc": "14:25"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:40",
+          "acc": "16:05"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:40",
+          "acc": "18:44"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:30",
+          "acc": "20:13"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:52",
+          "acc": "23:05"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:18",
+          "acc": "25:22"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:49",
+          "acc": "28:10"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "01:05",
+          "acc": "29:15"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:48",
+          "acc": "32:02"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:17",
+          "acc": "34:19"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:46",
+          "acc": "37:04"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:55",
+          "acc": "38:59"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:41",
+          "acc": "41:39"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:09",
+          "acc": "43:48"
+        }
+      ],
+      "_pid": "126",
+      "Dorsal": 126,
+      "_members": [
+        {
+          "name": "Tonina Colombàs",
+          "club": "Hybrid Mallorca"
+        },
+        {
+          "name": "Arantza Ortiz",
+          "club": "Commit training lab"
+        }
+      ],
+      "_pairGender": "Femenina",
+      "_club": "Hybrid Mallorca / Commit training lab",
+      "_category": "GGEE 20-29"
+    },
+    {
+      "AUTORANK.p": "1.",
+      "Nombre": "Maneta plena",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "30:56",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:23",
+          "acc": "01:23"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:04",
+          "acc": "02:26"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:32",
+          "acc": "03:58"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:21",
+          "acc": "05:18"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:34",
+          "acc": "06:52"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:05",
+          "acc": "07:56"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:39",
+          "acc": "09:35"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:25",
+          "acc": "10:59"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:39",
+          "acc": "12:38"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:28",
+          "acc": "14:05"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:41",
+          "acc": "15:45"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "01:56",
+          "acc": "17:41"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "01:51",
+          "acc": "19:31"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:42",
+          "acc": "20:13"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "01:54",
+          "acc": "22:06"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:02",
+          "acc": "24:08"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "01:50",
+          "acc": "25:57"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:24",
+          "acc": "27:21"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:48",
+          "acc": "29:09"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:48",
+          "acc": "30:56"
+        }
+      ],
+      "_pid": "804",
+      "Dorsal": 804,
+      "_members": [
+        {
+          "name": "Pau Nacenta",
+          "club": "Rafa Nadal Club"
+        },
+        {
+          "name": "Alberto Pareja",
+          "club": "Rafa nadal club"
+        }
+      ],
+      "_pairGender": "Masculina",
+      "_club": "Rafa Nadal Club / Rafa nadal club",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "2.",
+      "Nombre": "La argentinidad al palo!",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "31:54",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:28",
+          "acc": "01:28"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "00:57",
+          "acc": "02:24"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:36",
+          "acc": "03:59"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:29",
+          "acc": "05:28"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:43",
+          "acc": "07:10"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:11",
+          "acc": "08:21"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:42",
+          "acc": "10:02"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:33",
+          "acc": "11:34"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:40",
+          "acc": "13:14"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:18",
+          "acc": "14:31"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:43",
+          "acc": "16:13"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "01:55",
+          "acc": "18:08"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "01:58",
+          "acc": "20:05"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:47",
+          "acc": "20:52"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "01:58",
+          "acc": "22:49"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:02",
+          "acc": "24:50"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "01:55",
+          "acc": "26:45"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:27",
+          "acc": "28:11"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:52",
+          "acc": "30:03"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:52",
+          "acc": "31:54"
+        }
+      ],
+      "_pid": "813",
+      "Dorsal": 813,
+      "_members": [
+        {
+          "name": "Valentin Gamba Dondich",
+          "club": "/"
+        },
+        {
+          "name": "Mauro Adriel Lauría",
+          "club": "/"
+        }
+      ],
+      "_pairGender": "Masculina",
+      "_club": "/",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "3.",
+      "Nombre": "Atletas Ébridos",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "32:28",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:25",
+          "acc": "01:25"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:01",
+          "acc": "02:25"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:36",
+          "acc": "04:01"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:35",
+          "acc": "05:35"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:41",
+          "acc": "07:16"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:08",
+          "acc": "08:24"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:46",
+          "acc": "10:09"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:31",
+          "acc": "11:40"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:43",
+          "acc": "13:22"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:28",
+          "acc": "14:49"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:47",
+          "acc": "16:36"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "01:59",
+          "acc": "18:35"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:00",
+          "acc": "20:34"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:49",
+          "acc": "21:22"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:01",
+          "acc": "23:23"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:09",
+          "acc": "25:31"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "01:58",
+          "acc": "27:29"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:25",
+          "acc": "28:53"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:51",
+          "acc": "30:44"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:45",
+          "acc": "32:28"
+        }
+      ],
+      "_pid": "810",
+      "Dorsal": 810,
+      "_members": [
+        {
+          "name": "Lucas Perelló Caballeros",
+          "club": "Megasport"
+        },
+        {
+          "name": "Fernando Martorell Munar",
+          "club": "Megasport"
+        }
+      ],
+      "_pairGender": "Masculina",
+      "_club": "Megasport",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "4.",
+      "Nombre": "LOS TEJONES DE LA MIEL",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "32:39",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:25",
+          "acc": "01:25"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:06",
+          "acc": "02:30"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:31",
+          "acc": "04:00"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:39",
+          "acc": "05:38"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:36",
+          "acc": "07:14"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:06",
+          "acc": "08:19"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:44",
+          "acc": "10:03"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:46",
+          "acc": "11:48"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:45",
+          "acc": "13:32"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:33",
+          "acc": "15:04"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:44",
+          "acc": "16:47"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:08",
+          "acc": "18:55"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "01:55",
+          "acc": "20:49"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:49",
+          "acc": "21:38"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "01:58",
+          "acc": "23:35"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:12",
+          "acc": "25:47"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "01:50",
+          "acc": "27:36"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:28",
+          "acc": "29:04"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:47",
+          "acc": "30:50"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:49",
+          "acc": "32:39"
+        }
+      ],
+      "_pid": "808",
+      "Dorsal": 808,
+      "_members": [
+        {
+          "name": "Ángel Coll",
+          "club": "Megasport"
+        },
+        {
+          "name": "Marco Tulio Maciel Evangelista",
+          "club": "Megasport"
+        }
+      ],
+      "_pairGender": "Masculina",
+      "_club": "Megasport",
+      "_category": "GGEE 20-29"
+    },
+    {
+      "AUTORANK.p": "5.",
+      "Nombre": "TEAM TS",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "32:57",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:25",
+          "acc": "01:25"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:07",
+          "acc": "02:31"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:38",
+          "acc": "04:09"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:29",
+          "acc": "05:38"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:44",
+          "acc": "07:21"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:19",
+          "acc": "08:40"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:44",
+          "acc": "10:24"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:32",
+          "acc": "11:55"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:45",
+          "acc": "13:40"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:26",
+          "acc": "15:06"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:45",
+          "acc": "16:50"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "01:59",
+          "acc": "18:49"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:02",
+          "acc": "20:50"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:52",
+          "acc": "21:42"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "01:56",
+          "acc": "23:37"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:06",
+          "acc": "25:43"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "01:56",
+          "acc": "27:38"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:28",
+          "acc": "29:06"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:56",
+          "acc": "31:01"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:56",
+          "acc": "32:57"
+        }
+      ],
+      "_pid": "805",
+      "Dorsal": 805,
+      "_members": [
+        {
+          "name": "Salva Vázquez Guillén",
+          "club": "Hybrid Training Center"
+        },
+        {
+          "name": "Toni Marí Vargas",
+          "club": "Hybiza Athletes"
+        }
+      ],
+      "_pairGender": "Masculina",
+      "_club": "Hybrid Training Center / Hybiza Athletes",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "6.",
+      "Nombre": "Tomeu y Sergio RS",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "33:41",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:26",
+          "acc": "01:26"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:22",
+          "acc": "02:48"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:32",
+          "acc": "04:20"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:32",
+          "acc": "05:51"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:41",
+          "acc": "07:31"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:19",
+          "acc": "08:50"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:44",
+          "acc": "10:33"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:40",
+          "acc": "12:13"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:41",
+          "acc": "13:53"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:31",
+          "acc": "15:24"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:45",
+          "acc": "17:09"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:01",
+          "acc": "19:09"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "01:56",
+          "acc": "21:05"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:55",
+          "acc": "21:59"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "01:55",
+          "acc": "23:53"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:05",
+          "acc": "25:57"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "01:55",
+          "acc": "27:51"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:47",
+          "acc": "29:38"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:50",
+          "acc": "31:28"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:13",
+          "acc": "33:41"
+        }
+      ],
+      "_pid": "809",
+      "Dorsal": 809,
+      "_members": [
+        {
+          "name": "Sergio Moll Rexach",
+          "club": "RS Training"
+        },
+        {
+          "name": "Tomeu Rigo Mas",
+          "club": "RS Training"
+        }
+      ],
+      "_pairGender": "Masculina",
+      "_club": "RS Training",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "7.",
+      "Nombre": "carapapa",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "34:03",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:29",
+          "acc": "01:29"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:10",
+          "acc": "02:39"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:39",
+          "acc": "04:17"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:31",
+          "acc": "05:48"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:45",
+          "acc": "07:33"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:11",
+          "acc": "08:44"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:48",
+          "acc": "10:32"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:31",
+          "acc": "12:02"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:45",
+          "acc": "13:47"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:51",
+          "acc": "15:37"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:54",
+          "acc": "17:31"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:03",
+          "acc": "19:34"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:03",
+          "acc": "21:37"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:50",
+          "acc": "22:26"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:03",
+          "acc": "24:28"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:16",
+          "acc": "26:43"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "01:56",
+          "acc": "28:39"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:41",
+          "acc": "30:20"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:56",
+          "acc": "32:15"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:48",
+          "acc": "34:03"
+        }
+      ],
+      "_pid": "806",
+      "Dorsal": 806,
+      "_members": [
+        {
+          "name": "Óscar Rodríguez",
+          "club": "RS Training"
+        },
+        {
+          "name": "Iker Olivera",
+          "club": "RS Training"
+        }
+      ],
+      "_pairGender": "Masculina",
+      "_club": "RS Training",
+      "_category": "GGEE 40-49"
+    },
+    {
+      "AUTORANK.p": "8.",
+      "Nombre": "LOS HOKAGES",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "34:38",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:34",
+          "acc": "01:34"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:10",
+          "acc": "02:43"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:38",
+          "acc": "04:21"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:52",
+          "acc": "06:12"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:41",
+          "acc": "07:53"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:22",
+          "acc": "09:14"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:48",
+          "acc": "11:02"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:45",
+          "acc": "12:46"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:46",
+          "acc": "14:32"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:30",
+          "acc": "16:01"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:52",
+          "acc": "17:53"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:04",
+          "acc": "19:56"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:03",
+          "acc": "21:59"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:54",
+          "acc": "22:52"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:06",
+          "acc": "24:58"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:10",
+          "acc": "27:08"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "01:59",
+          "acc": "29:06"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:36",
+          "acc": "30:42"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:59",
+          "acc": "32:41"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:58",
+          "acc": "34:38"
+        }
+      ],
+      "_pid": "1251",
+      "Dorsal": 1251,
+      "_members": [
+        {
+          "name": "Juan Rossello Sanchez",
+          "club": "."
+        },
+        {
+          "name": "Adrián Endrino López",
+          "club": "."
+        }
+      ],
+      "_pairGender": "Masculina",
+      "_club": ".",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "9.",
+      "Nombre": "Young Hybrids",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "34:41",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:34",
+          "acc": "01:34"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:05",
+          "acc": "02:38"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:40",
+          "acc": "04:18"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:46",
+          "acc": "06:03"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:44",
+          "acc": "07:47"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:16",
+          "acc": "09:02"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:47",
+          "acc": "10:49"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:35",
+          "acc": "12:23"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:49",
+          "acc": "14:11"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:36",
+          "acc": "15:47"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:50",
+          "acc": "17:36"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:06",
+          "acc": "19:41"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:02",
+          "acc": "21:42"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:58",
+          "acc": "22:40"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:09",
+          "acc": "24:48"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:22",
+          "acc": "27:09"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:00",
+          "acc": "29:09"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:34",
+          "acc": "30:42"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:58",
+          "acc": "32:40"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:01",
+          "acc": "34:41"
+        }
+      ],
+      "_pid": "812",
+      "Dorsal": 812,
+      "_members": [
+        {
+          "name": "Marco Antonio Aliaga Koczy",
+          "club": "RS Training"
+        },
+        {
+          "name": "Sergio Nicolau Muñoz",
+          "club": "Megasport"
+        }
+      ],
+      "_pairGender": "Masculina",
+      "_club": "RS Training / Megasport",
+      "_category": "GGEE 20-29"
+    },
+    {
+      "AUTORANK.p": "10.",
+      "Nombre": "El Equipo B",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "34:42",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:30",
+          "acc": "01:30"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:12",
+          "acc": "02:42"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:38",
+          "acc": "04:19"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:31",
+          "acc": "05:50"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:44",
+          "acc": "07:33"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:20",
+          "acc": "08:53"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:45",
+          "acc": "10:38"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:46",
+          "acc": "12:23"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:48",
+          "acc": "14:10"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:29",
+          "acc": "15:39"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:51",
+          "acc": "17:29"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:06",
+          "acc": "19:34"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:04",
+          "acc": "21:38"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:54",
+          "acc": "22:32"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:08",
+          "acc": "24:39"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:28",
+          "acc": "27:06"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "01:59",
+          "acc": "29:04"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:40",
+          "acc": "30:44"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:55",
+          "acc": "32:39"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:04",
+          "acc": "34:42"
+        }
+      ],
+      "_pid": "811",
+      "Dorsal": 811,
+      "_members": [
+        {
+          "name": "Fausto Hugo",
+          "club": "The Good Wod"
+        },
+        {
+          "name": "Juan Manuel Rodríguez Flores",
+          "club": "The Good Wod"
+        }
+      ],
+      "_pairGender": "Masculina",
+      "_club": "The Good Wod",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "1.",
+      "Nombre": "Dragon Hybrid Team",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "33:59",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:34",
+          "acc": "01:34"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:05",
+          "acc": "02:39"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:38",
+          "acc": "04:16"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:27",
+          "acc": "05:43"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:50",
+          "acc": "07:32"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:11",
+          "acc": "08:43"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:48",
+          "acc": "10:30"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:34",
+          "acc": "12:03"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:46",
+          "acc": "13:49"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:34",
+          "acc": "15:23"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:52",
+          "acc": "17:14"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:12",
+          "acc": "19:26"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:01",
+          "acc": "21:26"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:55",
+          "acc": "22:21"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:00",
+          "acc": "24:21"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:11",
+          "acc": "26:31"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "01:56",
+          "acc": "28:26"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:32",
+          "acc": "29:58"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:58",
+          "acc": "31:55"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:04",
+          "acc": "33:59"
+        }
+      ],
+      "_pid": "1476",
+      "Dorsal": 1476,
+      "_members": [
+        {
+          "name": "Sandra Membrado",
+          "club": "OCR Aragon"
+        },
+        {
+          "name": "Manuel Caamaño",
+          "club": "Ocr Aragon"
+        }
+      ],
+      "_pairGender": "Mixta",
+      "_club": "OCR Aragon / Ocr Aragon",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "2.",
+      "Nombre": "Alfons y Noe",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "34:25",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:33",
+          "acc": "01:33"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:03",
+          "acc": "02:35"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:38",
+          "acc": "04:12"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:34",
+          "acc": "05:46"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:44",
+          "acc": "07:30"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:16",
+          "acc": "08:46"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:47",
+          "acc": "10:32"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:30",
+          "acc": "12:01"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:47",
+          "acc": "13:48"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:29",
+          "acc": "15:16"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:50",
+          "acc": "17:05"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:05",
+          "acc": "19:10"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:01",
+          "acc": "21:10"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "01:25",
+          "acc": "22:35"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "01:58",
+          "acc": "24:33"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:13",
+          "acc": "26:45"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "01:57",
+          "acc": "28:42"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:44",
+          "acc": "30:25"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:56",
+          "acc": "32:21"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:04",
+          "acc": "34:25"
+        }
+      ],
+      "_pid": "1474",
+      "Dorsal": 1474,
+      "_members": [
+        {
+          "name": "Alfons Deu",
+          "club": "Hybiza Athletes"
+        },
+        {
+          "name": "Noelia Pérez",
+          "club": "Hybiza Athletes"
+        }
+      ],
+      "_pairGender": "Mixta",
+      "_club": "Hybiza Athletes",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "3.",
+      "Nombre": "Equipo Furia",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "35:01",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:34",
+          "acc": "01:34"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:06",
+          "acc": "02:40"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:40",
+          "acc": "04:19"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:54",
+          "acc": "06:12"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:48",
+          "acc": "08:00"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:16",
+          "acc": "09:16"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:52",
+          "acc": "11:07"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:46",
+          "acc": "12:52"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:52",
+          "acc": "14:43"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:36",
+          "acc": "16:19"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:53",
+          "acc": "18:11"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:10",
+          "acc": "20:21"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:05",
+          "acc": "22:25"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:55",
+          "acc": "23:20"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:06",
+          "acc": "25:25"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:17",
+          "acc": "27:42"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:02",
+          "acc": "29:43"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:31",
+          "acc": "31:14"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:00",
+          "acc": "33:14"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:47",
+          "acc": "35:01"
+        }
+      ],
+      "_pid": "1478",
+      "Dorsal": 1478,
+      "_members": [
+        {
+          "name": "Malén Barcelo",
+          "club": "RS Training"
+        },
+        {
+          "name": "Miro Gadzhalov",
+          "club": "RS Training"
+        }
+      ],
+      "_pairGender": "Mixta",
+      "_club": "RS Training",
+      "_category": "GGEE 40-49"
+    },
+    {
+      "AUTORANK.p": "4.",
+      "Nombre": "Team Viking",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "35:12",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:40",
+          "acc": "01:40"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:15",
+          "acc": "02:54"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:44",
+          "acc": "04:37"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:48",
+          "acc": "06:25"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:50",
+          "acc": "08:15"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:19",
+          "acc": "09:33"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:49",
+          "acc": "11:22"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:53",
+          "acc": "13:14"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:50",
+          "acc": "15:04"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:31",
+          "acc": "16:35"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:52",
+          "acc": "18:26"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:09",
+          "acc": "20:34"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:06",
+          "acc": "22:39"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:54",
+          "acc": "23:33"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:03",
+          "acc": "25:35"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:08",
+          "acc": "27:43"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:00",
+          "acc": "29:43"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:33",
+          "acc": "31:15"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "01:59",
+          "acc": "33:14"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:59",
+          "acc": "35:12"
+        }
+      ],
+      "_pid": "1470",
+      "Dorsal": 1470,
+      "_members": [
+        {
+          "name": "Pär Bergsman",
+          "club": "RS Training"
+        },
+        {
+          "name": "Felicity Cole",
+          "club": "RS Training"
+        }
+      ],
+      "_pairGender": "Mixta",
+      "_club": "RS Training",
+      "_category": "GGEE 40-49"
+    },
+    {
+      "AUTORANK.p": "5.",
+      "Nombre": "NEXT LEVEL PALMA",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "36:37",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:37",
+          "acc": "01:37"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:07",
+          "acc": "02:44"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:44",
+          "acc": "04:27"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:44",
+          "acc": "06:11"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:51",
+          "acc": "08:02"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:23",
+          "acc": "09:24"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:52",
+          "acc": "11:16"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:39",
+          "acc": "12:55"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:52",
+          "acc": "14:46"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:34",
+          "acc": "16:20"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:56",
+          "acc": "18:15"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:13",
+          "acc": "20:28"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:10",
+          "acc": "22:37"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "01:02",
+          "acc": "23:39"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:11",
+          "acc": "25:49"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:28",
+          "acc": "28:17"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:12",
+          "acc": "30:29"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:42",
+          "acc": "32:10"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:13",
+          "acc": "34:23"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:15",
+          "acc": "36:37"
+        }
+      ],
+      "_pid": "1471",
+      "Dorsal": 1471,
+      "_members": [
+        {
+          "name": "YERAY MAÑAS",
+          "club": "Next Level Palma"
+        },
+        {
+          "name": "LAURA PEREZ",
+          "club": "Next Level Palma"
+        }
+      ],
+      "_pairGender": "Mixta",
+      "_club": "Next Level Palma",
+      "_category": "GGEE 40-49"
+    },
+    {
+      "AUTORANK.p": "6.",
+      "Nombre": "Pezzi sparsi",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "36:44",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:36",
+          "acc": "01:36"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:06",
+          "acc": "02:42"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:45",
+          "acc": "04:26"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:49",
+          "acc": "06:14"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:50",
+          "acc": "08:03"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:22",
+          "acc": "09:25"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:54",
+          "acc": "11:18"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:37",
+          "acc": "12:55"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:53",
+          "acc": "14:48"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:44",
+          "acc": "16:31"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:00",
+          "acc": "18:30"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:15",
+          "acc": "20:45"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:16",
+          "acc": "23:00"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:52",
+          "acc": "23:51"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:11",
+          "acc": "26:02"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:28",
+          "acc": "28:29"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:08",
+          "acc": "30:36"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:58",
+          "acc": "32:34"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:05",
+          "acc": "34:38"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:07",
+          "acc": "36:44"
+        }
+      ],
+      "_pid": "1475",
+      "Dorsal": 1475,
+      "_members": [
+        {
+          "name": "Carmen Escamilla",
+          "club": "Viding Illes"
+        },
+        {
+          "name": "Giacomo Colombo",
+          "club": "Spartans Academy"
+        }
+      ],
+      "_pairGender": "Mixta",
+      "_club": "Viding Illes / Spartans Academy",
+      "_category": "GGEE 40-49"
+    },
+    {
+      "AUTORANK.p": "7.",
+      "Nombre": "Coach Taming Beast",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "36:51",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:35",
+          "acc": "01:35"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:11",
+          "acc": "02:45"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:43",
+          "acc": "04:28"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:55",
+          "acc": "06:22"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "01:51",
+          "acc": "08:13"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:14",
+          "acc": "09:27"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "01:53",
+          "acc": "11:19"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:50",
+          "acc": "13:09"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "01:53",
+          "acc": "15:02"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:51",
+          "acc": "16:52"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "01:56",
+          "acc": "18:48"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:22",
+          "acc": "21:09"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:09",
+          "acc": "23:18"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "01:04",
+          "acc": "24:21"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:10",
+          "acc": "26:30"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:26",
+          "acc": "28:55"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:06",
+          "acc": "31:01"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:49",
+          "acc": "32:50"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:03",
+          "acc": "34:52"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "02:00",
+          "acc": "36:51"
+        }
+      ],
+      "_pid": "1472",
+      "Dorsal": 1472,
+      "_members": [
+        {
+          "name": "Marcos Soria Villalba",
+          "club": "Viding Illes"
+        },
+        {
+          "name": "Genoveva Olivares Sánchez",
+          "club": "Viding Illes"
+        }
+      ],
+      "_pairGender": "Mixta",
+      "_club": "Viding Illes",
+      "_category": "GGEE 30-39"
+    },
+    {
+      "AUTORANK.p": "8.",
+      "Nombre": "Los cuchus",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "37:08",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:49",
+          "acc": "01:49"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:13",
+          "acc": "03:01"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "02:00",
+          "acc": "05:00"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:41",
+          "acc": "06:41"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:01",
+          "acc": "08:41"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:23",
+          "acc": "10:04"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:06",
+          "acc": "12:09"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:37",
+          "acc": "13:46"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:05",
+          "acc": "15:50"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:29",
+          "acc": "17:18"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:03",
+          "acc": "19:20"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:07",
+          "acc": "21:27"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:17",
+          "acc": "23:43"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:48",
+          "acc": "24:30"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:25",
+          "acc": "26:54"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:11",
+          "acc": "29:05"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:16",
+          "acc": "31:21"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:40",
+          "acc": "33:00"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:15",
+          "acc": "35:14"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:54",
+          "acc": "37:08"
+        }
+      ],
+      "_pid": "1477",
+      "Dorsal": 1477,
+      "_members": [
+        {
+          "name": "Luz Cuevas Peris",
+          "club": "Hybryd Mallorca"
+        },
+        {
+          "name": "Martín Intrigliolo",
+          "club": "Hybryd Mallorca"
+        }
+      ],
+      "_pairGender": "Mixta",
+      "_club": "Hybryd Mallorca",
+      "_category": "GGEE 40-49"
+    },
+    {
+      "AUTORANK.p": "9.",
+      "Nombre": "Ànecs",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "37:10",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:45",
+          "acc": "01:45"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:07",
+          "acc": "02:52"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:57",
+          "acc": "04:49"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:21",
+          "acc": "06:09"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:08",
+          "acc": "08:17"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:19",
+          "acc": "09:35"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:16",
+          "acc": "11:51"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:30",
+          "acc": "13:21"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:14",
+          "acc": "15:35"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:22",
+          "acc": "16:56"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:13",
+          "acc": "19:09"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:10",
+          "acc": "21:19"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:27",
+          "acc": "23:45"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:53",
+          "acc": "24:38"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:34",
+          "acc": "27:12"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:15",
+          "acc": "29:27"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:22",
+          "acc": "31:49"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:31",
+          "acc": "33:19"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:21",
+          "acc": "35:39"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:31",
+          "acc": "37:10"
+        }
+      ],
+      "_pid": "1473",
+      "Dorsal": 1473,
+      "_members": [
+        {
+          "name": "Marc Cloquell",
+          "club": "gallery 27"
+        },
+        {
+          "name": "Tere Fuster",
+          "club": "gallery 27"
+        }
+      ],
+      "_pairGender": "Mixta",
+      "_club": "gallery 27",
+      "_category": "GGEE 20-29"
+    },
+    {
+      "AUTORANK.p": "10.",
+      "Nombre": "M&B",
+      "Sector Actual": "Meta",
+      "Penalización": "",
+      "Tiempo": "37:58",
+      "_splits": [
+        {
+          "label": "Carrera 1",
+          "sector": "01:47",
+          "acc": "01:47"
+        },
+        {
+          "label": "Zona 1 - Reverse Lounge",
+          "sector": "01:12",
+          "acc": "02:59"
+        },
+        {
+          "label": "Carrera 2",
+          "sector": "01:57",
+          "acc": "04:55"
+        },
+        {
+          "label": "Zona 2 - Air Bike",
+          "sector": "01:51",
+          "acc": "06:45"
+        },
+        {
+          "label": "Carrera 3",
+          "sector": "02:06",
+          "acc": "08:51"
+        },
+        {
+          "label": "Zone 3 - Step Over Box",
+          "sector": "01:24",
+          "acc": "10:15"
+        },
+        {
+          "label": "Carrera 4",
+          "sector": "02:07",
+          "acc": "12:22"
+        },
+        {
+          "label": "Zona 4 - Sit Ups",
+          "sector": "01:43",
+          "acc": "14:05"
+        },
+        {
+          "label": "Carrera 5",
+          "sector": "02:09",
+          "acc": "16:14"
+        },
+        {
+          "label": "Zona 5 - WallBalls",
+          "sector": "01:30",
+          "acc": "17:43"
+        },
+        {
+          "label": "Carrera 6",
+          "sector": "02:09",
+          "acc": "19:51"
+        },
+        {
+          "label": "Zona 6 - Ski Erg",
+          "sector": "02:04",
+          "acc": "21:55"
+        },
+        {
+          "label": "Carrera 7",
+          "sector": "02:21",
+          "acc": "24:15"
+        },
+        {
+          "label": "Zona 7 - Farmer Carry",
+          "sector": "00:56",
+          "acc": "25:11"
+        },
+        {
+          "label": "Carrera 8",
+          "sector": "02:24",
+          "acc": "27:35"
+        },
+        {
+          "label": "Zona 8 - Row",
+          "sector": "02:15",
+          "acc": "29:49"
+        },
+        {
+          "label": "Carrera 9",
+          "sector": "02:19",
+          "acc": "32:07"
+        },
+        {
+          "label": "Zona 9 - Dead Ball",
+          "sector": "01:41",
+          "acc": "33:48"
+        },
+        {
+          "label": "Carrera 10",
+          "sector": "02:17",
+          "acc": "36:05"
+        },
+        {
+          "label": "Zona 10",
+          "sector": "01:54",
+          "acc": "37:58"
+        }
+      ],
+      "_pid": "1400",
+      "Dorsal": 1400,
+      "_members": [
+        {
+          "name": "Borja Fernández González",
+          "club": "Summit Alcudia"
+        },
+        {
+          "name": "Miriam Crespo González",
+          "club": "Summit Alcudia"
+        }
+      ],
+      "_pairGender": "Mixta",
+      "_club": "Summit Alcudia",
+      "_category": "GGEE 30-39"
+    }
+  ]
+}

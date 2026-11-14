@@ -1,0 +1,280 @@
+{
+  "info": {
+    "id": "409310",
+    "fileKey": "409310_3",
+    "name": "DEKA Happy Gym Calvià 2026",
+    "contestName": "DEKA STRONG",
+    "date": "2026-07-04",
+    "location": "Calvià",
+    "listName": "Resultados|01.LIVE",
+    "contest": 3,
+    "format": "individual",
+    "genderCategories": [
+      "Femenina",
+      "Masculina"
+    ],
+    "certificateUrl": "https://my.raceresult.com/409310/details0/certificate/{pid}/Certificados%20Hibridas"
+  },
+  "rows": [
+    {
+      "AUTORANK.p": "1.",
+      "Nombre": "Berni Bustos",
+      "Dorsal": 5,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "13:45",
+      "_pid": "5",
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "2.",
+      "Nombre": "Matias Veliz",
+      "Dorsal": 9,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "14:49",
+      "_pid": "9",
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "3.",
+      "Nombre": "ALBERTO ALZAMORA",
+      "Dorsal": 12,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "15:21",
+      "_pid": "12",
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "4.",
+      "Nombre": "Amanda Brito",
+      "Dorsal": 24,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "18:42",
+      "_pid": "24",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "5.",
+      "Nombre": "Fran Ruiz",
+      "Dorsal": 15,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "18:44",
+      "_pid": "15",
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "6.",
+      "Nombre": "Annabelle Brook",
+      "Dorsal": 22,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "18:54",
+      "_pid": "22",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "7.",
+      "Nombre": "Evelin Castao",
+      "Dorsal": 20,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "19:28",
+      "_pid": "20",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "8.",
+      "Nombre": "Sheni Gadzhalova",
+      "Dorsal": 25,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:03",
+      "_pid": "25",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "9.",
+      "Nombre": "Jaume Vidal Roca",
+      "Dorsal": 4,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:09",
+      "_pid": "4",
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "10.",
+      "Nombre": "Anta Fuentes Lago",
+      "Dorsal": 18,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:13",
+      "_pid": "18",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "11.",
+      "Nombre": "Lara Cabrer Cabanillas",
+      "Dorsal": 23,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:36",
+      "_pid": "23",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "12.",
+      "Nombre": "Pascual Ruben Lluch Gonzalez",
+      "Dorsal": 2,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "20:38",
+      "_pid": "2",
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "13.",
+      "Nombre": "MIQUEL PACHECO",
+      "Dorsal": 8,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:13",
+      "_pid": "8",
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "14.",
+      "Nombre": "Natalia Godines",
+      "Dorsal": 19,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:15",
+      "_pid": "19",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "15.",
+      "Nombre": "Marc Galmes",
+      "Dorsal": 3,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:24",
+      "_pid": "3",
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "16.",
+      "Nombre": "Javier Sastre",
+      "Dorsal": 7,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "21:58",
+      "_pid": "7",
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "17.",
+      "Nombre": "Mireya Caldentey",
+      "Dorsal": 16,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "22:15",
+      "_pid": "16",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "18.",
+      "Nombre": "Alexandra Quiros",
+      "Dorsal": 26,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "23:15",
+      "_pid": "26",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "19.",
+      "Nombre": "Miquel Esteva Mart",
+      "Dorsal": 13,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "24:01",
+      "_pid": "13",
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "20.",
+      "Nombre": "Laia Fajeda Reina",
+      "Dorsal": 29,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "25:05",
+      "_pid": "29",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "21.",
+      "Nombre": "Marga Vara Martorell",
+      "Dorsal": 14,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "25:13",
+      "_pid": "14",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "22.",
+      "Nombre": "Neus Cardos",
+      "Dorsal": 17,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "25:53",
+      "_pid": "17",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "23.",
+      "Nombre": "Nathaly Porras Palacios",
+      "Dorsal": 21,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "26:18",
+      "_pid": "21",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "24.",
+      "Nombre": "MARINA Crespi Jimenez",
+      "Dorsal": 27,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "26:31",
+      "_pid": "27",
+      "_pairGender": "Femenina"
+    },
+    {
+      "AUTORANK.p": "25.",
+      "Nombre": "Wilson Pardo espitia",
+      "Dorsal": 6,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "28:00",
+      "_pid": "6",
+      "_pairGender": "Masculina"
+    },
+    {
+      "AUTORANK.p": "26.",
+      "Nombre": "Jesus Bozada",
+      "Dorsal": 1,
+      "Último Sector": "Meta",
+      "Penalización": "",
+      "Tiempo": "30:51",
+      "_pid": "1",
+      "_pairGender": "Masculina"
+    }
+  ]
+}
