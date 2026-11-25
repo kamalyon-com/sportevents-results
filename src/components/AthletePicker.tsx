@@ -53,6 +53,10 @@ interface AthletePickerProps {
   categoryOptions: string[];
   ageGroupOptions: string[];
   nationalityOptions: string[];
+  /** Controles extra junto al buscador (p. ej. el selector de carrera al buscar entre carreras). */
+  extraControls?: React.ReactNode;
+  /** Texto de la lista vacía. */
+  emptyText?: string;
 }
 
 export const AthletePicker: React.FC<AthletePickerProps> = ({
@@ -72,6 +76,8 @@ export const AthletePicker: React.FC<AthletePickerProps> = ({
   categoryOptions,
   ageGroupOptions,
   nationalityOptions,
+  extraControls,
+  emptyText = 'Ningún atleta coincide con los filtros.',
 }) => {
   const [limit, setLimit] = useState(PAGE_SIZE);
 
@@ -158,6 +164,7 @@ export const AthletePicker: React.FC<AthletePickerProps> = ({
             },
           }}
         />
+        {extraControls}
         {genderOptions.length > 1 &&
           select('gender', 'Género', genderOptions, 'Cualquiera', (v) => GENDER_LABELS[v] ?? v)}
         {categoryOptions.length > 1 && select('category', 'Categoría', categoryOptions, 'Todas')}
@@ -184,7 +191,7 @@ export const AthletePicker: React.FC<AthletePickerProps> = ({
       <Paper variant="outlined" sx={{ borderColor: 'divider', maxHeight: 340, overflowY: 'auto', borderRadius: 2 }}>
         {visible.length === 0 ? (
           <Typography variant="body2" color="text.disabled" sx={{ p: 3, textAlign: 'center' }}>
-            Ningún atleta coincide con los filtros.
+            {emptyText}
           </Typography>
         ) : (
           visible.map((a) => {

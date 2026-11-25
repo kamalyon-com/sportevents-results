@@ -4,9 +4,13 @@ import {
   Box,
   Button,
   Chip,
+  FormControl,
   FormControlLabel,
+  InputLabel,
   LinearProgress,
+  MenuItem,
   Paper,
+  Select,
   Stack,
   Switch,
   Table,
@@ -19,24 +23,21 @@ import {
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
-import { useRaceResults, presetFiltersFor } from '../hooks/useRaceResults';
+import { useRaceResults, presetFiltersFor, DEFAULT_FILTERS, athleteMatchesSearch } from '../hooks/useRaceResults';
 import { useGlobalAthletes } from '../hooks/useGlobalAthletes';
-import { matchesQuery, normalizeName } from '../lib/text';
+import { normalizeName } from '../lib/text';
 import { SearchForm } from './SearchForm';
 import { AthletePicker } from './AthletePicker';
 import { ChartLegend, MultiPositionChart, StationBarsChart } from './AnalyzeCharts';
 import { formatDelta, toSeconds } from '../lib/time';
 import { shortLabel } from '../lib/stations';
-import { Athlete, RREventConfig, WidgetConfig } from '../lib/types';
+import { Athlete, FilterState, RREventConfig, WidgetConfig } from '../lib/types';
 
 /** Máximo de atletas comparables a la vez — más columnas no caben en pantalla. */
 const MAX_ATHLETES = 5;
 
 /** Colores de columna para distinguir a cada atleta. */
 const COLUMN_COLORS = ['#9fd4f9', '#FF8C42', '#7BD389', '#C792EA', '#FFD166'];
-
-/** Tope de resultados de la búsqueda entre carreras, para no volcar miles de filas. */
-const CROSS_LIMIT = 200;
 
 const athleteKey = (a: Athlete) => `${a.source_key ?? a.event_id}-${a.bib}`;
 
@@ -64,6 +65,9 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
 
   const [selected, setSelected] = useState<Athlete[]>([]);
   const [crossEvent, setCrossEvent] = useState(false);
+  // Entre carreras los filtros son propios: los de la carrera abierta (p. ej. su género) no aplican al resto
+  const [crossFilters, setCrossFilters] = useState<FilterState>(DEFAULT_FILTERS);
+  const [crossSource, setCrossSource] = useState('');
 
   const events = config.rrEvents && config.rrEvents.length > 0 ? config.rrEvents : availableEvents;
   const { sources, loading: crossLoading, progress, loadAll } = useGlobalAthletes(events, config.apiKey);
@@ -72,25 +76,61 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
   const handleCrossToggle = (on: boolean) => {
     setCrossEvent(on);
     setSelected([]);
+    setCrossFilters({ ...DEFAULT_FILTERS, search: filters.search });
+    setCrossSource('');
     if (on) loadAll();
   };
 
-  /** Atletas de cualquier carrera que coinciden con el texto buscado. */
-  const crossPool = useMemo(() => {
+  /** Atletas de todas las carreras (o de la elegida) que coinciden con el buscador, de la más reciente a la más antigua. */
+  const crossBase = useMemo(() => {
     if (!crossEvent) return null;
-    const q = normalizeName(filters.search);
-    if (q.length < 2) return [];
+    const q = normalizeName(crossFilters.search);
     const out: Athlete[] = [];
     for (const source of sources) {
+      if (crossSource && source.key !== crossSource) continue;
       for (const a of source.athletes) {
-        if (matchesQuery(a.name, q) || a.members?.some((m) => matchesQuery(m.name, q))) {
-          out.push(a);
-          if (out.length >= CROSS_LIMIT) return out;
-        }
+        if (athleteMatchesSearch(a, q)) out.push(a);
       }
     }
     return out;
-  }, [crossEvent, sources, filters.search]);
+  }, [crossEvent, sources, crossSource, crossFilters.search]);
+
+  /** El género solo se ofrece si todos los atletas lo traen; si no, filtrar escondería gente sin avisar. */
+  const crossGenderOptions = useMemo(() => {
+    if (!crossBase || crossBase.length === 0 || crossBase.some((a) => !a.gender)) return [];
+    return Array.from(new Set(crossBase.map((a) => a.gender as string))).sort();
+  }, [crossBase]);
+
+  const crossPickerFilters = useMemo<FilterState>(
+    () => ({ ...crossFilters, gender: crossGenderOptions.includes(crossFilters.gender) ? crossFilters.gender : '' }),
+    [crossFilters, crossGenderOptions],
+  );
+
+  const crossPool = useMemo(() => {
+    if (!crossBase) return null;
+    const g = crossPickerFilters.gender;
+    return g ? crossBase.filter((a) => a.gender === g) : crossBase;
+  }, [crossBase, crossPickerFilters.gender]);
+
+  const crossTotal = useMemo(
+    () => sources.reduce((n, s) => (crossSource && s.key !== crossSource ? n : n + s.athletes.length), 0),
+    [sources, crossSource],
+  );
+
+  /** Nombre de cada carrera en el selector; si dos modalidades se llaman igual se distinguen por su número de atletas. */
+  const sourceLabels = useMemo(() => {
+    const base = new Map(
+      sources.map((s) => [s.key, [s.cfg.name ?? s.info.name, s.info.contestName ?? s.cfg.contestName].filter(Boolean).join(' · ')]),
+    );
+    const seen = new Map<string, number>();
+    base.forEach((label) => seen.set(label, (seen.get(label) ?? 0) + 1));
+    const out = new Map<string, string>();
+    for (const s of sources) {
+      const label = base.get(s.key) ?? s.key;
+      out.set(s.key, (seen.get(label) ?? 0) > 1 ? `${label} (${s.athletes.length} atletas)` : label);
+    }
+    return out;
+  }, [sources]);
 
   /** Pelotón con el que se compara cada atleta: el de su propia carrera. */
   const poolOf = useCallback(
@@ -301,9 +341,9 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
                 </Typography>
               </Box>
             )}
-            {crossEvent && !crossLoading && filters.search.trim().length < 2 && (
+            {crossEvent && !crossLoading && (
               <Typography variant="caption" color="text.disabled" sx={{ display: 'block' }}>
-                Escribe un nombre en el buscador para encontrar atletas entre las {sources.length} carreras.
+                Atletas de las {sources.length} carreras. Elige una carrera o busca por nombre o dorsal.
               </Typography>
             )}
           </Box>
@@ -329,19 +369,40 @@ export const CompareView: React.FC<CompareViewProps> = (config) => {
 
           <AthletePicker
             athletes={crossPool ?? filteredAthletes}
-            total={crossPool ? crossPool.length : athletes.length}
+            total={crossPool ? crossTotal : athletes.length}
             selected={selected}
             onToggle={toggleAthlete}
             primaryColor={primaryColor}
             max={MAX_ATHLETES}
             label={crossEvent ? 'Atletas de cualquier carrera' : 'Atletas a comparar'}
-            filters={filters}
-            setFilters={setFilters}
-            clearFilters={clearFilters}
-            genderOptions={crossEvent ? [] : genderOptions}
+            filters={crossEvent ? crossPickerFilters : filters}
+            setFilters={crossEvent ? setCrossFilters : setFilters}
+            clearFilters={crossEvent ? () => setCrossFilters((f) => ({ ...DEFAULT_FILTERS, search: f.search })) : clearFilters}
+            genderOptions={crossEvent ? crossGenderOptions : genderOptions}
             categoryOptions={crossEvent ? [] : categoryOptions}
             ageGroupOptions={crossEvent ? [] : ageGroupOptions}
             nationalityOptions={crossEvent ? [] : nationalityOptions}
+            emptyText={crossEvent && crossLoading ? 'Cargando carreras…' : undefined}
+            extraControls={
+              crossEvent && sources.length > 1 ? (
+                <FormControl size="small" sx={{ minWidth: 200, flex: '1 1 200px' }}>
+                  <InputLabel id="se-compare-race-label">Carrera</InputLabel>
+                  <Select
+                    labelId="se-compare-race-label"
+                    label="Carrera"
+                    value={crossSource}
+                    onChange={(e) => setCrossSource(e.target.value)}
+                  >
+                    <MenuItem value="">Todas las carreras</MenuItem>
+                    {sources.map((s) => (
+                      <MenuItem key={s.key} value={s.key}>
+                        {sourceLabels.get(s.key)}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              ) : null
+            }
             colorOf={(a) => {
               const index = selected.findIndex((s) => athleteKey(s) === athleteKey(a));
               return COLUMN_COLORS[(index < 0 ? 0 : index) % COLUMN_COLORS.length];

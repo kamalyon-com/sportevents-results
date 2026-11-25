@@ -52,7 +52,8 @@ function loadSource(cfg: RREventConfig, apiKey: string): Promise<EventSource | n
         source_key: key,
         event_name: cfg.name ?? eventInfo.name,
         event_date: cfg.date ?? eventInfo.date,
-        event_modality: cfg.contestName,
+        // El selector añade el género al nombre de la modalidad, pero el fichero trae todos los géneros
+        event_modality: eventInfo.contestName ?? cfg.contestName,
         field_size: athletes.length,
       }));
       return { key, cfg, info: eventInfo, athletes: stamped };

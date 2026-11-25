@@ -351,7 +351,7 @@ interface UseRaceResultsReturn {
   availableEvents: RREventConfig[];
 }
 
-const DEFAULT_FILTERS: FilterState = {
+export const DEFAULT_FILTERS: FilterState = {
   search: '',
   eventId: '',
   gender: '',
@@ -359,6 +359,18 @@ const DEFAULT_FILTERS: FilterState = {
   category: '',
   nationality: '',
 };
+
+/** Texto del buscador (ya normalizado) contra nombre, dorsal, categoría, club y, en parejas y equipos, cada integrante. */
+export function athleteMatchesSearch(a: Athlete, q: string): boolean {
+  return (
+    !q ||
+    matchesQuery(a.name, q) ||
+    matchesQuery(a.bib, q) ||
+    matchesQuery(a.category, q) ||
+    (a.members ?? []).some((m) => matchesQuery(m.name, q) || matchesQuery(m.club ?? '', q)) ||
+    matchesQuery(a.club ?? '', q)
+  );
+}
 
 export function useRaceResults(config: WidgetConfig): UseRaceResultsReturn {
   const [phase, setPhase] = useState<Phase>('search');
@@ -501,14 +513,7 @@ export function useRaceResults(config: WidgetConfig): UseRaceResultsReturn {
       ageGroup: (a: Athlete) => !filters.ageGroup || a.age_group === filters.ageGroup,
       category: (a: Athlete) => !filters.category || a.category === filters.category,
       nationality: (a: Athlete) => !filters.nationality || a.nationality === filters.nationality,
-      search: (a: Athlete) =>
-        !q ||
-        matchesQuery(a.name, q) ||
-        matchesQuery(a.bib, q) ||
-        matchesQuery(a.category, q) ||
-        // En parejas y equipos se busca también por cada integrante y su club
-        (a.members ?? []).some((m) => matchesQuery(m.name, q) || matchesQuery(m.club ?? '', q)) ||
-        matchesQuery(a.club ?? '', q),
+      search: (a: Athlete) => athleteMatchesSearch(a, q),
     };
   }, [filters]);
 
