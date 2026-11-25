@@ -234,7 +234,8 @@ export const AthletePicker: React.FC<AthletePickerProps> = ({
                   opacity: disabled ? 0.4 : 1,
                   font: 'inherit',
                   color: 'inherit',
-                  '&:hover': { background: disabled ? 'transparent' : `${accent}1f` },
+                  '&:hover': { background: disabled ? 'transparent' : `${accent}1f`, color: 'inherit' },
+                  '&:focus:not(:hover)': { background: isSelected ? `${accent}14` : 'transparent', color: 'inherit' },
                   '&:last-of-type': { borderBottom: 0 },
                 }}
               >

@@ -205,6 +205,7 @@ function PersonCard({
           background: 'transparent',
           font: 'inherit',
           color: 'inherit',
+          '&:hover, &:focus': { background: 'transparent', color: 'inherit' },
           textAlign: 'left',
           cursor: 'pointer',
         }}

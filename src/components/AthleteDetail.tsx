@@ -266,7 +266,7 @@ export const AthleteDetail: React.FC<AthleteDetailProps> = ({
             <IconButton
               size="small"
               onClick={onBack}
-              sx={{ alignSelf: 'flex-start', flexShrink: 0, border: 1, borderColor: `${primaryColor}60`, color: primaryColor, borderRadius: 1.5 }}
+              sx={{ alignSelf: 'flex-start', flexShrink: 0, border: 1, borderColor: `${primaryColor}60`, color: primaryColor, '&:hover, &:focus': { color: primaryColor }, borderRadius: 1.5 }}
             >
               <ArrowBackIcon fontSize="small" />
             </IconButton>

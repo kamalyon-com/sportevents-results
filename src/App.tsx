@@ -50,15 +50,25 @@ function buildTheme(mode: 'dark' | 'light') {
       },
       MuiButton: {
         styleOverrides: {
-          root: {
-            borderRadius: 0,
-            textTransform: 'uppercase',
-            fontWeight: 700,
-            fontFamily: '"Panton", sans-serif',
-            letterSpacing: '0.12em',
-            fontSize: '0.85rem',
-            boxShadow: 'none',
-            '&:hover': { boxShadow: 'none' },
+          // Many WordPress themes paint every button:hover / button:focus (Astra on SAC Series: light grey
+          // background, black text), which beats MUI's single-class rules; these keep the widget's own look.
+          root: ({ ownerState, theme }) => {
+            const pal = ownerState.color && ownerState.color !== 'inherit'
+              ? (theme.palette[ownerState.color] as { main: string; contrastText: string })
+              : null;
+            const contained = ownerState.variant === 'contained';
+            const fg = !pal ? 'inherit' : contained ? pal.contrastText : pal.main;
+            return {
+              borderRadius: 0,
+              textTransform: 'uppercase',
+              fontWeight: 700,
+              fontFamily: '"Panton", sans-serif',
+              letterSpacing: '0.12em',
+              fontSize: '0.85rem',
+              boxShadow: 'none',
+              '&:hover': { boxShadow: 'none', ...(!ownerState.variant || ownerState.variant === 'text' ? { color: fg } : {}) },
+              '&:focus:not(:hover)': { color: fg, backgroundColor: contained && pal ? pal.main : 'transparent' },
+            };
           },
           contained: {
             '&:hover': {
@@ -86,6 +96,26 @@ function buildTheme(mode: 'dark' | 'light') {
             letterSpacing: '0.05em',
             borderRadius: 2,
           },
+        },
+      },
+      MuiIconButton: {
+        styleOverrides: {
+          // Own colour on hover/focus (see MuiButton); buttons coloured through sx repeat it for these states.
+          root: ({ ownerState, theme }) => ({
+            '&:hover, &:focus': {
+              color: !ownerState.color || ownerState.color === 'default'
+                ? theme.palette.action.active
+                : ownerState.color === 'inherit'
+                  ? 'inherit'
+                  : (theme.palette[ownerState.color] as { main: string }).main,
+            },
+            '&:focus:not(:hover)': { backgroundColor: 'transparent' },
+          }),
+        },
+      },
+      MuiTab: {
+        styleOverrides: {
+          root: { '&:hover, &:focus': { backgroundColor: 'transparent' } },
         },
       },
       MuiTableCell: {

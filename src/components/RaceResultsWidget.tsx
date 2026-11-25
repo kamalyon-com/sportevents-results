@@ -258,12 +258,12 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
           {isMobile ? (
             <>
               <Tooltip title="Nueva búsqueda">
-                <IconButton size="small" onClick={backToSearch} sx={{ border: 1, borderColor: `${primaryColor}60`, color: primaryColor, borderRadius: 1.5 }}>
+                <IconButton size="small" onClick={backToSearch} sx={{ border: 1, borderColor: `${primaryColor}60`, color: primaryColor, '&:hover, &:focus': { color: primaryColor }, borderRadius: 1.5 }}>
                   <ArrowBackIcon fontSize="small" />
                 </IconButton>
               </Tooltip>
               <Tooltip title="Recargar">
-                <IconButton size="small" onClick={reload} sx={{ border: 1, borderColor: `${primaryColor}60`, color: primaryColor, borderRadius: 1.5 }}>
+                <IconButton size="small" onClick={reload} sx={{ border: 1, borderColor: `${primaryColor}60`, color: primaryColor, '&:hover, &:focus': { color: primaryColor }, borderRadius: 1.5 }}>
                   <RefreshIcon fontSize="small" />
                 </IconButton>
               </Tooltip>
@@ -391,12 +391,12 @@ export const RaceResultsWidget: React.FC<RaceResultsWidgetProps> = ({
         {isMobile ? (
           <>
             <Tooltip title="Nueva búsqueda">
-              <IconButton size="small" onClick={backToSearch} sx={{ color: 'text.secondary' }}>
+              <IconButton size="small" onClick={backToSearch} sx={{ color: 'text.secondary', '&:hover, &:focus': { color: 'text.secondary' } }}>
                 <ArrowBackIcon fontSize="small" />
               </IconButton>
             </Tooltip>
             <Tooltip title="Recargar">
-              <IconButton size="small" onClick={reload} sx={{ color: 'text.secondary' }}>
+              <IconButton size="small" onClick={reload} sx={{ color: 'text.secondary', '&:hover, &:focus': { color: 'text.secondary' } }}>
                 <RefreshIcon fontSize="small" />
               </IconButton>
             </Tooltip>

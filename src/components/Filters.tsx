@@ -130,6 +130,7 @@ export const Filters: React.FC<FiltersProps> = ({
                   borderColor: activeFilterCount > 0 ? 'primary.main' : 'divider',
                   borderRadius: 1.5,
                   color: activeFilterCount > 0 ? 'primary.main' : 'text.secondary',
+                  '&:hover, &:focus': { color: activeFilterCount > 0 ? 'primary.main' : 'text.secondary' },
                 }}
               >
                 <TuneIcon fontSize="small" />
